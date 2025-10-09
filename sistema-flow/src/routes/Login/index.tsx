@@ -42,18 +42,18 @@ export default function Login() {
          <h1  className="text-center text-3xl font-bold">Página de Login</h1>
 
             <div className="mx-auto">
-                <form className="frmLogin">
+                <form onSubmit={onSubmit} className="frmLogin">
                     <fieldset>
                         <legend>Entrar no sistema</legend>
                         <div>
                             <label htmlFor="idNomeUsuario">Nome Usuário:</label>
-                            <input type="text" id="idNomeUsuario" className="bg-amber-200"/>
+                            <input type="text" id="idNomeUsuario" className="bg-amber-200" {...register("nomeUser", { required:"Insira Nome do Usuário" })} aria-invalid={!!errors.nome} aria-describedby={errors.nome ? "nome-error" : undefined} /> {errors.nome && <span role="alert" id="nome-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nome.message}</span>}
                         </div>
                         <div>
                             <label htmlFor="idEmail">Email:</label>
-                            <input type="email" id="idEmail" className="bg-amber-200" />
+                            <input type="email" id="idEmail" className="bg-amber-200" {...register("email", { required: "Insira Email do usuário", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" } })} aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} /> {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
                         </div>
-
+                        
                         <div>
                             <button type="submit">Entrar</button>
                         </div>
@@ -64,7 +64,6 @@ export default function Login() {
                     </fieldset>
                 </form>
             </div>
-
         </main>
     );
 }
