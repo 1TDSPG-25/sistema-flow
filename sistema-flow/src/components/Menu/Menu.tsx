@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function Menu(){
   return(
     <nav className="menu flex flex-col md:flex-row gap-3 md:gap-6 items-center md:justify-center text-base md:text-lg">
