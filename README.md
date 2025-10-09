@@ -8,8 +8,8 @@
 <ul style="color:green">
 <li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
-<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li><span style="color:red">DEADLINE:[11:20]</span>
-	<li> ...</li>
+<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li><span style="color:red">DEADLINE:[11:20]</span><li>...</li>
+<li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson</li><span style="color:red">DEADLINE:[11:35]</span>
 </ul>
 
 ---
@@ -20,8 +20,6 @@
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li><span style="color:red">DEADLINE:[11:15]</span>
 <li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li><span style="color:red">DEADLINE:[11:25]</span>
 <li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li><span style="color:red">DEADLINE:[11:45]</span>
-<li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson
-    </li><span style="color:red">DEADLINE:[11:35]</span>
 </ul>
 
 ---
