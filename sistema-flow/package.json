@@ -14,9 +14,13 @@
     "@tailwindcss/vite": "^4.1.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+<<<<<<< HEAD
+    "react-router-dom": "^7.9.4"
+=======
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
     "tailwindcss": "^4.1.14"
+>>>>>>> d7007d74a9cb2d8a25fa4c0193c0dd9e3b11330a
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
