@@ -6,7 +6,8 @@
 ---
 ## IMPLEMENTADOS:
 <ul style="color:green">
-<li>[   ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
+<li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
+<li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
 	<li> ...</li>
 </ul>
 
@@ -19,7 +20,6 @@
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-<li>[   ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
 <li>[   ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne </li>
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li>
 <li>[   ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li>
