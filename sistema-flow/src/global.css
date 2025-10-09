@@ -1,28 +1,36 @@
 @import "tailwindcss";
 
-& .frmLogin, .frmCadastro {
-  @apply gap-4 p-4 m-4 bg-white rounded-lg w-3xl mx-auto;
-  
-  & fieldset {
-      @apply flex flex-col gap-4 border-2 p-4 rounded-lg;
-      
-        & legend{
-          @apply text-lg text-blue-600 font-bold;               
-      }
-      & div{
-          @apply flex flex-col gap-2;
-          
-          & label{
-              @apply font-bold;    
-          }
-          
-          & input,select,textarea{
-              @apply border-2 rounded-md p-2;
-          }
-      }
-      
-      & button{
-          @apply mx-auto bg-blue-500 text-white text-2xl font-bold py-4 px-20 rounded hover:bg-blue-700 cursor-pointer;
-      }
-  }
+:root{
+    scroll-behavior:smooth;
 }
+
+@layer {
+
+    & .frmLogin, .frmCadastro {
+        @apply gap-4 p-4 m-4 bg-white rounded-lg w-3xl mx-auto;
+  
+    & fieldset {
+        @apply flex flex-col gap-4 border-2 p-4 rounded-lg;
+        
+            & legend{
+            @apply text-lg text-blue-600 font-bold;               
+        }
+        & div{
+            @apply flex flex-col gap-2;
+            
+            & label{
+                @apply font-bold;    
+            }
+            
+            & input,select,textarea{
+                @apply border-2 rounded-md p-2;
+            }
+        }
+        
+        & button{
+            @apply mx-auto bg-blue-500 text-white text-2xl font-bold py-4 px-20 rounded hover:bg-blue-700 cursor-pointer;
+        }
+    }
+}
+}
+

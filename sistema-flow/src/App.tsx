@@ -4,7 +4,7 @@ import Rodape from "./components/Rodape/Rodape";
 
 export default function App(){
   return(
-    <div>
+    <div className="container flex flex-col max-w-screen h-screen justify-between">
       <Cabecalho/>
         <Outlet/>
       <Rodape/>
