@@ -6,6 +6,7 @@
 ---
 ## IMPLEMENTADOS:
 <ul style="color:green">
+<li>[   ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 	<li> ...</li>
 </ul>
 
@@ -18,7 +19,6 @@
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-<li>[   ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[   ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
 <li>[   ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne </li>
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li>
