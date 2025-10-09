@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import type { TipoUser } from "../../types/tipoUser";
+import type { TipoUser } from "../../types/tipoUsuario";
 import { useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -21,7 +21,7 @@ export default function Login() {
             const usuarios: TipoUser[] = await response.json();
 
             const usuarioValido = usuarios.find(
-                (user) => user.nomeUsuario.toLowerCase() === data.nomeUsuario.toLowerCase() && user.email.toLowerCase() === data.email.toLowerCase()
+                (user) => user.nomeUser.toLowerCase() === data.nomeUser.toLowerCase() && user.email.toLowerCase() === data.email.toLowerCase()
             );
 
             if(usuarioValido) {
