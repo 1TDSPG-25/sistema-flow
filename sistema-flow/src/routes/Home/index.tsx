@@ -11,7 +11,7 @@ const Home = () => {
     const [posts, setPosts] = useState<apiProps[]>([]);
 
     const fetchApi = async () => { 
-        const response = await fetch(`${import.meta.env.VITE_API_URL_HOME}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL_HOME}?limit=6`);
         if(response.status !== 200) {
             throw new Error('Failed to fetch data');
         }
