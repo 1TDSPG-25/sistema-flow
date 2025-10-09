@@ -1,5 +1,43 @@
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import type { TipoUser } from "../../types/tipoUser";
+import { useNavigate } from "react-router-dom";
+import Logado from "../../components/Logado/logado";
+const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 export default function Login() {
+
+    const navigate = useNavigate();
+
+    const {register,handleSubmit,formState:{errors}, reset } = useForm<TipoUser>({
+        mode:"onChange"
+    });
+
+    const onSubmit = handleSubmit(async (data:TipoUser) => {
+
+        try {
+            const response = await fetch(API_URL);
+            if(!response.ok) throw new Error("Erro ao buscar usuários");
+
+            const usuarios: TipoUser[] = await response.json();
+
+            const usuarioValido = usuarios.find(
+                (user) => user.nomeUsuario.toLowerCase() === data.nomeUsuario.toLowerCase() && user.email.toLowerCase() === data.email.toLowerCase()
+            );
+
+            if(usuarioValido) {
+                localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido))
+                navigate("/home");
+            } else {
+                alert("Usuário ou E-mail Inválido.")
+                reset();
+            }
+
+        } catch (error) {
+            alert("Erro ao logar. Tente novamente.");
+        }
+    });
+
     return(
         <main>
          <h1  className="text-center text-3xl font-bold">Página de Login</h1>

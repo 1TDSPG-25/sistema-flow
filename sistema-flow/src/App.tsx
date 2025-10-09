@@ -1,7 +1,7 @@
+import { Outlet } from "react-router-dom";
 
-
-export default function App() {
-  return (
-    <h1>teste</h1>
+export default function App(){
+  return(
+    <Outlet/>
   )
 }
