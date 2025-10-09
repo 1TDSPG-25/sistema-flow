@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Rodape(){
     return(
         <footer className="w-full bg-blue-300 py-4 text-center">
