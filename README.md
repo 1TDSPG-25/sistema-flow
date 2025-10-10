@@ -19,7 +19,7 @@
 </ul>
 
 ---
-## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
+## EM HOMOLOGAÇÃO: QA - ROSSONI
 <ul style="color:orange">
 
 <li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
@@ -31,7 +31,7 @@
 </ul>
 
 ---
-## EM DESENVOLVIMENTO: TASKS - ENZO OKUIZUMI
+## EM DESENVOLVIMENTO: Tech Lead - ENZO OKUIZUMI
 <ul style="color:yellow">
 
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
