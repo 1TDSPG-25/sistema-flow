@@ -20,7 +20,9 @@
 ---
 ## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
 <ul style="color:orange">
-<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[9:00]</span>
+
+   <li> ...</li>
+
 </ul>
 
 ---
