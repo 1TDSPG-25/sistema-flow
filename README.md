@@ -1,5 +1,8 @@
 # FEATURES LIST:
 
+## LIDER TÉCNICO: PROF.ALEXANDRE
+## COORDENADOR DE TAREFAS: ENZO OKUIZUMI
+
 ## Todas as TAREFAS/FEATURES devem ser finalizadas.
 ### Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
 
