@@ -6,6 +6,7 @@ const cadastroSchema = z.object({
   nome: z.string().min(3, { message: "O nome precisa ter no mínimo 3 caracteres." }),
   nomeUsuario: z.string().min(5, { message: "O nome de usuário precisa ter no mínimo 5 caracteres." }),
   email: z.string().email({ message: "Por favor, insira um e-mail válido." }),
+  senha: z.string().min(8, { message:"A senha precisa ter no mínimo 8 caracteres."}),
 });
 
 type CadastroInput = z.infer<typeof cadastroSchema>;
@@ -60,6 +61,18 @@ export default function CadastroForm() {
             {...register("email")}
           />
           {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+        </div>
+        <div>
+          <label htmlFor="senha" className="block text-sm font-medium text-gray-700">
+            Senha
+          </label>
+          <input
+            id="senha"
+            type="password"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            {...register("senha")}
+          />
+          {errors.senha && <p className="text-red-500 text-sm">{errors.senha.message}</p>}
         </div>
         <div>
           <button
