@@ -21,7 +21,7 @@ export default function CadastroForm() {
     alert("test");
   };
   return (
-    <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
         Criar Conta
       </h2>
