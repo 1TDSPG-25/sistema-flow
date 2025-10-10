@@ -25,6 +25,8 @@
 <li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
 
 
+<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
+
 </ul>
 
 ---
@@ -35,19 +37,19 @@
 
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
 
-<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
-
 <li>[   ] FEATURE / Alterar a página de Login para se adequar ao projeto  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[00:00]</span>
 
 <li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
 <li>[   ] BugFix / Corrigir responsividade de Header, Footer, etc/ Kelson, Alex</li>
 
-<li>[   ] FEATURE / Criar Componente Cadastro junto de Login e colocar o que esta na rota  / </li>
+<li>[   ] FEATURE / Adicionar Suspensão na página / Enrico - Iago - Vitor</li>
+
+<li>[   ] BUGFIX / Arrumar API na página Home / Enrico - Iago - Vitor</li>
+
 
 
 

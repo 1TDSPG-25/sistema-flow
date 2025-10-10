@@ -9,7 +9,7 @@ import Home from './routes/Home/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, children:[
-    {path:"/", element:<Home/>},
+    {path:"/home", element:<Home/>},
     {path:"/login", element:<Login/>},
     {path:"/cadastro", element:<Cadastro/>}
   ]
