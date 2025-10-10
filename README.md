@@ -24,8 +24,7 @@
    <li> ...</li>
 <span style="color:red">DEADLINE:[9:00]</span>
 <li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li><span style="color:red">DEADLINE:[11:45]</span>
-<li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson
-<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
+[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
 </ul>
 
 ---
@@ -38,10 +37,9 @@
 <li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
 <li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
+<li>Pagina Error/ Kelson, alex</li>
 </ul>
 
 
 ## TIME FREE
-
-- Kelson, alex
 -  Luiz Flosi, Arthur Brito e Pedro Brum 
