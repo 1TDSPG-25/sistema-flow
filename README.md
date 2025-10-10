@@ -21,19 +21,23 @@
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li><span style="color:red">DEADLINE:[9:00]</span>
 <li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li><span style="color:red">DEADLINE:[11:45]</span>
 <li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson
-    </li><span style="color:red">DEADLINE:[11:35]</span>
+<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[9:10]</span>
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[11:45]</span>
+
+<li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[10:45]</span>
+<li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Lucas Barros - Milton Marcelino - Enzo Okuizumi</li><span style="color:red">DEADLINE:[08:45]</span>
+<li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
+<li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
 </ul>
-ADD rota de cadastro no menu - Kelson, Alex
 
 
 ## TIME FREE
--[Huguinho, Zezinho, Luizinho]
-Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
-André Emygdio, João Victor Nascimento 
+
+- Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
+- André Emygdio, João Victor Nascimento 
+- Kelson
