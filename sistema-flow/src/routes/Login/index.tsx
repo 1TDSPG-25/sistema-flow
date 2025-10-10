@@ -53,11 +53,13 @@ export default function Login() {
                             <label htmlFor="idEmail">Email:</label>
                             <input type="email" id="idEmail" className="bg-amber-200" {...register("email", { required: "Insira Email do usuário", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" } })} aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} /> {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
                         </div>
-                        
+                        <div>
+                            <label htmlFor="idSenha">Senha:</label>
+                            <input type="text" id="idSenha" className="bg-amber-200" {...register("senha", { required:"Insira a Senha do Usuário" })} aria-invalid={!!errors.senha} aria-describedby={errors.senha ? "senha-error" : undefined} /> {errors.senha && <span role="alert" id="senha-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.senha.message}</span>}
+                        </div>
                         <div>
                             <button type="submit">Entrar</button>
                         </div>
-
                         <div>
                             <p>Caso não tenha um Usuário, clique em <Link to="/cadastro" className="hover:underline hover:text-blue-500 font-bold">Cadastrar-se</Link></p>
                         </div>
