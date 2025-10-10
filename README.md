@@ -11,7 +11,6 @@
 <ul style="color:green">
 <li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
-	<li> ...</li>
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/  </li>
 <li>[ x ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li></span>
 <li>[ x ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / </li>
@@ -21,7 +20,7 @@
 ## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
 <ul style="color:orange">
 
-   <li> ...</li>
+<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[9:45]</span>
 
 </ul>
 
@@ -29,7 +28,6 @@
 ## EM DESENVOLVIMENTO: TASKS - ENZO OKUIZUMI
 <ul style="color:yellow">
 
-</li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[9:45]</span>
 
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
 
