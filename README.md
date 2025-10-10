@@ -14,6 +14,7 @@
 	<li> ...</li>
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/  </li>
 <li>[ x ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li></span>
+<li>[ x ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / </li>
 </ul>
 
 ---
@@ -21,7 +22,7 @@
 <ul style="color:orange">
 
    <li> ...</li>
-<li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li><span style="color:red">DEADLINE:[9:00]</span>
+<span style="color:red">DEADLINE:[9:00]</span>
 <li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li><span style="color:red">DEADLINE:[11:45]</span>
 <li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson
 <li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
@@ -42,4 +43,5 @@
 
 ## TIME FREE
 
-- Kelson
+- Kelson, alex
+-  Luiz Flosi, Arthur Brito e Pedro Brum 
