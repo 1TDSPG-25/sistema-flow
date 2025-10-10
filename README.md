@@ -44,6 +44,7 @@
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
 <li>[   ] BUGFIX / Pagina Error/ Kelson, alex</li>
+
 </ul>
 
 
