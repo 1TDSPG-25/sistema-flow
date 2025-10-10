@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
-
-export default function Rodape(){
-    return(
-        <footer className="w-full bg-blue-300 py-4 text-center">
-            <p className="text-lg">&copy; Todos os direitos reservados.</p>
-        </footer>
-    );
+export default function Rodape() {
+  return (
+    <footer className="flex flex-col sm:flex-row gap-2 sm:gap-4 md:gap-6 items-center justify-center text-sm sm:text-base md:text-lg py-4 px-3 border-t border-gray-200 mt-6 text-gray-600 text-center sm:text-left">
+      <p className="px-2 py-1 hover:text-blue-500 transition-colors duration-300">
+        &copy; Todos os direitos reservados - 2025.
+      </p>
+    </footer>
+  );
 }
+
