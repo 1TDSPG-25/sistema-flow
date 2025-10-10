@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-
 interface apiProps {
   id: number;
   quote: string;
   author: string;
-  quotes: string;
 }
 
 const Home = () => {
@@ -17,12 +15,12 @@ const Home = () => {
     console.log(BASE_URL)
 
     try {
-      const response = await fetch(`${BASE_URL}?limit=6&skip=${Math.floor(Math.random() * 10)}`, {method: 'GET'});
+      const response = await fetch(`${BASE_URL}?limit=6&skip=${Math.floor(Math.random() * 6)}`, {method: 'GET'});
       if (response.status != 200) {
         throw new Error("Failed to fetch data");
       }
       const data: any = await response.json();
-      console.log(data)
+      console.log(data.quotes)
       setPosts(data.quotes);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -31,7 +29,7 @@ const Home = () => {
 
   useEffect(() => {
 
-     const interval = setInterval(() => fetchApi(), 10000);
+     const interval = setInterval(() => fetchApi(), 30000);
 
     return () => clearInterval(interval);
       
