@@ -48,6 +48,9 @@
 
 <li>[   ] FEATURE / Adicionar Suspensão na página / Enrico - Iago - Vitor</li>
 
+<li>[   ] BUGFIX / Arrumar API na página Home / Enrico - Iago - Vitor</li>
+
+
 </ul>
 
 
