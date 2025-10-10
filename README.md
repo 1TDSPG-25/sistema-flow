@@ -14,19 +14,21 @@
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/  </li>
 <li>[ x ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li></span>
 <li>[ x ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / </li>
-<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
-<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
 </ul>
 
 ---
 ## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
 <ul style="color:orange">
 
-
-
 <li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[08:45]</span>
 
 <li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
+
+<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
+
+<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
+
+
 
 </ul>
 
