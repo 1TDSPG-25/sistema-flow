@@ -25,8 +25,9 @@
 
 <li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
 
-
 <li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
+
+<li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[08:45]</span>
 
 </ul>
 
@@ -44,15 +45,11 @@
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-
 <li>[   ] BugFix / Corrigir responsividade de Header, Footer, etc/ Kelson, Alex</li>
 
 <li>[   ] FEATURE / Adicionar Suspensão na página / Enrico - Iago - Vitor</li>
 
-<li>[   ] BUGFIX / Arrumar API na página Home / Enrico - Iago - Vitor</li>
-
-
-
+<li>[   ] BUGFIX / Reformulação das rotas / André - João Victor Nascimento</li>
 
 </ul>
 
