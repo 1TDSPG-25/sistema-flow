@@ -28,8 +28,6 @@
 
 <li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
 
-
-
 </ul>
 
 ---
