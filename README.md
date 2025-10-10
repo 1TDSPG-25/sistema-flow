@@ -20,7 +20,7 @@
 </ul>
 
 ---
-## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
+## EM HOMOLOGAÇÃO: QA - ROSSONI
 <ul style="color:orange">
 
 <li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
@@ -32,7 +32,7 @@
 </ul>
 
 ---
-## EM DESENVOLVIMENTO: TASKS - ENZO OKUIZUMI
+## EM DESENVOLVIMENTO: Tech Lead - ENZO OKUIZUMI
 <ul style="color:yellow">
 
 <li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[08:45]</span>
