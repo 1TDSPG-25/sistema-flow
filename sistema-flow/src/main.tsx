@@ -5,9 +5,10 @@ import App from './App.tsx'
 import Login from './routes/Login/index.tsx'
 import Cadastro from './routes/Cadastro/index.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Error404 from './routes/Error/index.tsx'
 
 const router = createBrowserRouter([{
-  path:"/", element:<App/>, children:[
+  path:"/", element:<App/>, errorElement: <Error404/>, children:[
     {path:"/login", element:<Login/>},
     {path:"/cadastro", element:<Cadastro/>}
   ]
