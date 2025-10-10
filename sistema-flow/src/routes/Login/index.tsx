@@ -33,7 +33,7 @@ export default function Login() {
             }
 
         } catch (error) {
-            alert("Erro ao logar. Tente novamente.");
+            alert("Erro: " + error);
         }
     });
 
@@ -47,7 +47,7 @@ export default function Login() {
                         <legend>Entrar no sistema</legend>
                         <div>
                             <label htmlFor="idNomeUsuario">Nome Usuário:</label>
-                            <input type="text" id="idNomeUsuario" className="bg-amber-200" {...register("nomeUser", { required:"Insira Nome do Usuário" })} aria-invalid={!!errors.nome} aria-describedby={errors.nome ? "nome-error" : undefined} /> {errors.nome && <span role="alert" id="nome-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nome.message}</span>}
+                            <input type="text" id="idNomeUsuario" className="bg-amber-200" {...register("nomeUser", { required:"Insira Nome do Usuário" })} aria-invalid={!!errors.nomeUser} aria-describedby={errors.nomeUser ? "nome-user-error" : undefined} /> {errors.nomeUser && <span role="alert" id="nome-user-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nomeUser.message}</span>}
                         </div>
                         <div>
                             <label htmlFor="idEmail">Email:</label>
