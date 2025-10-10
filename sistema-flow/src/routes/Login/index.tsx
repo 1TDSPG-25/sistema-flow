@@ -39,12 +39,12 @@ export default function Login() {
 
     return(
         <main>
-         <h1  className="text-center text-3xl font-bold">Página de Login</h1>
+         <h1  className="text-3xl md:text-4xl font-bold tracking-tight">Página de Login</h1>
 
             <div className="mx-auto">
-                <form onSubmit={onSubmit} className="frmLogin">
+                <form onSubmit={onSubmit} className="frmLogin space-y-5">
                     <fieldset>
-                        <legend>Entrar no sistema</legend>
+                        <legend className= "sr-only">Entrar no sistema</legend>
                         <div>
                             <label htmlFor="idNomeUsuario">Nome Completo:</label>
                             <input type="text" id="idNome" className="bg-amber-200" {...register("nome", { required:"Insira o nome completo", pattern: { value: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/ , message: "Formato de nome inválido" } })} aria-invalid={!!errors.nome} aria-describedby={errors.nome ? "nome-error" : undefined} /> {errors.nome && <span role="alert" id="nome-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nome.message}</span>}
