@@ -36,7 +36,8 @@ const Home = () => {
   }, []);
 
   return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10 justify-center">
+      <section className="w-full max-w-5xl block m-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10 justify-center">
          {posts.length > 0 && (
           posts.map((post) => (
           <article key={post.id} className="bg-slate-800 text-white/80 p-6 rounded-lg shadow-lg border border-slate-700 transition-transform duration-300 hover:-translate-y-2">
@@ -46,6 +47,8 @@ const Home = () => {
         ))
         )}
       </div>
+      </section>
+     
   );
 };
 export default Home;
