@@ -35,4 +35,7 @@ Este arquivo lista as features já implementadas. As tarefas em homologação, d
 - BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor
 
 - FEATURE | Adicionar Suspensão na página | Enrico - Iago - Vitor
+
+- FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum
+
 </ul>

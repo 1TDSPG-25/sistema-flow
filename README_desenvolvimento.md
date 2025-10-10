@@ -7,8 +7,6 @@
 
 - BUGFIX | Arrumar Pagina Error | Kelson, alex
 
-- FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum
-
 </ul>
 
 ## 🟨 Em Desenvolvimento COORDENADOR DE TAREFAS - ENZO OKUIZUMI
