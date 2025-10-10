@@ -44,11 +44,11 @@
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-<li>[   ] BugFix / Corrigir responsividade de Header Mobile / Kelson, Alex</li>
+<li>[   ] BUGFIX / Corrigir responsividade de Header Mobile / Kelson, Alex</li>
 
 <li>[   ] FEATURE / Adicionar Suspensão na página / Enrico - Iago - Vitor</li>
 
-<li>[   ] BUGFIX / Arrumar API na página Home / Enrico - Iago - Vitor</li>
+<li>[   ] BUGFIX / Reformulação das rotas / André - João Victor Nascimento</li>
 
 
 </ul>
