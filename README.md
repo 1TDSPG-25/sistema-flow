@@ -31,16 +31,14 @@
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[11:45]</span>
-
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[10:45]</span>
 <li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Lucas Barros - Milton Marcelino - Enzo Okuizumi</li><span style="color:red">DEADLINE:[08:45]</span>
 <li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
 <li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
+<li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 </ul>
 
 
 ## TIME FREE
 
-- Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
-- André Emygdio, João Victor Nascimento 
 - Kelson
