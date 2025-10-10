@@ -24,7 +24,7 @@
 ## EM HOMOLOGAÇÃO: QA - ROSSONI
 <ul style="color:orange">
 
-<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
+<li>[   ] BUGFIX | Arrumar Pagina Error | Kelson, alex</li>
 
 <li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
@@ -36,17 +36,17 @@
 ## EM DESENVOLVIMENTO: Tech Lead - ENZO OKUIZUMI
 <ul style="color:yellow">
 
-<li>[   ] FEATURE / Alterar a página de Login para se adequar ao projeto  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[00:00]</span>
+<li>[   ] FEATURE | Alterar a página de Login para se adequar ao projeto | Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li>
 
-<li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
+<li>[   ] BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor</li>
 
-<li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
+<li>[   ] BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li>
 
-<li>[   ] BugFix / Corrigir responsividade de Header, Footer, etc/ Kelson, Alex</li>
+<li>[   ] BugFix | Corrigir responsividade de Header, Footer, etc | Kelson - Alex</li>
 
-<li>[   ] FEATURE / Adicionar Suspensão na página / Enrico - Iago - Vitor</li>
+<li>[   ] FEATURE | Adicionar Suspensão na página | Enrico - Iago - Vitor</li>
 
-<li>[   ] BUGFIX / Reformulação das rotas / André - João Victor Nascimento</li>
+<li>[   ] BUGFIX | Reformulação das rotas | André - João Victor Nascimento</li>
 
 </ul>
 
