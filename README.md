@@ -41,7 +41,7 @@
 
 <li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
 
-<li>[   ] FEATURE / Criar rota com página de Lista de produtos / Luiz Flosi, Arthur Brito e Pedro Brum </li>
+<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
 </ul>
 
