@@ -1,6 +1,7 @@
 # FEATURES LIST:
 
 ## LIDER TÉCNICO: PROF.ALEXANDRE
+## QA: ROSSONI
 ## COORDENADOR DE TAREFAS: ENZO OKUIZUMI
 
 ## Todas as TAREFAS/FEATURES devem ser finalizadas.
@@ -19,6 +20,8 @@
 <li>[ x ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li>
 <li>[ x ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li>
 </ul>
+<li>[ x ] BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor</li>
+<li>[ x ] FEATURE | Adicionar Suspensão na página | Enrico - Iago - Vitor</li>
 
 ---
 ## EM HOMOLOGAÇÃO: QA - ROSSONI
@@ -28,22 +31,17 @@
 
 <li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
-<li>[   ] BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor</li>
-
-<li>[   ] FEATURE | Adicionar Suspensão na página | Enrico - Iago - Vitor</li>
-
-
 </ul>
 
 ---
-## EM DESENVOLVIMENTO: Tech Lead - ENZO OKUIZUMI
+## EM DESENVOLVIMENTO: COORDENADOR DE TAREFAS - ENZO OKUIZUMI
 <ul style="color:yellow">
+
+<li>[   ] BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li>
 
 <li>[   ] FEATURE | Alterar a página de Login para se adequar ao projeto | Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li>
 
 <li>[   ] FEATURE | Adicionar Componentes reutilzáveis  | Enrico - Iago - Vitor</li>
-
-<li>[   ] BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li>
 
 <li>[   ] BUGFIX | Corrigir responsividade de Header, Footer, etc | Kelson - Alex</li>
 
