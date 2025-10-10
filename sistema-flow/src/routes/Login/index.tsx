@@ -47,19 +47,38 @@ export default function Login() {
                         <legend className= "sr-only">Entrar no sistema</legend>
                         <div>
                             <label htmlFor="idNomeUsuario" className="block text-sm font-medium text-gray-700">Nome Completo:</label>
-                            <input type="text" id="idNome" className="bg-amber-200" {...register("nome", { required:"Insira o nome completo", pattern: { value: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/ , message: "Formato de nome inválido" } })} aria-invalid={!!errors.nome} aria-describedby={errors.nome ? "nome-error" : undefined} /> {errors.nome && <span role="alert" id="nome-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nome.message}</span>}
+                            <input type="text" id="idNome" className="bg-amber-200" {...register("nome")} 
+                            
+                            aria-invalid={!!errors.nome} aria-describedby={errors.nome ? "nome-error" : undefined} />
+                            
+                            {errors.nome && <span role="alert" id="nome-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nome.message}</span>}
                         </div>
+
                         <div>
                             <label htmlFor="idNomeUsuario">Nome Usuário:</label>
-                            <input type="text" id="idNomeUsuario" className="bg-amber-200" {...register("nomeUser", { required:"Insira nome do Usuário" })} aria-invalid={!!errors.nomeUser} aria-describedby={errors.nomeUser ? "nome-user-error" : undefined} /> {errors.nomeUser && <span role="alert" id="nome-user-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nomeUser.message}</span>}
+                            <input type="text" id="idNomeUsuario" className="bg-amber-200" {...register("nomeUser")} 
+                            
+                            aria-invalid={!!errors.nomeUser} aria-describedby={errors.nomeUser ? "nome-user-error" : undefined} />
+                            
+                            {errors.nomeUser && <span role="alert" id="nome-user-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.nomeUser.message}</span>}
                         </div>
+
                         <div>
                             <label htmlFor="idEmail">Email:</label>
-                            <input type="email" id="idEmail" className="bg-amber-200" {...register("email", { required: "Insira email do usuário", pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Formato de email inválido" } })} aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} /> {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
+                            <input type="text" id="idEmail" className="bg-amber-200" {...register("email", )}
+                            
+                            aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} />
+                            
+                             {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
                         </div>
+
                         <div>
                             <label htmlFor="idSenha">Senha:</label>
-                            <input type="text" id="idSenha" className="bg-amber-200" {...register("senha", { required:"Insira a senha do Usuário" })} aria-invalid={!!errors.senha} aria-describedby={errors.senha ? "senha-error" : undefined} /> {errors.senha && <span role="alert" id="senha-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.senha.message}</span>}
+                            <input type="text" id="idSenha" className="bg-amber-200" {...register("senha", )} 
+                            
+                            aria-invalid={!!errors.senha} aria-describedby={errors.senha ? "senha-error" : undefined} />
+                            
+                            {errors.senha && <span role="alert" id="senha-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.senha.message}</span>}
                         </div>
                         <div>
                             <button type="submit">Entrar</button>
