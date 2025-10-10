@@ -30,6 +30,8 @@
 
 <span style="color:red">DEADLINE:[08:45]</span>
 
+<li>[   ] BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor</li>
+
 </ul>
 
 ---
@@ -38,7 +40,6 @@
 
 <li>[   ] FEATURE | Alterar a página de Login para se adequar ao projeto | Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li>
 
-<li>[   ] BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor</li>
 
 <li>[   ] BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li>
 
