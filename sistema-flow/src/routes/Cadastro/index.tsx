@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const cadastroSchema = z.object({
   nome: z.string().min(3, { message: "O nome precisa ter no mínimo 3 caracteres." }),
   nomeUsuario: z.string().min(5, { message: "O nome de usuário precisa ter no mínimo 5 caracteres." }),
-  email: z.string().email({ message: "Por favor, insira um e-mail válido." }),
+  email: z.email({ message: "Por favor, insira um e-mail válido." }),
   senha: z.string().min(8, { message:"A senha precisa ter no mínimo 8 caracteres."}),
 });
 
