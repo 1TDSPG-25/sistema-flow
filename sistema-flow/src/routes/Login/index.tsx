@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import type { TipoUser } from "../../types/tipoUsuario";
 import { useNavigate } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 export default function Login() {
 
+    const usuarioSchema = z.object({
+        nome: z.string()
+        .nonempty("Nome completo é obrigatório")
+        .min(5, "Nome completo deve ter no mínimo de 5 caracteres"),
+        nomeUser: z.string()
+        .nonempty("Nome de usuário é obrigatório")
+        .min(3, "Nome de usuário deve ter no mínimo 3 caracteres"),
+        email: z.string()
+        .nonempty("E-mail é obrigatório")
+        .email("E-mail inválido, exemplo de e-mail válido: example@gmail.com")
+        .max(100, "Email deve ter no máximo 100 caracteres"),
+        senha: z.string().max(100, "Senha deve ter no máximo 100 caracteres")
+    })
+
     const navigate = useNavigate();
 
     const {register,handleSubmit,formState:{errors}, reset } = useForm<TipoUser>({
-        mode:"onChange"
+        resolver: zodResolver(usuarioSchema),
     });
 
     const onSubmit = handleSubmit(async (data:TipoUser) => {
@@ -65,11 +81,11 @@ export default function Login() {
 
                         <div>
                             <label htmlFor="idEmail">Email:</label>
-                            <input type="text" id="idEmail" className="bg-amber-200" {...register("email", )}
+                            <input type="email" id="idEmail" className="bg-amber-200" {...register("email")}
                             
                             aria-invalid={!!errors.email} aria-describedby={errors.email ? "email-error" : undefined} />
                             
-                             {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
+                            {errors.email && <span role="alert" id="email-error" className="text-red-600 bg-red-300 border-[1px] border-red-600 rounded-md p-2">{errors.email.message}</span>}
                         </div>
 
                         <div>
