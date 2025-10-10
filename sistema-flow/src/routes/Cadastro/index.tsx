@@ -21,7 +21,7 @@ export default function CadastroForm() {
     alert("test");
   };
   return (
-    <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
         Criar Conta
       </h2>
@@ -61,6 +61,18 @@ export default function CadastroForm() {
             {...register("email")}
           />
           {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+        </div>
+        <div>
+          <label htmlFor="senha" className="block text-sm font-medium text-gray-700">
+            Senha
+          </label>
+          <input
+            id="senha"
+            type="password"
+            className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            {...register("senha")}
+          />
+          {errors.senha && <p className="text-red-500 text-sm">{errors.senha.message}</p>}
         </div>
         <div>
           <button
