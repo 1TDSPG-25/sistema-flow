@@ -36,6 +36,9 @@
 @layer components {
   .error-card { @apply w-full max-w-2xl rounded-[1.25rem] p-6 border border-slate-200 bg-white; }
   .error-header { @apply flex flex-col items-center gap-2; }
+  .error-icon svg { @apply size-30 text-black; }
+  .error-title { @apply text-2xl font-bold; }
+  .error-text { @apply text-center mt-3 text-slate-600; }
 }
 
 
