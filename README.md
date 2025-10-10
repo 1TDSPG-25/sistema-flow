@@ -15,6 +15,7 @@
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/  </li>
 <li>[ x ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li></span>
 <li>[ x ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / </li>
+<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
 </ul>
 
 ---
@@ -41,10 +42,11 @@
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
+
 
 <li>[   ] FEATURE / Criar rota com página de Lista de produtos / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
+<li>[   ] BugFix / Corrigir responsividade de Header Mobile/ Kelson, Alex</li>
 </ul>
 
 
