@@ -10,16 +10,18 @@ export default function Login() {
 
     const usuarioSchema = z.object({
         nome: z.string()
-        .nonempty("Nome completo é obrigatório")
+        .nonempty("O campo nome completo é obrigatório")
         .min(5, "Nome completo deve ter no mínimo de 5 caracteres"),
         nomeUser: z.string()
-        .nonempty("Nome de usuário é obrigatório")
+        .nonempty("O campo nome de usuário é obrigatório")
         .min(3, "Nome de usuário deve ter no mínimo 3 caracteres"),
         email: z.string()
-        .nonempty("E-mail é obrigatório")
+        .nonempty("O campo e-mail é obrigatório")
         .email("E-mail inválido, exemplo de e-mail válido: example@gmail.com")
         .max(100, "Email deve ter no máximo 100 caracteres"),
-        senha: z.string().max(100, "Senha deve ter no máximo 100 caracteres")
+        senha: z.string()
+        .nonempty("O campo senha é obrigatório")
+        .max(20, "Senha deve ter no máximo 20 caracteres")
     })
 
     const navigate = useNavigate();
