@@ -28,6 +28,8 @@
 
 <li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
 
+<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
+
 </ul>
 
 ---
@@ -35,8 +37,6 @@
 <ul style="color:yellow">
 
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
-
-<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
 <li>[   ] FEATURE / Alterar a página de Login para se adequar ao projeto  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[00:00]</span>
 
