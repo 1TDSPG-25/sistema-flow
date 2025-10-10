@@ -39,6 +39,8 @@
   .error-icon svg { @apply size-30 text-black; }
   .error-title { @apply text-2xl font-bold; }
   .error-text { @apply text-center mt-3 text-slate-600; }
+  .error-actions { @apply mt-4 flex gap-3 justify-center; }
+ 
 }
 
 
