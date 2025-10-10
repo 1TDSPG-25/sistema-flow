@@ -20,18 +20,14 @@
 ---
 ## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
 <ul style="color:orange">
-
-   <li> ...</li>
-<span style="color:red">DEADLINE:[9:00]</span>
-<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   
+<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[9:00]</span>
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
 
-</li><span style="color:red">DEADLINE:[9:45]</span>
-[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
+</li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[9:45]</span>
 
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
 
@@ -43,10 +39,12 @@
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-<li>[   ] BUGFIX / Pagina Error/ Kelson, alex</li>
+<li>[   ] BUGFIX / Arrumar Pagina Error / Kelson, alex</li>
+
+<li>[   ] FEATURE / Criar rota com página de Lista de produtos / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
 </ul>
 
 
 ## TIME FREE
--  Luiz Flosi, Arthur Brito e Pedro Brum 
+-  
