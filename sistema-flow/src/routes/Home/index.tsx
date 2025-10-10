@@ -6,8 +6,8 @@ interface apiProps {
   author: string;
 }
 
-const Home = () => {
-  const [posts, setPosts] = useState<apiProps[]>([]);
+export default function Home(){
+const [posts, setPosts] = useState<apiProps[]>([]);
 
   const fetchApi = async () => {
     try {
@@ -46,5 +46,4 @@ const Home = () => {
       </section>
     </main>
   );
-};
-export default Home;
+  }
