@@ -8,13 +8,13 @@
 <ul style="color:green">
 <li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
-<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li><span style="color:red">DEADLINE:[11:20]</span>
 	<li> ...</li>
 </ul>
 
 ---
-## EM HOMOLOGAÇÃO:
+## EM HOMOLOGAÇÃO: HOMOLOGADOR - ROSSONI
 <ul style="color:orange">
+<li>[  ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li><span style="color:red">DEADLINE:[11:20]</span>
 <li>[   ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne </li><span style="color:red">DEADLINE:[11:05]</span>
    <li> ...</li>
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li><span style="color:red">DEADLINE:[11:15]</span>
@@ -30,3 +30,7 @@
 <li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[11:45]</span>
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[11:45]</span>
 </ul>
+
+
+## TIME FREE
+-[Huguinho, Zezinho, Luizinho]
