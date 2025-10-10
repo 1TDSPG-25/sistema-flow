@@ -14,8 +14,8 @@
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne  </li>
 <li>[ x ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li></span>
 <li>[ x ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / Luiz Flosi, Arthur Brito e Pedro Brum </li>
-<li>[ x ] FEATURE /(Criar formulário, com validação de useForms, estilizado de Cadastro)</li>
-<li>[ x ] FEATURE / Alterar o campo Senha no Cadastro </li>
+<li>[ x ] FEATURE /(Criar formulário, com validação de useForms, estilizado de Cadastro)/ Orlando - Gabriel Lourenço - Alexandre</li>
+<li>[ x ] FEATURE / Alterar o campo Senha no Cadastro / Orlando - Gabriel Lourenço - Alexandre </li>
 <li>[ x ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li>
 <li>[ x ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li>
 </ul>
