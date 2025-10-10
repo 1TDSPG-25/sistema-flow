@@ -26,7 +26,7 @@
 </ul>
 
 ---
-## EM DESENVOLVIMENTO:
+## EM DESENVOLVIMENTO: TASKS - ENZO OKUIZUMI
 <ul style="color:yellow">
 
 </li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li><span style="color:red">DEADLINE:[9:45]</span>
