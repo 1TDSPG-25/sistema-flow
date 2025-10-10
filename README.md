@@ -46,6 +46,9 @@
 <li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
 <li>[   ] BugFix / Corrigir responsividade de Header Mobile/ Kelson, Alex</li>
+
+<li>[   ] FEATURE / Criar Componente Cadastro junto de Login e colocar o que esta na rota  / </li>
+
 </ul>
 
 
