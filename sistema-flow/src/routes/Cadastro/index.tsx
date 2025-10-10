@@ -16,9 +16,21 @@ export default function CadastroForm() {
     resolver: zodResolver(cadastroSchema),
   });
   
-  const onSubmit = (data: CadastroInput) => {
-    console.log(data);
-    alert("test");
+  const onSubmit = async (data: CadastroInput) => {
+    try {
+      const response = await fetch("http://localhost:3000/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      if (!response.ok) throw new Error("Erro ao cadastrar usuário");
+      alert("Usuário cadastrado com sucesso!");
+    } catch (error) {
+      alert("Erro ao cadastrar usuário. Tente novamente.");
+      console.error(error);
+    }
   };
   return (
     <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto">
