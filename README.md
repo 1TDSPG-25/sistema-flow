@@ -23,13 +23,16 @@
 
    <li> ...</li>
 <span style="color:red">DEADLINE:[9:00]</span>
-<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li><span style="color:red">DEADLINE:[11:45]</span>
-[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
+<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
+
+</li><span style="color:red">DEADLINE:[9:45]</span>
+[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
+
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
 
 <li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Lucas Barros - Milton Marcelino - Enzo Okuizumi</li><span style="color:red">DEADLINE:[08:45]</span>
