@@ -21,14 +21,14 @@ export default function Login() {
             const usuarios: TipoUser[] = await response.json();
 
             const usuarioValido = usuarios.find(
-                (user) => user.nomeUser.toLowerCase() === data.nomeUser.toLowerCase() && user.email.toLowerCase() === data.email.toLowerCase()
+                (user) => user.nome.toLowerCase() === data.nome.toLowerCase() && user.nomeUser.toLowerCase() === data.nomeUser.toLowerCase() && user.email === data.email && user.senha === data.senha
             );
 
             if(usuarioValido) {
                 localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido))
                 navigate("/home");
             } else {
-                alert("Usuário ou E-mail Inválido.")
+                alert("Credenciais Inválidas.")
                 reset();
             }
 
