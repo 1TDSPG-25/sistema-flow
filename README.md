@@ -25,26 +25,25 @@
 
 <li>[   ] FEATURE / Alterar o TipoUser adicionando senha  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[08:45]</span>
 
+<li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
+
 </ul>
 
 ---
 ## EM DESENVOLVIMENTO: TASKS - ENZO OKUIZUMI
 <ul style="color:yellow">
 
-
 <li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li><span style="color:red">DEADLINE:[9:20]</span>
 
-<li>[   ] FEATURE / Alterar a página de Login para se adequar ao projeto  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[00:00]</span>
+<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
 
-<li>[   ] FEATURE / Alterar o campo Senha no Cadastro  / Orlando - Gabriel Lourenço - Alexandre</li><span style="color:red">DEADLINE:[09:20]</span>
+<li>[   ] FEATURE / Alterar a página de Login para se adequar ao projeto  / Enzo Okuizumi -  Lucas Barros - Milton Marcelino</li><span style="color:red">DEADLINE:[00:00]</span>
 
 <li>[   ] BUGFIX / Arrumar API na página Home / Iago - Enrico - Vitor</li><span style="color:red">DEADLINE:[09:45]</span>
 
 <li>[   ] BUGFIX / Arrumar validação do usuário na página de login / Moisés Barsoti, Sofia Siqueira, Felipe Kirschne</li><span style="color:red">DEADLINE:[09:45]</span>
 
-<li>[   ] FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum </li>
-
-<li>[   ] BugFix / Corrigir responsividade de Header Mobile/ Kelson, Alex</li>
+<li>[   ] BugFix / Corrigir responsividade de Header Mobile / Kelson, Alex</li>
 </ul>
 
 
