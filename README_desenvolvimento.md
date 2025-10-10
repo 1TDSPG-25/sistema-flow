@@ -34,3 +34,13 @@
 - Orlando - Gabriel Lourenço - Alexandre
 
 - Joao Victor L - Pedro Vaz
+
+</ul>
+
+## Possíveis Features Futuras
+<ul style="color:lightgreen">
+
+- REFACTOR | Refatorar css para global |
+- FEATURE | Adicionar tema escuro/claro | 
+
+</ul>
