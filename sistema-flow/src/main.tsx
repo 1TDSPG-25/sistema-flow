@@ -2,16 +2,17 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './global.css'
 import App from './App.tsx'
-import Login from './routes/Login/index.tsx'
-import Cadastro from './routes/Cadastro/index.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import LoginForm from './routes/Login/index.tsx'
+import CadastroForm from './routes/Cadastro/index.tsx'
 import Home from './routes/Home/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, children:[
     {path:"/", element:<Home/>},
-    {path:"/login", element:<Login/>},
-    {path:"/cadastro", element:<Cadastro/>}
+    {path:"/login", element:<LoginForm/>},
+    {path:"/cadastro", element:<CadastroForm/>}
   ]
 }])
 

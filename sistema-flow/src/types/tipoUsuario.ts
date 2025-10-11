@@ -1,8 +1,8 @@
 export type TipoUser = {
     id:number;
     nome:string;
-    nomeUser:string;
-    senha:string;
+    cpf:string;
     email:string;
+    senha:string;
     avatar:string;
 }
