@@ -1,5 +1,9 @@
 # Projeto Front-End - Roadmap de Features
 
+Objetivo: Criar um site de Farmácia...
+
+---
+
 **Tech Lead:** Prof. Alexandre  
 **Project Coordinator:** Enzo Okuizumi   
 **QA:** Lucas Rossoni
