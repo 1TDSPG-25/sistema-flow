@@ -1,16 +1,67 @@
 # Projeto Front-End - Roadmap de Features
 
-**Líder Técnico:** Prof. Alexandre  
-**QA:** Rossoni  
-**Coordenador de Tarefas:** Enzo Okuizumi
+**Tech Lead:** Prof. Alexandre  
+**Project Coordinator:** Enzo Okuizumi   
+**QA:** Lucas Rossoni
 
 ---
 
-Este arquivo lista as features já implementadas. As tarefas em homologação, desenvolvimento e o time livre estão detalhadas em:
+| Equipe | Integrantes |
+|:-------|:-------------|
+| **Equipe A** | Enrico, Iago, Vitor |
+| **Equipe B** | Kelson, Alex, Rossoni |
+| **Equipe C** | Enzo Okuizumi, Barros, Milton |
+| **Equipe D** | André, João Victor, Lucas Tavares |
+| **Equipe E** | Orlando, Alexandre, Gabriel Lourenço |
+| **Equipe F** | Luiz Flosi, Arthur Brito, Pedro Brum |
+| **Equipe G** | Moisés, Sofia, Felipe |
+| **Equipe H** | João Victor L, Pedro Vaz |
 
-➡️ [README_desenvolvimento.md](./README_desenvolvimento.md)
+
+# FEATURES LIST:
+
+### Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
+
+## 🟨 Em Desenvolvimento 
+<ul style="color:yellow">
+
+- **FEATURE:** Adicionar Componentes reutilzáveis  -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
+
+- **BUGFIX:** | Arrumar rota do App.tsx  -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** | Reformulação das rotas -> <span style="color:white">Equipe D</span>
+
+</ul>
+
+
+## 🟧 Em Homologação QA - ROSSONI
+<ul style="color:orange">
+
+- **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
+
+</ul>
+
+## 🟦 Time Livre
+<ul style="color:lightblue">
+
+- Equipe E
+
+- Equipe H
+
+</ul>
+
+## Possíveis Features Futuras
+<ul style="color:lightgreen">
+
+- REFACTOR | Refatorar css para global |
+- FEATURE | Adicionar tema escuro/claro | 
+
+</ul>
 
 ---
+
 ## IMPLEMENTADOS:
 <ul style="color:green">
 
@@ -32,10 +83,14 @@ Este arquivo lista as features já implementadas. As tarefas em homologação, d
 
 - FEATURE / Alterar o TipoUser adicionando senha / Enzo Okuizumi - Lucas Barros - Milton Marcelino
 
-- BUGFIX | Arrumar API na página Home | Iago - Enrico - Vitor
-
-- FEATURE | Adicionar Suspensão na página | Enrico - Iago - Vitor
-
 - FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum
+
+- BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
+
+- FEATURE | Alterar a página de Login para se adequar ao projeto | Equipe C
+
+- BUGFIX | Arrumar API na página Home | Equipe A
+
+- FEATURE | Adicionar Suspensão na página | Equipe A
 
 </ul>
