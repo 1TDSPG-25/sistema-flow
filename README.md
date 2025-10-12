@@ -1,6 +1,35 @@
 # Projeto Front-End - Roadmap de Features
 
-Objetivo: Criar um site de Farmácia...
+## Objetivo
+Nosso objetivo é desenvolver o site **Megafarma**, um sistema de farmácia online que exibe produtos, mostra as unidades físicas, responde dúvidas e permite contato direto com o usuário.  
+Também haverá uma área de login e cadastro, com dois tipos de acesso: usuário comum (para gerenciar suas informações e pedidos) e administrador (para controlar produtos).  
+No futuro, o sistema será integrado a um backend em **Java**.
+
+## 🏗️ Estrutura do Site
+
+ Home | Produtos | Unidades | FAQ | Contato | Minha Conta
+
+### 🏠 Home
+Visão geral da farmácia, com destaque para promoções, produtos em alta e links principais do site.
+
+### 💊 Produtos
+Listagem de produtos disponíveis com imagem, nome, preço e botão de visualização.  
+
+### 📍 Unidades
+Mapa e endereços das farmácias físicas, com horários de funcionamento.
+
+### ❓ FAQ
+Perguntas e respostas diretas sobre entrega, pagamento e uso do site.
+
+### 📞 Contato
+Formulário para mensagens e dados de contato (telefone, e-mail, WhatsApp).
+
+### 👤 Minha Conta
+Login e cadastro de usuários.  
+
+Serão criados dois tipos de acesso:
+- **Usuário comum:** poderá visualizar e gerenciar suas próprias informações, além de acompanhar os seus pedidos.  
+- **Administrador:** terá acesso a um painel separado para gerenciar produtos e outras configurações do sistema.
 
 ---
 
@@ -29,13 +58,30 @@ Objetivo: Criar um site de Farmácia...
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **FEATURE:** Adicionar Componentes reutilzáveis  -> <span style="color:white">Equipe A</span>
+- **BUGFIX:** Arrumar a Suspense para carregamento do site -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
 
 - **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
 
-- **BUGFIX:** | Arrumar rota do App.tsx  -> <span style="color:white">Equipe A</span>
+- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
 
-- **BUGFIX:** | Reformulação das rotas -> <span style="color:white">Equipe D</span>
+- **FEATURE:** Adicionar Componentes reutilzáveis -> <span style="color:white">Equipe A</span>
+
+- **FEATURE:** Criação das rotas para as páginas de Unidades, FAQ e Contato. Adição das mesmas no componente Menu -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
+
+- **FEATURE:** Desenvolver a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
+
+- **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
+
+- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
+
+- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
+
 
 </ul>
 
@@ -50,17 +96,17 @@ Objetivo: Criar um site de Farmácia...
 ## 🟦 Time Livre
 <ul style="color:lightblue">
 
-- Equipe E
-
-- Equipe H
+- <span style="color:white">Equipe ?</span>
 
 </ul>
 
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
-- REFACTOR | Refatorar css para global |
-- FEATURE | Adicionar tema escuro/claro | 
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Comum após Logado -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Admin após Logado -> <span style="color:white">Equipe ?</span>
 
 </ul>
 
