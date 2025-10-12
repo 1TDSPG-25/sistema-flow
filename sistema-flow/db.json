@@ -3,6 +3,7 @@
       "id": "1",
       "nome": "João",
       "nomeUser": "JJ",
+      "senha": "jaoZao20",
       "avatar": "https://avatars.githubusercontent.com/u/1?v=4",
       "email": "jj@gmail.com"
     },
@@ -10,6 +11,7 @@
       "id": "2",
       "nome": "Marcos",
       "nomeUser": "MM",
+      "senha": "Marcusao",
       "avatar": "https://avatars.githubusercontent.com/u/2?v=4",
       "email": "mm@gmail.com"
     },
@@ -17,6 +19,7 @@
       "id": "3",
       "nome": "Tomato",
       "nomeUser": "tomatinho",
+      "senha": "tomatao",
       "avatar": "https://avatars.githubusercontent.com/u/28?v=4",
       "email": "tomato@gmail.com"
     },
@@ -24,6 +27,7 @@
       "id": "4",
       "nome": "Vitor",
       "nomeUser": "vitor",
+      "senha": "v1t0r",
       "avatar": "https://avatars.githubusercontent.com/u/32?v=4",
       "email": "vitor@gmail.com"
     },
@@ -31,6 +35,7 @@
       "id": "5",
       "nome": "Kelson",
       "nomeUser": "zhang",
+      "senha": "KelsonZhang",
       "avatar": "https://avatars.githubusercontent.com/u/30?v=4",
       "email": "Zhang@gmail.com"
     },
@@ -38,6 +43,7 @@
       "id": "6",
       "nome": "Rossni",
       "nomeUser": "PsX",
+      "senha": "r0550n1",
       "avatar": "https://avatars.githubusercontent.com/u/34?v=4",
       "email": "jj@gmail.com"
     },
@@ -45,6 +51,7 @@
       "id": "7",
       "nome": "Tom",
       "nomeUser": "TT",
+      "senha": "TomTank",
       "avatar": "https://avatars.githubusercontent.com/u/36?v=4",
       "email": "TT@gmail.com"
     },
@@ -52,6 +59,7 @@
       "id": "8",
       "nome": "Lucas",
       "nomeUser": "Lu",
+      "senha": "Lucasmurro",
       "avatar": "https://avatars.githubusercontent.com/u/45?v=4",
       "email": "LU@gmail.com"
     },
@@ -59,6 +67,7 @@
       "id": "9",
       "nome": "arthur",
       "nomeUser": "ART",
+      "senha": "KingART",
       "avatar": "https://avatars.githubusercontent.com/u/37?v=4",
       "email": "art@gmail.com"
     },
@@ -66,6 +75,7 @@
       "id": "10",
       "nome": "Vitoria",
       "nomeUser": "VV",
+      "senha": "ViWValeria",
       "avatar": "https://avatars.githubusercontent.com/u/44?v=4",
       "email": "VV@gmail.com"
     }
