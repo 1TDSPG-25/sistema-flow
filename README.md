@@ -53,7 +53,7 @@ Serão criados dois tipos de acesso:
 
 # FEATURES LIST:
 
-### Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
+## Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
 
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
@@ -89,7 +89,6 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
-- **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
 
 </ul>
 
@@ -142,5 +141,7 @@ Serão criados dois tipos de acesso:
 - BUGFIX | Arrumar API na página Home | Equipe A
 
 - FEATURE | Adicionar Suspensão na página | Equipe A
+
+- **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
 
 </ul>
