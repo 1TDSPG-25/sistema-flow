@@ -90,5 +90,31 @@
       "avatar": "https://avatars.githubusercontent.com/u/44?v=4"
     }
   
+  ],
+  "produtos": [
+     {
+      "id": 1,
+      "nome": "Dipirona 500mg 20 comprimidos",
+      "preco": 11.99,
+      "dataFabricacao": "2023-01-01",
+      "dataValidade": "2024-01-01",
+      "urlAvatar": " "
+    },
+    {
+      "id": 2,
+      "nome": "Paracetamol 500mg 20 comprimidos",
+      "preco": 12.99,
+      "dataFabricacao": "2023-01-01",
+      "dataValidade": "2024-01-01",
+      "urlAvatar": " "
+    },
+    {
+      "id": 3,
+      "nome": "Ibuprofeno 200mg 20 comprimidos",
+      "preco": 9.99,
+      "dataFabricacao": "2023-01-01",
+      "dataValidade": "2024-01-01",
+      "urlAvatar": " "
+    }
   ]
 }
