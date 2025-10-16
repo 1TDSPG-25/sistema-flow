@@ -64,6 +64,8 @@ Serão criados dois tipos de acesso:
 
 - **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
 
+- **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe A</span>
+
 - **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
 
 - **FEATURE:** Adicionar Componentes reutilzáveis -> <span style="color:white">Equipe A</span>
