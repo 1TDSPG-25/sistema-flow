@@ -88,9 +88,6 @@ Serão criados dois tipos de acesso:
 <ul style="color:orange">
 
 
-
-- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
-
 </ul>
 
 ## 🟦 Time Livre
@@ -146,5 +143,7 @@ Serão criados dois tipos de acesso:
 - **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
 
 - **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
 
 </ul>
