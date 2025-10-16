@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import type { TipoProduto } from "../../types/tipoProduto";
 
-const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
+import produtosData from "../../data/produtos.json";
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
@@ -11,13 +11,10 @@ export default function Produtos() {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error("Erro ao buscar produtos");
-
-        const data = await response.json();
-        setProdutos(data);
+        await new Promise((resolve) => setTimeout(resolve, 500)); // pequeno delay
+        setProdutos(produtosData);
       } catch (error) {
-        alert("Erro: " + error);
+        alert("Erro ao carregar dados locais: " + error);
       }
     };
 
