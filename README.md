@@ -89,7 +89,7 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
-- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+
 
 </ul>
 
@@ -144,5 +144,7 @@ Serão criados dois tipos de acesso:
 - FEATURE | Adicionar Suspensão na página | Equipe A
 
 - **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
+
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
 
 </ul>
