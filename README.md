@@ -63,7 +63,7 @@ Serão criados dois tipos de acesso:
 
 - **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
 
-- **FEATURE:** Desenvolver a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
+- **BUGFIX:** Arrumar a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
 
 - **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
 
