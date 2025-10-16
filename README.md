@@ -85,7 +85,7 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
-- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+
 
 - **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
 
@@ -142,5 +142,7 @@ Serão criados dois tipos de acesso:
 - FEATURE | Adicionar Suspensão na página | Equipe A
 
 - **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
+
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
 
 </ul>
