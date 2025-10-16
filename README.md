@@ -58,9 +58,7 @@ Serão criados dois tipos de acesso:
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **BUGFIX:** Arrumar a Suspense para carregamento do site -> <span style="color:white">Equipe A</span>
-
-- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+- **BUGFIX:** Arrumar a API da página Home -> <span style="color:white">Equipe A</span>
 
 - **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
 
@@ -91,6 +89,7 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
 
 </ul>
 
