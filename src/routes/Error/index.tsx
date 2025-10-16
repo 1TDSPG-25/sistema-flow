@@ -12,11 +12,9 @@ export default function Error404() {
           <h1 className="text-2xl font-bold">Página não encontrada</h1>
         </div>
 
-        <p className="text-center mt-3 text-slate-600">
-          O link pode estar incorreto ou a página foi removida.
-          <br />
-          Verifique o endereço ou vá para a página inicial.
-        </p>
+        <p className="text-center mt-3 text-slate-600">O link pode estar incorreto ou a página foi removida.</p>
+        <p className="text-center text-slate-600">Verifique o endereço ou vá para a página inicial.</p>
+
 
         <div className="mt-4 flex gap-3 justify-center">
           <Link to="/" className="btn btn-primary">Ir para a Home</Link>
