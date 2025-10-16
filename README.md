@@ -61,8 +61,6 @@ Serão criados dois tipos de acesso:
 
 ---
 
-- **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe A</span>
-
 - **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
 
 - **FEATURE:** Desenvolver a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
@@ -150,5 +148,7 @@ Serão criados dois tipos de acesso:
 - **BUGFIX:** Arrumar a API da página Home -> <span style="color:white">Equipe A</span>
 
 - **BUGFIX:** Arrumar as Rotas (Pelo visto está sem a página Home em main.tsx) -> <span style="color:white">Equipe A (Precisa arrumar a página Home primeiro. Não sei)</span>
+
+- **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe A</span>
 
 </ul>
