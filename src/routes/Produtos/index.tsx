@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import type { TipoProduto } from "../../types/tipoProduto";
 
-const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
+import produtosData from "../../data/produtos.json";
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
@@ -11,13 +11,10 @@ export default function Produtos() {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error("Erro ao buscar produtos");
-
-        const data = await response.json();
-        setProdutos(data);
+        await new Promise((resolve) => setTimeout(resolve, 500)); // simula delay
+        setProdutos(produtosData);
       } catch (error) {
-        alert("Erro: " + error);
+        alert("Erro ao carregar dados locais: " + error);
       }
     };
 
@@ -30,7 +27,7 @@ export default function Produtos() {
 
   return (
     <main>
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-5xl mx-auto">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Lista de Produtos
         </h2>
@@ -52,7 +49,7 @@ export default function Produtos() {
         </div>
 
         {produtosFiltrados.length > 0 ? (
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {produtosFiltrados.map((produto) => (
               <li
                 key={produto.id}
