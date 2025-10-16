@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 package-lock.json
+**/package-lock.json
+
 yarn.lock
 pnpm-lock.yaml
 
@@ -26,3 +28,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
