@@ -80,5 +80,15 @@
       "email": "VV@gmail.com"
     }
   
-  ]
+  ],
+    "produtos": [
+      {
+        "id": 1,
+        "nome": "Dipirona 500mg 20 comprimidos",
+        "preco": 11.99,
+        "categoria": "Analgésico",
+        "descricao": "Alívio de dores e febre. Com 20 comprimidos.",
+        "estoque": 50
+      }
+    ]
 }
