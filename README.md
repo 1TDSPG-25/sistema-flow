@@ -151,5 +151,4 @@ Serão criados dois tipos de acesso:
 
 - **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe A</span>
 
-
 </ul>
