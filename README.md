@@ -1,32 +1,147 @@
+# Projeto Front-End - Roadmap de Features
+
+## Objetivo
+Nosso objetivo é desenvolver o site **Megafarma**, um sistema de farmácia online que exibe produtos, mostra as unidades físicas, responde dúvidas e permite contato direto com o usuário.  
+Também haverá uma área de login e cadastro, com dois tipos de acesso: usuário comum (para gerenciar suas informações e pedidos) e administrador (para controlar produtos).  
+No futuro, o sistema será integrado a um backend em **Java**.
+
+## 🏗️ Estrutura do Site
+
+ Home | Produtos | Unidades | FAQ | Contato | Minha Conta
+
+### 🏠 Home
+Visão geral da farmácia, com destaque para promoções, produtos em alta e links principais do site.
+
+### 💊 Produtos
+Listagem de produtos disponíveis com imagem, nome, preço e botão de visualização.  
+
+### 📍 Unidades
+Mapa e endereços das farmácias físicas, com horários de funcionamento.
+
+### ❓ FAQ
+Perguntas e respostas diretas sobre entrega, pagamento e uso do site.
+
+### 📞 Contato
+Formulário para mensagens e dados de contato (telefone, e-mail, WhatsApp).
+
+### 👤 Minha Conta
+Login e cadastro de usuários.  
+
+Serão criados dois tipos de acesso:
+- **Usuário comum:** poderá visualizar e gerenciar suas próprias informações, além de acompanhar os seus pedidos.  
+- **Administrador:** terá acesso a um painel separado para gerenciar produtos e outras configurações do sistema.
+
+---
+
+**Tech Lead:** Prof. Alexandre  
+**Project Coordinator:** Enzo Okuizumi   
+**QA:** Lucas Rossoni
+
+---
+
+| Equipe | Integrantes |
+|:-------|:-------------|
+| **Equipe A** | Enrico, Iago, Vitor |
+| **Equipe B** | Kelson, Alex, Rossoni |
+| **Equipe C** | Enzo Okuizumi, Barros, Milton |
+| **Equipe D** | André, João Victor, Lucas Tavares |
+| **Equipe E** | Orlando, Alexandre, Gabriel Lourenço |
+| **Equipe F** | Luiz Flosi, Arthur Brito, Pedro Brum |
+| **Equipe G** | Moisés, Sofia, Felipe |
+| **Equipe H** | João Victor L, Pedro Vaz |
+
+
 # FEATURES LIST:
 
-## Todas as TAREFAS/FEATURES devem ser finalizadas.
-### Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
+## Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
+
+## 🟨 Em Desenvolvimento 
+<ul style="color:yellow">
+
+- **BUGFIX:** Arrumar a Suspense para carregamento do site -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+
+- **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
+
+- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
+
+- **FEATURE:** Adicionar Componentes reutilzáveis -> <span style="color:white">Equipe A</span>
+
+- **FEATURE:** Criação das rotas para as páginas de Unidades, FAQ e Contato. Adição das mesmas no componente Menu -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
+
+- **FEATURE:** Desenvolver a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
+
+- **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
+
+- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
+
+- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
+
+
+</ul>
+
+
+## 🟧 Em Homologação QA - ROSSONI
+<ul style="color:orange">
+
+
+</ul>
+
+## 🟦 Time Livre
+<ul style="color:lightblue">
+
+- <span style="color:white">Equipe ?</span>
+
+</ul>
+
+## Possíveis Features Futuras
+<ul style="color:lightgreen">
+
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Comum após Logado -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Admin após Logado -> <span style="color:white">Equipe ?</span>
+
+</ul>
 
 ---
+
 ## IMPLEMENTADOS:
 <ul style="color:green">
-<li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
-<li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre </li>
-	<li> ...</li>
-</ul>
 
----
-## EM HOMOLOGAÇÃO:
-<ul style="color:orange">
-   <li> ...</li>
-</ul>
+- FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre 
 
----
-## EM DESENVOLVIMENTO:
-<ul style="color:yellow">
-<li>[   ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne </li>
-<li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /  Luiz Flosi, Arthur Brito e Pedro Brum  </li>
-<li>[   ] FEATURE / Criar estrutura de rotas e registrar estas rotas no main, lembrar os dev do menu de quais rotas devem criar, as rotas inicias devem ser: Login, Cadastro. /  André Emygdio, João Victor Nascimento </li>
-<li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex  </li>
-<li>[   ] FEATURE / Criação de conteúdo dinâmico na Home - sistema de notícias(Colocar uma api publica trocando cards de noticias)Peguem exemplos em sites como UOL, TERRA e MSN /  Iago - Enrico - Vitor   </li>
-<li>[   ] FEATURE / Criar componente de Login(Criar formulário, com validação de useForms, estilizado) /  Enzo Okuizumi, Lucas Barros, Milton Jakson
-    </li>
-<li>[   ] FEATURE / Criar componente de Cadastro (Criar formulário, com validação de useForms, estilizado)/  Orlando - Gabriel Lourenço - Alexandre </li>
-<li>[   ] FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz </li>
+- FEATURE / Criar o projeto (VITE+REACT+TS) do zero / prof.Alexandre
+
+- FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
+
+- FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ Rossoni - Kelson- Alex
+
+- FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu / Luiz Flosi, Arthur Brito e Pedro Brum 
+
+- FEATURE /(Criar formulário, com validação de useForms, estilizado de Cadastro)/ Orlando - Gabriel Lourenço - Alexandre
+
+- FEATURE / Alterar o campo Senha no Cadastro / Orlando - Gabriel Lourenço - Alexandre
+
+- FEATURE / Aplicação de responsividade em todos os componentes, utilizando 3 resoluções(lg,md e sm) / Joao Victor L - Pedro Vaz
+
+- FEATURE / Alterar o TipoUser adicionando senha / Enzo Okuizumi - Lucas Barros - Milton Marcelino
+
+- FEATURE / Criar rota com página de Lista de produtos e arrumar index.html / Luiz Flosi, Arthur Brito e Pedro Brum
+
+- BUGFIX | Arrumar validação do usuário na página de login | Moisés Barsoti, Sofia Siqueira, Felipe Kirschne
+
+- FEATURE | Alterar a página de Login para se adequar ao projeto | Equipe C
+
+- BUGFIX | Arrumar API na página Home | Equipe A
+
+- FEATURE | Adicionar Suspensão na página | Equipe A
+
+- **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
+
 </ul>
