@@ -11,10 +11,10 @@ import Home from './routes/Home/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
+    {path:"/", element:<Home/>},
     {path:"/login", element:<Login/>},
     {path:"/cadastro", element:<Cadastro/>},
-    {path:"/produtos", element:<Produtos/>},
-    {path:"/home", element:<Home/>}
+    {path:"/produtos", element:<Produtos/>}
   ]
 }])
 
