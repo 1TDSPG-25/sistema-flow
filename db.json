@@ -98,7 +98,7 @@
       "preco": 11.99,
       "dataFabricacao": "2023-01-01",
       "dataValidade": "2024-01-01",
-      "urlAvatar": " "
+      "avatar": "https://www.biolabfarma.com.br/wp-content/themes/biolabtheme/assets/images/produto-generico.png"
     },
     {
       "id": 2,
@@ -106,7 +106,7 @@
       "preco": 12.99,
       "dataFabricacao": "2023-01-01",
       "dataValidade": "2024-01-01",
-      "urlAvatar": " "
+      "avatar": "https://www.biolabfarma.com.br/wp-content/themes/biolabtheme/assets/images/produto-generico.png"
     },
     {
       "id": 3,
@@ -114,7 +114,7 @@
       "preco": 9.99,
       "dataFabricacao": "2023-01-01",
       "dataValidade": "2024-01-01",
-      "urlAvatar": " "
+      "avatar": "https://www.biolabfarma.com.br/wp-content/themes/biolabtheme/assets/images/produto-generico.png"
     }
   ]
 }
