@@ -60,11 +60,13 @@ Serão criados dois tipos de acesso:
 
 - **BUGFIX:** Arrumar a API da página Home -> <span style="color:white">Equipe A</span>
 
-- **BUGFIX:** Arrumar as Rotas (Pelo visto está sem a página Home em main.tsx) -> <span style="color:white">Equipe ?</span>
+- **BUGFIX:** Arrumar as Rotas (Pelo visto está sem a página Home em main.tsx) -> <span style="color:white">Equipe ? (Precisa arrumar a página Home primeiro. Não sei)</span>
 
 - **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
 
 - **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe C</span>
+
+---
 
 - **FEATURE:** Criação das rotas para as páginas de Unidades, FAQ e Contato. Adição das mesmas no componente Menu -> <span style="color:white">Equipe B</span>
 
