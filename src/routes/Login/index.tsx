@@ -46,7 +46,7 @@ export default function LoginForm(){
 
     return(
         <main>
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto">
+            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
