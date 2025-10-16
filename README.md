@@ -58,17 +58,11 @@ Serão criados dois tipos de acesso:
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **BUGFIX:** Arrumar a Suspense para carregamento do site -> <span style="color:white">Equipe A</span>
-
-- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
+- **BUGFIX:** Arrumar a API da página Home -> <span style="color:white">Equipe A</span>
 
 - **BUGFIX:** Corrigir responsividade de Header, Footer, etc -> <span style="color:white">Equipe B</span>
 
-- **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe A</span>
-
-- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
-
-- **FEATURE:** Adicionar Componentes reutilzáveis -> <span style="color:white">Equipe A</span>
+- **BUGFIX:** Corrigir Página Home (Tem um tipo any... Precisa gerar um tipo especifico para esses dados) -> <span style="color:white">Equipe C</span>
 
 - **FEATURE:** Criação das rotas para as páginas de Unidades, FAQ e Contato. Adição das mesmas no componente Menu -> <span style="color:white">Equipe B</span>
 
@@ -91,6 +85,9 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
+
+
+- **BUGFIX:** Centralizar Zod em tipoUsuario.ts e corrigir informações divergentes da API (db.json) -> <span style="color:white">Equipe C</span>
 
 </ul>
 
@@ -145,5 +142,7 @@ Serão criados dois tipos de acesso:
 - FEATURE | Adicionar Suspensão na página | Equipe A
 
 - **BUGFIX:** Arrumar Pagina Error -> <span style="color:white">Equipe D</span>
+
+- **BUGFIX:** Reformulação das rotas -> <span style="color:white">Equipe A</span>
 
 </ul>
