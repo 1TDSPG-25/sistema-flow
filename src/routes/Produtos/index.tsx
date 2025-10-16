@@ -11,7 +11,7 @@ export default function Produtos() {
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        await new Promise((resolve) => setTimeout(resolve, 500)); // pequeno delay
+        await new Promise((resolve) => setTimeout(resolve, 500)); // simula delay
         setProdutos(produtosData);
       } catch (error) {
         alert("Erro ao carregar dados locais: " + error);
@@ -27,7 +27,7 @@ export default function Produtos() {
 
   return (
     <main>
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-5xl mx-auto">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Lista de Produtos
         </h2>
@@ -49,7 +49,7 @@ export default function Produtos() {
         </div>
 
         {produtosFiltrados.length > 0 ? (
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {produtosFiltrados.map((produto) => (
               <li
                 key={produto.id}
