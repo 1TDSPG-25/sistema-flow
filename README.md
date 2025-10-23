@@ -60,9 +60,11 @@ Serão criados dois tipos de acesso:
 
 - **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
 
-- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe G</span>
+- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
 
-- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe H</span>
+- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
+
+
 
 
 </ul>
