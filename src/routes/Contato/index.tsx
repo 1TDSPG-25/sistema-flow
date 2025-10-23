@@ -21,11 +21,11 @@ export default function Contato() {
         <div className="flex min-h-80 shadow-lg shadow-gray-400 rounded-2xl">
             <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">Vai Corinthians!</div>
 
-            <form className="bg-[#FFFFFF] rounded-r-2xl w-1/2">
-                <h2>Envie uma mensagem!</h2>
+            <form className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
+                <h2 className="text-3xl font-bold text-black text-center mb-6">Envie uma mensagem!</h2>
 
-                <label htmlFor="nome">Nome:</label>
-                <input type="text" placeholder="Digite seu nome"/>
+                <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
+                <input type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 mb-4 focus:outline-none focus:border-[#4F39F6] focus:border-b-4"/>
 
                 <label htmlFor="email">E-mail:</label>
                 <input type="email" placeholder="Digite seu e-mail"/>
