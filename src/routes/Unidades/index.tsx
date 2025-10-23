@@ -7,6 +7,7 @@ const API_URL =
 
 export default function Unidades() {
   const [unidades, setUnidades] = useState<Unidade[]>([]);
+  const [busca, setBusca] = useState("");
 
   useEffect(() => {
     const fetchUnidades = async () => {
@@ -28,9 +29,14 @@ export default function Unidades() {
         );
       }
     };
-
     fetchUnidades();
   }, []);
+
+  const unidadesFiltradas = unidades.filter((u) =>
+    `${u.nome} ${u.endereco} ${u.cidade} ${u.uf}`
+      .toLowerCase()
+      .includes(busca.toLowerCase())
+  );
 
   return (
     <main>
@@ -39,9 +45,19 @@ export default function Unidades() {
           Unidades das Farmácias
         </h2>
 
-        {unidades.length > 0 ? (
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Buscar unidade (nome, endereço, cidade)..."
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        </div>
+
+        {unidadesFiltradas.length > 0 ? (
           <ul className="grid grid-cols-1 gap-4">
-            {unidades.map((u) => (
+            {unidadesFiltradas.map((u) => (
               <li key={u.id} className="border p-4 rounded-lg">
                 <h3 className="text-lg font-semibold">{u.nome}</h3>
                 <p className="text-gray-600 mt-2">
