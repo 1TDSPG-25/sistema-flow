@@ -16,6 +16,14 @@ export default function Contato() {
         <div className="absolute inset-0 bg-white [clip-path:polygon(0_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
         
       </div>
+
+      <div className="px-80 -mt-20 relative z-30">
+        <div className="flex min-h-80 shadow-lg shadow-gray-400 rounded-2xl">
+            <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">Vai Corinthians!</div>
+            <form className="bg-[#FFFFFF] rounded-r-2xl w-1/2">Vai Corinthians!</form>
+        </div>
+      </div>  
+
     </section>
   );
 }
