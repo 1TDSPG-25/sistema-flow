@@ -1,4 +1,96 @@
-[
+{"usuarios": [
+    {
+      "id": "1",
+      "nome": "João",
+      "cpf": "123.456.789-00",
+      "nomeUser": "JJ",
+      "email": "jj@gmail.com",
+      "senha": "jaoZao2020",
+      "avatar": "https://avatars.githubusercontent.com/u/1?v=4"
+    },
+    {
+      "id": "2",
+      "nome": "Marcos",
+      "cpf": "492.491.589-23",
+      "nomeUser": "MM",
+      "email": "mm@gmail.com",
+      "senha": "MarcusaoMarcus",
+      "avatar": "https://avatars.githubusercontent.com/u/2?v=4"
+    },
+    {
+      "id": "3",
+      "nome": "Tomato",
+      "cpf": "051.349.123-99",
+      "nomeUser": "tomatinho",
+      "email": "tomato@gmail.com",
+      "senha": "tomataozaozao",
+      "avatar": "https://avatars.githubusercontent.com/u/28?v=4"
+    },
+    {
+      "id": "4",
+      "nome": "Vitor",
+      "cpf": "051.592.478-24",
+      "nomeUser": "vitor",
+      "email": "vitor@gmail.com",
+      "senha": "v1t0rvitor",
+      "avatar": "https://avatars.githubusercontent.com/u/32?v=4"
+    },
+    {
+      "id": "5",
+      "nome": "Kelson",
+      "cpf": "051.592.478-24",
+      "nomeUser": "zhang",
+      "email": "Zhang@gmail.com",
+      "senha": "KelsonZhang",
+      "avatar": "https://avatars.githubusercontent.com/u/30?v=4"
+    },
+    {
+      "id": "6",
+      "nome": "Rossni",
+      "cpf": "491.429.539-23",
+      "nomeUser": "PsX",
+      "email": "jj@gmail.com",
+      "senha": "r0550n1PsX",
+      "avatar": "https://avatars.githubusercontent.com/u/34?v=4"
+    },
+    {
+      "id": "7",
+      "nome": "Tom",
+      "cpf": "479.417.198-21",
+      "nomeUser": "TT",
+      "email": "TT@gmail.com",
+      "senha": "TomTankTomTank",
+      "avatar": "https://avatars.githubusercontent.com/u/36?v=4"
+    },
+    {
+      "id": "8",
+      "nome": "Lucas",
+      "cpf": "910.123.517-72",
+      "nomeUser": "Lu",
+      "email": "LU@gmail.com",
+      "senha": "Lucasmurro",
+      "avatar": "https://avatars.githubusercontent.com/u/45?v=4"
+    },
+    {
+      "id": "9",
+      "nome": "arthur",
+      "cpf": "812.378.193-12",
+      "nomeUser": "ART",
+      "email": "art@gmail.com",
+      "senha": "KingARTKing",
+      "avatar": "https://avatars.githubusercontent.com/u/37?v=4"
+    },
+    {
+      "id": "10",
+      "nome": "Vitoria",
+      "cpf": "479.417.198-21",
+      "nomeUser": "VV",
+      "email": "VV@gmail.com",
+      "senha": "ViWValeria",
+      "avatar": "https://avatars.githubusercontent.com/u/44?v=4"
+    }
+  ],
+  "produtos":[
   {
     "id": 1,
     "nome": "Paracetamol 500mg",
@@ -240,3 +332,4 @@
     "avatar": "https://via.placeholder.com/200x150.png?text=Luvas"
   }
 ]
+}
