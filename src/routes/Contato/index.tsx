@@ -12,6 +12,9 @@ export default function Contato() {
                 Precisa de ajuda ou encontrou algum problema? Mande uma mensagem para nós!
             </p>
         </div>
+
+        <div className="absolute inset-0 bg-white [clip-path:polygon(0_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
+        
       </div>
     </section>
   );
