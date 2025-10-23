@@ -64,7 +64,7 @@ Serão criados dois tipos de acesso:
 
 - **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
 
-
+- **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
 
 </ul>
@@ -89,8 +89,8 @@ Serão criados dois tipos de acesso:
 
 - **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
-- **FEATURE:** Desenvolver a página do Usuário Comum após Logado -> <span style="color:white">Equipe ?</span>
-- **FEATURE:** Desenvolver a página do Usuário Admin após Logado -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe ?</span>
+
 - **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe ?</span>
 </ul>
 
