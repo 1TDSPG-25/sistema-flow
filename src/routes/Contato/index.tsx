@@ -30,7 +30,8 @@ export default function Contato() {
                 <label htmlFor="email">E-mail:</label>
                 <input type="email" placeholder="Digite seu e-mail"/>
 
-                
+                <label htmlFor="mensagem">Escreva sua mensagem:</label>
+                <textarea placeholder="Digite sua mensagem"></textarea>
             </form>
         </div>
       </div>  
