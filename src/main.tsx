@@ -23,7 +23,7 @@ const router = createBrowserRouter([{
     {path:"/unidade", element:<Unidade/>},
     {path:"/home", element:<Home/>}
   ]
-}])
+}], {basename: "/sistema-flow"})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
