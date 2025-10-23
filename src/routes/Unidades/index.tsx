@@ -1,9 +1,36 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Unidade } from "../../types/tipoUnidade";
 
+const API_URL =
+  import.meta.env.VITE_API_URL_UNIDADES ||
+  `${import.meta.env.BASE_URL}data/db.json`;
+
 export default function Unidades() {
-  const [unidades] = useState<Unidade[]>([]);
+  const [unidades, setUnidades] = useState<Unidade[]>([]);
+
+  useEffect(() => {
+    const fetchUnidades = async () => {
+      try {
+        const response = await fetch(API_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("Erro ao carregar dados de unidades");
+
+        const raw = await response.json();
+        const unidadesData: Unidade[] = Array.isArray(raw)
+          ? raw
+          : ((raw?.unidades ?? []) as Unidade[]);
+
+        setUnidades(unidadesData);
+      } catch (error: unknown) {
+        alert(
+          error instanceof Error
+            ? "Erro ao carregar unidades: " + error.message
+            : "Erro ao carregar unidades"
+        );
+      }
+    };
+
+    fetchUnidades();
+  }, []);
 
   return (
     <main>
