@@ -32,6 +32,8 @@ export default function Contato() {
 
                 <label htmlFor="mensagem">Escreva sua mensagem:</label>
                 <textarea placeholder="Digite sua mensagem"></textarea>
+
+                <button type="submit">Enviar</button>
             </form>
         </div>
       </div>  
