@@ -5,6 +5,10 @@ interface apiProps {
   author: string;
 }
 
+interface apiResponse {
+  quotes: apiProps[];
+}
+
 export default function Home(){
 const [posts, setPosts] = useState<apiProps[]>([]);
 
@@ -15,12 +19,11 @@ const [posts, setPosts] = useState<apiProps[]>([]);
     console.log(BASE_URL)
 
     try {
-      const response = await fetch(`${BASE_URL}?limit=6&skip=${Math.floor(Math.random() * 6)}`, {method: 'GET'});
+      const response = await fetch(`${BASE_URL}?limit=6&skip=${Math.floor(Math.random() * 10)}`, {method: 'GET'});
       if (response.status != 200) {
         throw new Error("Failed to fetch data");
       }
-      const data: any = await response.json();
-      console.log(data.quotes)
+      const data: apiResponse = await response.json();
       setPosts(data.quotes);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -28,6 +31,7 @@ const [posts, setPosts] = useState<apiProps[]>([]);
   };
 
   useEffect(() => {
+    fetchApi();
 
      const interval = setInterval(() => fetchApi(), 30000);
 

@@ -15,7 +15,13 @@ import Home from './routes/Home/index.tsx'
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
     {path:"/", element:<Home/>},
-    
+    {path:"/login", element:<Login/>},
+    {path:"/cadastro", element:<Cadastro/>},
+    {path:"/produtos", element:<Produtos/>},
+    {path:"/contato", element:<Contato/>},
+    {path:"/faq", element:<Faq/>},
+    {path:"/unidade", element:<Unidade/>},
+    {path:"/home", element:<Home/>}
   ]
 }])
 
