@@ -17,7 +17,7 @@ export default function Error404() {
 
 
         <div className="mt-4 flex gap-3 justify-center">
-          <Link to="/" className="btn btn-primary">Ir para a Home</Link>
+          <Link to="/" className="btn btn-primary bg-gray-900 text-white p-3 rounded-md hover:bg-gray-700">Ir para a Home</Link>
         </div>
       </section>
     </main>
