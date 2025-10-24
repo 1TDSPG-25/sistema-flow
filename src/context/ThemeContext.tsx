@@ -21,3 +21,5 @@ export const ThemeProvider = ({children} : {children : ReactNode}) => {
         </ThemeContext.Provider>
     );
 }
+
+export default ThemeContext;

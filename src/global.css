@@ -1,1 +1,21 @@
 @import "tailwindcss"; 
+
+body {
+    @apply w-screen h-screen m-0 p-0 box-border font-sans;
+}
+
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg-color: #f8f9fa;
+  --header-text-color: #343a40;
+  --button-bg-color: #007bff;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-bg-color: #1f1f1f;
+  --header-text-color: #f1f1f1;
+  --button-bg-color: #375a7f;
+}
