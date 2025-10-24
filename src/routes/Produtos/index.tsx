@@ -3,14 +3,12 @@ import type { TipoProduto } from "../../types/tipoProduto";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
-
 export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
 
   useEffect(() => {
     const fetchProdutos = async () => {
-
       try {
         const response = await fetch(API_URL);
 
@@ -35,7 +33,9 @@ export default function Produtos() {
   }, []);
 
   const produtosFiltrados = produtos.filter((p) =>
-    p.nome.toLowerCase().includes(busca.toLowerCase())
+    busca === ""
+      ? true
+      : p.nome.toLowerCase().startsWith(busca.toLowerCase())
   );
 
   return (
