@@ -73,8 +73,6 @@ Serão criados dois tipos de acesso:
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
 
-- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
-
 </ul>
 
 ## 🟦 Time Livre
@@ -146,4 +144,6 @@ Serão criados dois tipos de acesso:
 - **BUGFIX:** Arrumar a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
 
 - **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
+
+- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
 </ul>
