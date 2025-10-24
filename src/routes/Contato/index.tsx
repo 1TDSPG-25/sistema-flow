@@ -25,8 +25,6 @@ export default function Contato() {
                 Confira abaixo os canais disponíveis para entrar em contato conosco:
             </p>
 
-            {/* Card de Contato */}
-            <div className="flex flex-col gap-4">
 
                 {/* Telefone */}
                 <div className="bg-[#8F85F5 rounded-xl p-4 shadow-md shadow-purple-300">
