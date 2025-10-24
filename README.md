@@ -25,11 +25,21 @@ Perguntas e respostas diretas sobre entrega, pagamento e uso do site.
 Formulário para mensagens e dados de contato (telefone, e-mail, WhatsApp).
 
 ### 👤 Minha Conta
-Login e cadastro de usuários.  
+Login e cadastro de usuários.
+
+
 
 Serão criados dois tipos de acesso:
 - **Usuário comum:** poderá visualizar e gerenciar suas próprias informações, além de acompanhar os seus pedidos.  
 - **Administrador:** terá acesso a um painel separado para gerenciar produtos e outras configurações do sistema.
+
+.env
+```
+VITE_API_URL_USUARIOS=http://localhost:3001/usuarios
+VITE_API_URL_PRODUTOS=http://localhost:3001/produtos
+VITE_API_URL_UNIDADES=http://localhost:3001/unidades
+VITE_HOME_URL=https://dummyjson.com/quotes
+```
 
 ---
 
