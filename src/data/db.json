@@ -1,0 +1,365 @@
+{"usuarios": [
+    {
+      "id": "1",
+      "nome": "João",
+      "cpf": "123.456.789-00",
+      "nomeUser": "JJ",
+      "email": "jj@gmail.com",
+      "senha": "jaoZao2020",
+      "avatar": "https://avatars.githubusercontent.com/u/1?v=4"
+    },
+    {
+      "id": "2",
+      "nome": "Marcos",
+      "cpf": "492.491.589-23",
+      "nomeUser": "MM",
+      "email": "mm@gmail.com",
+      "senha": "MarcusaoMarcus",
+      "avatar": "https://avatars.githubusercontent.com/u/2?v=4"
+    },
+    {
+      "id": "3",
+      "nome": "Tomato",
+      "cpf": "051.349.123-99",
+      "nomeUser": "tomatinho",
+      "email": "tomato@gmail.com",
+      "senha": "tomataozaozao",
+      "avatar": "https://avatars.githubusercontent.com/u/28?v=4"
+    },
+    {
+      "id": "4",
+      "nome": "Vitor",
+      "cpf": "051.592.478-24",
+      "nomeUser": "vitor",
+      "email": "vitor@gmail.com",
+      "senha": "v1t0rvitor",
+      "avatar": "https://avatars.githubusercontent.com/u/32?v=4"
+    },
+    {
+      "id": "5",
+      "nome": "Kelson",
+      "cpf": "051.592.478-24",
+      "nomeUser": "zhang",
+      "email": "Zhang@gmail.com",
+      "senha": "KelsonZhang",
+      "avatar": "https://avatars.githubusercontent.com/u/30?v=4"
+    },
+    {
+      "id": "6",
+      "nome": "Rossni",
+      "cpf": "491.429.539-23",
+      "nomeUser": "PsX",
+      "email": "jj@gmail.com",
+      "senha": "r0550n1PsX",
+      "avatar": "https://avatars.githubusercontent.com/u/34?v=4"
+    },
+    {
+      "id": "7",
+      "nome": "Tom",
+      "cpf": "479.417.198-21",
+      "nomeUser": "TT",
+      "email": "TT@gmail.com",
+      "senha": "TomTankTomTank",
+      "avatar": "https://avatars.githubusercontent.com/u/36?v=4"
+    },
+    {
+      "id": "8",
+      "nome": "Lucas",
+      "cpf": "910.123.517-72",
+      "nomeUser": "Lu",
+      "email": "LU@gmail.com",
+      "senha": "Lucasmurro",
+      "avatar": "https://avatars.githubusercontent.com/u/45?v=4"
+    },
+    {
+      "id": "9",
+      "nome": "arthur",
+      "cpf": "812.378.193-12",
+      "nomeUser": "ART",
+      "email": "art@gmail.com",
+      "senha": "KingARTKing",
+      "avatar": "https://avatars.githubusercontent.com/u/37?v=4"
+    },
+    {
+      "id": "10",
+      "nome": "Vitoria",
+      "cpf": "479.417.198-21",
+      "nomeUser": "VV",
+      "email": "VV@gmail.com",
+      "senha": "ViWValeria",
+      "avatar": "https://avatars.githubusercontent.com/u/44?v=4"
+    }
+  ],
+  "produtos":[
+  {
+    "id": 1,
+    "nome": "Paracetamol 500mg",
+    "preco": 9.99,
+    "dataFabricacao": "2024-01-10",
+    "dataValidade": "2026-01-10",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 2,
+    "nome": "Dipirona 1g",
+    "preco": 7.5,
+    "dataFabricacao": "2023-05-15",
+    "dataValidade": "2025-05-15",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 3,
+    "nome": "Amoxicilina 500mg",
+    "preco": 24.9,
+    "dataFabricacao": "2024-03-20",
+    "dataValidade": "2026-03-20",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 4,
+    "nome": "Ibuprofeno 400mg",
+    "preco": 15.8,
+    "dataFabricacao": "2024-02-12",
+    "dataValidade": "2026-02-12",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 5,
+    "nome": "Cetirizina 10mg",
+    "preco": 12.5,
+    "dataFabricacao": "2023-12-01",
+    "dataValidade": "2025-12-01",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 6,
+    "nome": "Omeprazol 20mg",
+    "preco": 19.9,
+    "dataFabricacao": "2023-09-05",
+    "dataValidade": "2025-09-05",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 7,
+    "nome": "Loratadina 10mg",
+    "preco": 14.2,
+    "dataFabricacao": "2024-01-30",
+    "dataValidade": "2026-01-30",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 8,
+    "nome": "Vitamina C 500mg",
+    "preco": 11.5,
+    "dataFabricacao": "2024-03-10",
+    "dataValidade": "2027-03-10",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 9,
+    "nome": "AAS Infantil 100mg",
+    "preco": 9.75,
+    "dataFabricacao": "2023-08-01",
+    "dataValidade": "2025-08-01",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 10,
+    "nome": "Losartana 50mg",
+    "preco": 22.9,
+    "dataFabricacao": "2024-05-20",
+    "dataValidade": "2026-05-20",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 11,
+    "nome": "Sinvastatina 20mg",
+    "preco": 18.4,
+    "dataFabricacao": "2024-02-10",
+    "dataValidade": "2026-02-10",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 12,
+    "nome": "Metformina 850mg",
+    "preco": 16.9,
+    "dataFabricacao": "2023-11-05",
+    "dataValidade": "2025-11-05",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 13,
+    "nome": "Clorfenamina 4mg",
+    "preco": 8.9,
+    "dataFabricacao": "2023-12-20",
+    "dataValidade": "2025-12-20",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 14,
+    "nome": "Ácido Fólico 5mg",
+    "preco": 10.0,
+    "dataFabricacao": "2024-04-05",
+    "dataValidade": "2026-04-05",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 15,
+    "nome": "Azitromicina 500mg",
+    "preco": 32.5,
+    "dataFabricacao": "2023-10-15",
+    "dataValidade": "2025-10-15",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 16,
+    "nome": "Prednisona 20mg",
+    "preco": 13.4,
+    "dataFabricacao": "2023-11-25",
+    "dataValidade": "2026-11-25",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 17,
+    "nome": "Clonazepam 2mg",
+    "preco": 29.9,
+    "dataFabricacao": "2023-07-15",
+    "dataValidade": "2025-07-15",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 18,
+    "nome": "Dipirona Gotas",
+    "preco": 6.5,
+    "dataFabricacao": "2024-03-22",
+    "dataValidade": "2026-03-22",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 19,
+    "nome": "Soro Fisiológico 500ml",
+    "preco": 4.9,
+    "dataFabricacao": "2024-05-01",
+    "dataValidade": "2027-05-01",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 20,
+    "nome": "Pomada Nebacetin",
+    "preco": 18.7,
+    "dataFabricacao": "2023-09-12",
+    "dataValidade": "2026-09-12",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 21,
+    "nome": "Antisséptico Bucal 250ml",
+    "preco": 15.3,
+    "dataFabricacao": "2024-01-15",
+    "dataValidade": "2027-01-15",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 22,
+    "nome": "Shampoo Anticaspa 300ml",
+    "preco": 17.5,
+    "dataFabricacao": "2024-02-05",
+    "dataValidade": "2026-02-05",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 23,
+    "nome": "Protetor Solar FPS 50",
+    "preco": 42.0,
+    "dataFabricacao": "2024-03-01",
+    "dataValidade": "2026-03-01",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 24,
+    "nome": "Creme Hidratante 200ml",
+    "preco": 21.9,
+    "dataFabricacao": "2024-04-18",
+    "dataValidade": "2026-04-18",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 25,
+    "nome": "Pomada para Assaduras",
+    "preco": 12.2,
+    "dataFabricacao": "2023-10-30",
+    "dataValidade": "2025-10-30",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 26,
+    "nome": "Termômetro Digital",
+    "preco": 39.9,
+    "dataFabricacao": "2024-01-01",
+    "dataValidade": "2030-01-01",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 27,
+    "nome": "Gaze Estéril 100un",
+    "preco": 25.0,
+    "dataFabricacao": "2024-02-22",
+    "dataValidade": "2028-02-22",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 28,
+    "nome": "Álcool 70% 500ml",
+    "preco": 8.5,
+    "dataFabricacao": "2024-03-15",
+    "dataValidade": "2027-03-15",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 29,
+    "nome": "Máscara Cirúrgica 50un",
+    "preco": 27.9,
+    "dataFabricacao": "2024-04-05",
+    "dataValidade": "2029-04-05",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  },
+  {
+    "id": 30,
+    "nome": "Luvas Descartáveis 100un",
+    "preco": 34.5,
+    "dataFabricacao": "2024-02-28",
+    "dataValidade": "2029-02-28",
+    "avatar": "https://vipfarma.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/b/i/biolab_generico_35.png"
+  }
+]
+,
+  "unidades": [
+  {
+    "id": "u1",
+    "nome": "Farmácia Central",
+    "endereco": "Av. Paulista, 1000",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "telefone": "(11) 3333-0001",
+    "horario": "Seg a Dom, 7h–23h"
+  },
+  {
+    "id": "u2",
+    "nome": "Farmácia Jardim",
+    "endereco": "R. das Flores, 45",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "telefone": "(11) 3333-0002",
+    "horario": "24 horas"
+  },
+  {
+    "id": "u3",
+    "nome": "Farmácia Lapa",
+    "endereco": "R. Carlos, 210",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "telefone": "(11) 3333-0003",
+    "horario": "Seg a Sáb, 8h–20h"
+  }
+]
+}

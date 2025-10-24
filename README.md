@@ -58,18 +58,13 @@ Serão criados dois tipos de acesso:
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-
----
-
-- **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
-
 - **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
 
-- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
+- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
 
 - **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
 
-- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
+- **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
 
 </ul>
@@ -77,9 +72,6 @@ Serão criados dois tipos de acesso:
 
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
-
-
-
 
 </ul>
 
@@ -95,8 +87,8 @@ Serão criados dois tipos de acesso:
 
 - **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
-- **FEATURE:** Desenvolver a página do Usuário Comum após Logado -> <span style="color:white">Equipe ?</span>
-- **FEATURE:** Desenvolver a página do Usuário Admin após Logado -> <span style="color:white">Equipe ?</span>
+- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe ?</span>
+
 - **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe ?</span>
 </ul>
 
@@ -151,4 +143,7 @@ Serão criados dois tipos de acesso:
 
 - **BUGFIX:** Arrumar a página de Produtos (Cards dos produtos) -> <span style="color:white">Equipe F</span>
 
+- **FEATURE:** Desenvolver a página Home -> <span style="color:white">Equipe D</span>
+
+- **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
 </ul>

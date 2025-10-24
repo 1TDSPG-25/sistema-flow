@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import type { TipoProduto } from "../../types/tipoProduto";
 
-import produtosData from "../../data/produtos.json";
+const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
+
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
@@ -9,11 +10,24 @@ export default function Produtos() {
 
   useEffect(() => {
     const fetchProdutos = async () => {
+
       try {
+        const response = await fetch(API_URL);
+
+        if (!response.ok) {
+          throw new Error("Erro ao carregar dados locais");
+        }
+
+        const produtosData: TipoProduto[] = await response.json();
+
         await new Promise((resolve) => setTimeout(resolve, 500)); // simula delay
         setProdutos(produtosData);
-      } catch (error) {
-        alert("Erro ao carregar dados locais: " + error);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          alert("Erro ao carregar dados locais: " + error.message);
+        } else {
+          alert("Erro ao carregar dados locais");
+        }
       }
     };
 
