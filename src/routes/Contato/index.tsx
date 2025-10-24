@@ -15,12 +15,7 @@ export default function Contato() {
 
   type MensagemInput = z.infer<typeof mensagemSchema>;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<MensagemInput>({
+  const { register, handleSubmit, formState: { errors }, reset,} = useForm<MensagemInput>({
     resolver: zodResolver(mensagemSchema),
     mode: "onChange",
   });
@@ -56,7 +51,7 @@ export default function Contato() {
           
           <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">
             <div className="flex flex-col gap-4 px-6 py-7">
-                <h2 className="text-white text-3xl font-bold">Entre em contato</h2>
+                <h2 className="text-white text-4xl font-bold">Entre em contato</h2>
                 <p className="text-white">
                     Confira abaixo os canais disponíveis para entrar em contato conosco:
                 </p>
@@ -64,10 +59,20 @@ export default function Contato() {
                     <li className="w-full flex">
                         <Link 
                         to=""
-                        className="w-full"
-                        style={{background: "rgba(119, 65, 170, 0.2)"}}
+                        className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
+                        title="Clique aqui para ver telefones disponíveis"
                         >
-                            <FaPhoneAlt color="white" fill="{#4F39F6}" /> Telefone
+                          <figure className="flex items-center gap-3 px-3 py-2">
+                            <div className="bg-[#4F39F6] rounded-full p-3 text-white">
+                              <FaPhoneAlt size={40}/>
+                            </div>
+                            <div className="flex flex-col font-bold">
+                              <figcaption className="text-xl text-white">Telefone</figcaption>
+                              <p className="text-white">
+                                <span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.
+                              </p>
+                            </div>
+                          </figure>
                         </Link>
                     </li>
                 </ul>
@@ -75,7 +80,7 @@ export default function Contato() {
           </div>
 
           <form onSubmit={handleSubmit(onsubmit)} className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
-                            <h2 className="text-3xl font-bold text-black text-center my-6">Envie uma mensagem!</h2>
+                <h2 className="text-3xl font-bold text-black text-center my-6">Envie uma mensagem!</h2>
 
                 <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
                 <input id="nome" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 mb-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
