@@ -9,6 +9,13 @@ export default function Contato() {
     mensagem: z.string().min(10, "Mensagem deve conter no mínimo 10 caracteres.")
   });
 
+  type MensagemInput = z.infer<typeof mensagemSchema>;
+  
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<MensagemInput>({
+          resolver: zodResolver(mensagemSchema),
+          mode: "onChange",
+    });
+
   
 
   return (
