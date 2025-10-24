@@ -36,8 +36,29 @@ export default function Contato() {
       </div>
 
       <div className="px-80 -mt-20 relative z-30">
-        <div className=" flex shadow-lg shadow-gray-400 rounded-2xl">
-            <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">Vai Corinthians!</div>
+        <div className=" flex shadow-lg shadow-gray-400 rounded-2xl overflow-hidden">
+            <div className="bg-[#A29DFB] text-white w-1/2 flex flex-col justify-center px-10 py-12 rounded-l-2xl">
+            <h2 className="text-4xl font-bold mb-4 text-left">Entre em Contato</h2>
+            <p className="text-lg text-left mb-8">
+                Confira abaixo os canais disponíveis para entrar em contato conosco:
+            </p>
+
+            {/* Card de Contato */}
+            <div className="flex flex-col gap-4">
+
+                {/* Telefone */}
+                <div className="bg-[#8F85F5 rounded-xl p-4 shadow-md shadow-purple-300">
+                    <div className="text-left">
+                        <h3 className="font-semibold text-lg mb-1">Telefone</h3>
+                        <a href="#" className="underline text-sm hover:text-gray-200 transition">
+                            Clique aqui para ver os telefones das farmácias na sua cidade.
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            </div>
 
             <form onSubmit={handleSubmit(onsubmit)} className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
                 <h2 className="text-3xl font-bold text-black text-center my-6">Envie uma mensagem!</h2>
