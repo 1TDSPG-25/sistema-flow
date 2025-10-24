@@ -1,5 +1,6 @@
+import type { ThemeContextType } from "@/types/themeContextType";
 import { createContext, useState, type ReactNode } from "react";
-import type { ThemeContextType } from "../types/themeContextType";
+
 
 //Criamos o bilhete mágico
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -8,7 +9,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider = ({children}:{children : ReactNode })=>{
 
     //Guardar o estado da luz (se esta escuro ou não);
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(true);
 
     //Função para mudar o estado da luz.
     const toggleTheme = ()=>{
