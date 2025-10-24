@@ -1,11 +1,8 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
 import { FaPhoneAlt } from "react-icons/fa";
-import { TbBackground } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { bg } from "zod/locales";
 
 export default function Contato() {
   const mensagemSchema = z.object({
@@ -93,8 +90,6 @@ export default function Contato() {
                 <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[30%]">Enviar</button>
             </form>
         </div>
-      </div>  
-
     </section>
   );
 }
