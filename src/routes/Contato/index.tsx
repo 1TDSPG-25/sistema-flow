@@ -3,12 +3,17 @@ export default function Contato() {
     <section>
       <div className="
       relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.jpeg')] bg-cover bg-center
-     text-white py-28 overflow-hidden
+     text-white py-28 overflow-hidden border-none
+     max-[450px]:py-20
     "
       >
         <div className="relative z-20 flex flex-col items-center gap-7">
             <h1 className="text-6xl font-bold text-white -mt-10">Contate-nos!</h1>
-            <p className="text-white text-2xl w-[38%] text-center">
+            <p className="
+            text-white text-2xl w-[38%] text-center
+            max-md:w-[60%] max-:text-xl
+
+            ">
                 Precisa de ajuda ou encontrou algum problema? Mande uma mensagem para nós!
             </p>
         </div>
