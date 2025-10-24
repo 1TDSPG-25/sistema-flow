@@ -16,7 +16,6 @@ export default function Contato() {
           mode: "onChange",
     });
 
-  
 
   return (
     <section>
@@ -40,17 +39,20 @@ export default function Contato() {
         <div className=" flex shadow-lg shadow-gray-400 rounded-2xl">
             <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">Vai Corinthians!</div>
 
-            <form className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
-                <h2 className="text-3xl font-bold text-black text-center my-6">Envie uma mensagem!</h2>
+            <form onSubmit={handleSubmit(onsubmit)} className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
+                <h2 className="text-3xl font-bold text-black text-center">Envie uma mensagem!</h2>
 
                 <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
-                <input type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 mb-8 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold"/>
+                <input id="nome" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 mb-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
+                
 
-                <label htmlFor="email" className="text-black text-2xl font-bold mb-1">E-mail:</label>
-                <input type="email" placeholder="Digite seu e-mail" className="border-2 border-black rounded-md p-2 mb-8 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold"/>
+                <label htmlFor="email" className="text-black text-2xl font-bold mb-1 mt-5">E-mail:</label>
+                <input id="email" type="email" placeholder="Digite seu e-mail" className="border-2 border-black rounded-md p-2 mb-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
+                
 
                 <label htmlFor="mensagem" className="text-black text-2xl font-bold mb-1">Escreva sua mensagem:</label>
-                <textarea placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-8 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold "></textarea>
+                <textarea id="mensagem" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("mensagem")}></textarea>
+                
 
                 <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[30%]">Enviar</button>
             </form>
