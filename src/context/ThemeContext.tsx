@@ -11,12 +11,12 @@ export const ThemeProvider = ({children} : {children : ReactNode})=>{
     const [isDark, setisDark] = useState(false);
 
     //Função para mudar o estado da luz
-    const toogleTheme = ()=>{
+    const toggleTheme = ()=>{
         setisDark((prevIsDark)=> !prevIsDark);
     }
 
     return(
-        <ThemeContext.Provider value={{isDark, toogleTheme}}>
+        <ThemeContext.Provider value={{isDark, toggleTheme}}>
         {children}
         </ThemeContext.Provider>
     )
