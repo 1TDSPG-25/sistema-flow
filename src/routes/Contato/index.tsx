@@ -46,17 +46,26 @@ export default function Contato() {
         <div className="absolute inset-0 bg-white [clip-path:polygon(0_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
       </div>
 
-      <div className="px-80 -mt-20 relative z-30">
-        <div className="flex min-h-80 shadow-lg shadow-gray-400 rounded-2xl">
+      <div className="
+      px-80 -mt-20 relative z-30
+      max-xl:px-25
+      max-lg:px-5
+      max-md:px-12
+      max-sm:px-5
+      ">
+        <div className="
+        flex min-h-80 shadow-lg shadow-gray-400 rounded-2xl
+        max-md:flex max-md:flex-col
+        ">
           
-          <div className="bg-[#A29DFB] rounded-l-2xl w-1/2">
+          <div className="bg-[#A29DFB] rounded-l-2xl w-1/2 max-md:w-full">
             <div className="flex flex-col gap-4 px-6 py-7">
                 <h2 className="text-white text-4xl font-bold">Entre em contato</h2>
                 <p className="text-white">
                     Confira abaixo os canais disponíveis para entrar em contato conosco:
                 </p>
                   <ul>
-                    <li className="w-full flex">
+                    <li className="flex">
                         <Link 
                         to=""
                         className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
@@ -79,7 +88,10 @@ export default function Contato() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onsubmit)} className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
+          <form onSubmit={handleSubmit(onsubmit)} className="
+          bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10
+          max-md:w-full          
+          ">
                 <h2 className="text-3xl font-bold text-black text-center my-6">Envie uma mensagem!</h2>
 
                 <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
