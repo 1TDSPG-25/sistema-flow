@@ -1,14 +1,24 @@
+import { FaPhoneAlt } from "react-icons/fa";
+import { TbBackground } from "react-icons/tb";
+import { Link } from "react-router-dom";
+import { bg } from "zod/locales";
+
 export default function Contato() {
   return (
     <section>
       <div className="
-      relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.jpeg')] bg-cover bg-center
-     text-white py-28 overflow-hidden
+      relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.png')] bg-cover bg-center
+     text-white py-28 overflow-hidden border-none
+     max-[450px]:py-20
     "
       >
         <div className="relative z-20 flex flex-col items-center gap-7">
             <h1 className="text-6xl font-bold text-white -mt-10">Contate-nos!</h1>
-            <p className="text-white text-2xl w-[38%] text-center">
+            <p className="
+            text-white text-2xl w-[38%] text-center
+            max-md:w-[60%] max-:text-xl
+
+            ">
                 Precisa de ajuda ou encontrou algum problema? Mande uma mensagem para nós!
             </p>
         </div>
@@ -18,26 +28,26 @@ export default function Contato() {
       </div>
 
       <div className="px-80 -mt-20 relative z-30">
-        <div className=" flex shadow-lg shadow-gray-400 rounded-2xl overflow-hidden">
-            <div className="bg-[#A29DFB] text-white w-1/2 flex flex-col justify-center px-10 py-12 rounded-l-2xl">
-            <h2 className="text-4xl font-bold mb-4 text-left">Entre em Contato</h2>
-            <p className="text-lg text-left mb-8">
-                Confira abaixo os canais disponíveis para entrar em contato conosco:
-            </p>
-
-
-                {/* Telefone */}
-                <div className="bg-[#8F85F5 rounded-xl p-4 shadow-md shadow-purple-300">
-                    <div className="text-left">
-                        <h3 className="font-semibold text-lg mb-1">Telefone</h3>
-                        <a href="#" className="underline text-sm hover:text-gray-200 transition">
-                            Clique aqui para ver os telefones das farmácias na sua cidade.
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-
+        <div className=" flex shadow-lg shadow-gray-400 rounded-2xl">
+            <div className="
+            flex flex-col gap-4
+            bg-[#A29DFB] rounded-l-2xl w-1/2 px-6 py-7
+            ">
+                <h2 className="text-white text-3xl font-bold">Entre em contato</h2>
+                <p className="text-white">
+                    Confira abaixo os canais disponíveis para entrar em contato conosco:
+                </p>
+                <ul>
+                    <li className="w-full flex">
+                        <Link 
+                        to=""
+                        className="w-full"
+                        style={{background: "rgba(119, 65, 170, 0.2)"}}
+                        >
+                            <FaPhoneAlt color="white" fill="{#4F39F6}" /> Telefone
+                        </Link>
+                    </li>
+                </ul>
             </div>
 
             <form className="bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10">
