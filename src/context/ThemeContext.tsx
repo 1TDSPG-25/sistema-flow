@@ -22,3 +22,5 @@ export const ThemeProvider = ({children}:{children : ReactNode })=>{
     );
 
 };
+
+export default ThemeContext;
