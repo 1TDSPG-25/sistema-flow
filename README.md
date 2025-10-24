@@ -25,11 +25,21 @@ Perguntas e respostas diretas sobre entrega, pagamento e uso do site.
 Formulário para mensagens e dados de contato (telefone, e-mail, WhatsApp).
 
 ### 👤 Minha Conta
-Login e cadastro de usuários.  
+Login e cadastro de usuários.
+
+
 
 Serão criados dois tipos de acesso:
 - **Usuário comum:** poderá visualizar e gerenciar suas próprias informações, além de acompanhar os seus pedidos.  
 - **Administrador:** terá acesso a um painel separado para gerenciar produtos e outras configurações do sistema.
+
+.env
+```
+VITE_API_URL_USUARIOS=http://localhost:3001/usuarios
+VITE_API_URL_PRODUTOS=http://localhost:3001/produtos
+VITE_API_URL_UNIDADES=http://localhost:3001/unidades
+VITE_HOME_URL=https://dummyjson.com/quotes
+```
 
 ---
 
@@ -66,6 +76,8 @@ Serão criados dois tipos de acesso:
 
 - **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
+
 
 </ul>
 
@@ -85,7 +97,6 @@ Serão criados dois tipos de acesso:
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
-- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe ?</span>
 
