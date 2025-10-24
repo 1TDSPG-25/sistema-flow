@@ -66,8 +66,8 @@ export default function Contato() {
                             <div className="bg-[#4F39F6] rounded-full p-3 text-white">
                               <FaPhoneAlt size={40}/>
                             </div>
-                            <div className="flex flex-col font-bold">
-                              <figcaption className="text-xl text-white">Telefone</figcaption>
+                            <div className="flex flex-col gap-1 font-bold">
+                              <figcaption className="text-2xl text-white">Telefone</figcaption>
                               <p className="text-white">
                                 <span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.
                               </p>
