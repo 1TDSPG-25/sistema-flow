@@ -25,12 +25,12 @@ export default function Contato() {
       <div
         className="
       relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.png')] bg-cover bg-center
-     text-white py-28 overflow-hidden border-none
+     text-white py-40 overflow-hidden border-none
      max-[450px]:py-20
     "
       >
         <div className="relative z-20 flex flex-col items-center gap-7">
-          <h1 className="text-6xl font-bold text-white -mt-10">Contate-nos!</h1>
+          <h1 className="text-6xl font-bold text-white -mt-20">Contate-nos!</h1>
           <p
             className="
             text-white text-2xl w-[38%] text-center
@@ -43,11 +43,11 @@ export default function Contato() {
           </p>
         </div>
 
-        <div className="absolute inset-0 bg-white [clip-path:polygon(0_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
+        <div className="absolute inset-0 bg-white [clip-path:polygon(0%_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
       </div>
 
       <div className="
-      px-80 -mt-20 relative z-30
+      px-80 -mt-28 relative z-30
       max-xl:px-25
       max-lg:px-5
       max-md:px-12
