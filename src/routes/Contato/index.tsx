@@ -2,7 +2,7 @@ export default function Contato() {
   return (
     <section>
       <div className="
-      relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.jpeg')] bg-cover bg-center
+      relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.png')] bg-cover bg-center
      text-white py-28 overflow-hidden border-none
      max-[450px]:py-20
     "
