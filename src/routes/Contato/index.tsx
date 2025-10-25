@@ -15,7 +15,7 @@ export default function Contato() {
 
   type MensagemInput = z.infer<typeof mensagemSchema>;
 
-  const { register, handleSubmit, formState: { errors }, reset,} = useForm<MensagemInput>({
+  const { register, handleSubmit, formState: { errors }, reset} = useForm<MensagemInput>({
     resolver: zodResolver(mensagemSchema),
     mode: "onChange",
   });
@@ -88,7 +88,7 @@ export default function Contato() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onsubmit)} className="
+          <form onSubmit={handleSubmit(onSubmit)} className="
           bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7
           max-md:w-full          
           ">
@@ -96,19 +96,19 @@ export default function Contato() {
 
                 <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
                 <input id="nome" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
-                {errors.nome && (<p className="text-red-500 font-semibold text-sm mb-1">{errors.nome.message}</p>)}
+                {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
 
                 
 
                 <label htmlFor="email" className="text-black text-2xl font-bold mb-1 mt-7">E-mail:</label>
                 <input id="email" type="email" placeholder="Digite seu e-mail" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
-                {errors.email && (<p className="text-red-500 font-semibold text-sm mb-1">{errors.email.message}</p>)}
+                {errors.email && (<p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>)}
 
                 
 
                 <label htmlFor="mensagem" className="text-black text-2xl font-bold mb-1 mt-7">Escreva sua mensagem:</label>
                 <textarea id="mensagem" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("mensagem")}></textarea>
-                {errors.mensagem && (<p className="text-red-500 font-semibold text-sm mb-4">{errors.mensagem.message}</p>)}
+                {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
                 
 
                 <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold mt-7 py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[40%] cursor-pointer">Enviar</button>
