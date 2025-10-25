@@ -88,7 +88,7 @@ export default function Contato() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="
+          <form onSubmit={handleSubmit()} className="
           bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7
           max-md:w-full          
           ">
