@@ -134,7 +134,7 @@ export default function Contato() {
                     Siga-nos nas redes sociais!
                   </h3>
                 </div>
-                <ul>
+                <ul className="flex">
                   <li className="flex">
                         <Link 
                         to=""
@@ -145,7 +145,7 @@ export default function Contato() {
                             bg-[#4F39F6] rounded-full p-3 text-white
                             hover:bg-[#7A5AF8] duration-300
                             ">
-                              <FiFacebook  size={35}/>
+                              <FiFacebook  size={30}/>
                             </div>
                         </Link>
                     </li>
@@ -159,7 +159,7 @@ export default function Contato() {
                             bg-[#4F39F6] rounded-full p-3 text-white
                             hover:bg-[#7A5AF8] duration-300
                             ">
-                              <FaInstagram   size={35}/>
+                              <FaInstagram   size={30}/>
                             </div>
                         </Link>
                     </li>
@@ -173,7 +173,7 @@ export default function Contato() {
                             bg-[#4F39F6] rounded-full p-3 text-white
                             hover:bg-[#7A5AF8] duration-300
                             ">
-                              <BsTwitterX  size={35}/>
+                              <BsTwitterX  size={30}/>
                             </div>
                         </Link>
                     </li>
