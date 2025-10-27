@@ -39,8 +39,7 @@ export default function Contato() {
           <p
             className="
             text-white text-2xl w-[38%] text-center
-            max-md:w-[60%] max-:text-xl
-
+            max-md:w-[60%] max-sm:text-xl
             "
           >
             Precisa de ajuda ou encontrou algum problema? Mande uma mensagem
@@ -101,7 +100,13 @@ export default function Contato() {
                             </div>
                             <div className="flex flex-col gap-1 font-bold">
                               <figcaption className="text-2xl text-white">E-mail</figcaption>
-                              <p className="text-white">
+                              <p className="
+                              text-white
+                              max-[890px]:text-[14px]
+                              max-[800px]:text-[12px]
+                              max-md:text-[14px]
+                              
+                              ">
                                 contato@megafarmadelivery.com.br
                               </p>
                             </div>
