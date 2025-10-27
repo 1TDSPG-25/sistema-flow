@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
 
@@ -65,7 +65,7 @@ export default function Contato() {
                 <p className="text-white">
                     Confira abaixo os canais disponíveis para entrar em contato conosco:
                 </p>
-                  <ul>
+                  <ul className="flex flex-col gap-7">
                     <li className="flex">
                         <Link 
                         to=""
@@ -89,7 +89,7 @@ export default function Contato() {
                         <Link 
                         to=""
                         className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
-                        title="Clique aqui para ver telefones disponíveis"
+                        title="Clique aqui para enviar mensagem"
                         >
                           <figure className="flex items-center gap-3 px-3 py-2">
                             <div className="bg-[#4F39F6] rounded-full p-3 text-white">
@@ -98,7 +98,26 @@ export default function Contato() {
                             <div className="flex flex-col gap-1 font-bold">
                               <figcaption className="text-2xl text-white">E-mail</figcaption>
                               <p className="text-white">
-                                contato@megafarmadelivery.com.br.
+                                contato@megafarmadelivery.com.br
+                              </p>
+                            </div>
+                          </figure>
+                        </Link>
+                    </li>
+                    <li className="flex">
+                        <Link 
+                        to=""
+                        className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
+                        title="Clique aqui para ver localizações disponíveis"
+                        >
+                          <figure className="flex items-center gap-3 px-3 py-2">
+                            <div className="bg-[#4F39F6] rounded-full p-3 text-white">
+                              <FaMapMarkedAlt size={40}/>
+                            </div>
+                            <div className="flex flex-col gap-1 font-bold">
+                              <figcaption className="text-2xl text-white">Localização</figcaption>
+                              <p className="text-white">
+                                <span className="underline">Clique aqui</span> para ver as farmácias disponíveis na sua cidade.
                               </p>
                             </div>
                           </figure>
