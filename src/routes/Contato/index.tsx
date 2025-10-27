@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { MdOutlineMail } from "react-icons/md";
 
 export default function Contato() {
   const mensagemSchema = z.object({
@@ -79,6 +80,25 @@ export default function Contato() {
                               <figcaption className="text-2xl text-white">Telefone</figcaption>
                               <p className="text-white">
                                 <span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.
+                              </p>
+                            </div>
+                          </figure>
+                        </Link>
+                    </li>
+                    <li className="flex">
+                        <Link 
+                        to=""
+                        className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
+                        title="Clique aqui para ver telefones disponíveis"
+                        >
+                          <figure className="flex items-center gap-3 px-3 py-2">
+                            <div className="bg-[#4F39F6] rounded-full p-3 text-white">
+                              <MdOutlineMail size={40} />
+                            </div>
+                            <div className="flex flex-col gap-1 font-bold">
+                              <figcaption className="text-2xl text-white">E-mail</figcaption>
+                              <p className="text-white">
+                                contato@megafarmadelivery.com.br.
                               </p>
                             </div>
                           </figure>
