@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
+import { FiFacebook } from "react-icons/fi";
+import { AiFillFacebook } from "react-icons/ai";
 
 export default function Contato() {
   const mensagemSchema = z.object({
@@ -125,6 +127,27 @@ export default function Contato() {
                     </li>
                 </ul>
                 <hr className="text-[#4F39F6]"/>
+                <div>
+                  <h3 className="text-white text-lg font-bold">
+                    Siga-nos nas redes sociais!
+                  </h3>
+                </div>
+                <ul>
+                  <li className="flex">
+                        <Link 
+                        to=""
+                        className="w-full flex items-center gap-3 px-3 py-2"
+                        title="Clique para visualizar facebook megafarma"
+                        >
+                            <div className="
+                            bg-[#4F39F6] rounded-full p-3 text-white
+                            hover:bg-[#7A5AF8] duration-300
+                            ">
+                              <FiFacebook  size={35}/>
+                            </div>
+                        </Link>
+                    </li>
+                </ul>
             </div>
           </div>
 
