@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
 import { FiFacebook } from "react-icons/fi";
 import { AiFillFacebook } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
 
 export default function Contato() {
   const mensagemSchema = z.object({
@@ -158,6 +160,20 @@ export default function Contato() {
                             hover:bg-[#7A5AF8] duration-300
                             ">
                               <FaInstagram   size={35}/>
+                            </div>
+                        </Link>
+                    </li>
+                  <li className="flex">
+                        <Link 
+                        to=""
+                        className="w-full flex items-center gap-3 px-3 py-2"
+                        title="Clique para visualizar o X (Twitter) megafarma"
+                        >
+                            <div className="
+                            bg-[#4F39F6] rounded-full p-3 text-white
+                            hover:bg-[#7A5AF8] duration-300
+                            ">
+                              <BsTwitterX  size={35}/>
                             </div>
                         </Link>
                     </li>
