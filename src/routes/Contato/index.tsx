@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
 import { FiFacebook } from "react-icons/fi";
@@ -137,13 +137,27 @@ export default function Contato() {
                         <Link 
                         to=""
                         className="w-full flex items-center gap-3 px-3 py-2"
-                        title="Clique para visualizar facebook megafarma"
+                        title="Clique para visualizar o facebook megafarma"
                         >
                             <div className="
                             bg-[#4F39F6] rounded-full p-3 text-white
                             hover:bg-[#7A5AF8] duration-300
                             ">
                               <FiFacebook  size={35}/>
+                            </div>
+                        </Link>
+                    </li>
+                  <li className="flex">
+                        <Link 
+                        to=""
+                        className="w-full flex items-center gap-3 px-3 py-2"
+                        title="Clique para visualizar o instagram megafarma"
+                        >
+                            <div className="
+                            bg-[#4F39F6] rounded-full p-3 text-white
+                            hover:bg-[#7A5AF8] duration-300
+                            ">
+                              <FaInstagram   size={35}/>
                             </div>
                         </Link>
                     </li>
