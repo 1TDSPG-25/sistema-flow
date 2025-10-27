@@ -5,8 +5,6 @@ import { FaInstagram, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
 import { FiFacebook } from "react-icons/fi";
-import { AiFillFacebook } from "react-icons/ai";
-import { FaSquareXTwitter } from "react-icons/fa6";
 import { BsTwitterX } from "react-icons/bs";
 
 export default function Contato() {
