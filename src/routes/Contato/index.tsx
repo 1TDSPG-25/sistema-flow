@@ -124,6 +124,7 @@ export default function Contato() {
                         </Link>
                     </li>
                 </ul>
+                <hr className="text-[#4F39F6]"/>
             </div>
           </div>
 
