@@ -59,6 +59,7 @@ export default function Unidades() {
             {unidadesFiltradas.map((u) => (
               <li key={u.id} className="w-full max-w-[22rem]">
                 <div className="border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+                  <img src={u.imagem} alt="" />
                   <h3 className="text-lg font-semibold text-gray-800">{u.nome}</h3>
                   <p className="text-gray-600 mt-2">
                     {u.endereco} — {u.cidade}/{u.uf}
