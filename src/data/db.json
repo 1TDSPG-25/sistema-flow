@@ -341,7 +341,8 @@
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0001",
-    "horario": "Seg a Dom, 7h–23h"
+    "horario": "Seg a Dom, 7h–23h",
+    "imagem": ""
   },
   {
     "id": "u2",
@@ -350,7 +351,8 @@
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0002",
-    "horario": "24 horas"
+    "horario": "24 horas",
+    "imagem": ""
   },
   {
     "id": "u3",
@@ -359,7 +361,8 @@
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0003",
-    "horario": "Seg a Sáb, 8h–20h"
+    "horario": "Seg a Sáb, 8h–20h",
+    "imagem": ""
   }
 ]
 }

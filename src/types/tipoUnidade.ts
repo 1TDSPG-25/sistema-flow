@@ -1,4 +1,5 @@
 export type Unidade = {
+  imagem: string;
   id: string;
   nome: string;
   endereco: string;
