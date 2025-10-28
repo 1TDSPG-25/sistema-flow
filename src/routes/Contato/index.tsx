@@ -31,7 +31,7 @@ export default function Contato() {
     <section>
       <div
         className="
-      relative bg-[url('https://raw.githubusercontent.com/sSofia-s/sistema-flow-assets/refs/heads/main/banner.png')] bg-cover bg-center
+      relative bg-[url('https://res.cloudinary.com/dt26mfzpw/image/upload/v1761654366/banner-contato_oowzup.png')] bg-cover bg-center
      text-white py-40 overflow-hidden border-none
      max-[450px]:py-20
     "
