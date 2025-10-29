@@ -76,6 +76,8 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
+
 
 </ul>
 
@@ -95,7 +97,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
-- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
 - **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe ?</span>
 
