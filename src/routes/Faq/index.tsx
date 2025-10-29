@@ -29,6 +29,12 @@ const faqData: FAQItem[] = [
 ];
 
 export default function FaqPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleAnswer = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="w-full max-w-5xl block m-auto min-h-screen py-10 px-5">
       <h1 className="text-center text-4xl font-bold text-white mb-10">
@@ -39,12 +45,27 @@ export default function FaqPage() {
         {faqData.map((item, index) => (
           <article
             key={index}
-            className="bg-slate-800 text-white/80 p-5 rounded-lg border border-slate-700 shadow-lg"
+            className="bg-slate-800 text-white/80 p-5 rounded-lg border border-slate-700 shadow-lg transition-transform duration-300 hover:-translate-y-1"
           >
-            <h2 className="text-lg md:text-xl font-semibold text-white">
-              {item.question}
-            </h2>
-            <p className="text-slate-300 mt-2">{item.answer}</p>
+            <button
+              onClick={() => toggleAnswer(index)}
+              className="flex justify-between items-center w-full text-left focus:outline-none"
+            >
+              <h2 className="text-lg md:text-xl font-semibold text-white">
+                {item.question}
+              </h2>
+              <span className="text-slate-400 text-xl">
+                {openIndex === index ? "−" : "+"}
+              </span>
+            </button>
+
+            <div
+              className={`transition-all duration-300 overflow-hidden ${
+                openIndex === index ? "max-h-40 mt-3" : "max-h-0"
+              }`}
+            >
+              <p className="text-slate-300">{item.answer}</p>
+            </div>
           </article>
         ))}
       </div>
