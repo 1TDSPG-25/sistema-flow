@@ -72,8 +72,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
 
-- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
-
 - **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
 - **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
@@ -158,3 +156,5 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
 </ul>
+
+- **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
