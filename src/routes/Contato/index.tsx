@@ -220,7 +220,14 @@ export default function Contato() {
                 <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold mt-7 py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[40%] cursor-pointer">Enviar</button>
           </form>
           ) : (
-            <div>Mensagem enviada com sucesso!</div>
+
+            <div className="
+            bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7
+              max-md:w-full 
+            ">
+                
+            </div>
+
           )}
 
           
