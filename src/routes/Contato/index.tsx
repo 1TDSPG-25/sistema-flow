@@ -6,8 +6,12 @@ import { Link } from "react-router-dom";
 import { MdOutlineMail } from "react-icons/md";
 import { FiFacebook } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
+import { useState } from "react";
 
 export default function Contato() {
+
+  const [mensagem, setMensagem] = useState<boolean>(false)
+
   const mensagemSchema = z.object({
     nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
     email: z.email({ message: "Por favor, insira um e-mail válido." }),
@@ -25,6 +29,7 @@ export default function Contato() {
 
   const onSubmit = () => {
     reset();
+    setMensagem(true);
   }
 
   return (
@@ -188,7 +193,8 @@ export default function Contato() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} title="Clique para enviar sua mensagem." className="
+          {!mensagem ? (
+            <form onSubmit={handleSubmit(onSubmit)} title="Clique para enviar sua mensagem." className="
           bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7
           max-md:w-full          
           ">
@@ -213,6 +219,11 @@ export default function Contato() {
 
                 <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold mt-7 py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[40%] cursor-pointer">Enviar</button>
           </form>
+          ) : (
+            <div>Mensagem enviada com sucesso!</div>
+          )}
+
+          
         </div>
       </div>
     </section>
