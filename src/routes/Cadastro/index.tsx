@@ -14,6 +14,8 @@ const cadastroSchema = z.object({
 });
 
 type CadastroInput = z.infer<typeof cadastroSchema>;
+    const { isDark } = useTheme();
+    const navigate = useNavigate();
 
 export default function CadastroForm() {
 
