@@ -28,8 +28,11 @@ export default function Contato() {
     mode: "onChange",
   });
 
-  const onSubmit = (data: MensagemInput) => {
+  const onSubmit = async (data: MensagemInput) => {
     setDadosUsuario(data);
+    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     setMensagem(true);
     reset();
   }
@@ -246,7 +249,10 @@ export default function Contato() {
                   <li>
                     <button 
                     title="Clique aqui para voltar"
-                    onClick={() => setMensagem(false)}
+                    onClick={() => {
+                      reset()
+                      setMensagem(false)
+                    }}
                     className="
                     p-3 border-3 border-[#4F39F6] rounded-[10px]
                     text-[#4F39F6] text-lg cursor-pointer
