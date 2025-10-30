@@ -91,6 +91,10 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe G</span>
 
+- **FEATURE:** Criar uma página de Integrantes -> <span style="color:white">Equipe G</span>
+
+
+
 </ul>
 
 
