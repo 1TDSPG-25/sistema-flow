@@ -79,30 +79,18 @@ export default function FaqPage() {
           ))}
         </div>
 
-        {/* Botão de suporte aprimorado */}
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={handleContactRedirect}
-            className="relative px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-          >
-            <span className="relative z-10">Fale com o suporte</span>
-            <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-          </button>
-        </div>
-
-        {/* 🔹 Nova seção de ajuda adicional */}
-        <div className="mt-16 text-center border-t border-gray-300 dark:border-slate-700 pt-10">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+        {/* Seção de contato (mantida e estilizada com o mesmo gradiente do outro botão) */}
+        <div className="text-center mt-16">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
             Ainda precisa de ajuda?
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-lg mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
             Nossa equipe de suporte está pronta para ajudar você com qualquer dúvida.
             Entre em contato conosco e retornaremos o mais rápido possível.
           </p>
-
           <button
             onClick={handleContactRedirect}
-            className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition-colors duration-300 shadow-md"
+            className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
             Entrar em contato
           </button>
