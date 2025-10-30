@@ -7,6 +7,9 @@ const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 
 export default function Produtos() {
+   const theme = useTheme();
+  const { isDark } = theme;
+
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
 
