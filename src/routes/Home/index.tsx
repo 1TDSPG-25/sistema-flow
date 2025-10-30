@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+
+import type { TipoApiProps } from "@/types/tipoApiProps";
 import type { TipoNoticia } from "@/types/tipoNoticia";
+import { createApiProps } from "../util/utilFunctions";
 
 const VITE_HOME_URL: string = import.meta.env.VITE_HOME_URL;
 
 export default function Home() {
-  const [posts, setPosts] = useState<TipoNoticia[] | null>([]);
+  const [posts, setPosts] = useState<TipoApiProps[] | null>([]);
 
   useEffect(() => {
 
@@ -14,19 +17,15 @@ export default function Home() {
         if (response.status != 200) {
           throw new Error("Failed to fetch data");
         }
-        const data: TipoNoticia[]  = await response.json();
+        const data: TipoNoticia  = await response.json();
         console.log(data)
-        setPosts(data);
+        setPosts(data.quotes);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchApi();
-
-    const interval = setInterval(() => fetchApi(), 1000);
-
-    return () => clearInterval(interval);
 
   }, []);
 
@@ -42,20 +41,16 @@ export default function Home() {
           <div className="col-span-3 text-center text-gray-500">Carregando notícias...</div>
         ) : (
           posts.map((post) => (
-            <article key={post.articles[0].url} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-              <img
-                src={post.articles[0].urlToImage || 'https://via.placeholder.com/300'}
-                alt={post.articles[0].title}
-                className="w-full h-64 object-cover"
-              />
+            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2">
-                  {post.articles[0].title}
+                  {post.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-4">{post.articles[0].description}</p>
-                <p className="text-xs text-gray-500">{`Por ${post.articles[0].author || 'Autor Desconhecido'} | ${new Date(post.articles[0].publishedAt).toLocaleDateString()}`}</p>
+                 <p className="text-sm text-gray-600 mb-4">{post.quote}</p>
+                <p className="text-xs text-gray-500">{`Por ${post.author || 'Autor Desconhecido'} | ${new Date(createApiProps(post).data).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}`}</p>
                 <a
-                  href={post.articles[0].url}
+                  href={post.author}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-4 text-green-500 hover:underline font-medium"
