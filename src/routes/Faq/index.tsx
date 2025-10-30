@@ -42,17 +42,17 @@ export default function FaqPage() {
   };
 
   return (
-    <section className="min-h-screen flex justify-center items-center py-16 px-4 transition-colors duration-500">
+    <section className="min-h-screen flex justify-center items-center py-20 px-4 transition-colors duration-500">
       <div className="w-full max-w-4xl bg-gray-50 dark:bg-slate-900 rounded-3xl shadow-2xl p-10 border border-gray-200 dark:border-slate-700">
-        <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100 mb-10">
+        <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12">
           Perguntas Frequentes (FAQ)
         </h1>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {faqData.map((item, index) => (
             <article
               key={index}
-              className="bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 p-5 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 p-6 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <button
                 onClick={() => toggleAnswer(index)}
@@ -61,14 +61,14 @@ export default function FaqPage() {
                 <h2 className="text-lg md:text-xl font-semibold">
                   {item.question}
                 </h2>
-                <span className="text-gray-500 dark:text-gray-400 text-xl">
+                <span className="text-gray-500 dark:text-gray-400 text-2xl font-bold select-none">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
 
               <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  openIndex === index ? "max-h-40 mt-3" : "max-h-0"
+                  openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
               >
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -79,13 +79,14 @@ export default function FaqPage() {
           ))}
         </div>
 
-        {/* Botão de suporte */}
-        <div className="flex justify-center mt-10">
+        {/* Botão de suporte aprimorado */}
+        <div className="flex justify-center mt-12">
           <button
             onClick={handleContactRedirect}
-            className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors duration-300 shadow-md"
+            className="relative px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
-            Fale com o suporte
+            <span className="relative z-10">Fale com o suporte</span>
+            <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
           </button>
         </div>
       </div>
