@@ -11,6 +11,7 @@ import { useState } from "react";
 export default function Contato() {
 
   const [mensagem, setMensagem] = useState<boolean>(false)
+  const [dadosUsuario, setDadosUsuario] = useState<MensagemInput | null>(null);
 
   const mensagemSchema = z.object({
     nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
@@ -27,10 +28,18 @@ export default function Contato() {
     mode: "onChange",
   });
 
-  const onSubmit = () => {
-    reset();
+  const onSubmit = (data: MensagemInput) => {
+    setDadosUsuario(data);
     setMensagem(true);
+    reset();
   }
+
+  const fazerOutraPergunta = () => {
+  if (dadosUsuario) {
+    reset(dadosUsuario);
+  }
+  setMensagem(false);
+};
 
   return (
     <section>
@@ -237,6 +246,7 @@ export default function Contato() {
                   <li>
                     <button 
                     title="Clique aqui para voltar"
+                    onClick={() => setMensagem(false)}
                     className="
                     p-3 border-3 border-[#4F39F6] rounded-[10px]
                     text-[#4F39F6] text-lg cursor-pointer
@@ -248,6 +258,7 @@ export default function Contato() {
                   <li>
                     <button 
                     title="Clique aqui para fazer outra pergunta"
+                    onClick={fazerOutraPergunta}
                     className="
                     px-7 py-3 border-3 border-[#4F39F6] rounded-[10px]
                     bg-[#4F39F6] text-[#FFFFFF] text-lg cursor-pointer
