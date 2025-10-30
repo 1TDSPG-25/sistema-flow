@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { apiProps, apiResponse } from "../../types/tipoHome";
+import useTheme from "../../context/useTheme";
 
 export default function Home(){
 const [posts, setPosts] = useState<apiProps[]>([]);
