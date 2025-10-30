@@ -2,6 +2,7 @@
 
 body{
     @apply w-screen h-screen;
+    overflow-x: hidden
 }
 
 .dark-mode{
