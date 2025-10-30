@@ -23,6 +23,16 @@ const faqData: FAQItem[] = [
       "Sim, o sistema é totalmente responsivo e pode ser acessado em smartphones e tablets.",
   },
   {
+    question: "Qual é o prazo de entrega dos pedidos?",
+    answer:
+      "O prazo de entrega pode variar de acordo com a sua região. Normalmente, as entregas são realizadas entre 3 e 7 dias úteis após a confirmação do pagamento.",
+  },
+  {
+    question: "Quais formas de pagamento são aceitas?",
+    answer:
+      "Aceitamos cartões de crédito, débito, Pix e boleto bancário. Todas as transações são processadas com segurança.",
+  },
+  {
     question: "Como entro em contato com o suporte?",
     answer:
       "Você pode entrar em contato com o suporte através da página de contato ou enviando um e-mail para suporte@sistemaflow.com.",
