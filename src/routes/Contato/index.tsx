@@ -232,8 +232,32 @@ export default function Contato() {
                 <span>
                   <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
                 </span>
+                <h5 className="text-3xl">Deseja fazer outra pergunta?</h5>
+                 <ul className="flex justify-around w-full">
+                  <li>
+                    <button 
+                    title="Clique aqui para voltar"
+                    className="
+                    p-3 border-3 border-[#4F39F6] rounded-[10px]
+                    text-[#4F39F6] text-lg cursor-pointer
+                    hover:bg-[#9479ff25] duration-300
+                    ">
+                      Não, obrigado
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                    title="Clique aqui para fazer outra pergunta"
+                    className="
+                    px-7 py-3 border-3 border-[#4F39F6] rounded-[10px]
+                    bg-[#4F39F6] text-[#FFFFFF] text-lg cursor-pointer
+                    hover:bg-[#7A5AF8] duration-300
+                    ">
+                      Sim, gostaria
+                    </button>
+                  </li>
+                </ul>
             </div>
-
           )}
         </div>
       </div>
