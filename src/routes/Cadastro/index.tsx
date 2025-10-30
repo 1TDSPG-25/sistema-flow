@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link, useNavigate } from "react-router-dom";
+import useTheme from "../../context/useTheme";
+
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 const cadastroSchema = z.object({
