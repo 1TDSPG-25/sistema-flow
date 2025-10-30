@@ -45,11 +45,11 @@ export default function LoginForm(){
         };
 
     return(
-        <main className="mb-0 p-[2vh] pb-[20vh]">
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
+        <section className="p-[2vh] pb-[45vh]">
+            <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-15">
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700">E-mail</label>
                         <input id="email" type="email" className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" {...register("email")} />
@@ -65,6 +65,6 @@ export default function LoginForm(){
                     <p className="block text-sm font-medium text-gray-700">Caso não tenha um usuário, clique em <Link to="/cadastro" className="hover:underline hover:text-blue-500 font-bold">Cadastrar</Link></p>
                 </form>
             </div>
-        </main>
+        </section>
     )
 }
