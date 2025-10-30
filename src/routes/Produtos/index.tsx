@@ -81,7 +81,7 @@ export default function Produtos() {
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {produtosFiltrados.map((produto) => (
               <li key={produto.id}>
-                <Link to={`/produtos/${produtos.id}`}>
+                <Link to={`/produtos/${produto.id}`}>
                   <div
                     className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer ${
                       isDark 
