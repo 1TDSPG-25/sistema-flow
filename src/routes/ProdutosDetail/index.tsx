@@ -1,16 +1,38 @@
 import { useParams, Link } from "react-router-dom";
-// Importa o useState e useEffect
 import { useState, useEffect } from "react";
-// Importa o tipo do produto (vamos assumir que ele existe em /types)
 import type { TipoProduto } from "../../types/tipoProduto"; 
+
+const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function ProdutoDetail() {
   const { id } = useParams<{ id: string }>();
-
   const [produto, setProduto] = useState<TipoProduto | null>(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!id) return;
+
+
+    const fetchProduto = async () => {
+      try {
+        const response = await fetch(`${API_URL}/${id}`);
+        
+        if (!response.ok) {
+          throw new Error("Produto não encontrado");
+        }
+        
+        const produtoData: TipoProduto = await response.json();
+        setProduto(produtoData);
+
+      } catch (error) {
+        console.error("Erro ao carregar produto:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduto();
+  
   }, [id]); 
 
   return (
