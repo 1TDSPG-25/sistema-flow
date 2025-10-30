@@ -70,9 +70,7 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe A</span>
 
-- **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe C</span>
-
-- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe F</span>
+- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe B</span>
 
 - **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe D</span>
 
@@ -87,6 +85,11 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 - **FEATURE:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe D</span>
 
+- **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe H</span>
+
+- **FEATURE:** Aplicar apis de Java - megafarma -> <span style="color:white">Equipe C</span>
+
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe G</span>
 
 </ul>
 
@@ -107,8 +110,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
-- **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe ?</span>
-- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
 </ul>
 
 ---
@@ -169,5 +170,7 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 - **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
 
 - **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
+
+- **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe C</span>
 </ul>
 
