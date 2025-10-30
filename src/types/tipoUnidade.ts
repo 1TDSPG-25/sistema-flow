@@ -1,5 +1,4 @@
 export type Unidade = {
-  imagem: string;
   id: string;
   nome: string;
   endereco: string;
@@ -7,4 +6,6 @@ export type Unidade = {
   uf: string;
   telefone?: string;
   horario?: string;
+  localizacao?: string;
+  imagem?: string;
 };

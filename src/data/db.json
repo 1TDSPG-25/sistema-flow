@@ -337,32 +337,35 @@
   {
     "id": "u1",
     "nome": "Farmácia Central",
-    "endereco": "Av. Paulista, 1000",
+    "endereco": "Av. Europa, 352",
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0001",
     "horario": "Seg a Dom, 7h–23h",
-    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwji9sS4CrtbuQKCLyZ5J0BMkDgJ0PIbGwxoZ5kiczyjt1pfbnf9iZfs2GiZz1Po_hVhYQruyRDbVCmeQTt6BikuFdzBYMBaamjIvjUK9ee-I9SarQt-hB0dB8954lyCtotY5F5qA=w408-h306-k-no"
+    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwji9sS4CrtbuQKCLyZ5J0BMkDgJ0PIbGwxoZ5kiczyjt1pfbnf9iZfs2GiZz1Po_hVhYQruyRDbVCmeQTt6BikuFdzBYMBaamjIvjUK9ee-I9SarQt-hB0dB8954lyCtotY5F5qA=w408-h306-k-no",
+    "localizacao": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160706.91814591468!2d-46.71893697900635!3d-23.456854925144793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5764fb2699f7%3A0x467b699569863d94!2sPanvel%20Farm%C3%A1cias!5e0!3m2!1spt-BR!2sbr!4v1761834618733!5m2!1spt-BR!2sbr\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
   },
   {
     "id": "u2",
     "nome": "Farmácia Jardim",
-    "endereco": "R. das Flores, 45",
+    "endereco": "Rua Vergueiro, 3950",
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0002",
     "horario": "24 horas",
-    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxm3U5k3OkW94RwcLefPY1jW-y8IhwP_Y0Xm67EgULXMUAyiW4m2fyyBNUxH7A6Dtf-UdVlZIWG8htvS0gS2XBG7X7JDBOMADjS1dflXUV146rVY80G2vhSRhVtmzsdKc8mETcQ_g=w408-h306-k-no"
+    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwkbY_2_0mF_JccsAg_Vn9wqlk7_iboiMtjsdcD5qTT8CXfRx2gXzFUn20v9CwUJMCRM1hp3WeJ8tRCMUhwSM8rgjVGFaF90M4V9xPXB_6W3uKqXKc0Aa6wslDXiTxURwJ6gQGs=w408-h306-k-no",
+    "localizacao": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160706.91814591468!2d-46.71893697900635!3d-23.456854925144793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b3c4afb6683%3A0x82e14748bd65d1d1!2sPanvel%20Farm%C3%A1cias!5e0!3m2!1spt-BR!2sbr!4v1761834890357!5m2!1spt-BR!2sbr\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
   },
   {
     "id": "u3",
     "nome": "Farmácia Lapa",
-    "endereco": "R. Carlos, 210",
+    "endereco": "R. Dr. Homem de Melo, 494",
     "cidade": "São Paulo",
     "uf": "SP",
     "telefone": "(11) 3333-0003",
     "horario": "Seg a Sáb, 8h–20h",
-    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx_NG8W_cp1dGHTuU1wEOpYXqmw96yI4qnor-mTT1dNWFvhyiSUCI8WcZT4y6yc-mb4-GKUpOinjXoI0_bPvf2PdVFenwfPAPfhP0o7yWXn6yVE0dsLpnWpNhQwh2c1okSOsfB2=w426-h240-k-no"
+    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSygK88kfQx6gEEPGsVfsjJBl3LQlC3itIqMF3eoT_Za_LGeP28k11pl0Jywp0UVMwIbHiU_-vzW_qH5uG8lIYUsRMydCM4JhwwEtiD5TMkE9huca5w0_MheV5zDxFmwFpNawsPS=w426-h240-k-no",
+    "localizacao": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.895087755576!2d-46.669284999999995!3d-23.536275500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5753f0cc7c95%3A0xf9c78a5351e71ded!2sPanvel%20Farm%C3%A1cias!5e0!3m2!1spt-BR!2sbr!4v1761834669085!5m2!1spt-BR!2sbr\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
   }
 ]
 }
