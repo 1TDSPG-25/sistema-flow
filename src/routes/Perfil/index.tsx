@@ -143,31 +143,3 @@ export default function Perfil() {
     </section>
   );
 }
-
-function coerceUser(found: unknown): TipoUser {
-  const f = found as Record<string, unknown>;
-
-  const toNumber = (v: unknown): number => {
-    if (v == null) return 0;
-    if (typeof v === 'number') return v;
-    const n = Number(v);
-    return Number.isNaN(n) ? 0 : n;
-  };
-
-  const toString = (v: unknown): string => {
-    if (v == null) return '';
-    if (typeof v === 'string') return v;
-    return String(v);
-  };
-
-  return {
-    id: toNumber(f.id),
-    nome: toString(f.nome ?? ''),
-    cpf: toString(f.cpf ?? ''),
-    email: toString(f.email ?? ''),
-    senha: toString(f.senha ?? ''),
-    avatar: toString(f.avatar ?? ''),
-  };
-}
-
-       
