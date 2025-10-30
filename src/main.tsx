@@ -5,6 +5,7 @@ import App from './App.tsx'
 import Login from './routes/Login/index.tsx'
 import Cadastro from './routes/Cadastro/index.tsx'
 import Produtos from './routes/Produtos/index.tsx'
+import ProdutoDetail from './routes/ProdutosDetail/index.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error404 from './routes/Error/index.tsx'
 import Contato from './routes/Contato/index.tsx'
@@ -21,6 +22,7 @@ const router = createBrowserRouter([{
     { path:"/login", element:<Login/> },
     { path:"/cadastro", element:<Cadastro/> },
     { path:"/produtos", element:<Produtos/> },
+    { path:"/produtos/:id", element:<ProdutoDetail/> },
     { path:"/contato", element:<Contato/> },
     { path:"/faq", element:<Faq/> },
     { path:"/unidade", element:<Unidade/> },

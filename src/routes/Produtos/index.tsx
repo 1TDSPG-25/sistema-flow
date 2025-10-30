@@ -1,6 +1,8 @@
+// routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
 import type { TipoProduto } from "../../types/tipoProduto";
-import useTheme from "../../context/useTheme"; // usa seu hook
+import useTheme from "../../context/useTheme";
+import { Link } from "react-router-dom"; // ← Nova importação
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -22,7 +24,7 @@ export default function Produtos() {
 
         const produtosData: TipoProduto[] = await response.json();
 
-        await new Promise((resolve) => setTimeout(resolve, 500)); // simula delay
+        await new Promise((resolve) => setTimeout(resolve, 500));
         setProdutos(produtosData);
       } catch (error: unknown) {
         if (error instanceof Error) {
@@ -78,49 +80,52 @@ export default function Produtos() {
         {produtosFiltrados.length > 0 ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {produtosFiltrados.map((produto) => (
-              <li
-                key={produto.id}
-                className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 ${
-                  isDark ? "border-gray-700 bg-gray-700" : "border-gray-200 bg-white"
-                }`}
-              >
-                {produto.avatar && (
-                  <div className="w-full h-40 flex items-center justify-center rounded-md mb-3 overflow-hidden bg-white">
-                    <img
-                      src={produto.avatar}
-                      alt={produto.nome}
-                      className="w-full h-full object-contain"
-                    />
+              <li key={produto.id}>
+                <Link to={`/produtos/${produto.id}`}>
+                  <div
+                    className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer ${
+                      isDark 
+                        ? "border-gray-700 bg-gray-700 hover:border-gray-600" 
+                        : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
+                  >
+                    {produto.avatar && (
+                      <div className="w-full h-40 flex items-center justify-center rounded-md mb-3 overflow-hidden bg-white">
+                        <img
+                          src={produto.avatar}
+                          alt={produto.nome}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    )}
+                    <h3
+                      className={`text-lg font-semibold transition-colors duration-500 ${
+                        isDark ? "text-gray-100" : "text-gray-800"
+                      }`}
+                    >
+                      {produto.nome}
+                    </h3>
+                    <p className="text-indigo-600 font-medium mt-2">
+                      R$ {produto.preco.toFixed(2)}
+                    </p>
+                    <p
+                      className={`mt-2 transition-colors duration-500 ${
+                        isDark ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
+                      <span className="font-medium">Fabricação:</span>{" "}
+                      {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
+                    </p>
+                    <p
+                      className={`transition-colors duration-500 ${
+                        isDark ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
+                      <span className="font-medium">Validade:</span>{" "}
+                      {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
+                    </p>
                   </div>
-                )}
-                <h3
-                  className={`text-lg font-semibold transition-colors duration-500 ${
-                    isDark ? "text-gray-100" : "text-gray-800"
-                  }`}
-                >
-                  {produto.nome}
-                </h3>
-                <p className="text-indigo-600 font-medium mt-2">
-                   R$ {produto.preco.toFixed(2)}
-                </p>
-                <p
-                  className={`mt-2 transition-colors duration-500 ${
-                    isDark ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
-                  <span className="font-medium">Fabricação:</span>{" "}
-                  {new Date(produto.dataFabricacao).toLocaleDateString(
-                    "pt-BR"
-                  )}
-                </p>
-                <p
-                  className={`transition-colors duration-500 ${
-                    isDark ? "text-gray-300" : "text-gray-600"
-                  }`}
-                >
-                  <span className="font-medium">Validade:</span>{" "}
-                  {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
-                </p>
+                </Link>
               </li>
             ))}
           </ul>
