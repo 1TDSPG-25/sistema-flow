@@ -3,6 +3,7 @@ import type { apiProps, apiResponse } from "../../types/tipoHome";
 import useTheme from "../../context/useTheme";
 
 export default function Home(){
+  const { isDark } = useTheme();
 const [posts, setPosts] = useState<apiProps[]>([]);
 
   const fetchApi = async () => {
