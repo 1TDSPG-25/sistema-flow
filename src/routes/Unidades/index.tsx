@@ -59,6 +59,13 @@ export default function Unidades() {
             {unidadesFiltradas.map((u) => (
               <li key={u.id} className="w-full max-w-[22rem]">
                 <div className="border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+                  <div className="w-full h-44 overflow-hidden rounded-md mb-4 bg-gray-100 flex items-center justify-center">
+                    <img
+                      src={u.imagem}
+                      alt={u.nome}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <h3 className="text-lg font-semibold text-gray-800">{u.nome}</h3>
                   <p className="text-gray-600 mt-2">
                     {u.endereco} — {u.cidade}/{u.uf}
@@ -72,6 +79,12 @@ export default function Unidades() {
                     <p className="text-gray-700">
                       <span className="font-medium">Horário:</span> {u.horario}
                     </p>
+                  )}
+                  {u.localizacao && (
+                    <div
+                      className="mt-3 w-full overflow-hidden rounded-md"
+                      dangerouslySetInnerHTML={{ __html: u.localizacao }}
+                    />
                   )}
                 </div>
               </li>

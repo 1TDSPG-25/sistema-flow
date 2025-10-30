@@ -6,4 +6,6 @@ export type Unidade = {
   uf: string;
   telefone?: string;
   horario?: string;
+  localizacao?: string;
+  imagem?: string;
 };
