@@ -68,11 +68,24 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
+- **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe ?</span>
+
+- **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe ?</span>
+
+- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe ?</span>
+
+- **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe ?</span>
+
+
+---
+
 - **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
 
 - **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
-- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
+- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe D</span>
 
 
 </ul>
@@ -96,10 +109,8 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
-- **FEATURE:** Adicionar tema escuro/claro -> <span style="color:white">Equipe ?</span>
-- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe ?</span>
-
 - **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe ?</span>
+- **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe B</span>
 </ul>
 
 ---
