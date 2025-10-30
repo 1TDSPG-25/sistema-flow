@@ -92,3 +92,82 @@ export default function Perfil() {
       </div>
     );
 
+  const InfoPill = ({
+    icon: Icon, text, sr,
+  }: { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; text: string; sr?: string }) => (
+    <span className="inline-flex items-center gap-2 rounded-full border px-2 py-1 text-sm">
+      <Icon aria-hidden />
+      {sr ? <span className="sr-only">{sr}</span> : null}
+      <span>{text}</span>
+    </span>
+  );
+
+  return (
+    <section className="max-w-2xl mx-auto p-4">
+      <h1 className="text-2xl font-semibold flex items-center gap-2">
+        <FiUser aria-hidden /> Dados do Usuário
+      </h1>
+
+      <div className="mt-4 flex items-center gap-4 rounded-xl border p-4 bg-white/60 dark:bg-gray-800/60">
+        <Avatar />
+        <div className="min-w-0">
+          <p className="text-lg font-medium truncate">{user.nome}</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <InfoPill icon={FiHash} text={`ID: ${user.id}`} />
+            {user.email && <InfoPill icon={FiMail} text={user.email} sr="E-mail" />}
+            {user.cpf && <InfoPill icon={FiCreditCard} text={user.cpf} sr="CPF" />}
+          </div>
+        </div>
+      </div>
+
+      <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="rounded-lg border p-3">
+          <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <FiUser aria-hidden /> Nome completo
+          </dt>
+          <dd className="text-sm mt-1">{user.nome || '—'}</dd>
+        </div>
+        <div className="rounded-lg border p-3">
+          <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <FiMail aria-hidden /> E-mail
+          </dt>
+          <dd className="text-sm mt-1">{user.email || '—'}</dd>
+        </div>
+        <div className="rounded-lg border p-3">
+          <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <FiCreditCard aria-hidden /> CPF
+          </dt>
+          <dd className="text-sm mt-1">{user.cpf || '—'}</dd>
+        </div>
+      </dl>
+    </section>
+  );
+}
+
+function coerceUser(found: unknown): TipoUser {
+  const f = found as Record<string, unknown>;
+
+  const toNumber = (v: unknown): number => {
+    if (v == null) return 0;
+    if (typeof v === 'number') return v;
+    const n = Number(v);
+    return Number.isNaN(n) ? 0 : n;
+  };
+
+  const toString = (v: unknown): string => {
+    if (v == null) return '';
+    if (typeof v === 'string') return v;
+    return String(v);
+  };
+
+  return {
+    id: toNumber(f.id),
+    nome: toString(f.nome ?? ''),
+    cpf: toString(f.cpf ?? ''),
+    email: toString(f.email ?? ''),
+    senha: toString(f.senha ?? ''),
+    avatar: toString(f.avatar ?? ''),
+  };
+}
+
+       
