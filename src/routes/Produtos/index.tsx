@@ -101,7 +101,7 @@ export default function Produtos() {
                   {produto.nome}
                 </h3>
                 <p className="text-indigo-600 font-medium mt-2">
-                  💰 R$ {produto.preco.toFixed(2)}
+                   R$ {produto.preco.toFixed(2)}
                 </p>
                 <p
                   className={`mt-2 transition-colors duration-500 ${
