@@ -36,38 +36,42 @@ export default function FaqPage() {
   };
 
   return (
-    <section className="w-full max-w-5xl block m-auto min-h-screen py-10 px-5">
-      <h1 className="text-center text-4xl font-bold text-white mb-10">
-        Perguntas Frequentes (FAQ)
-      </h1>
+    <section className="min-h-screen flex justify-center items-center py-16 px-4">
+      <div className="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-10">
+        <h1 className="text-center text-4xl font-bold text-slate-900 dark:text-white mb-10">
+          Perguntas Frequentes (FAQ)
+        </h1>
 
-      <div className="space-y-4">
-        {faqData.map((item, index) => (
-          <article
-            key={index}
-            className="bg-slate-800 text-white/80 p-5 rounded-lg border border-slate-700 shadow-lg transition-transform duration-300 hover:-translate-y-1"
-          >
-            <button
-              onClick={() => toggleAnswer(index)}
-              className="flex justify-between items-center w-full text-left focus:outline-none"
+        <div className="space-y-4">
+          {faqData.map((item, index) => (
+            <article
+              key={index}
+              className="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 p-5 rounded-xl border border-slate-300 dark:border-slate-700 shadow-md transition-transform duration-300 hover:-translate-y-1"
             >
-              <h2 className="text-lg md:text-xl font-semibold text-white">
-                {item.question}
-              </h2>
-              <span className="text-slate-400 text-xl">
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
+              <button
+                onClick={() => toggleAnswer(index)}
+                className="flex justify-between items-center w-full text-left focus:outline-none"
+              >
+                <h2 className="text-lg md:text-xl font-semibold">
+                  {item.question}
+                </h2>
+                <span className="text-slate-400 text-xl">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
 
-            <div
-              className={`transition-all duration-300 overflow-hidden ${
-                openIndex === index ? "max-h-40 mt-3" : "max-h-0"
-              }`}
-            >
-              <p className="text-slate-300">{item.answer}</p>
-            </div>
-          </article>
-        ))}
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  openIndex === index ? "max-h-40 mt-3" : "max-h-0"
+                }`}
+              >
+                <p className="text-slate-600 dark:text-slate-300">
+                  {item.answer}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
