@@ -80,6 +80,12 @@ export default function Unidades() {
                       <span className="font-medium">Horário:</span> {u.horario}
                     </p>
                   )}
+                  {u.localizacao && (
+                    <div
+                      className="mt-3 w-full overflow-hidden rounded-md"
+                      dangerouslySetInnerHTML={{ __html: u.localizacao }}
+                    />
+                  )}
                 </div>
               </li>
             ))}
