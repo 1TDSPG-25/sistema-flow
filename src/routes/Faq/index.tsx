@@ -36,9 +36,9 @@ export default function FaqPage() {
   };
 
   return (
-    <section className="min-h-screen flex justify-center items-center py-16 px-4">
-      <div className="w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl p-10">
-        <h1 className="text-center text-4xl font-bold text-slate-900 dark:text-white mb-10">
+    <section className="min-h-screen flex justify-center items-center py-16 px-4 transition-colors duration-500">
+      <div className="w-full max-w-4xl bg-gray-50 dark:bg-slate-900 rounded-3xl shadow-2xl p-10 border border-gray-200 dark:border-slate-700">
+        <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100 mb-10">
           Perguntas Frequentes (FAQ)
         </h1>
 
@@ -46,7 +46,7 @@ export default function FaqPage() {
           {faqData.map((item, index) => (
             <article
               key={index}
-              className="bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 p-5 rounded-xl border border-slate-300 dark:border-slate-700 shadow-md transition-transform duration-300 hover:-translate-y-1"
+              className="bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 p-5 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300"
             >
               <button
                 onClick={() => toggleAnswer(index)}
@@ -55,7 +55,7 @@ export default function FaqPage() {
                 <h2 className="text-lg md:text-xl font-semibold">
                   {item.question}
                 </h2>
-                <span className="text-slate-400 text-xl">
+                <span className="text-gray-500 dark:text-gray-400 text-xl">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
@@ -65,7 +65,7 @@ export default function FaqPage() {
                   openIndex === index ? "max-h-40 mt-3" : "max-h-0"
                 }`}
               >
-                <p className="text-slate-600 dark:text-slate-300">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {item.answer}
                 </p>
               </div>
