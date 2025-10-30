@@ -4,6 +4,7 @@ import type { TipoUser } from "../../types/tipoUsuario";
 import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import useTheme from "../../context/useTheme";
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 const loginSchema = z.object({
