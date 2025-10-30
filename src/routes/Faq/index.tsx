@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface FAQItem {
   question: string;
@@ -30,9 +31,14 @@ const faqData: FAQItem[] = [
 
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   const toggleAnswer = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleContactRedirect = () => {
+    navigate("/contato");
   };
 
   return (
@@ -71,6 +77,16 @@ export default function FaqPage() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Botão de suporte */}
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={handleContactRedirect}
+            className="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors duration-300 shadow-md"
+          >
+            Fale com o suporte
+          </button>
         </div>
       </div>
     </section>
