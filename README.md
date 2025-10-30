@@ -68,13 +68,13 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe ?</span>
+- **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe A</span>
 
-- **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe ?</span>
+- **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe C</span>
 
-- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe ?</span>
+- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe F</span>
 
-- **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe ?</span>
+- **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe D</span>
 
 
 ---
