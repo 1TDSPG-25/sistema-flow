@@ -15,6 +15,8 @@ const loginSchema = z.object({
 type LoginInput = z.infer<typeof loginSchema>;
 
 export default function LoginForm(){
+     const theme = useTheme();
+    const { isDark } = theme;
     const navigate = useNavigate();
     
     const { register, handleSubmit, formState: { errors }, reset } = useForm<LoginInput>({
