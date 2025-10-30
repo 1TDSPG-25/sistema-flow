@@ -11,7 +11,8 @@ import { useState } from "react";
 export default function Contato() {
 
   const [mensagem, setMensagem] = useState<boolean>(false)
-  const [dadosUsuario, setDadosUsuario] = useState<MensagemInput | null>(null);
+  const [dadosUsuario, setDadosUsuario] = useState<MensagemInput | null>(null)
+  const [carregando, setCarregando] = useState<boolean>(false)
 
   const mensagemSchema = z.object({
     nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
@@ -29,19 +30,21 @@ export default function Contato() {
   });
 
   const onSubmit = async (data: MensagemInput) => {
-    setDadosUsuario(data);
+    setDadosUsuario(data)
+    setCarregando(true)
     
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    setMensagem(true);
-    reset();
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    
+    setCarregando(false)
+    setMensagem(true)
+    reset()
   }
 
   const fazerOutraPergunta = () => {
   if (dadosUsuario) {
-    reset(dadosUsuario);
+    reset(dadosUsuario)
   }
-  setMensagem(false);
+  setMensagem(false)
 };
 
   return (
@@ -229,7 +232,15 @@ export default function Contato() {
                 {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
                 
 
-                <button type="submit" className="bg-[#4F39F6] self-center text-white text-2xl font-semibold mt-7 py-2 rounded-md hover:bg-[#7A5AF8] transition-colors duration-200 w-[40%] cursor-pointer">Enviar</button>
+                <button
+                type="submit" 
+                className="
+                bg-[#4F39F6] self-center text-white 
+                text-2xl font-semibold mt-7 py-2 rounded-md
+                hover:bg-[#7A5AF8] transition-colors duration-200 w-[40%]
+                cursor-pointer">
+                  {carregando ? "Enviando..." : "Enviar"}
+                </button>
           </form>
           ) : (
 
