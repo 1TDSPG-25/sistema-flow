@@ -44,10 +44,39 @@ export default function FaqPage() {
   return (
     <section className="min-h-screen flex justify-center items-center py-20 px-4 transition-colors duration-500">
       <div className="w-full max-w-4xl bg-gray-50 dark:bg-slate-900 rounded-3xl shadow-2xl p-10 border border-gray-200 dark:border-slate-700">
-        <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12">
-          Perguntas Frequentes (FAQ)
-        </h1>
+        {/* Cabeçalho principal da FAQ */}
+        <div className="text-center mb-14">
+          <div className="flex justify-center mb-4">
+            {/* Ícone SVG */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="url(#gradient)"
+              viewBox="0 0 24 24"
+              strokeWidth={0}
+              className="w-10 h-10"
+            >
+              <defs>
+                <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#6366f1" />
+                  <stop offset="100%" stopColor="#4338ca" />
+                </linearGradient>
+              </defs>
+              <path
+                fillRule="evenodd"
+                d="M4.5 4.5a9 9 0 0114.79 10.36l1.16 3.49a.75.75 0 01-.95.95l-3.49-1.16A9 9 0 114.5 4.5zm5.25 6.75a.75.75 0 000 1.5h4.5a.75.75 0 000-1.5h-4.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
+            Perguntas Frequentes (FAQ)
+          </h1>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Encontre respostas rápidas para as dúvidas mais comuns sobre o uso da <strong>MegaFarma</strong>.
+          </p>
+        </div>
 
+        {/* Lista de perguntas */}
         <div className="space-y-5">
           {faqData.map((item, index) => (
             <article
@@ -57,6 +86,8 @@ export default function FaqPage() {
               <button
                 onClick={() => toggleAnswer(index)}
                 className="flex justify-between items-center w-full text-left focus:outline-none"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <h2 className="text-lg md:text-xl font-semibold">
                   {item.question}
@@ -67,6 +98,7 @@ export default function FaqPage() {
               </button>
 
               <div
+                id={`faq-answer-${index}`}
                 className={`transition-all duration-300 overflow-hidden ${
                   openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
@@ -79,12 +111,12 @@ export default function FaqPage() {
           ))}
         </div>
 
-        {/* Seção de contato (mantida e estilizada com o mesmo gradiente do outro botão) */}
-        <div className="text-center mt-16">
+        {/* Seção final de contato (mantida) */}
+        <div className="text-center mt-16 border-t border-gray-200 dark:border-slate-700 pt-10">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
             Ainda precisa de ajuda?
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
             Nossa equipe de suporte está pronta para ajudar você com qualquer dúvida.
             Entre em contato conosco e retornaremos o mais rápido possível.
           </p>
