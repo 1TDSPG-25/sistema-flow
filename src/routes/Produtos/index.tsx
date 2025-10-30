@@ -1,22 +1,29 @@
 import { useEffect, useState } from "react";
 import type { TipoProduto } from "../../types/tipoProduto";
+import useTheme from "../../context/useTheme"; // usa seu hook
+
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
+
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
+
 
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
         const response = await fetch(API_URL);
 
+
         if (!response.ok) {
           throw new Error("Erro ao carregar dados locais");
         }
 
+
         const produtosData: TipoProduto[] = await response.json();
+
 
         await new Promise((resolve) => setTimeout(resolve, 500)); // simula delay
         setProdutos(produtosData);
@@ -29,8 +36,10 @@ export default function Produtos() {
       }
     };
 
+
     fetchProdutos();
   }, []);
+
 
   const produtosFiltrados = produtos.filter((p) =>
     busca === ""
@@ -38,12 +47,14 @@ export default function Produtos() {
       : p.nome.toLowerCase().startsWith(busca.toLowerCase())
   );
 
+
   return (
     <main>
       <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-7xl mx-auto">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Lista de Produtos
         </h2>
+
 
         <div className="mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <input
@@ -54,6 +65,7 @@ export default function Produtos() {
             className="w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
+
 
         {produtosFiltrados.length > 0 ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
