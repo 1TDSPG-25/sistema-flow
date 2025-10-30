@@ -7,12 +7,14 @@ import { MdOutlineMail } from "react-icons/md";
 import { FiFacebook } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
 import { useState } from "react";
+import useTheme from "../../context/useTheme";
 
 export default function Contato() {
 
   const [mensagem, setMensagem] = useState<boolean>(false)
   const [dadosUsuario, setDadosUsuario] = useState<MensagemInput | null>(null)
   const [carregando, setCarregando] = useState<boolean>(false)
+  const { isDark } = useTheme()
 
   const mensagemSchema = z.object({
     nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
@@ -62,11 +64,11 @@ export default function Contato() {
   return (
     <section>
       <div
-        className="
+        className={`
       relative bg-[url('https://res.cloudinary.com/dt26mfzpw/image/upload/v1761654366/banner-contato_oowzup.png')] bg-cover bg-center
-     text-white py-40 overflow-hidden border-none
+     text-white py-40 overflow-hidden border-none ${ isDark ? 'dark-mode':'light-mode'}
      max-[450px]:py-20
-    "
+    `}
       >
         <div className="relative z-20 flex flex-col items-center gap-7">
           <h1 className="text-6xl font-bold text-white -mt-20">Contate-nos!</h1>
@@ -81,7 +83,12 @@ export default function Contato() {
           </p>
         </div>
 
-        <div className="absolute inset-0 bg-white [clip-path:polygon(0%_100%,100%_80%,100%_100%,0%_100%)] z-0"></div>
+        <div className={`absolute inset-0 ${
+         isDark
+          ? "bg-gray-900"
+          : "bg-white"
+        } [clip-path:polygon(0%_100%,100%_80%,100%_100%,0%_100%)] z-0
+        `} ></div>
       </div>
 
       <div className="
