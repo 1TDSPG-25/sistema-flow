@@ -95,8 +95,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 <ul style="color:orange">
 
 
-- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
-
 </ul>
 
 ## 🟦 Time Livre
@@ -169,5 +167,7 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 - **FEATURE:** Desenvolver a página de Unidades (Cards das Unidades das Farmácias) -> <span style="color:white">Equipe B</span>
 
 - **FEATURE:** Desenvolver a página de FAQ -> <span style="color:white">Equipe H</span>
+
+- **FEATURE:** Desenvolver a página de Contato -> <span style="color:white">Equipe G</span>
 </ul>
 
