@@ -75,7 +75,7 @@ export default function Produtos() {
                   {produto.nome}
                 </h3>
                 <p className="text-indigo-600 font-medium mt-2">
-                  💰 R$ {produto.preco.toFixed(2)}
+                   R$ {produto.preco.toFixed(2)}
                 </p>
                 <p className="text-gray-600 mt-2">
                   <span className="font-medium">Fabricação:</span>{" "}
