@@ -51,8 +51,12 @@ export default function CadastroForm() {
             if (!res.ok) throw new Error("Erro ao cadastrar usuário");
 
             navigate("/login");
-        } catch (error) {
-            alert("Erro ao cadastrar. Tente novamente.");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                alert("Erro ao cadastrar: " + error.message);
+            } else {
+                alert("Erro ao cadastrar. Tente novamente.");
+            }
         }
     };
 

@@ -11,6 +11,7 @@ import Contato from './routes/Contato/index.tsx'
 import Faq from './routes/Faq/index.tsx'
 import Unidade from './routes/Unidades/index.tsx'
 import Home from './routes/Home/index.tsx'
+import { ThemeProvider } from './context/ThemeContext.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
@@ -23,10 +24,12 @@ const router = createBrowserRouter([{
     {path:"/unidade", element:<Unidade/>},
     {path:"/home", element:<Home/>}
   ]
-}])
+}], {basename: "/sistema-flow"})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <ThemeProvider>
     <RouterProvider router={router}/>
+    </ThemeProvider>
   </StrictMode>,
 )

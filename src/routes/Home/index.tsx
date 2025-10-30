@@ -1,30 +1,23 @@
 import { useEffect, useState } from "react";
-interface apiProps {
-  id: number;
-  quote: string;
-  author: string;
-}
-
-interface apiResponse {
-  quotes: apiProps[];
-}
+import type { apiProps, apiResponse } from "../../types/tipoHome";
 
 export default function Home(){
 const [posts, setPosts] = useState<apiProps[]>([]);
 
   const fetchApi = async () => {
 
-    const BASE_URL: string = import.meta.env.VITE_HOME_URL
+    const VITE_HOME_URL: string = import.meta.env.VITE_HOME_URL;
 
-    console.log(BASE_URL)
+    console.log(VITE_HOME_URL)
 
     try {
-      const response = await fetch(`${BASE_URL}?limit=6&skip=${Math.floor(Math.random() * 10)}`, {method: 'GET'});
+      const response = await fetch(`${VITE_HOME_URL}&skip=${Math.floor(Math.random() * 10)}`, {method: 'GET'});
       if (response.status != 200) {
         throw new Error("Failed to fetch data");
       }
       const data: apiResponse = await response.json();
-      setPosts(data.quotes);
+      console.log(data)
+      setPosts(data.articles);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -33,25 +26,48 @@ const [posts, setPosts] = useState<apiProps[]>([]);
   useEffect(() => {
     fetchApi();
 
-     const interval = setInterval(() => fetchApi(), 30000);
+     const interval = setInterval(() => fetchApi(), 1000);
 
     return () => clearInterval(interval);
       
   }, []);
 
   return (
-      <section className="w-full max-w-5xl block m-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-10 justify-center">
-         {posts.length > 0 && (
+      <section className="w-full max-w-5xl mx-auto py-16 px-4">
+      <h2 className="text-4xl font-semibold text-center text-gray-800 mb-12">
+        Últimas Notícias sobre Saúde e Bem-Estar
+      </h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {posts.length > 0 ? (
           posts.map((post) => (
-          <article key={post.id} className="bg-slate-800 text-white/80 p-6 rounded-lg shadow-lg border border-slate-700 transition-transform duration-300 hover:-translate-y-2">
-            <h2 className="text-2xl font-bold mb-4">{post.quote}</h2>
-            <p className="text-slate-300">{post.author}</p>
-          </article>
-        ))
+            <article key={post.url} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              <img
+                src={post.urlToImage || 'https://via.placeholder.com/300'}
+                alt={post.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4">{post.description}</p>
+                <p className="text-xs text-gray-500">{`Por ${post.author || 'Autor Desconhecido'} | ${new Date(post.publishedAt).toLocaleDateString()}`}</p>
+                <a
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-green-500 hover:underline font-medium"
+                >
+                  Leia mais
+                </a>
+              </div>
+            </article>
+          ))
+        ) : (
+          <div className="col-span-3 text-center text-gray-500">Carregando notícias...</div>
         )}
       </div>
-      </section>
-     
+    </section>
   );
   }
