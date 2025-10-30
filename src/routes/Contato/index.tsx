@@ -47,6 +47,18 @@ export default function Contato() {
   setMensagem(false)
 };
 
+  interface RedeSocial {
+    icon: React.ReactNode;
+    link: string;
+    title: string;
+  }
+
+  const redesSociais: RedeSocial[] = [
+    {icon: <FiFacebook size={30} />, link:"", title:"Clique para visualizar o facebook megafarma"},
+    {icon: <FaInstagram size={30} />, link:"", title:"Clique para visualizar o instagram megafarma"},
+    {icon: <BsTwitterX size={30} />, link:"", title:"Clique para visualizar o X (Twitter) megafarma"}
+  ]
+
   return (
     <section>
       <div
@@ -162,48 +174,22 @@ export default function Contato() {
                   </h3>
                 </div>
                 <ul className="flex">
-                  <li className="flex">
+                  {redesSociais.map((rede, index) => (
+                  <li className="flex" key={index}>
                         <Link 
-                        to=""
+                        to={rede.link}
                         className="w-full flex items-center gap-3 px-3 py-2"
-                        title="Clique para visualizar o facebook megafarma"
+                        title={rede.title}
                         >
                             <div className="
                             bg-[#4F39F6] rounded-full p-3 text-white
                             hover:bg-[#7A5AF8] duration-300
                             ">
-                              <FiFacebook  size={30}/>
+                              {rede.icon}
                             </div>
                         </Link>
                     </li>
-                  <li className="flex">
-                        <Link 
-                        to=""
-                        className="w-full flex items-center gap-3 px-3 py-2"
-                        title="Clique para visualizar o instagram megafarma"
-                        >
-                            <div className="
-                            bg-[#4F39F6] rounded-full p-3 text-white
-                            hover:bg-[#7A5AF8] duration-300
-                            ">
-                              <FaInstagram   size={30}/>
-                            </div>
-                        </Link>
-                    </li>
-                  <li className="flex">
-                        <Link 
-                        to=""
-                        className="w-full flex items-center gap-3 px-3 py-2"
-                        title="Clique para visualizar o X (Twitter) megafarma"
-                        >
-                            <div className="
-                            bg-[#4F39F6] rounded-full p-3 text-white
-                            hover:bg-[#7A5AF8] duration-300
-                            ">
-                              <BsTwitterX  size={30}/>
-                            </div>
-                        </Link>
-                    </li>
+                  ))}
                 </ul>
             </div>
           </div>
