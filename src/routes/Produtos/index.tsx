@@ -63,11 +63,13 @@ export default function Produtos() {
                 className="border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 {produto.avatar && (
-                  <img
-                    src={produto.avatar}
-                    alt={produto.nome}
-                    className="w-full h-40 object-cover rounded-md mb-3"
-                  />
+                  <div className="w-full h-40 flex items-center justify-center bg-white rounded-md mb-3 overflow-hidden">
+                    <img
+                      src={produto.avatar}
+                      alt={produto.nome}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 )}
                 <h3 className="text-lg font-semibold text-gray-800">
                   {produto.nome}
