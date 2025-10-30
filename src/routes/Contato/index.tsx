@@ -222,18 +222,19 @@ export default function Contato() {
           ) : (
 
             <div className="
-              w-1/2 flex flex-col justify-center px-10 py-7
-              font-bold bg-[#FFFFFF] rounded-r-2xl 
+              w-1/2 flex flex-col justify-center items-center gap-10
+              px-10 py-7 font-bold bg-[#FFFFFF] rounded-r-2xl 
               max-md:w-full 
             ">
                 <h4 className="text-4xl text-center">
                   Mensagem enviada com sucesso! Obrigado pelo contato.
                 </h4>
+                <span>
+                  <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
+                </span>
             </div>
 
           )}
-
-          
         </div>
       </div>
     </section>
