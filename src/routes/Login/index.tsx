@@ -45,7 +45,7 @@ export default function LoginForm(){
         };
 
     return(
-        <main>
+        <main className="mb-0 p-[20vh]">
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
 
