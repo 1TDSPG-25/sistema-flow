@@ -42,9 +42,13 @@ export default function Contato() {
 
   const fazerOutraPergunta = () => {
   if (dadosUsuario) {
-    reset(dadosUsuario)
+    reset({
+      nome: dadosUsuario.nome,
+      email: dadosUsuario.email,
+      mensagem: ""
+    });
   }
-  setMensagem(false)
+  setMensagem(false);
 };
 
   interface RedeSocial {
