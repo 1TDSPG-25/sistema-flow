@@ -8,6 +8,8 @@ import { FiFacebook } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
 import { useState } from "react";
 import useTheme from "../../context/useTheme";
+import emailjs from "@emailjs/browser";
+
 
 export default function Contato() {
 
@@ -17,9 +19,9 @@ export default function Contato() {
   const { isDark } = useTheme()
 
   const mensagemSchema = z.object({
-    nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
-    email: z.email({ message: "Por favor, insira um e-mail válido." }),
-    mensagem: z
+    name: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
+    email: z.email({ message: "E-mail deve conter '@' e '.', insira um e-mail válido." }),
+    message: z
       .string()
       .min(10, "Mensagem deve conter no mínimo 10 caracteres."),
   });
@@ -32,15 +34,40 @@ export default function Contato() {
   });
 
   const onSubmit = async (data: MensagemInput) => {
-    setDadosUsuario(data)
-    setCarregando(true)
+    setDadosUsuario(data);
+    setCarregando(true);
     
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    
-    setCarregando(false)
-    setMensagem(true)
-    reset()
-  }
+
+    try {
+      const response = await emailjs.send (
+        "service_f857e49",
+        "template_m9bu5dr",
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        "_XQqXSasurqGnR7gx"
+      );
+
+      console.log("Resposta do EmailJS:", response);
+
+      if (response.status === 200) {
+        setMensagem(true);
+        setCarregando(false);
+        reset();
+
+      } else {
+        alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+        setCarregando(false);
+      }
+    } catch (error) {
+      alert("Ocorreu um erro ao enviar sua mensagem");
+    } finally {
+      setCarregando(false);
+    }
+  };
 
   const fazerOutraPergunta = () => {
   if (dadosUsuario) {
@@ -182,8 +209,8 @@ export default function Contato() {
                 <h2 className="text-3xl font-bold text-black text-center mb-10">Envie uma mensagem!</h2>
 
                 <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
-                <input id="nome" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
-                {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
+                <input id="name" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("name")}/>
+                {errors.name && (<p className="text-red-500 font-semibold text-sm">{errors.name.message}</p>)}
 
                 
 
@@ -194,8 +221,8 @@ export default function Contato() {
                 
 
                 <label htmlFor="mensagem" className="text-black text-2xl font-bold mb-1 mt-7">Escreva sua mensagem:</label>
-                <textarea id="mensagem" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("mensagem")}></textarea>
-                {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
+                <textarea id="message" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("message")}></textarea>
+                {errors.message && (<p className="text-red-500 font-semibold text-sm">{errors.message.message}</p>)}
                 
 
                 <button
@@ -232,9 +259,9 @@ export default function Contato() {
                     onClick={() => {
                       setMensagem(false)
                       reset({
-                        nome: "",
+                        name: "",
                         email: "",
-                        mensagem: "",
+                        message: "",
                       })
                     }}
                     className="
