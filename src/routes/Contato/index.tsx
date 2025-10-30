@@ -49,6 +49,21 @@ export default function Contato() {
   setMensagem(false)
 };
 
+  interface CardsGerais {
+    icon: React.ReactNode;
+    link: string;
+    title: string;
+    figcaption: string;
+    span: string;
+    text: string;
+  }
+
+  const cardsSimples: CardsGerais[] = [
+    {icon: <FaPhoneAlt size={40} />, link:"", title:"Clique aqui para ver telefones disponíveis", figcaption:"Telefone", span:"Clique aqui", text:"para ver os telefones das farmácias na sua cidade."},
+    {icon: <MdOutlineMail size={40} />, link:"", title:"Clique aqui para enviar mensagem", figcaption:"E-mail", span:"E-mail", text:"contato@megafarmadelivery.com.br"},
+    {icon: <FaMapMarkedAlt size={40} />, link:"", title:"Clique aqui para ver localizações disponíveis", figcaption:"Localização", span:"Clique aqui", text:"para ver as farmácias disponíveis na sua cidade."}
+  ]
+
   interface RedeSocial {
     icon: React.ReactNode;
     link: string;
@@ -110,69 +125,27 @@ export default function Contato() {
                     Confira abaixo os canais disponíveis para entrar em contato conosco:
                 </p>
                   <ul className="flex flex-col gap-7">
-                    <li className="flex">
+                    {cardsSimples.map((cardsSimples, index) => (
+                    <li className="flex" key={index}>
                         <Link 
-                        to=""
+                        to={cardsSimples.link}
                         className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
-                        title="Clique aqui para ver telefones disponíveis"
+                        title={cardsSimples.title}
                         >
                           <figure className="flex items-center gap-3 px-3 py-2">
                             <div className="bg-[#4F39F6] rounded-full p-3 text-white">
-                              <FaPhoneAlt size={40}/>
+                              {cardsSimples.icon}
                             </div>
                             <div className="flex flex-col gap-1 font-bold">
-                              <figcaption className="text-2xl text-white">Telefone</figcaption>
+                              <figcaption className="text-2xl text-white">{cardsSimples.figcaption}</figcaption>
                               <p className="text-white">
-                                <span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.
+                                <span className="underline">{cardsSimples.span}</span> {cardsSimples.text}
                               </p>
                             </div>
                           </figure>
                         </Link>
                     </li>
-                    <li className="flex">
-                        <Link 
-                        to=""
-                        className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
-                        title="Clique aqui para enviar mensagem"
-                        >
-                          <figure className="flex items-center gap-3 px-3 py-2">
-                            <div className="bg-[#4F39F6] rounded-full p-3 text-white">
-                              <MdOutlineMail size={40} />
-                            </div>
-                            <div className="flex flex-col gap-1 font-bold">
-                              <figcaption className="text-2xl text-white">E-mail</figcaption>
-                              <p className="
-                              text-white
-                              max-[890px]:text-[14px]
-                              max-[800px]:text-[12px]
-                              max-md:text-[14px]
-                              
-                              ">
-                                contato@megafarmadelivery.com.br
-                              </p>
-                            </div>
-                          </figure>
-                        </Link>
-                    </li>
-                    <li className="flex">
-                        <Link 
-                        to=""
-                        className="w-full rounded-2xl bg-[#877dd675] hover:bg-[#8c7efa] duration-300"
-                        title="Clique aqui para ver localizações disponíveis"
-                        >
-                          <figure className="flex items-center gap-3 px-3 py-2">
-                            <div className="bg-[#4F39F6] rounded-full p-3 text-white">
-                              <FaMapMarkedAlt size={40}/>
-                            </div>
-                            <div className="flex flex-col gap-1 font-bold">
-                              <figcaption className="text-2xl text-white">Localização</figcaption>
-                              <p className="text-white">
-                                <span className="underline">Clique aqui</span> para ver as farmácias disponíveis na sua cidade.
-                              </p>
-                            </div>
-                          </figure>
-                        </Link>
-                    </li>
+                    ))}
                 </ul>
                 <hr className="text-[#4F39F6]"/>
                 <div>
