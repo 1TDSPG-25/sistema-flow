@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 const loginSchema = z.object({
-  email: z.email({ message: "Por favor, insira um e-mail válido." }),
+  email: z.string().email({ message: "Por favor, insira um e-mail válido." }),
   senha: z.string().min(8, { message: "A senha precisa ter no mínimo 8 caracteres." }),
 });
 
@@ -29,12 +29,18 @@ export default function LoginForm(){
                 const usuarios: TipoUser[] = await response.json();
 
                 const usuarioValido = usuarios.find(
-                    (user) => user.email === data.email.toLowerCase().trim() && user.senha === data.senha
+                    (user) =>
+                      user.email?.toLowerCase().trim() === data.email.toLowerCase().trim() &&
+                      user.senha === data.senha
                 );
 
                 if (usuarioValido) {
                     localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido));
-                    navigate("/");
+                    const authToken = btoa(JSON.stringify({ id: usuarioValido.id ?? usuarioValido.email, ts: Date.now() }));
+                    localStorage.setItem("authToken", authToken);
+                    localStorage.setItem("isLoggedIn", "true");
+
+                    navigate("/", { replace: true });
                 } else {
                     alert("Credenciais Inválidas.");
                     reset();
