@@ -9,6 +9,7 @@ export default function Menu(){
       <Link to="/faq" className="px-2 py-1 hover:text-blue-500 transition-colors">FAQ</Link>
       <Link to="/contato" className="px-2 py-1 hover:text-blue-500 transition-colors">Contato</Link>
       <Link to="/login" className="px-2 py-1 hover:text-blue-500 transition-colors">Login</Link>
+      <Link to="/perfil" className="px-3 py-2 hover:underline">Meu Perfil</Link>
     </nav>
   );
 }

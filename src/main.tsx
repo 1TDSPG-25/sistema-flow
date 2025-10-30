@@ -13,18 +13,23 @@ import Unidade from './routes/Unidades/index.tsx'
 import Home from './routes/Home/index.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
 
+import Perfil from './routes/Perfil/index.tsx';
+
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
-    {path:"/", element:<Home/>},
-    {path:"/login", element:<Login/>},
-    {path:"/cadastro", element:<Cadastro/>},
-    {path:"/produtos", element:<Produtos/>},
-    {path:"/contato", element:<Contato/>},
-    {path:"/faq", element:<Faq/>},
-    {path:"/unidade", element:<Unidade/>},
-    {path:"/home", element:<Home/>}
+    { path:"/", element:<Home/> },
+    { path:"/login", element:<Login/> },
+    { path:"/cadastro", element:<Cadastro/> },
+    { path:"/produtos", element:<Produtos/> },
+    { path:"/contato", element:<Contato/> },
+    { path:"/faq", element:<Faq/> },
+    { path:"/unidade", element:<Unidade/> },
+    { path:"/home", element:<Home/> },
+    { path:"/perfil", element:<Perfil/> },
+    { path:"/perfil/:id", element:<Perfil/> },
   ]
-}], {basename: "/sistema-flow"})
+}], { basename: "/sistema-flow" })
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
