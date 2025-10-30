@@ -1,12 +1,12 @@
-import React from 'react';
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import type { TipoProduto } from "../../types/tipoProduto";
+import useTheme from "../../context/useTheme";
 
-const ProdutosDetail: React.FC = () => {
-    return (
-        <div>
-            <h1>Product Details</h1>
-            <p>Details about the product will go here.</p>
-        </div>
-    );
-};
 
-export default ProdutosDetail;
+
+export default function ProdutoDetail() {
+  const { id } = useParams<{ id: string }>();
+  const [produto, setProduto] = useState<TipoProduto | null>(null);
+  const [loading, setLoading] = useState(true);
+  const theme = useTheme();
