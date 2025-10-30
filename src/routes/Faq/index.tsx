@@ -23,14 +23,14 @@ const faqData: FAQItem[] = [
       "Sim, o sistema é totalmente responsivo e pode ser acessado em smartphones e tablets.",
   },
   {
-    question: "Qual é o prazo de entrega dos pedidos?",
+    question: "Quais são as formas de pagamento aceitas?",
     answer:
-      "O prazo de entrega pode variar de acordo com a sua região. Normalmente, as entregas são realizadas entre 3 e 7 dias úteis após a confirmação do pagamento.",
+      "Aceitamos cartões de crédito, débito, Pix e boletos bancários. O pagamento é processado de forma segura por parceiros certificados.",
   },
   {
-    question: "Quais formas de pagamento são aceitas?",
+    question: "Como acompanho minha entrega?",
     answer:
-      "Aceitamos cartões de crédito, débito, Pix e boleto bancário. Todas as transações são processadas com segurança.",
+      "Após a confirmação do pagamento, você receberá um código de rastreio por e-mail. É possível acompanhar o status diretamente na área do cliente.",
   },
   {
     question: "Como entro em contato com o suporte?",
@@ -53,17 +53,16 @@ export default function FaqPage() {
 
   return (
     <section className="min-h-screen flex justify-center items-center py-20 px-4 transition-colors duration-500">
-      <div className="w-full max-w-4xl bg-gray-50 dark:bg-slate-900 rounded-3xl shadow-2xl p-10 border border-gray-200 dark:border-slate-700">
-        {/* Cabeçalho principal da FAQ */}
+      <div className="w-full max-w-4xl rounded-3xl shadow-2xl p-10 border border-gray-300 dark:border-gray-700">
+        {/* Cabeçalho */}
         <div className="text-center mb-14">
           <div className="flex justify-center mb-4">
-            {/* Ícone SVG */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="url(#gradient)"
               viewBox="0 0 24 24"
               strokeWidth={0}
-              className="w-10 h-10"
+              className="w-10 h-10 drop-shadow-md"
             >
               <defs>
                 <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="1">
@@ -78,11 +77,10 @@ export default function FaqPage() {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">
-            Perguntas Frequentes (FAQ)
-          </h1>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Encontre respostas rápidas para as dúvidas mais comuns sobre o uso da <strong>MegaFarma</strong>.
+          <h1 className="text-4xl font-extrabold mb-3">Perguntas Frequentes (FAQ)</h1>
+          <p className="max-w-2xl mx-auto opacity-80">
+            Encontre respostas rápidas para as dúvidas mais comuns sobre o uso da{" "}
+            <strong>MegaFarma</strong>.
           </p>
         </div>
 
@@ -91,7 +89,7 @@ export default function FaqPage() {
           {faqData.map((item, index) => (
             <article
               key={index}
-              className="bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 p-6 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="p-6 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <button
                 onClick={() => toggleAnswer(index)}
@@ -99,10 +97,10 @@ export default function FaqPage() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <h2 className="text-lg md:text-xl font-semibold">
+                <h2 className="text-lg md:text-xl font-semibold leading-snug">
                   {item.question}
                 </h2>
-                <span className="text-gray-500 dark:text-gray-400 text-2xl font-bold select-none">
+                <span className="text-2xl font-bold select-none opacity-70">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
@@ -113,20 +111,16 @@ export default function FaqPage() {
                   openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
               >
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {item.answer}
-                </p>
+                <p className="leading-relaxed opacity-90">{item.answer}</p>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Seção final de contato (mantida) */}
-        <div className="text-center mt-16 border-t border-gray-200 dark:border-slate-700 pt-10">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-3">
-            Ainda precisa de ajuda?
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto">
+        {/* Seção de contato */}
+        <div className="text-center mt-16 border-t border-gray-300 dark:border-gray-700 pt-10">
+          <h2 className="text-2xl font-semibold mb-3">Ainda precisa de ajuda?</h2>
+          <p className="mb-8 max-w-xl mx-auto opacity-80">
             Nossa equipe de suporte está pronta para ajudar você com qualquer dúvida.
             Entre em contato conosco e retornaremos o mais rápido possível.
           </p>
