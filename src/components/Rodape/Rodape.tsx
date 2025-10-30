@@ -1,7 +1,7 @@
 import useTheme from "../../context/useTheme"; // usa o seu hook normalmente
 
 export default function Rodape() {
-
+  const { isDark } = useTheme(); // pega o estado do tema
   return (
     <>
       {/* favor, manter este rodapé fixo na parte inferior da página */}
