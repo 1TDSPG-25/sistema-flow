@@ -264,8 +264,12 @@ export default function Contato() {
                     <button 
                     title="Clique aqui para voltar"
                     onClick={() => {
-                      reset()
                       setMensagem(false)
+                      reset({
+                        nome: "",
+                        email: "",
+                        mensagem: "",
+                      })
                     }}
                     className="
                     p-3 border-3 border-[#4F39F6] rounded-[10px]
