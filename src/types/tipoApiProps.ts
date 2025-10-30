@@ -1,4 +1,4 @@
-export type apiProps = {
+export type TipoApiProps = {
   id?: string;
   title: string;
   author: string;
@@ -12,6 +12,3 @@ export type apiProps = {
   }; 
 };
 
-export type apiResponse = {
-  articles: apiProps[];
-};
