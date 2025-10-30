@@ -73,7 +73,7 @@ export default function Contato() {
       </div>
 
       <div className="
-      px-60 -mt-28 relative z-30
+      px-55 -mt-28 relative z-30
       max-xl:px-25
       max-lg:px-5
       max-md:px-12
@@ -249,14 +249,17 @@ export default function Contato() {
               px-10 py-7 font-bold bg-[#FFFFFF] rounded-r-2xl 
               max-md:w-full 
             ">
-                <h4 className="text-4xl text-center">
+                <h4 className="text-4xl text-center max-[870px]:text-3xl">
                   Mensagem enviada com sucesso! Obrigado pelo contato.
                 </h4>
                 <span>
                   <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
                 </span>
-                <h5 className="text-3xl">Deseja fazer outra pergunta?</h5>
-                 <ul className="flex justify-around w-full">
+                <h5 className="text-3xl text-center max-[870px]:text-2xl">Deseja fazer outra pergunta?</h5>
+                 <ul className="
+                 flex justify-around w-full
+                 max-[870px]:flex-col max-[870px]:gap-3
+                 ">
                   <li>
                     <button 
                     title="Clique aqui para voltar"
@@ -268,6 +271,7 @@ export default function Contato() {
                     p-3 border-3 border-[#4F39F6] rounded-[10px]
                     text-[#4F39F6] text-lg cursor-pointer
                     hover:bg-[#9479ff25] duration-300
+                    max-[870px]:w-full
                     ">
                       Não, obrigado
                     </button>
@@ -280,6 +284,7 @@ export default function Contato() {
                     px-7 py-3 border-3 border-[#4F39F6] rounded-[10px]
                     bg-[#4F39F6] text-[#FFFFFF] text-lg cursor-pointer
                     hover:bg-[#7A5AF8] duration-300
+                    max-[870px]:w-full
                     ">
                       Sim, gostaria
                     </button>
