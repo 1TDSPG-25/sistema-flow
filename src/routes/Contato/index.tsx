@@ -81,7 +81,7 @@ export default function Contato() {
   ]
 
   return (
-    <section>
+    <section className="pb-20">
       <div
         className={`
       relative bg-[url('https://res.cloudinary.com/dt26mfzpw/image/upload/v1761654366/banner-contato_oowzup.png')] bg-cover bg-center
@@ -183,22 +183,22 @@ export default function Contato() {
           bg-[#FFFFFF] rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7
           max-md:w-full          
           ">
-                <h2 className="text-3xl font-bold text-black text-center mb-10">Envie uma mensagem!</h2>
+                <h2 className="text-black text-3xl font-bold text-center mb-10">Envie uma mensagem!</h2>
 
-                <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
-                <input id="nome" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
+                <label htmlFor="nome" className={`text-black text-2xl font-bold mb-1`}>Nome:</label>
+                <input id="nome" type="text" placeholder="Digite seu nome" className="text-black border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("nome")}/>
                 {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
 
                 
 
                 <label htmlFor="email" className="text-black text-2xl font-bold mb-1 mt-7">E-mail:</label>
-                <input id="email" type="email" placeholder="Digite seu e-mail" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
+                <input id="email" type="email" placeholder="Digite seu e-mail" className="text-black border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
                 {errors.email && (<p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>)}
 
                 
 
                 <label htmlFor="mensagem" className="text-black text-2xl font-bold mb-1 mt-7">Escreva sua mensagem:</label>
-                <textarea id="mensagem" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("mensagem")}></textarea>
+                <textarea id="mensagem" placeholder="Digite sua mensagem" className="text-black resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("mensagem")}></textarea>
                 {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
                 
 
@@ -219,13 +219,13 @@ export default function Contato() {
               px-10 py-7 font-bold bg-[#FFFFFF] rounded-r-2xl 
               max-md:w-full 
             ">
-                <h4 className="text-4xl text-center max-[870px]:text-3xl">
+                <h4 className="text-4xl text-black text-center max-[870px]:text-3xl">
                   Mensagem enviada com sucesso! Obrigado pelo contato.
                 </h4>
                 <span>
                   <img src="https://res.cloudinary.com/dtbgsboo5/image/upload/v1761775582/icon-check_ao22ng.png" alt="Imagem de check com a cor verde" />
                 </span>
-                <h5 className="text-3xl text-center max-[870px]:text-2xl">Deseja fazer outra pergunta?</h5>
+                <h5 className="text-3xl text-black text-center max-[870px]:text-2xl">Deseja fazer outra pergunta?</h5>
                  <ul className="
                  flex justify-around w-full
                  max-[870px]:flex-col max-[870px]:gap-3
