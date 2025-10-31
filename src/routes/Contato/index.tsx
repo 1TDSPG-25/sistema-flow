@@ -8,6 +8,8 @@ import { FiFacebook } from "react-icons/fi";
 import { BsTwitterX } from "react-icons/bs";
 import { useState } from "react";
 import useTheme from "../../context/useTheme";
+import emailjs from "@emailjs/browser";
+
 
 export default function Contato() {
   const theme = useTheme();
@@ -18,9 +20,9 @@ export default function Contato() {
   const [carregando, setCarregando] = useState<boolean>(false);
 
   const mensagemSchema = z.object({
-    nome: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
-    email: z.email({ message: "Por favor, insira um e-mail válido." }),
-    mensagem: z
+    name: z.string().min(2, "Nome deve conter no mínimo 2 caracteres."),
+    email: z.email({ message: "E-mail deve conter '@' e '.', insira um e-mail válido." }),
+    message: z
       .string()
       .min(10, "Mensagem deve conter no mínimo 10 caracteres."),
   });
@@ -35,20 +37,45 @@ export default function Contato() {
   const onSubmit = async (data: MensagemInput) => {
     setDadosUsuario(data);
     setCarregando(true);
+    
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await emailjs.send (
+        "service_f857e49",
+        "template_m9bu5dr",
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        "_XQqXSasurqGnR7gx"
+      );
 
-    setCarregando(false);
-    setMensagem(true);
-    reset();
+      console.log("Resposta do EmailJS:", response);
+
+      if (response.status === 200) {
+        setMensagem(true);
+        setCarregando(false);
+        reset();
+
+      } else {
+        alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
+        setCarregando(false);
+      }
+    } catch (error) {
+      alert("Ocorreu um erro ao enviar sua mensagem");
+    } finally {
+      setCarregando(false);
+    }
   };
 
   const fazerOutraPergunta = () => {
     if (dadosUsuario) {
       reset({
-        nome: dadosUsuario.nome,
+        name: dadosUsuario.name,
         email: dadosUsuario.email,
-        mensagem: ""
+        message: ""
       });
     }
     setMensagem(false);
@@ -160,17 +187,20 @@ export default function Contato() {
             <form onSubmit={handleSubmit(onSubmit)} title="Clique para enviar sua mensagem." className={`rounded-r-2xl w-1/2 flex flex-col justify-center px-10 py-7 max-md:w-full transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-[#FFFFFF]"}`}>
               <h2 className={`text-3xl font-bold text-center mb-10 transition-colors duration-500 ${isDark ? "text-gray-100" : "text-black"}`}>Envie uma mensagem!</h2>
 
-              <label htmlFor="nome" className={`text-2xl font-bold mb-1 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>Nome:</label>
-              <input id="nome" type="text" placeholder="Digite seu nome" className={`border-2 rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 w-full transition-colors duration-500 ${isDark ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400" : "bg-white border-black text-black placeholder-gray-400"}`} {...register("nome")}/>
-              {errors.nome && (<p className="text-red-500 font-semibold text-sm">{errors.nome.message}</p>)}
+                <label htmlFor="nome" className="text-black text-2xl font-bold mb-1">Nome:</label>
+                <input id="name" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("name")}/>
+                {errors.name && (<p className="text-red-500 font-semibold text-sm">{errors.name.message}</p>)}
 
               <label htmlFor="email" className={`text-2xl font-bold mb-1 mt-7 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>E-mail:</label>
               <input id="email" type="email" placeholder="Digite seu e-mail" className={`border-2 rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 w-full transition-colors duration-500 ${isDark ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400" : "bg-white border-black text-black placeholder-gray-400"}`} {...register("email")}/>
               {errors.email && (<p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>)}
 
-              <label htmlFor="mensagem" className={`text-2xl font-bold mb-1 mt-7 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>Escreva sua mensagem:</label>
-              <textarea id="mensagem" placeholder="Digite sua mensagem" className={`resize-none h-[100px] border-2 rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 w-full transition-colors duration-500 ${isDark ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400" : "bg-white border-black text-black placeholder-gray-400"}`} {...register("mensagem")}></textarea>
-              {errors.mensagem && (<p className="text-red-500 font-semibold text-sm">{errors.mensagem.message}</p>)}
+                
+
+                <label htmlFor="mensagem" className="text-black text-2xl font-bold mb-1 mt-7">Escreva sua mensagem:</label>
+                <textarea id="message" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("message")}></textarea>
+                {errors.message && (<p className="text-red-500 font-semibold text-sm">{errors.message.message}</p>)}
+                
 
               <button
                 type="submit" 
@@ -195,10 +225,10 @@ export default function Contato() {
                     onClick={() => {
                       setMensagem(false);
                       reset({
-                        nome: "",
+                        name: "",
                         email: "",
-                        mensagem: "",
-                      });
+                        message: "",
+                      })
                     }}
                     className="p-3 border-3 border-[#4F39F6] rounded-[10px] text-[#4F39F6] text-lg cursor-pointer hover:bg-[#9479ff25] duration-300 max-[870px]:w-full"
                   >
