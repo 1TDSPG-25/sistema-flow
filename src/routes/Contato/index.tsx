@@ -50,11 +50,9 @@ export default function Contato() {
 
       if (response.status === 200) {
         setMensagem(true);
-        setCarregando(false);
         reset();
       } else {
         alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente.");
-        setCarregando(false);
       }
     } catch {
       alert("Ocorreu um erro ao enviar sua mensagem");
@@ -105,15 +103,21 @@ export default function Contato() {
               </p>
 
               {/* Card de telefone */}
-              <div className="w-full rounded-2xl bg-[#877dd675] flex items-center gap-3 px-3 py-2 mb-4">
+              <Link
+                to="/unidade"
+                className="w-full rounded-2xl bg-[#877dd675] flex items-center gap-3 px-3 py-2 mb-4 hover:bg-[#8c7efa] transition-colors duration-300"
+                title="Clique aqui para ver os telefones das farmácias na sua cidade"
+              >
                 <div className="bg-[#4F39F6] rounded-full p-3 text-white">
                   <FaPhoneAlt size={40} />
                 </div>
                 <div className="flex flex-col gap-1 font-bold">
                   <figcaption className="text-2xl text-white">Telefone</figcaption>
-                  <p className="text-white"><span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.</p>
+                  <p className="text-white">
+                    <span className="underline">Clique aqui</span> para ver os telefones das farmácias na sua cidade.
+                  </p>
                 </div>
-              </div>
+              </Link>
 
               {/* Card de e-mail */}
               <div className="w-full rounded-2xl bg-[#877dd675] flex items-center gap-3 px-3 py-2 mb-4">
@@ -126,7 +130,7 @@ export default function Contato() {
                 </div>
               </div>
 
-              {/* Card de localização - link funcionando */}
+              {/* Card de localização */}
               <Link
                 to="/unidade"
                 className="w-full rounded-2xl bg-[#877dd675] flex items-center gap-3 px-3 py-2 mb-4 hover:bg-[#8c7efa] transition-colors duration-300"
