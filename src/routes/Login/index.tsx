@@ -41,6 +41,7 @@ export default function LoginForm(){
                     localStorage.setItem("isLoggedIn", "true");
 
                     navigate("/", { replace: true });
+                    window.location.reload();
                 } else {
                     alert("Credenciais Inválidas.");
                     reset();
