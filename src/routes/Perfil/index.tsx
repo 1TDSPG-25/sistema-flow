@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import type { TipoUser } from "../../types/tipoUsuario";
-import { FiUser, FiMail, FiCreditCard, FiHash, FiAlertCircle, FiImage, FiLogOut } from "react-icons/fi";
+import { FiUser, FiMail, FiCreditCard, FiAlertCircle, FiImage, FiLogOut } from "react-icons/fi";
+import useTheme from "../../context/useTheme";
 
 const API_USERS = "http://localhost:3001/usuarios";
 
 export default function Perfil() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isDark } = useTheme();
 
   const [user, setUser] = useState<TipoUser | null>(null);
   const [erro, setErro] = useState<string | null>(null);
@@ -113,20 +115,18 @@ export default function Perfil() {
 
   const Avatar = () =>
     user.avatar ? (
-      <img src={user.avatar} alt={`Avatar de ${user.nome}`} className="h-28 w-28 rounded-full object-cover border" />
+      <img src={user.avatar} alt={`Avatar de ${user.nome}`} className="h-28 w-28 rounded-full object-cover border-slate-900 border-4" />
     ) : (
-      <div className="h-28 w-28 rounded-full border flex items-center justify-center text-gray-400" aria-label="Usuário sem avatar" title="Usuário sem avatar">
+      <div className="h-28 w-28 rounded-full border border-slate-900 flex items-center justify-center text-gray-400" aria-label="Usuário sem avatar" title="Usuário sem avatar">
         <FiImage className="text-2xl" aria-hidden />
       </div>
     );
-
-  const InfoPill = ({ icon: Icon, text }: { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; text: string }) => (
-    <span className="inline-flex items-center gap-2 rounded-full border px-2 py-1 text-sm">
-      <Icon aria-hidden />
-      <span>{text}</span>
-    </span>
-  );
-
+  // const InfoPill = ({ icon: Icon, text }: { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; text: string }) => (
+  //   <span className="inline-flex items-center gap-2 rounded-full border border-slate-900 px-2 py-1 text-sm">
+  //     <Icon aria-hidden />
+  //     <span>{text}</span>
+  //   </span>
+  // );
   return (
     <section className="max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-start">
@@ -140,41 +140,35 @@ export default function Perfil() {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col items-center rounded-xl border p-4 bg-white/60">
+  <div className={`mt-4 flex flex-col items-center rounded-xl border-4 p-4 ${isDark ? 'bg-slate-800 border-slate-700' : 'bg-white border-black'}`}>
         <Avatar />
-        <p className="mt-3 text-2xl font-semibold text-gray-900">{(user as any).nomeUser ?? "—"}</p>
-
+        <p className={`mt-3 text-2xl font-semibold ${isDark ? 'text-amber-50' : 'text-gray-900'}`}>{user.nomeUser ?? user.nome ?? "—"}</p>
         <div className="mt-6 w-full">
-          <div className="text-center">
-            <p className="text-lg font-medium truncate">{user.nome || "—"}</p>
-          </div>
-
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
             <InfoPill icon={FiHash} text={`ID: ${user.id}`} />
-          </div>
-
+          </div> */}
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border p-3">
-              <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <div className={`rounded-lg border p-3 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
+              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
                 <FiUser aria-hidden /> Nome completo
               </dt>
-              <dd className="text-sm mt-1">{user.nome || "—"}</dd>
+              <dd className={`text-sm mt-1 ${isDark ? '' : 'text-black'}`}>{user.nome || "—"}</dd>
             </div>
 
-            <div className="rounded-lg border p-3">
-              <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <div className={`rounded-lg border p-3 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
+              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
                 <FiMail aria-hidden /> E-mail
               </dt>
-              <dd className="text-sm mt-1">{user.email || "—"}</dd>
+              <dd className={`text-sm mt-1 ${isDark ? '' : 'text-black'}`}>{user.email || "—"}</dd>
             </div>
 
-            <div className="rounded-lg border p-3 sm:col-span-2">
-              <dt className="text-xs uppercase text-gray-500 flex items-center gap-2">
+            <div className={`rounded-lg border p-3 sm:col-span-2 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
+              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
                 <FiCreditCard aria-hidden /> CPF
               </dt>
-              <dd className="text-sm mt-1 flex items-center justify-between">
+              <dd className={`text-sm mt-1 flex items-center justify-between ${isDark ? '' : 'text-black'}`}>
                 <span>{mostrarCpf ? user.cpf || "—" : maskCpfStart(user.cpf)}</span>
-                <button onClick={() => setMostrarCpf((s) => !s)} className="px-2 py-1 text-sm bg-indigo-600 text-white rounded">
+                <button onClick={() => setMostrarCpf((s) => !s)} className="px-4 py-2 rounded bg-slate-700 text-amber-50 hover:bg-slate-600">
                   {mostrarCpf ? "Ocultar" : "Mostrar"}
                 </button>
               </dd>
@@ -182,7 +176,7 @@ export default function Perfil() {
           </div>
 
           <div className="mt-4 flex justify-center gap-3">
-            <Link to="/" className="px-4 py-2 bg-gray-200 rounded self-center">Voltar</Link>
+            <Link to="/" className="px-4 py-2 rounded self-center bg-slate-700 text-amber-50 hover:bg-slate-600">Voltar</Link>
           </div>
         </div>
       </div>
@@ -210,6 +204,7 @@ function coerceUser(found: unknown): TipoUser {
   return {
     id: toNumber(f.id),
     nome: toString(f.nome ?? ''),
+    nomeUser: toString(f.nomeUser ?? ''),
     cpf: toString(f.cpf ?? ''),
     email: toString(f.email ?? ''),
     senha: toString(f.senha ?? ''),
