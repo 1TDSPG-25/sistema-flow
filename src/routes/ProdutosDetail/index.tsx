@@ -98,7 +98,6 @@ export default function ProdutoDetail() {
                   src={produto.avatar}
                   alt={produto.nome}
                   className="w-full h-full object-contain"
-section-end: _952b1b
                 />
               </div>
             </div>
@@ -113,6 +112,7 @@ section-end: _952b1b
               </h1>
               
               <div className="mb-6">
+section-end: _952b1b
                 <p className="text-4xl font-bold text-indigo-600 mb-2">
                   R$ {produto.preco.toFixed(2)}
                 </p>
@@ -121,10 +121,8 @@ section-end: _952b1b
                 }`}>
                   Em estoque • Pronta entrega
                 </p>
-section-end: _3c8e40
               </div>
 
-             
               <div className="space-y-4 mb-8">
                 <div>
                   <h3 className={`font-semibold mb-2 transition-colors duration-500 ${
@@ -136,19 +134,32 @@ section-end: _3c8e40
                     <p className={`transition-colors duration-500 ${
                       isDark ? "text-gray-300" : "text-gray-600"
                     }`}>
-                    s <span className="font-medium">Fabricação:</span>{" "}
+                      <span className="font-medium">Fabricação:</span>{" "}
                       {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
                     </p>
                     <p className={`transition-colors duration-500 ${
                       isDark ? "text-gray-300" : "text-gray-600"
                     }`}>
                       <span className="font-medium">Validade:</span>{" "}
+section-end: _3c8e40
                       {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
                     </p>
                   </div>
                 </div>
               </div>
-
+section-end: _599a2c
+section-end: _c25d7b
+              
+              
+              <button
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-300 ${
+                  isDark
+                    ? "bg-indigo-600 hover:bg-indigo-700 text-white"
+                    : "bg-indigo-500 hover:bg-indigo-600 text-white"
+                }`}
+              >
+                Adicionar ao Carrinho
+              </button>
             </div>
           </div>
         </div>
