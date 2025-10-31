@@ -188,15 +188,15 @@ export default function Contato() {
               <h2 className={`text-3xl font-bold text-center mb-10 transition-colors duration-500 ${isDark ? "text-gray-100" : "text-black"}`}>Envie uma mensagem!</h2>
 
                 <label htmlFor="nome" className={`text-2xl font-bold mb-1 mt-7 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>Nome:</label>
-                <input id="name" type="text" placeholder="Digite seu nome" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("name")}/>
+                <input id="name" type="text" placeholder="Digite seu nome" className="border-2 border-[#4F39F6] rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("name")}/>
                 {errors.name && (<p className="text-red-500 font-semibold text-sm">{errors.name.message}</p>)}
 
                 <label htmlFor="email" className={`text-2xl font-bold mb-1 mt-7 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>E-mail:</label>
-                <input id="email" type="email" placeholder="Digite seu e-mail" className="border-2 border-black rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
+                <input id="email" type="email" placeholder="Digite seu e-mail" className="border-2 border-[#4F39F6] rounded-md p-2 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("email")}/>
                 {errors.email && (<p className="text-red-500 font-semibold text-sm">{errors.email.message}</p>)}
 
                 <label htmlFor="mensagem" className={`text-2xl font-bold mb-1 mt-7 transition-colors duration-500 ${isDark ? "text-gray-200" : "text-black"}`}>Escreva sua mensagem:</label>
-                <textarea id="message" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-black rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("message")}></textarea>
+                <textarea id="message" placeholder="Digite sua mensagem" className="resize-none h-[100px] border-2 border-[#4F39F6] rounded-md p-2 mb-1 focus:outline-none focus:border-[#4F39F6] focus:border-b-4 placeholder:text-sm placeholder:text-gray-400 placeholder:font-bold" {...register("message")}></textarea>
                 {errors.message && (<p className="text-red-500 font-semibold text-sm">{errors.message.message}</p>)}
                 
 
