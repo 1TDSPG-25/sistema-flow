@@ -117,3 +117,22 @@ export default function AdminProdutos() {
       setError("Falha ao remover o produto.");
     }
   }
+
+  function abrirNovo(): void {
+    setEditing(null);
+    setFormNome("");
+    setFormDataFabricacao("");
+    setFormValidade("");
+    setFormValor(0);
+    setShowForm(true);
+  }
+
+  // 🔹 Abrir formulário para editar produto
+  function abrirEditar(p: Produto): void {
+    setEditing(p);
+    setFormNome(p.nome);
+    setFormDataFabricacao(p.dataFabricacao);
+    setFormValidade(p.validade);
+    setFormValor(p.valor);
+    setShowForm(true);
+  }
