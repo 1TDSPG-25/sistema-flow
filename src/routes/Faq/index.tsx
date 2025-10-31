@@ -54,7 +54,6 @@ export default function FaqPage() {
   return (
     <section className="min-h-screen flex justify-center items-center py-20 px-4 transition-colors duration-500">
       <div className="w-full max-w-4xl rounded-3xl shadow-2xl p-10 border border-gray-300 dark:border-gray-700">
-        {/* Cabeçalho */}
         <div className="text-center mb-14">
           <div className="flex justify-center mb-4">
             <svg
@@ -86,14 +85,12 @@ export default function FaqPage() {
           </p>
         </div>
 
-        {/* Lista de perguntas */}
         <div className="space-y-5">
           {faqData.map((item, index) => (
             <article
               key={index}
               className="relative p-6 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
             >
-              {/* Brilho suave ao passar o cursor */}
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 pointer-events-none"></div>
 
               <button
@@ -103,7 +100,6 @@ export default function FaqPage() {
                 aria-controls={`faq-answer-${index}`}
               >
                 <div className="flex items-center gap-3">
-                  {/* Ícone de interrogação */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -123,7 +119,6 @@ export default function FaqPage() {
                   </h2>
                 </div>
 
-                {/* Seta animada */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -131,7 +126,9 @@ export default function FaqPage() {
                   strokeWidth={2}
                   stroke="currentColor"
                   className={`w-6 h-6 transform transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180 text-indigo-600" : "rotate-0 opacity-70"
+                    openIndex === index
+                      ? "rotate-180 text-indigo-600"
+                      : "rotate-0 opacity-70"
                   }`}
                 >
                   <path
@@ -148,23 +145,41 @@ export default function FaqPage() {
                   openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
               >
-                <p className="leading-relaxed opacity-90 relative z-10">{item.answer}</p>
+                <p className="leading-relaxed opacity-90 relative z-10">
+                  {item.answer}
+                </p>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Seção de contato */}
         <div className="text-center mt-16 border-t border-gray-300 dark:border-gray-700 pt-10">
-          <h2 className="text-2xl font-semibold mb-3">Ainda precisa de ajuda?</h2>
+          <h2 className="text-2xl font-semibold mb-3">
+            Ainda precisa de ajuda?
+          </h2>
           <p className="mb-8 max-w-xl mx-auto opacity-80">
             Nossa equipe de suporte está pronta para ajudar você com qualquer dúvida.
             Entre em contato conosco e retornaremos o mais rápido possível.
           </p>
+
           <button
             onClick={handleContactRedirect}
-            className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="mx-auto flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0L12 13.5 2.25 6.75"
+              />
+            </svg>
             Entrar em contato
           </button>
         </div>
