@@ -73,9 +73,9 @@ export default function Contato() {
   const fazerOutraPergunta = () => {
     if (dadosUsuario) {
       reset({
-        nome: dadosUsuario.nome,
+        name: dadosUsuario.name,
         email: dadosUsuario.email,
-        mensagem: ""
+        message: ""
       });
     }
     setMensagem(false);
