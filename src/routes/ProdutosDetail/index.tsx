@@ -26,14 +26,12 @@ export default function ProdutoDetail() {
       }
     };
     fetchProduto();
-  }, [id]); 
-
+  }, [id]);
 
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
         <div className="text-center">
-          {/* Adiciona um spinner simples de CSS (Tailwind) */}
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
           <p className="mt-4">Carregando produto...</p>
         </div>
@@ -41,7 +39,24 @@ export default function ProdutoDetail() {
     );
   }
 
+ 
+  if (!produto) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Produto não encontrado</h2>
+          <Link 
+            to="/produtos" 
+            className="px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-600 text-white"
+          >
+            Voltar para produtos
+          </Link>
+        </div>
+      </main>
+    );
+  }
 
+ 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
       <div className="container mx-auto px-4 py-8">
@@ -50,8 +65,17 @@ export default function ProdutoDetail() {
         </Link>
 
         <div className="p-8 rounded-xl shadow-md max-w-4xl mx-auto bg-white">
-          <h1 className="text-3xl font-bold mb-4">Página de Detalhe do Produto</h1>
-          <p>Carregando dados para o produto com ID: <strong>{id}</strong></p>
+         
+          <h1 className="text-3xl font-bold mb-4">{produto.nome}</h1>
+        
+          <div className="mb-6">
+            <p className="text-4xl font-bold text-indigo-600 mb-2">
+             
+              R$ {produto.preco.toFixed(2)}
+            </p>
+          </div>
+
+          
         </div>
       </div>
     </main>
