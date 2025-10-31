@@ -61,30 +61,31 @@ export default function LoginForm() {
     }
   };
 
-  return(
-    <main className="p-8 pb-[50vh]">
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
+  const bgClass = isDark ? "bg-gray-900" : "bg-gray-100";
+  const cardClass = isDark
+    ? "bg-gray-800 border border-gray-700 text-gray-100"
+    : "bg-white border border-gray-300 text-gray-900";
+  const labelClass = isDark ? "text-gray-200" : "text-gray-700";
+  const inputClass = isDark
+    ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
+    : "bg-white border-gray-300 text-gray-900 placeholder-gray-400";
+  const linkClass = isDark ? "hover:text-blue-400" : "hover:text-blue-500";
+
+  return (
+    <main className={`p-8 min-h-screen flex items-center justify-center ${bgClass} transition-colors duration-500`}>
+      <div className={`p-8 rounded-xl shadow-md w-full max-w-md ${cardClass} transition-colors duration-500`}>
+        <h2 className="text-2xl font-bold mb-6 text-center">Página de Login</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Campo de e-mail */}
           <div>
-            <label
-              htmlFor="email"
-              className={`block text-sm font-medium transition-colors duration-500 ${
-                isDark ? "text-gray-200" : "text-gray-700"
-              }`}
-            >
+            <label htmlFor="email" className={`block text-sm font-medium ${labelClass}`}>
               E-mail
             </label>
             <input
               id="email"
               type="email"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${
-                isDark
-                  ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
-                  : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-              }`}
+              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
               {...register("email")}
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
@@ -92,22 +93,13 @@ export default function LoginForm() {
 
           {/* Campo de senha */}
           <div>
-            <label
-              htmlFor="senha"
-              className={`block text-sm font-medium transition-colors duration-500 ${
-                isDark ? "text-gray-200" : "text-gray-700"
-              }`}
-            >
+            <label htmlFor="senha" className={`block text-sm font-medium ${labelClass}`}>
               Senha
             </label>
             <input
               id="senha"
               type="password"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${
-                isDark
-                  ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
-                  : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-              }`}
+              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
               {...register("senha")}
             />
             {errors.senha && <p className="text-red-500 text-sm">{errors.senha.message}</p>}
@@ -122,13 +114,9 @@ export default function LoginForm() {
           </button>
 
           {/* Link de cadastro */}
-          <p
-            className={`block text-sm sm:text-base mt-4 text-center transition-colors duration-500 ${
-              isDark ? "text-gray-200" : "text-gray-700"
-            }`}
-          >
+          <p className={`block text-sm sm:text-base mt-4 text-center ${labelClass}`}>
             Caso não tenha um usuário, clique em{" "}
-            <Link to="/cadastro" className="hover:underline hover:text-blue-500 font-bold">
+            <Link to="/cadastro" className={`hover:underline font-bold ${linkClass}`}>
               Cadastrar
             </Link>
           </p>
@@ -137,4 +125,3 @@ export default function LoginForm() {
     </main>
   );
 }
- 
