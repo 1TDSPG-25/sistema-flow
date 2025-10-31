@@ -61,24 +61,10 @@ export default function LoginForm() {
     }
   };
 
-  return (
-    <main
-      className={`min-h-screen flex items-center justify-center transition-colors duration-500 px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 ${
-        isDark ? "bg-gray-900 text-gray-200" : "bg-gray-100 text-gray-900"
-      }`}
-    >
-      <div
-        className={`p-6 sm:p-8 md:p-10 lg:p-12 rounded-xl shadow-md w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl transition-colors duration-500 ${
-          isDark ? "bg-gray-800 text-gray-200" : "bg-white text-gray-800"
-        }`}
-      >
-        <h2
-          className={`text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center transition-colors duration-500 ${
-            isDark ? "text-gray-100" : "text-gray-800"
-          }`}
-        >
-          Página de Login
-        </h2>
+  return(
+    <main className="p-8 pb-[50vh]">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Campo de e-mail */}
