@@ -92,23 +92,22 @@ export default function ProdutoDetail() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-           
             <div className="flex items-center justify-center">
               <div className="w-full h-80 flex items-center justify-center rounded-lg overflow-hidden bg-white p-4">
                 <img
                   src={produto.avatar}
                   alt={produto.nome}
                   className="w-full h-full object-contain"
+section-end: _952b1b
                 />
               </div>
             </div>
             
-           
             <div>
               <h1
                 className={`text-3xl font-bold mb-4 transition-colors duration-500 ${
                   isDark ? "text-gray-100" : "text-gray-800"
-          _     }`}
+                }`}
               >
                 {produto.nome}
               </h1>
@@ -122,9 +121,35 @@ export default function ProdutoDetail() {
                 }`}>
                   Em estoque • Pronta entrega
                 </p>
+section-end: _3c8e40
               </div>
+
+             
+              <div className="space-y-4 mb-8">
+                <div>
+                  <h3 className={`font-semibold mb-2 transition-colors duration-500 ${
+                    isDark ? "text-gray-200" : "text-gray-700"
+                  }`}>
+                    Informações do Produto
+                  </h3>
+                  <div className="space-y-2">
+                    <p className={`transition-colors duration-500 ${
+                      isDark ? "text-gray-300" : "text-gray-600"
+                    }`}>
+                    s <span className="font-medium">Fabricação:</span>{" "}
+                      {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
+                    </p>
+                    <p className={`transition-colors duration-500 ${
+                      isDark ? "text-gray-300" : "text-gray-600"
+                    }`}>
+                      <span className="font-medium">Validade:</span>{" "}
+                      {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
-  
           </div>
         </div>
       </div>
