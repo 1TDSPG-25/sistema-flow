@@ -12,11 +12,12 @@
     "api": "json-server --watch ./src/data/db.json  --port 3001",
     "predeploy": "tsc -b && vite build",
     "deploy": "gh-pages -d dist"
-
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/vite": "^4.1.14",
+    "emailjs-com": "^3.2.0",
     "postcss": "^8.5.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
