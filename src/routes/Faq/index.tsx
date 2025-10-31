@@ -91,16 +91,19 @@ export default function FaqPage() {
           {faqData.map((item, index) => (
             <article
               key={index}
-              className="p-6 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="relative p-6 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
             >
+              {/* Brilho suave ao passar o cursor */}
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 pointer-events-none"></div>
+
               <button
                 onClick={() => toggleAnswer(index)}
-                className="flex justify-between items-center w-full text-left focus:outline-none"
+                className="flex justify-between items-center w-full text-left focus:outline-none relative z-10"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
                 <div className="flex items-center gap-3">
-                  {/* Ícone decorativo (exemplo: ponto de interrogação) */}
+                  {/* Ícone de interrogação */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -120,7 +123,7 @@ export default function FaqPage() {
                   </h2>
                 </div>
 
-                {/* Seta que gira ao abrir */}
+                {/* Seta animada */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -145,7 +148,7 @@ export default function FaqPage() {
                   openIndex === index ? "max-h-40 mt-4" : "max-h-0"
                 }`}
               >
-                <p className="leading-relaxed opacity-90">{item.answer}</p>
+                <p className="leading-relaxed opacity-90 relative z-10">{item.answer}</p>
               </div>
             </article>
           ))}
