@@ -32,7 +32,7 @@ export default function Menu() {
     { path: "/contato", label: "Contato" },
     isLoggedIn
       ? { path: "/perfil", label: avatar }
-      : { path: "/login", label: loginIcon }, // 👈 Ícone no lugar do texto
+      : { path: "/login", label: loginIcon },
   ];
 
   return (
