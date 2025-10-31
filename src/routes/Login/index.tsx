@@ -29,12 +29,19 @@ export default function LoginForm(){
                 const usuarios: TipoUser[] = await response.json();
 
                 const usuarioValido = usuarios.find(
-                    (user) => user.email === data.email.toLowerCase().trim() && user.senha === data.senha
+                    (user) =>
+                      user.email?.toLowerCase().trim() === data.email.toLowerCase().trim() &&
+                      user.senha === data.senha
                 );
 
                 if (usuarioValido) {
                     localStorage.setItem("usuarioLogado", JSON.stringify(usuarioValido));
-                    navigate("/");
+                    const authToken = btoa(JSON.stringify({ id: usuarioValido.id ?? usuarioValido.email, ts: Date.now() }));
+                    localStorage.setItem("authToken", authToken);
+                    localStorage.setItem("isLoggedIn", "true");
+
+                    navigate("/", { replace: true });
+                    window.location.reload();
                 } else {
                     alert("Credenciais Inválidas.");
                     reset();
@@ -45,7 +52,7 @@ export default function LoginForm(){
         };
 
     return(
-        <main>
+        <main className="mb-0 p-[20vh]">
             <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md mx-auto justify-center items-center mt-15">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Página de Login</h2>
 
