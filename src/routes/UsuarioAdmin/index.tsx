@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-// 💊 Tipo do produto
+ 
 export type Produto = {
   id?: number;
   nome: string;
@@ -9,46 +8,39 @@ export type Produto = {
   validade: string;
   valor: number;
 };
-
-// 🌐 URL da API
-const API_URL = import.meta.env.VITE_API_URL_PRODUTOS || "http://localhost:3001/produtos";
-
+ 
+const API_URL =
+  import.meta.env.VITE_API_URL_PRODUTOS || "http://localhost:3001/produtos";
+ 
 export default function AdminProdutos() {
-  // =========================
-  // ⚡ Estados principais
-  // =========================
-  const [produtos, setProdutos] = useState<Produto[]>([]); // lista de produtos
-  const [loading, setLoading] = useState<boolean>(true); // carregamento da lista
-  const [saving, setSaving] = useState<boolean>(false); // status de salvamento
-  const [showForm, setShowForm] = useState<boolean>(false); // exibir modal do formulário
-  const [editing, setEditing] = useState<Produto | null>(null); // produto que está sendo editado
-
-  // =========================
-  // ⚡ Estados do formulário
-  // =========================
-  const [formNome, setFormNome] = useState<string>(""); // nome do remédio
-  const [formDataFabricacao, setFormDataFabricacao] = useState<string>(""); // data fabricação
-  const [formValidade, setFormValidade] = useState<string>(""); // validade
-  const [formValor, setFormValor] = useState<number>(0); // valor do produto
-
-  // =========================
-  // ⚡ Estados de feedback
-  // =========================
-  const [message, setMessage] = useState<string | null>(null); // mensagem de sucesso
-  const [error, setError] = useState<string | null>(null); // mensagem de erro
-
-  // =========================
-  // ⚡ Buscar produtos ao carregar
-  // =========================
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [saving, setSaving] = useState<boolean>(false);
+  const [showForm, setShowForm] = useState<boolean>(false);
+  const [editing, setEditing] = useState<Produto | null>(null);
+ 
+  const [formNome, setFormNome] = useState<string>("");
+  const [formDataFabricacao, setFormDataFabricacao] = useState<string>("");
+  const [formValidade, setFormValidade] = useState<string>("");
+  const [formValor, setFormValor] = useState<number>(0);
+ 
+  const [message, setMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+ 
   useEffect(() => {
     buscarProdutos();
   }, []);
-
-  // =========================
-  // ⚡ Funções CRUD
-  // =========================
-
-  // 🔹 Buscar produtos (GET)
+ 
+  useEffect(() => {
+    if (message || error) {
+      const timer = setTimeout(() => {
+        setMessage(null);
+        setError(null);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [message, error]);
+ 
   async function buscarProdutos(): Promise<void> {
     try {
       setLoading(true);
@@ -61,10 +53,8 @@ export default function AdminProdutos() {
       setLoading(false);
     }
   }
-
-  // 🔹 Salvar produto (POST ou PUT)
+ 
   async function salvarProduto(): Promise<void> {
-    // ⛔ Validações
     if (!formNome.trim()) {
       setError("O nome do remédio é obrigatório.");
       return;
@@ -77,7 +67,11 @@ export default function AdminProdutos() {
       setError("O valor deve ser maior que zero.");
       return;
     }
-
+    if (new Date(formValidade) < new Date(formDataFabricacao)) {
+      setError("A validade não pode ser anterior à data de fabricação.");
+      return;
+    }
+ 
     setSaving(true);
     const novoProduto: Produto = {
       nome: formNome,
@@ -85,7 +79,7 @@ export default function AdminProdutos() {
       validade: formValidade,
       valor: formValor,
     };
-
+ 
     try {
       if (editing) {
         await axios.put(`${API_URL}/${editing.id}`, novoProduto);
@@ -95,6 +89,11 @@ export default function AdminProdutos() {
         setMessage("Produto adicionado com sucesso!");
       }
       setShowForm(false);
+      setFormNome("");
+      setFormDataFabricacao("");
+      setFormValidade("");
+      setFormValor(0);
+      setEditing(null);
       await buscarProdutos();
     } catch (err) {
       console.error("Erro ao salvar produto:", err);
@@ -103,11 +102,10 @@ export default function AdminProdutos() {
       setSaving(false);
     }
   }
-
+ 
   async function removerProduto(id?: number): Promise<void> {
     if (!id) return;
     if (!confirm("Deseja realmente excluir este produto?")) return;
-
     try {
       await axios.delete(`${API_URL}/${id}`);
       setMessage("Produto removido com sucesso!");
@@ -117,7 +115,7 @@ export default function AdminProdutos() {
       setError("Falha ao remover o produto.");
     }
   }
-
+ 
   function abrirNovo(): void {
     setEditing(null);
     setFormNome("");
@@ -126,8 +124,7 @@ export default function AdminProdutos() {
     setFormValor(0);
     setShowForm(true);
   }
-
-  // 🔹 Abrir formulário para editar produto
+ 
   function abrirEditar(p: Produto): void {
     setEditing(p);
     setFormNome(p.nome);
@@ -136,63 +133,85 @@ export default function AdminProdutos() {
     setFormValor(p.valor);
     setShowForm(true);
   }
-
-   return (
-    <div className="p-6 max-w-5xl mx-auto">
-      {/* Cabeçalho */}
-      <header className="flex items-center justify-between mb-6">
+ 
+  return (
+    <div className="min-h-screen bg-slate-800 text-slate-100 p-6">
+      <header className="flex items-center justify-between mb-6 border-b border-slate-700 pb-3">
         <div>
-          <h1 className="text-2xl font-semibold">Painel de Produtos</h1>
-          <p className="text-sm text-gray-500">Gerencie os remédios cadastrados no sistema.</p>
+          <h1 className="text-2xl font-semibold text-sky-400">
+            Painel de Produtos
+          </h1>
+          <p className="text-sm text-slate-400">
+            Gerencie os remédios cadastrados no sistema.
+          </p>
         </div>
         <button
           onClick={abrirNovo}
-          className="bg-sky-600 text-white px-4 py-2 rounded-md shadow-sm hover:brightness-105"
+          className="bg-sky-500 hover:bg-sky-400 text-white px-4 py-2 rounded-md shadow-md transition"
         >
           + Novo produto
         </button>
       </header>
-
-      {/* Mensagens */}
-      {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}
-      {message && <div className="bg-green-100 text-green-700 p-3 rounded mb-4">{message}</div>}
-
-      {/* Tabela de produtos */}
+ 
+      {error && (
+        <div className="bg-red-500/20 text-red-400 border border-red-500/30 p-3 rounded mb-4">
+          {error}
+        </div>
+      )}
+      {message && (
+        <div className="bg-green-500/20 text-green-400 border border-green-500/30 p-3 rounded mb-4">
+          {message}
+        </div>
+      )}
+ 
       <main>
         {loading ? (
-          <p className="text-center text-gray-500 py-8">Carregando produtos...</p>
+          <p className="text-center text-slate-400 py-8">
+            Carregando produtos...
+          </p>
         ) : produtos.length === 0 ? (
-          <p className="text-center text-gray-500 py-8">Nenhum produto encontrado.</p>
+          <p className="text-center text-slate-400 py-8">
+            Nenhum produto encontrado.
+          </p>
         ) : (
-          <div className="bg-white shadow-sm rounded-md overflow-hidden">
+          <div className="bg-slate-700 rounded-lg overflow-hidden shadow-lg">
             <table className="min-w-full text-sm">
-              <thead className="bg-gray-50 text-left text-gray-600">
+              <thead className="bg-slate-700 text-sky-300">
                 <tr>
                   <th className="px-4 py-3">Nome</th>
                   <th className="px-4 py-3">Data de Fabricação</th>
                   <th className="px-4 py-3">Validade</th>
                   <th className="px-4 py-3">Valor (R$)</th>
-                  <th className="px-4 py-3">Ações</th>
+                  <th className="px-4 py-3 text-right">Ações</th>
                 </tr>
               </thead>
               <tbody>
                 {produtos.map((p) => (
-                  <tr key={p.id} className="border-t hover:bg-gray-50">
+                  <tr
+                    key={p.id}
+                    className="border-t border-slate-600 hover:bg-slate-600/60"
+                  >
                     <td className="px-4 py-3">{p.nome}</td>
-                    <td className="px-4 py-3">{p.dataFabricacao}</td>
-                    <td className="px-4 py-3">{p.validade}</td>
-                    <td className="px-4 py-3">{p.valor.toFixed(2)}</td>
                     <td className="px-4 py-3">
-                      <div className="flex gap-2">
+                      {new Date(p.dataFabricacao).toLocaleDateString("pt-BR")}
+                    </td>
+                    <td className="px-4 py-3">
+                      {new Date(p.validade).toLocaleDateString("pt-BR")}
+                    </td>
+                    <td className="px-4 py-3 text-sky-400 font-medium">
+                      R$ {p.valor.toFixed(2)}
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <div className="flex justify-end gap-2">
                         <button
                           onClick={() => abrirEditar(p)}
-                          className="px-3 py-1 rounded-md border text-sm"
+                          className="px-3 py-1 rounded-md border border-sky-500 text-sky-400 hover:bg-sky-500/10 transition"
                         >
                           Editar
                         </button>
                         <button
                           onClick={() => removerProduto(p.id)}
-                          className="px-3 py-1 rounded-md border text-sm text-red-600"
+                          className="px-3 py-1 rounded-md border border-red-500 text-red-400 hover:bg-red-500/10 transition"
                         >
                           Excluir
                         </button>
@@ -205,45 +224,50 @@ export default function AdminProdutos() {
           </div>
         )}
       </main>
-
-      {/* Modal do formulário */}
+ 
       {showForm && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 shadow-lg">
-            <h2 className="text-lg font-semibold mb-2">
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center p-4"
+          onClick={() => setShowForm(false)}
+        >
+          <div
+            className="bg-slate-700 text-slate-100 rounded-xl max-w-lg w-full p-6 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-lg font-semibold mb-4 text-sky-400">
               {editing ? "Editar produto" : "Novo produto"}
             </h2>
+ 
             <div className="grid grid-cols-1 gap-3">
-              {/* Inputs do formulário */}
               <label className="text-sm">
                 Nome do remédio
                 <input
                   value={formNome}
                   onChange={(e) => setFormNome(e.target.value)}
-                  className="mt-1 block w-full rounded-md border px-3 py-2"
+                  className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
-
+ 
               <label className="text-sm">
                 Data de fabricação
                 <input
                   type="date"
                   value={formDataFabricacao}
                   onChange={(e) => setFormDataFabricacao(e.target.value)}
-                  className="mt-1 block w-full rounded-md border px-3 py-2"
+                  className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
-
+ 
               <label className="text-sm">
                 Validade
                 <input
                   type="date"
                   value={formValidade}
                   onChange={(e) => setFormValidade(e.target.value)}
-                  className="mt-1 block w-full rounded-md border px-3 py-2"
+                  className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
-
+ 
               <label className="text-sm">
                 Valor (R$)
                 <input
@@ -251,22 +275,21 @@ export default function AdminProdutos() {
                   step="0.01"
                   value={formValor}
                   onChange={(e) => setFormValor(parseFloat(e.target.value))}
-                  className="mt-1 block w-full rounded-md border px-3 py-2"
+                  className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
-
-              {/* Botões */}
-              <div className="flex justify-end gap-3 mt-3">
+ 
+              <div className="flex justify-end gap-3 mt-4">
                 <button
                   onClick={() => setShowForm(false)}
-                  className="px-4 py-2 rounded-md border"
+                  className="px-4 py-2 rounded-md border border-slate-500 text-slate-300 hover:bg-slate-600/50 transition"
                 >
                   Cancelar
                 </button>
                 <button
                   onClick={salvarProduto}
                   disabled={saving}
-                  className="px-4 py-2 rounded-md bg-sky-600 text-white disabled:opacity-50"
+                  className="px-4 py-2 rounded-md bg-sky-500 hover:bg-sky-400 text-white disabled:opacity-50 transition"
                 >
                   {saving ? "Salvando..." : "Salvar"}
                 </button>
@@ -278,3 +301,4 @@ export default function AdminProdutos() {
     </div>
   );
 }
+ 
