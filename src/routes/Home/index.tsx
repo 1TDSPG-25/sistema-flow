@@ -7,7 +7,7 @@ export default function Home() {
   const [posts, setPosts] = useState<apiProps[]>([]);
 
   const fetchApi = async () => {
-    const VITE_HOME_URL: string = import.meta.env.VITE_HOME_URL;
+    const VITE_HOME_URL: string = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=e6015af2753f4a38aa2693025f5fbaf2';
 
     try {
       const response = await fetch(`${VITE_HOME_URL}&skip=${Math.floor(Math.random() * 10)}`, { method: "GET" });
