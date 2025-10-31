@@ -1,5 +1,5 @@
 export type TipoUser = {
-    id: number;
+    id: string;
     nome: string;
     nomeUser?: string;
     cpf: string;

@@ -4,7 +4,7 @@ import type { TipoUser } from "../../types/tipoUsuario";
 import { FiUser, FiMail, FiCreditCard, FiAlertCircle, FiImage, FiLogOut } from "react-icons/fi";
 import useTheme from "../../context/useTheme";
 
-const API_USERS = "http://localhost:3001/usuarios";
+const API_USERS = import.meta.env.VITE_API_URL_USUARIOS;
 
 export default function Perfil() {
   const { id } = useParams();
@@ -16,20 +16,20 @@ export default function Perfil() {
   const [carregando, setCarregando] = useState(true);
   const [mostrarCpf, setMostrarCpf] = useState(false);
 
-  const loggedId = useMemo<number | null>(() => {
+  const loggedId = useMemo<string | null>(() => {
     try {
       const rawUsuario = localStorage.getItem("usuarioLogado");
       if (rawUsuario) {
         const u = JSON.parse(rawUsuario);
-        if (u?.id != null) return Number(u.id);
+        if (u?.id != null) return String(u.id);
       }
       const rawAuthUser = localStorage.getItem("auth:user");
       if (rawAuthUser) {
         const u2 = JSON.parse(rawAuthUser);
-        if (u2?.id != null) return Number(u2.id);
+        if (u2?.id != null) return String(u2.id);
       }
       const rawId = localStorage.getItem("userId") || localStorage.getItem("auth:userId");
-      return rawId ? Number(rawId) : null;
+      return rawId ? rawId : null;
     } catch {
       return null;
     }
@@ -41,11 +41,9 @@ export default function Perfil() {
         setCarregando(true);
         setErro(null);
 
-        let targetId: number | null = null;
+        let targetId: string | null = null;
         if (id != null) {
-          const parsed = Number(id);
-          if (Number.isNaN(parsed)) throw new Error("ID inválido na URL. Use um número (ex.: /perfil/5).");
-          targetId = parsed;
+          targetId = id;
         } else if (loggedId != null) {
           targetId = loggedId;
         }
@@ -188,13 +186,6 @@ export default function Perfil() {
 function coerceUser(found: unknown): TipoUser {
   const f = found as Record<string, unknown>;
 
-  const toNumber = (v: unknown): number => {
-    if (v == null) return 0;
-    if (typeof v === 'number') return v;
-    const n = Number(v);
-    return Number.isNaN(n) ? 0 : n;
-  };
-
   const toString = (v: unknown): string => {
     if (v == null) return '';
     if (typeof v === 'string') return v;
@@ -202,7 +193,7 @@ function coerceUser(found: unknown): TipoUser {
   };
 
   return {
-    id: toNumber(f.id),
+    id: toString(f.id),
     nome: toString(f.nome ?? ''),
     nomeUser: toString(f.nomeUser ?? ''),
     cpf: toString(f.cpf ?? ''),
