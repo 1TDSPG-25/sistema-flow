@@ -103,3 +103,17 @@ export default function AdminProdutos() {
       setSaving(false);
     }
   }
+
+  async function removerProduto(id?: number): Promise<void> {
+    if (!id) return;
+    if (!confirm("Deseja realmente excluir este produto?")) return;
+
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      setMessage("Produto removido com sucesso!");
+      await buscarProdutos();
+    } catch (err) {
+      console.error("Erro ao remover produto:", err);
+      setError("Falha ao remover o produto.");
+    }
+  }
