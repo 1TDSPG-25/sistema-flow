@@ -77,7 +77,9 @@ export default function FaqPage() {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-extrabold mb-3">Perguntas Frequentes (FAQ)</h1>
+          <h1 className="text-4xl font-extrabold mb-3">
+            Perguntas Frequentes (FAQ)
+          </h1>
           <p className="max-w-2xl mx-auto opacity-80">
             Encontre respostas rápidas para as dúvidas mais comuns sobre o uso da{" "}
             <strong>MegaFarma</strong>.
@@ -97,12 +99,44 @@ export default function FaqPage() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <h2 className="text-lg md:text-xl font-semibold leading-snug">
-                  {item.question}
-                </h2>
-                <span className="text-2xl font-bold select-none opacity-70">
-                  {openIndex === index ? "−" : "+"}
-                </span>
+                <div className="flex items-center gap-3">
+                  {/* Ícone decorativo (exemplo: ponto de interrogação) */}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-indigo-600 dark:text-indigo-400 flex-shrink-0"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.228 9c.549-1.165 1.726-2 3.272-2 1.873 0 3.25 1.216 3.25 2.944 0 1.21-.735 2.01-1.797 2.614-.92.526-1.203.935-1.203 1.692v.25m0 3h.01M12 21.75a9.75 9.75 0 100-19.5 9.75 9.75 0 000 19.5z"
+                    />
+                  </svg>
+                  <h2 className="text-lg md:text-xl font-semibold leading-snug">
+                    {item.question}
+                  </h2>
+                </div>
+
+                {/* Seta que gira ao abrir */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className={`w-6 h-6 transform transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180 text-indigo-600" : "rotate-0 opacity-70"
+                  }`}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
               </button>
 
               <div
