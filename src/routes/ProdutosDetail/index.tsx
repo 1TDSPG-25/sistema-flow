@@ -1,32 +1,26 @@
-import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import type { TipoProduto } from "../../types/tipoProduto"; 
-import useTheme from "../../context/useTheme";
+import { useEffect, useState } from "react";
+import type { TipoProduto } from "../types/tipoProduto";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
-export default function ProdutoDetail() {
-  const { id } = useParams<{ id: string }>();
+export function useProduto(id: string | undefined) {
   const [produto, setProduto] = useState<TipoProduto | null>(null);
   const [loading, setLoading] = useState(true);
-  // Adiciona o estado de erro
   const [error, setError] = useState<string | null>(null);
-  const theme = useTheme();
-  const { isDark } = theme;
 
   useEffect(() => {
     if (!id) {
-      setLoading(false); 
+      setLoading(false);
       return;
     }
+
     const fetchProduto = async () => {
-      setLoading(true); 
+      setLoading(true);
       setProduto(null);
-      setError(null); 
+      setError(null);
       try {
         const response = await fetch(`${API_URL}/${id}`);
         if (!response.ok) {
-        
           if (response.status === 404) {
             throw new Error("Produto não encontrado");
           }
@@ -35,7 +29,6 @@ export default function ProdutoDetail() {
         const produtoData: TipoProduto = await response.json();
         setProduto(produtoData);
       } catch (error: unknown) {
-        // Seta o estado de erro
         if (error instanceof Error) {
           setError(error.message);
         } else {
@@ -46,8 +39,12 @@ export default function ProdutoDetail() {
         setLoading(false);
       }
     };
+
     fetchProduto();
-  }, [id]); 
+  }, [id]);
+
+  return { produto, loading, error };
+}
 
   if (loading) {
     return (
