@@ -11,29 +11,36 @@ export default function ProdutoDetail() {
 
   useEffect(() => {
     if (!id) return;
-
-
     const fetchProduto = async () => {
       try {
         const response = await fetch(`${API_URL}/${id}`);
-        
         if (!response.ok) {
           throw new Error("Produto não encontrado");
         }
-        
         const produtoData: TipoProduto = await response.json();
         setProduto(produtoData);
-
       } catch (error) {
         console.error("Erro ao carregar produto:", error);
       } finally {
         setLoading(false);
       }
     };
-
     fetchProduto();
-  
   }, [id]); 
+
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center bg-gray-50 text-gray-800">
+        <div className="text-center">
+          {/* Adiciona um spinner simples de CSS (Tailwind) */}
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+          <p className="mt-4">Carregando produto...</p>
+        </div>
+      </main>
+    );
+  }
+
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
@@ -44,7 +51,6 @@ export default function ProdutoDetail() {
 
         <div className="p-8 rounded-xl shadow-md max-w-4xl mx-auto bg-white">
           <h1 className="text-3xl font-bold mb-4">Página de Detalhe do Produto</h1>
-          
           <p>Carregando dados para o produto com ID: <strong>{id}</strong></p>
         </div>
       </div>
