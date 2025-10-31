@@ -6,8 +6,10 @@ const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function ProdutoDetail() {
   const { id } = useParams<{ id: string }>();
-  const [produto, setProduto] = useState<TipoProduto | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [_produto, setProduto] = useState<TipoProduto | null>(null);
+  const [_loading, setLoading] = useState(true);
+  void _produto;
+  void _loading;
 
   useEffect(() => {
     if (!id) return;
