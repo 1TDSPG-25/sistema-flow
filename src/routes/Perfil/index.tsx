@@ -51,9 +51,7 @@ export default function Perfil() {
 
         const rawUsuario = localStorage.getItem("usuarioLogado");
         if (!rawUsuario) {
-          setErro("Você precisa estar logado para ver seu perfil.");
-          setUser(null);
-          setCarregando(false);
+          navigate("/login", { replace: true });
           return;
         }
         const usuario = JSON.parse(rawUsuario);
@@ -65,11 +63,16 @@ export default function Perfil() {
           setCarregando(false);
           return;
         }
-        const r = await fetch(API_USERS, { headers: { Accept: "application/json" } });
+        const r = await fetch(API_USERS, {
+          headers: { Accept: "application/json" },
+        });
         if (!r.ok) throw new Error(`Falha ao buscar clientes (${r.status}).`);
         const clientes = await r.json();
-        const found = clientes.find((c: TipoUser) => c.email === email && c.senha === senha);
-        if (!found) throw new Error("Usuário logado não encontrado na base de dados.");
+        const found = clientes.find(
+          (c: TipoUser) => c.email === email && c.senha === senha
+        );
+        if (!found)
+          throw new Error("Usuário logado não encontrado na base de dados.");
         setUser(coerceUser(found));
       } catch (e: unknown) {
         const message =
@@ -170,10 +173,8 @@ export default function Perfil() {
           className={`mt-3 text-2xl font-semibold ${
             isDark ? "text-amber-50" : "text-gray-900"
           }`}
-        >
-        </p>
+        ></p>
         <div className="mt-6 w-full">
-          
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div
               className={`rounded-lg border p-3 ${
