@@ -13,7 +13,11 @@ export default function Menu() {
     localStorage.getItem("isLoggedIn") === "true";
 
   const loginIcon = (
-    <MdPerson className="text-2xl hover:scale-110 transition-transform" />
+    <MdPerson className="text-4xl hover:scale-110 transition-transform" />
+  );
+
+  const perfilIcon = (
+    <MdPerson className="text-4xl text-blue-500 transition-transform" />
   );
 
   const links = [
@@ -23,7 +27,7 @@ export default function Menu() {
     { path: "/faq", label: "FAQ" },
     { path: "/contato", label: "Contato" },
     isLoggedIn
-      ? { path: "/perfil", label: loginIcon }
+      ? { path: "/perfil", label: perfilIcon }
       : { path: "/login", label: loginIcon },
   ];
 
