@@ -18,7 +18,7 @@ export default function Rodape() {
       aria-label="Rodapé"
       className={footerClasses}
     >
-      <div className="mx-auto max-w-7xl flex justify-center">
+      <div className="mx-auto max-w-7xl flex justify-between">
         <p className="px-2 py-1 text-center">
           © {year} Todos os direitos reservados.
         </p>
