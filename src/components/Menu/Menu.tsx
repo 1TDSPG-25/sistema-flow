@@ -38,7 +38,7 @@ export default function Menu() {
           onClick={toggleTheme}
           className="px-5 py-3 hover:text-blue-500 transition-colors"
         >
-          {isDark ? <LightIcon /> : <DarkIcon />}
+          {isDark ? <LightIcon className="text-2xl" /> : <DarkIcon className="text-2xl" />}
         </button>
       </div>
 
