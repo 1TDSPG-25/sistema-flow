@@ -1,60 +1,42 @@
-import { NavLink } from "react-router-dom";
-import { MdDarkMode as DarkIcon } from "react-icons/md";
-import { MdOutlineLightMode as LightIcon } from "react-icons/md";
-import { MdPerson } from "react-icons/md"; 
 import useTheme from "../../context/useTheme";
 
-export default function Menu() {
-  const { isDark, toggleTheme } = useTheme();
-  const activeClass = "text-blue-500 font-semibold";
+export default function Rodape() {
+  const { isDark } = useTheme();
+  const year = new Date().getFullYear();
 
-  const isLoggedIn =
-    typeof window !== "undefined" &&
-    localStorage.getItem("isLoggedIn") === "true";
-
-  const loginIcon = (
-    <MdPerson className="text-4xl hover:scale-110 transition-transform" />
-  );
-
-  const perfilIcon = (
-    <MdPerson className="text-4xl text-blue-500 transition-transform" />
-  );
-
-  const links = [
-    { path: "/", label: "Home" },
-    { path: "/produtos", label: "Produtos" },
-    { path: "/unidade", label: "Unidade" },
-    { path: "/faq", label: "FAQ" },
-    { path: "/contato", label: "Contato" },
-    isLoggedIn
-      ? { path: "/perfil", label: perfilIcon }
-      : { path: "/login", label: loginIcon },
-  ];
+  const footerClasses = `
+    w-full border-t backdrop-blur py-4 px-3 transition-colors duration-500 mt-10
+    ${isDark
+      ? "bg-gray-900/90 border-gray-700 text-gray-300"
+      : "bg-white/90 border-gray-200 text-gray-600"
+    }
+  `;
 
   return (
-    <nav className="menu flex flex-row gap-3 md:gap-6 items-center md:justify-center text-base md:text-lg">
-      <div>
-        <button
-          onClick={toggleTheme}
-          className="px-5 py-3 hover:text-blue-500 transition-colors"
-        >
-          {isDark ? <LightIcon className="text-2xl" /> : <DarkIcon className="text-2xl" />}
-        </button>
+    <footer
+      role="contentinfo"
+      aria-label="Rodapé"
+      className={footerClasses}
+    >
+      <div className="mx-auto max-w-7xl flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <p className="px-2 py-1 text-center sm:text-left">
+          © {year} Todos os direitos reservados.
+        </p>
+        <nav>
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <li>
+              <a href="/termos" className="hover:underline">
+                Termos de Uso
+              </a>
+            </li>
+            <li>
+              <a href="/privacidade" className="hover:underline">
+                Privacidade
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-
-      {links.map(({ path, label }, idx) => (
-        <NavLink
-          key={idx}
-          to={path}
-          className={({ isActive }) =>
-            `px-2 py-1 transition-all duration-150 hover:px-3 ${
-              isActive ? activeClass : ""
-            }`
-          }
-        >
-          {label}
-        </NavLink>
-      ))}
-    </nav>
+    </footer>
   );
 }
