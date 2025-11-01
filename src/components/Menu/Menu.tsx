@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { MdDarkMode as DarkIcon } from "react-icons/md";
 import { MdOutlineLightMode as LightIcon } from "react-icons/md";
+import { MdPerson } from "react-icons/md"; 
 import useTheme from "../../context/useTheme";
 
 export default function Menu() {
@@ -19,6 +20,10 @@ export default function Menu() {
     />
   );
 
+  const loginIcon = (
+    <MdPerson className="text-2xl hover:scale-110 transition-transform" />
+  );
+
   const links = [
     { path: "/", label: "Home" },
     { path: "/produtos", label: "Produtos" },
@@ -27,7 +32,7 @@ export default function Menu() {
     { path: "/contato", label: "Contato" },
     isLoggedIn
       ? { path: "/perfil", label: avatar }
-      : { path: "/login", label: "Login" },
+      : { path: "/login", label: loginIcon },
   ];
 
   return (

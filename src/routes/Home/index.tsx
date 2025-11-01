@@ -1,31 +1,25 @@
 import { useEffect, useState } from "react";
-import type { apiProps, apiResponse } from "../../types/tipoHome";
+import type { apiProps } from "../../types/tipoHome";
 import useTheme from "../../context/useTheme";
+import { fetchApi } from "../../services/api-home";
 
 export default function Home() {
   const { isDark } = useTheme();
   const [posts, setPosts] = useState<apiProps[]>([]);
-
-  const fetchApi = async () => {
-    const VITE_HOME_URL: string = import.meta.env.VITE_HOME_URL;
-
-    try {
-      const response = await fetch(`${VITE_HOME_URL}&skip=${Math.floor(Math.random() * 10)}`, { method: "GET" });
-      if (response.status !== 200) {
-        throw new Error("Failed to fetch data");
-      }
-      const data: apiResponse = await response.json();
-      setPosts(data.articles);
-    } catch (error) {
-      console.error("Error fetching data:", error);
+  
+  const fetchGet = async () => {
+    const api = await fetchApi();
+    if(api) {
+      setPosts(api.articles);
     }
-  };
+  }
 
   useEffect(() => {
-    fetchApi();
-    const interval = setInterval(() => fetchApi(), 1000);
+    fetchGet();
+    const interval = setInterval(() => fetchGet(), 1000);
     return () => clearInterval(interval);
   }, []);
+
 
   return (
     <section className={`min-h-screen w-full max-w-5xl mx-auto py-16 px-4 transition-colors duration-500 ${isDark ? "bg-gray-900 text-gray-200" : "bg-gray-50 text-gray-800"}`}>
