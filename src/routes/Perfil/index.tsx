@@ -84,7 +84,7 @@ export default function Perfil() {
       }
     };
     run();
-  }, [id, loggedId]);
+  }, [id, loggedId, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("usuarioLogado");
