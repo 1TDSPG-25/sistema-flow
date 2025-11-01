@@ -9,8 +9,17 @@ import useTheme from "../../context/useTheme";
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
 const loginSchema = z.object({
-  email: z.string().email({ message: "Por favor, insira um e-mail válido." }),
-  senha: z.string().min(8, { message: "A senha precisa ter no mínimo 8 caracteres." }),
+  email: z.email({ message: "Por favor, insira um e-mail válido." }),
+  senha: z.string()
+    .min(8, { message: "A senha precisa ter no mínimo 8 caracteres." })
+    .max(20, { message: "A senha pode ter no máximo 20 caracteres." })
+    .refine(
+      (val) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,20}$/.test(val),
+      {
+        message:
+          "Senha fraca: use letras maiúsculas, minúsculas, números e símbolos.",
+      }
+    ),
 });
 
 type LoginInput = z.infer<typeof loginSchema>;
