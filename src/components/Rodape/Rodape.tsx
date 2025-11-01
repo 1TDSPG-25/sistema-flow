@@ -1,6 +1,20 @@
 import useTheme from "../../context/useTheme";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
+const SocialLink = ({ href, label, icon: Icon }) => (
+  <li>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="text-gray-400 transition-colors hover:text-gray-500 dark:hover:text-gray-300"
+    >
+      <Icon size={20} />
+    </a>
+  </li>
+);
+
 export default function Rodape() {
   const { isDark } = useTheme();
   const year = new Date().getFullYear();
@@ -28,34 +42,22 @@ export default function Rodape() {
           <nav>
             <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               <li>
-                <a href="/termos" className="hover:underline">
+                <span className="hover:underline">
                   Termos de Uso
-                </a>
+                </span>
               </li>
               <li>
-                <a href="/privacidade" className="hover:underline">
+                <span className="hover:underline">
                   Privacidade
-                </a>
+                </span>
               </li>
             </ul>
           </nav>
           
           <ul className="flex items-center justify-center gap-5">
-            <li>
-              <a href="https://github.com" target="_blank" className="text-gray-400 hover:text-gray-500">
-                <FaGithub size={20} />
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com" target="_blank" className="text-gray-400 hover:text-gray-500">
-                <FaLinkedin size={20} />
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com" target="_blank" className="text-gray-400 hover:text-gray-500">
-                <FaTwitter size={20} />
-              </a>
-            </li>
+            <SocialLink href="https://github.com/1TDSPG-25/sistema-flow" label="Visitar Github" icon={FaGithub} />
+            <SocialLink href="https://linkedin.com" label="Visitar LinkedIn" icon={FaLinkedin} />
+            <SocialLink href="https://twitter.com" label="Visitar Twitter" icon={FaTwitter} />
           </ul>
         </div>
 
