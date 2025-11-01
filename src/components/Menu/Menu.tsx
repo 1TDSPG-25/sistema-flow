@@ -12,14 +12,6 @@ export default function Menu() {
     typeof window !== "undefined" &&
     localStorage.getItem("isLoggedIn") === "true";
 
-  const avatar = (
-    <img
-      src="img/avatar.png"
-      alt="Meu Perfil"
-      className="w-8 h-8 rounded-full object-cover hover:scale-105 transition-transform"
-    />
-  );
-
   const loginIcon = (
     <MdPerson className="text-2xl hover:scale-110 transition-transform" />
   );
@@ -31,7 +23,7 @@ export default function Menu() {
     { path: "/faq", label: "FAQ" },
     { path: "/contato", label: "Contato" },
     isLoggedIn
-      ? { path: "/perfil", label: avatar }
+      ? { path: "/perfil", label: loginIcon }
       : { path: "/login", label: loginIcon },
   ];
 
