@@ -127,9 +127,9 @@ export default function Perfil() {
   if (!user) return null;
 
   const Avatar = () =>
-    user.avatar ? (
+    user.imagem ? (
       <img
-        src={user.avatar}
+        src={user.imagem}
         alt={`Avatar de ${user.nome}`}
         className="h-28 w-28 rounded-full object-cover border-slate-900 border-4"
       />
@@ -175,12 +175,9 @@ export default function Perfil() {
             isDark ? "text-amber-50" : "text-gray-900"
           }`}
         >
-          {user.nomeUser ?? user.nome ?? "—"}
         </p>
         <div className="mt-6 w-full">
-          {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <InfoPill icon={FiHash} text={`ID: ${user.id}`} />
-          </div> */}
+          
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div
               className={`rounded-lg border p-3 ${
@@ -272,10 +269,9 @@ function coerceUser(found: unknown): TipoUser {
   return {
     id: toString(f.id),
     nome: toString(f.nome ?? ""),
-    nomeUser: toString(f.nomeUser ?? ""),
     cpf: toString(f.cpf ?? ""),
     email: toString(f.email ?? ""),
     senha: toString(f.senha ?? ""),
-    avatar: toString(f.avatar ?? ""),
+    imagem: toString(f.imagem ?? ""),
   };
 }
