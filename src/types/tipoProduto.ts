@@ -4,5 +4,5 @@ export type TipoProduto = {
     preco: number;
     dataFabricacao: string;
     dataValidade: string;
-    avatar: string;
+    imagem: string;
 };

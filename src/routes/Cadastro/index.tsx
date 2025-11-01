@@ -10,7 +10,16 @@ const cadastroSchema = z.object({
     nome: z.string().min(3, { message: "O nome precisa ter no mínimo 3 caracteres." }),
     cpf: z.string().min(11, { message: "O CPF deve ter 11 dígitos." }),
     email: z.email({ message: "Por favor, insira um e-mail válido." }),
-    senha: z.string().min(8, { message: "A senha precisa ter no mínimo 8 caracteres." }),
+    senha: z.string()
+        .min(8, { message: "A senha precisa ter no mínimo 8 caracteres." })
+        .max(20, { message: "A senha pode ter no máximo 20 caracteres." })
+        .refine(
+            (val) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,20}$/.test(val),
+            {
+                message:
+                    "Senha fraca: use letras maiúsculas, minúsculas, números e símbolos.",
+            }
+        ),
 });
 
 type CadastroInput = z.infer<typeof cadastroSchema>;

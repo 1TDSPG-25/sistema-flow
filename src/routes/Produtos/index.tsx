@@ -1,8 +1,8 @@
 // routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
-import type { TipoProduto } from "../../types/tipoProduto";
-import useTheme from "../../context/useTheme";
 import { Link } from "react-router-dom"; // ← Nova importação
+import useTheme from "../../context/useTheme";
+import type { TipoProduto } from "../../types/tipoProduto";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -39,9 +39,7 @@ export default function Produtos() {
   }, []);
 
   const produtosFiltrados = produtos.filter((p) =>
-    busca === ""
-      ? true
-      : p.nome.toLowerCase().startsWith(busca.toLowerCase())
+    busca === "" ? true : p.nome.toLowerCase().startsWith(busca.toLowerCase())
   );
 
   return (
@@ -84,15 +82,15 @@ export default function Produtos() {
                 <Link to={`/produtos/${produto.id}`}>
                   <div
                     className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer ${
-                      isDark 
-                        ? "border-gray-700 bg-gray-700 hover:border-gray-600" 
+                      isDark
+                        ? "border-gray-700 bg-gray-700 hover:border-gray-600"
                         : "border-gray-200 bg-white hover:border-gray-300"
                     }`}
                   >
-                    {produto.avatar && (
+                    {produto.imagem && (
                       <div className="w-full h-40 flex items-center justify-center rounded-md mb-3 overflow-hidden bg-white">
                         <img
-                          src={produto.avatar}
+                          src={produto.imagem}
                           alt={produto.nome}
                           className="w-full h-full object-contain"
                         />
@@ -114,7 +112,9 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Fabricação:</span>{" "}
-                      {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataFabricacao).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
                     <p
                       className={`transition-colors duration-500 ${
@@ -122,7 +122,9 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Validade:</span>{" "}
-                      {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataValidade).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
                   </div>
                 </Link>
