@@ -12,16 +12,12 @@ export default function Menu() {
     typeof window !== "undefined" &&
     localStorage.getItem("isLoggedIn") === "true";
 
-  const avatar = (
-    <img
-      src="img/avatar.png"
-      alt="Meu Perfil"
-      className="w-8 h-8 rounded-full object-cover hover:scale-105 transition-transform"
-    />
+  const loginIcon = (
+    <MdPerson className="text-4xl hover:scale-110 transition-transform" />
   );
 
-  const loginIcon = (
-    <MdPerson className="text-2xl hover:scale-110 transition-transform" />
+  const perfilIcon = (
+    <MdPerson className="text-4xl text-blue-500 transition-transform" />
   );
 
   const links = [
@@ -31,7 +27,7 @@ export default function Menu() {
     { path: "/faq", label: "FAQ" },
     { path: "/contato", label: "Contato" },
     isLoggedIn
-      ? { path: "/perfil", label: avatar }
+      ? { path: "/perfil", label: perfilIcon }
       : { path: "/login", label: loginIcon },
   ];
 
@@ -42,7 +38,7 @@ export default function Menu() {
           onClick={toggleTheme}
           className="px-5 py-3 hover:text-blue-500 transition-colors"
         >
-          {isDark ? <LightIcon /> : <DarkIcon />}
+          {isDark ? <LightIcon className="text-2xl" /> : <DarkIcon className="text-2xl" />}
         </button>
       </div>
 
