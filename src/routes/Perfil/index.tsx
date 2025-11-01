@@ -49,31 +49,27 @@ export default function Perfil() {
         setCarregando(true);
         setErro(null);
 
-        let targetId: string | null = null;
-        if (id != null) {
-          targetId = id;
-        } else if (loggedId != null) {
-          targetId = loggedId;
-        }
-
-        if (targetId == null) {
-          setErro(
-            "Nenhum usuário selecionado. Passe o ID na URL (ex.: /perfil/5) ou faça login para ver seu perfil."
-          );
+        const rawUsuario = localStorage.getItem("usuarioLogado");
+        if (!rawUsuario) {
+          setErro("Você precisa estar logado para ver seu perfil.");
           setUser(null);
           setCarregando(false);
           return;
         }
-
-        const base = API_USERS.replace(/\/$/, "");
-        const r = await fetch(`${base}/${targetId}`, {
-          headers: { Accept: "application/json" },
-        });
-        if (r.status === 404)
-          throw new Error(`Usuário ${targetId} não encontrado.`);
-        if (!r.ok) throw new Error(`Falha ao buscar usuário (${r.status}).`);
-
-        const found = await r.json();
+        const usuario = JSON.parse(rawUsuario);
+        const email = usuario?.email;
+        const senha = usuario?.senha;
+        if (!email || !senha) {
+          setErro("Não foi possível identificar o usuário logado.");
+          setUser(null);
+          setCarregando(false);
+          return;
+        }
+        const r = await fetch(API_USERS, { headers: { Accept: "application/json" } });
+        if (!r.ok) throw new Error(`Falha ao buscar clientes (${r.status}).`);
+        const clientes = await r.json();
+        const found = clientes.find((c: TipoUser) => c.email === email && c.senha === senha);
+        if (!found) throw new Error("Usuário logado não encontrado na base de dados.");
         setUser(coerceUser(found));
       } catch (e: unknown) {
         const message =
