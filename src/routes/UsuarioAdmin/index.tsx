@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
- 
+import { useEffect, useState } from "react";
+import Spinner from "../../components/Spinner";
+
 export type Produto = {
   id?: number;
   nome: string;
@@ -7,29 +8,29 @@ export type Produto = {
   validade: string;
   valor: number;
 };
- 
+
 const API_URL =
   import.meta.env.VITE_API_URL_PRODUTOS || "http://localhost:3001/produtos";
- 
+
 export default function AdminProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [saving, setSaving] = useState<boolean>(false);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [editing, setEditing] = useState<Produto | null>(null);
- 
+
   const [formNome, setFormNome] = useState<string>("");
   const [formDataFabricacao, setFormDataFabricacao] = useState<string>("");
   const [formValidade, setFormValidade] = useState<string>("");
   const [formValor, setFormValor] = useState<number>(0);
- 
+
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
- 
+
   useEffect(() => {
     buscarProdutos();
   }, []);
- 
+
   useEffect(() => {
     if (message || error) {
       const timer = setTimeout(() => {
@@ -39,7 +40,7 @@ export default function AdminProdutos() {
       return () => clearTimeout(timer);
     }
   }, [message, error]);
- 
+
   async function buscarProdutos(): Promise<void> {
     try {
       setLoading(true);
@@ -52,7 +53,7 @@ export default function AdminProdutos() {
       setLoading(false);
     }
   }
- 
+
   async function salvarProduto(): Promise<void> {
     if (!formNome.trim()) {
       setError("O nome do remédio é obrigatório.");
@@ -70,7 +71,7 @@ export default function AdminProdutos() {
       setError("A validade não pode ser anterior à data de fabricação.");
       return;
     }
- 
+
     setSaving(true);
     const novoProduto: Produto = {
       nome: formNome,
@@ -78,7 +79,7 @@ export default function AdminProdutos() {
       validade: formValidade,
       valor: formValor,
     };
- 
+
     try {
       if (editing) {
         await axios.put(`${API_URL}/${editing.id}`, novoProduto);
@@ -101,7 +102,7 @@ export default function AdminProdutos() {
       setSaving(false);
     }
   }
- 
+
   async function removerProduto(id?: number): Promise<void> {
     if (!id) return;
     if (!confirm("Deseja realmente excluir este produto?")) return;
@@ -114,7 +115,7 @@ export default function AdminProdutos() {
       setError("Falha ao remover o produto.");
     }
   }
- 
+
   function abrirNovo(): void {
     setEditing(null);
     setFormNome("");
@@ -123,7 +124,7 @@ export default function AdminProdutos() {
     setFormValor(0);
     setShowForm(true);
   }
- 
+
   function abrirEditar(p: Produto): void {
     setEditing(p);
     setFormNome(p.nome);
@@ -132,7 +133,7 @@ export default function AdminProdutos() {
     setFormValor(p.valor);
     setShowForm(true);
   }
- 
+
   return (
     <div className="min-h-screen bg-slate-800 text-slate-100 p-6">
       <header className="flex items-center justify-between mb-6 border-b border-slate-700 pb-3">
@@ -151,7 +152,7 @@ export default function AdminProdutos() {
           + Novo produto
         </button>
       </header>
- 
+
       {error && (
         <div className="bg-red-500/20 text-red-400 border border-red-500/30 p-3 rounded mb-4">
           {error}
@@ -162,12 +163,12 @@ export default function AdminProdutos() {
           {message}
         </div>
       )}
- 
+
       <main>
         {loading ? (
-          <p className="text-center text-slate-400 py-8">
-            Carregando produtos...
-          </p>
+          <div className="text-center py-8">
+            <Spinner text="Carregando produtos..." />
+          </div>
         ) : produtos.length === 0 ? (
           <p className="text-center text-slate-400 py-8">
             Nenhum produto encontrado.
@@ -223,7 +224,7 @@ export default function AdminProdutos() {
           </div>
         )}
       </main>
- 
+
       {showForm && (
         <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center p-4"
@@ -236,7 +237,7 @@ export default function AdminProdutos() {
             <h2 className="text-lg font-semibold mb-4 text-sky-400">
               {editing ? "Editar produto" : "Novo produto"}
             </h2>
- 
+
             <div className="grid grid-cols-1 gap-3">
               <label className="text-sm">
                 Nome do remédio
@@ -246,7 +247,7 @@ export default function AdminProdutos() {
                   className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
- 
+
               <label className="text-sm">
                 Data de fabricação
                 <input
@@ -256,7 +257,7 @@ export default function AdminProdutos() {
                   className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
- 
+
               <label className="text-sm">
                 Validade
                 <input
@@ -266,7 +267,7 @@ export default function AdminProdutos() {
                   className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
- 
+
               <label className="text-sm">
                 Valor (R$)
                 <input
@@ -277,7 +278,7 @@ export default function AdminProdutos() {
                   className="mt-1 block w-full rounded-md border border-slate-600 bg-slate-800 px-3 py-2 text-slate-100"
                 />
               </label>
- 
+
               <div className="flex justify-end gap-3 mt-4">
                 <button
                   onClick={() => setShowForm(false)}
@@ -300,4 +301,3 @@ export default function AdminProdutos() {
     </div>
   );
 }
- 

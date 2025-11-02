@@ -35,10 +35,10 @@ Serão criados dois tipos de acesso:
 
 .env
 ```
-VITE_API_URL_USUARIOS=http://localhost:3001/usuarios
-VITE_API_URL_PRODUTOS=http://localhost:3001/produtos
 VITE_API_URL_UNIDADES=http://localhost:3001/unidades
 VITE_HOME_URL=https://dummyjson.com/quotes
+VITE_API_URL_USUARIOS=https://megafarma-g620.onrender.com/clientes
+VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 ```
 
 ---
@@ -67,10 +67,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
-
-- **Fix:** Aplicar APIs de Java - megafarma -> <span style="color:white">Equipe C</span>
-
----
 
 - **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
 
@@ -172,5 +168,7 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 - **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe D</span>
 
 - **FEATURE:** Melhorar footer -> <span style="color:white">Equipe E</span>
+
+- **Fix:** Aplicar APIs de Java - megafarma -> <span style="color:white">Equipe B</span>
 </ul>
 

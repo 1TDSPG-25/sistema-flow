@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
-import { IoIosArrowRoundBack } from "react-icons/io";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -38,10 +39,7 @@ export default function ProdutoDetail() {
           isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
         }`}
       >
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
-          <p className="mt-4">Carregando produto...</p>
-        </div>
+        <Spinner text="Carregando produto..." />
       </main>
     );
   }
@@ -85,7 +83,8 @@ export default function ProdutoDetail() {
               : "text-gray-600 hover:text-gray-800"
           }`}
         >
-          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para produtos
+          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para
+          produtos
         </Link>
 
         <div

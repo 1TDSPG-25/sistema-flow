@@ -2,12 +2,14 @@ import { Suspense, lazy } from "react";
 import Cabecalho from "./components/Cabecalho/Cabecalho";
 import Rodape from "./components/Rodape/Rodape";
 import useTheme from "./context/useTheme";
+import Spinner from "./components/Spinner";
  
 const Home = lazy(() => import("react-router-dom").then(module => ({ default:module.Outlet})) );
  
  
 const Loading = () => {
-  return <h2>Loading...</h2>;
+  return <Spinner text="Carregando..." />;
+
 };
  
 export default function App(){

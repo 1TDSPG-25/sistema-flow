@@ -1,6 +1,7 @@
 // routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
@@ -78,7 +79,7 @@ export default function Produtos() {
 
         {loading ? (
           <div className="flex justify-center items-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+            <Spinner />
           </div>
         ) : produtosFiltrados.length > 0 ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -8,6 +8,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoUser } from "../../types/tipoUsuario";
 
@@ -106,10 +107,7 @@ export default function Perfil() {
   if (carregando) {
     return (
       <div className="max-w-2xl mx-auto p-4 text-gray-500">
-        <div className="flex items-center gap-2 justify-center">
-          <span className="inline-block w-5 h-5 mr-2 border-2 border-t-2 border-gray-400 border-t-indigo-500 rounded-full animate-spin"></span>
-          <span>Carregando dados do usuário…</span>
-        </div>
+        <Spinner text="Carregando dados do usuário…" />
       </div>
     );
   }
