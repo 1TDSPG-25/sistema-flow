@@ -44,7 +44,7 @@ export default function Integrantes() {
         "https://github.com/alex-isidro.png",
         "https://github.com/PxS00.png",
       ],
-      integrantes: ["Kelson", "Alexander", "Lucas"], 
+      integrantes: ["Kelson", "Alex", "Lucas"], 
       borderBotao: "border-[#337B45]",
       corTextoBotao: "text-[#337B45]",
     },
@@ -140,12 +140,20 @@ export default function Integrantes() {
   }
 
     return (
-        <section className="flex flex-col gap-15 my-10 px-12">
+        <section className="
+        flex flex-col gap-15 my-10 px-12
+        max-[916px]:px-0
+        max-sm:px-2
+        max-2xl:px-18
+        ">
             <header className="flex flex-col items-center gap-5">
-                <h1 className="text-6xl font-bold">Conheça nosso time!</h1>
-                <p className="text-3xl">Conheça as equipes que fizeram este projeto acontecer.</p>
+                <h1 className="text-6xl font-bold max-sm:text-5xl">Conheça nosso time!</h1>
+                <p className="text-3xl max-md:text-center">Conheça as equipes que fizeram este projeto acontecer.</p>
             </header>
-            <ul className="flex flex-wrap justify-around gap-5">
+            <ul className="
+            flex flex-wrap justify-around gap-5
+            max-md:w-full
+            ">
                 {Object.values(IntegrantesData).map((equipe, index) => (
                     <li key={index}>
                         <Link
@@ -155,6 +163,9 @@ export default function Integrantes() {
                             flex flex-col gap-5 max-w-xl items-center
                             ${equipe.bgCard} rounded-[30px] pt-4 pb-11 px-20
                             border-[3px] ${equipe.borderCard}
+                            max-xl:w-[25rem]
+                            max-[916px]:max-w-none max-[916px]:w-full
+
                         `}
                         >
                         <h2 className="text-3xl font-bold">{equipe.equipeTitulo}</h2>
@@ -192,11 +203,15 @@ export default function Integrantes() {
                                 ? "justify-around w-[70%]"
                                 : "justify-between w-[80%]"
                             }
+                            max-xl:w-full
                         `}
                         >
                             {equipe.integrantes.map((nome, i) => (
                             <li key={i}>
-                                <h3 className="font-bold text-3xl">{nome}</h3>
+                                <h3 className="
+                                font-bold text-3xl
+                                max-xl:text-2xl                               
+                                ">{nome}</h3>
                             </li>
                             ))}
                         </ul>
