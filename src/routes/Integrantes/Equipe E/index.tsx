@@ -15,7 +15,6 @@ export default function EquipeE() {
           <hr />
           <p>Conheça um pouco mais a Equipe E:</p>
 
-          {/* Card 1 */}
           <div>
             {/* Card 1 */}
             <div className="bg-[#EFD2C3]">
