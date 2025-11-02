@@ -8,6 +8,9 @@ import type { TipoProduto } from "../../types/tipoProduto";
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function ProdutoDetail() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { id } = useParams<{ id: string }>();
   const [produto, setProduto] = useState<TipoProduto | null>(null);
   const [loading, setLoading] = useState(true);
