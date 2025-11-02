@@ -107,6 +107,21 @@ export default function Integrantes() {
       borderBotao: "border-[#251DBC]",
       corTextoBotao: "text-[#251DBC]",
     },
+    equipeH: {
+      linkPagina: "",
+      bgCard: "bg-[#E79595]",
+      borderCard: "border-[#ED3535]",
+      equipeTitulo: "Equipe H",
+      borderImg: "border-[#ED3535]",
+      img: [
+        "https://github.com/yJoaoVictor10.png",
+        "https://github.com/pedrovaz100.png",
+      ],
+      integrantes: ["João", "Pedro"], 
+      borderBotao: "border-[#BE2121]",
+      corTextoBotao: "text-[#BE2121]",
+      tamanhoImg: "w-[]"
+    },
   }
 
     return (
@@ -141,14 +156,29 @@ export default function Integrantes() {
                                 <img
                                 src={src}
                                 alt={`Foto de ${equipe.integrantes[i]}`}
-                                className={`w-[95%] border-4 ${equipe.borderImg} rounded-[20px]`}
+                                className={`
+                                     ${
+                                        index === Object.values(IntegrantesData).length - 1
+                                         ? "w-[74%]"
+                                         : "w-[95%]"
+                                        }
+                                     border-4 ${equipe.borderImg} rounded-[20px]
+                                `}
                                 />
                             </div>
                             ))}
                         </figure>
 
                         {/* Nomes */}
-                        <ul className="flex justify-between gap-3 w-[80%]">
+                        <ul className={`
+                            flex 
+                            ${
+                                index === Object.values(IntegrantesData).length - 1 
+                                ? "justify-around w-[70%]"
+                                : "justify-between w-[80%]"
+                            }
+                        `}
+                        >
                             {equipe.integrantes.map((nome, i) => (
                             <li key={i}>
                                 <h3 className="font-bold text-3xl">{nome}</h3>
