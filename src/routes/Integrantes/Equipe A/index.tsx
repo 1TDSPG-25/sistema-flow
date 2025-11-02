@@ -1,0 +1,113 @@
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+
+export default function EquipeA() {
+    return (
+        <>
+            <section className="px-10">
+                <div className="flex">
+                    <h1>Equipe A</h1>
+                    <Link to="/integrantes" className="flex">
+                        <IoArrowBackCircleOutline />
+                    Voltar
+                    </Link>
+                </div>
+                    <hr />
+                <p>
+                    Conheça um pouco mais a Equipe A:
+                </p>
+
+                <div className="flex gap-5">
+                    {/* Card 1 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Enrico Delesporte</h2>
+                    <p>Desenvolvedor</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/enricodelesporte.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                    {/* Card 2 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Iago Liziero</h2>
+                    <p>Desenvolvedor front-end e back-end</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/iagoliziero.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                    {/* Card 3 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Vitor Santos</h2>
+                    <p>Desenvolvedor</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/vitordias1006.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                </div>
+            </section>
+            <section className="px-10 py-20">
+            <h2>Qual foi o papel da Equipe A durante o projeto?</h2>
+            {/* Card tarefa */}
+            <div>
+                <img src="" alt="" />
+                <h2>Bugfix</h2>
+                <p>Equipe responsável pelo conserto de diversos erros no site. Desde API da página Home, reformulação de rotas.</p>
+                <Link to="" target="_blank" rel="noopener noreferrer">Clique aqui para ver mais</Link>
+            </div>
+        </section>
+        </>
+    );
+}

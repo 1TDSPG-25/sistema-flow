@@ -16,6 +16,7 @@ import { ThemeProvider } from './context/ThemeContext.tsx'
 
 import Perfil from './routes/Perfil/index.tsx';
 import Integrantes from './routes/Integrantes/index.tsx'
+import EquipeA from './routes/Integrantes/Equipe A/index.tsx'
 import EquipeE from './routes/Integrantes/Equipe E/index.tsx'
 
 const router = createBrowserRouter([{
@@ -32,7 +33,8 @@ const router = createBrowserRouter([{
     { path:"/perfil", element:<Perfil/> },
     { path:"/perfil/:id", element:<Perfil/> },
     { path:"/integrantes", element: <Integrantes/> },
-    { path:"/integrantes/equipeE", element: <EquipeE/>}
+    { path:"/integrantes/equipeA", element: <EquipeA/> },
+    { path:"/integrantes/equipeE", element: <EquipeE/> },
   ]
 }], { basename: "/sistema-flow" })
 
