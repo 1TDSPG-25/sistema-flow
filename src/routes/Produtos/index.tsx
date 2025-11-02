@@ -1,9 +1,8 @@
 // routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // ← Nova importação
+import { Link } from "react-router-dom";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
-
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function Produtos() {
@@ -12,35 +11,37 @@ export default function Produtos() {
 
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProdutos = async () => {
+    async function fetchProdutos() {
       try {
         const response = await fetch(API_URL);
-
         if (!response.ok) {
-          throw new Error("Erro ao carregar dados locais");
+          throw new Error("Erro ao carregar dados da API");
         }
-
         const produtosData: TipoProduto[] = await response.json();
-
         await new Promise((resolve) => setTimeout(resolve, 500));
         setProdutos(produtosData);
-      } catch (error: unknown) {
-        if (error instanceof Error) {
-          alert("Erro ao carregar dados locais: " + error.message);
-        } else {
-          alert("Erro ao carregar dados locais");
-        }
+      } catch (e) {
+        console.error("Erro ao buscar produtos:", e);
+      } finally {
+        setLoading(false);
       }
-    };
-
+    }
     fetchProdutos();
   }, []);
 
-  const produtosFiltrados = produtos.filter((p) =>
-    busca === "" ? true : p.nome.toLowerCase().startsWith(busca.toLowerCase())
-  );
+  const buscaTrim = busca.trim();
+  const isBuscaNumero = buscaTrim !== "" && !isNaN(Number(buscaTrim));
+  const buscaLower = buscaTrim.toLowerCase();
+  const produtosFiltrados = produtos.filter((p, idx) => {
+    if (buscaTrim === "") return true;
+    if (isBuscaNumero) {
+      if ((idx + 1).toString() === buscaTrim) return true;
+    }
+    return p.nome.toLowerCase().includes(buscaLower);
+  });
 
   return (
     <main
@@ -75,11 +76,15 @@ export default function Produtos() {
           />
         </div>
 
-        {produtosFiltrados.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+          </div>
+        ) : produtosFiltrados.length > 0 ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {produtosFiltrados.map((produto) => (
-              <li key={produto.id}>
-                <Link to={`/produtos/${produto.id}`}>
+            {produtosFiltrados.map((produto, idx) => (
+              <li key={idx}>
+                <Link to={`/produtos/${idx + 1}`}>
                   <div
                     className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer ${
                       isDark
@@ -112,7 +117,7 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Fabricação:</span>{" "}
-                      {new Date(produto.dataFabricacao).toLocaleDateString(
+                      {new Date(produto.dataDeFabricacao).toLocaleDateString(
                         "pt-BR"
                       )}
                     </p>
@@ -122,7 +127,7 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Validade:</span>{" "}
-                      {new Date(produto.dataValidade).toLocaleDateString(
+                      {new Date(produto.dataDeValidade).toLocaleDateString(
                         "pt-BR"
                       )}
                     </p>
