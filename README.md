@@ -98,6 +98,11 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
+- **REFACTOR:** Organizar melhor o codigo-> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Unidades -> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Integrantes -> <span style="color:white">Equipe ?</span>
 </ul>
 
 ---

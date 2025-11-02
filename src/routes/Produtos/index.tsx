@@ -1,4 +1,3 @@
-// routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddItemModal from "../../components/AddItemModal/AddItemModal";
