@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import Spinner from "../../components/Spinner";
 import {
   FiAlertCircle,
   FiCreditCard,
@@ -9,6 +8,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoUser } from "../../types/tipoUsuario";
 

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import Spinner from "../../components/Spinner";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
-import { IoIosArrowRoundBack } from "react-icons/io";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -83,7 +83,8 @@ export default function ProdutoDetail() {
               : "text-gray-600 hover:text-gray-800"
           }`}
         >
-          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para produtos
+          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para
+          produtos
         </Link>
 
         <div
