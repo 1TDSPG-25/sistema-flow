@@ -49,31 +49,30 @@ export default function Perfil() {
         setCarregando(true);
         setErro(null);
 
-        let targetId: string | null = null;
-        if (id != null) {
-          targetId = id;
-        } else if (loggedId != null) {
-          targetId = loggedId;
+        const rawUsuario = localStorage.getItem("usuarioLogado");
+        if (!rawUsuario) {
+          navigate("/login", { replace: true });
+          return;
         }
-
-        if (targetId == null) {
-          setErro(
-            "Nenhum usuário selecionado. Passe o ID na URL (ex.: /perfil/5) ou faça login para ver seu perfil."
-          );
+        const usuario = JSON.parse(rawUsuario);
+        const email = usuario?.email;
+        const senha = usuario?.senha;
+        if (!email || !senha) {
+          setErro("Não foi possível identificar o usuário logado.");
           setUser(null);
           setCarregando(false);
           return;
         }
-
-        const base = API_USERS.replace(/\/$/, "");
-        const r = await fetch(`${base}/${targetId}`, {
+        const r = await fetch(API_USERS, {
           headers: { Accept: "application/json" },
         });
-        if (r.status === 404)
-          throw new Error(`Usuário ${targetId} não encontrado.`);
-        if (!r.ok) throw new Error(`Falha ao buscar usuário (${r.status}).`);
-
-        const found = await r.json();
+        if (!r.ok) throw new Error(`Falha ao buscar clientes (${r.status}).`);
+        const clientes = await r.json();
+        const found = clientes.find(
+          (c: TipoUser) => c.email === email && c.senha === senha
+        );
+        if (!found)
+          throw new Error("Usuário logado não encontrado na base de dados.");
         setUser(coerceUser(found));
       } catch (e: unknown) {
         const message =
@@ -85,7 +84,7 @@ export default function Perfil() {
       }
     };
     run();
-  }, [id, loggedId]);
+  }, [id, loggedId, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("usuarioLogado");
@@ -107,8 +106,8 @@ export default function Perfil() {
   if (carregando) {
     return (
       <div className="max-w-2xl mx-auto p-4 text-gray-500">
-        <div className="flex items-center gap-2">
-          <FiUser className="animate-pulse" aria-hidden />
+        <div className="flex items-center gap-2 justify-center">
+          <span className="inline-block w-5 h-5 mr-2 border-2 border-t-2 border-gray-400 border-t-indigo-500 rounded-full animate-spin"></span>
           <span>Carregando dados do usuário…</span>
         </div>
       </div>
@@ -174,10 +173,8 @@ export default function Perfil() {
           className={`mt-3 text-2xl font-semibold ${
             isDark ? "text-amber-50" : "text-gray-900"
           }`}
-        >
-        </p>
+        ></p>
         <div className="mt-6 w-full">
-          
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div
               className={`rounded-lg border p-3 ${

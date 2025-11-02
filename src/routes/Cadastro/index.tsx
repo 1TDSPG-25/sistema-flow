@@ -10,6 +10,18 @@ const cadastroSchema = z.object({
     nome: z.string().min(3, { message: "O nome precisa ter no mínimo 3 caracteres." }),
     cpf: z.string().min(11, { message: "O CPF deve ter 11 dígitos." }),
     email: z.email({ message: "Por favor, insira um e-mail válido." }),
+    dataNascimento: z.string()
+        .refine((val) => {
+            const hoje = new Date();
+            const nasc = new Date(val);
+            if (isNaN(nasc.getTime())) return false;
+            const idade = hoje.getFullYear() - nasc.getFullYear();
+            const m = hoje.getMonth() - nasc.getMonth();
+            if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) {
+                return idade - 1 >= 18;
+            }
+            return idade >= 18;
+        }, { message: "Você precisa ser maior de 18 anos." }),
     senha: z.string()
         .min(8, { message: "A senha precisa ter no mínimo 8 caracteres." })
         .max(20, { message: "A senha pode ter no máximo 20 caracteres." })
@@ -74,6 +86,16 @@ export default function CadastroForm() {
             <h2 className={`text-2xl font-bold mb-6 text-center transition-colors duration-500 ${isDark ? "text-gray-100" : "text-gray-800"}`}>Criar Conta</h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div>
+                    <label htmlFor="dataNascimento" className={`block text-sm font-medium transition-colors duration-500 ${isDark ? "text-gray-200" : "text-gray-700"}`}>Data de Nascimento</label>
+                    <input
+                        id="dataNascimento"
+                        type="date"
+                        className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${isDark ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400" : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"}`}
+                        {...register("dataNascimento")}
+                    />
+                    {errors.dataNascimento && <p className="text-red-500 text-sm">{errors.dataNascimento.message}</p>}
+                </div>
                 <div>
                     <label htmlFor="nome" className={`block text-sm font-medium transition-colors duration-500 ${isDark ? "text-gray-200" : "text-gray-700"}`}>Nome Completo</label>
                     <input
