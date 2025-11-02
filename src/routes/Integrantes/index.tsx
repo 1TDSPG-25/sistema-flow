@@ -47,6 +47,21 @@ export default function Integrantes() {
       borderBotao: "border-[#C7354D]",
       corTextoBotao: "text-[#C7354D]",
     },
+    equipeD: {
+      linkPagina: "",
+      bgCard: "bg-[#EFEEC3]",
+      borderCard: "border-[#DEDA21]",
+      equipeTitulo: "Equipe D",
+      borderImg: "border-[#DEDA21]",
+      img: [
+        "https://github.com/Asuyz.png",
+        "https://github.com/JoaooResende.png",
+        "https://github.com/lucastdag.png",
+      ],
+      integrantes: ["André", "João", "Lucas"],
+      borderBotao: "border-[#A19F5A]",
+      corTextoBotao: "text-[#A19F5A]",
+    },
   }
 
     return (
