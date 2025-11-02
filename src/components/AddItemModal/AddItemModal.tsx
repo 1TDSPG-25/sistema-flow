@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 import type { AddItemModalProps } from "../../types/addItemModal";
 
-const AddItemModal: React.FC<AddItemModalProps & { dark?: boolean }> = ({
+
+function AddItemModal({
   open,
   onClose,
   onSubmit,
@@ -11,41 +13,55 @@ const AddItemModal: React.FC<AddItemModalProps & { dark?: boolean }> = ({
   error = null,
   submitLabel = "Salvar",
   dark = false,
-}) => {
+}: AddItemModalProps & { dark?: boolean }) {
   const [values, setValues] = useState<Record<string, unknown>>({});
   const [localError, setLocalError] = useState<string | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!open) {
       setValues({});
       setLocalError(null);
     }
   }, [open]);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type } = e.target;
     setValues((prev) => ({
       ...prev,
       [name]: type === "number" ? parseFloat(value) : value,
     }));
-  }
+  }, []);
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    for (const field of fields) {
-      if (field.required && !values[field.name]) {
-        setLocalError(`O campo "${field.label}" é obrigatório.`);
-        return;
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      for (const field of fields) {
+        if (field.required && !values[field.name]) {
+          setLocalError(`O campo "${field.label}" é obrigatório.`);
+          return;
+        }
       }
+      setLocalError(null);
+      await onSubmit(values);
+    },
+    [fields, values, onSubmit]
+  );
+
+  useEffect(() => {
+    if (open) {
+      const firstInput = document.querySelector("#add-item-modal input");
+      if (firstInput) (firstInput as HTMLElement).focus();
     }
-    setLocalError(null);
-    await onSubmit(values);
-  }
+  }, [open]);
 
   if (!open) return null;
 
-  return (
+  return ReactDOM.createPortal(
     <div
+      id="add-item-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
       className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
       onClick={onClose}
     >
@@ -110,8 +126,9 @@ const AddItemModal: React.FC<AddItemModalProps & { dark?: boolean }> = ({
           </div>
         </form>
       </div>
-    </div>
+    </div>,
+    document.body
   );
-};
+}
 
 export default AddItemModal;
