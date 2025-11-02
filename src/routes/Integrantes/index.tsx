@@ -9,6 +9,11 @@ export default function Integrantes() {
             borderCard: "2577EF",
             equipeTitulo: "Equipe A",
             borderImg: "2577EF",
+            img: [
+                "https://github.com/enricodelesporte.png",
+                "https://github.com/iagoliziero.png",
+                "https://github.com/vitordias1006.png"
+            ],
             integrantes: [
                 "Enrico",
                 "Iago",
@@ -16,7 +21,7 @@ export default function Integrantes() {
             ],
             borderBotao: "0059D8",
             corTextoBotao: "0059D8"
-        }
+        },
     ]
     return (
         <section className="flex flex-col gap-15 my-10 px-12">
@@ -41,19 +46,19 @@ export default function Integrantes() {
                                 <figure className="flex items-center mt-5">
                                     <div className="flex flex-col items-center">
                                         <img 
-                                        src="https://github.com/enricodelesporte.png"
+                                        src={`${equipe.img[0]}`}
                                         alt="Uma fotografia do Enrico"
                                         className={`w-[95%] border-4 border-[#${equipe.borderImg}] rounded-[20px]`} />
                                     </div>
                                     <div className="flex flex-col items-center -mt-10 -ml-10">
                                         <img 
-                                        src="https://github.com/iagoliziero.png"
+                                        src={`${equipe.img[1]}`}
                                         alt="Uma fotografia do Iago"
                                         className={`w-[95%] border-4 border-[#${equipe.borderImg}] rounded-[20px]`} />
                                     </div>
                                     <div className="flex flex-col items-center -ml-10">
                                         <img 
-                                        src="https://github.com/vitordias1006.png"
+                                        src={`${equipe.img[2]}`}
                                         alt="Uma fotografia do Vitor"
                                         className={`w-[95%] border-4 border-[#${equipe.borderImg}] rounded-[20px]`} />
                                     </div>
