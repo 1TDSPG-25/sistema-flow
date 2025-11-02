@@ -32,9 +32,16 @@ export default function Produtos() {
     fetchProdutos();
   }, []);
 
-  const produtosFiltrados = produtos.filter((p) =>
-    busca === "" ? true : p.nome.toLowerCase().startsWith(busca.toLowerCase())
-  );
+  const buscaTrim = busca.trim();
+  const isBuscaNumero = buscaTrim !== "" && !isNaN(Number(buscaTrim));
+  const buscaLower = buscaTrim.toLowerCase();
+  const produtosFiltrados = produtos.filter((p, idx) => {
+    if (buscaTrim === "") return true;
+    if (isBuscaNumero) {
+      if ((idx + 1).toString() === buscaTrim) return true;
+    }
+    return p.nome.toLowerCase().includes(buscaLower);
+  });
 
   return (
     <main
