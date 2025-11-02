@@ -98,6 +98,16 @@ export default function EquipeE() {
             </div>
           </div>
         </section>
+        <section className="px-10 py-20">
+            <h2>Qual foi o papel da Equipe E durante o projeto?</h2>
+            {/* Card tarefa 1 */}
+            <div>
+                <img src="" alt="" />
+                <h2>Página de Cadastro</h2>
+                <p>Equipe responsável pelo desenvolvimento da página de cadastro de conta, implementando o formulário de registro de novos usuários, validação dos dados inseridos e integração com o sistema de armazenamento das informações.</p>
+                <Link to="" target="_blank" rel="noopener noreferrer">Clique aqui para ver mais</Link>
+            </div>
+        </section>
       </>
     );
 }
