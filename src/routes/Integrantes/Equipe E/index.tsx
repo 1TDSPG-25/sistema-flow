@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 export default function EquipeE() {
     return (
       <>
-        <section className="flex flex-col justify-center pl-8">
+        <section className="flex flex-col justify-center pl-8
+        sm:px-8">
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-4xl">Equipe E</h1>
             <Link
               to="/integrantes"
-              className="flex font-bold items-center gap-1"
+              className="flex font-bold items-center text-xl gap-1"
             >
               <IoArrowBackCircleOutline className="size-8" />
               Voltar
@@ -26,7 +27,7 @@ export default function EquipeE() {
               <img
                 src="https://github.com/orlando-IDA.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
+                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5 w-full"
               />
 
               <h2 className="font-bold text-[32px]">Orlando Gonçalves</h2>
@@ -116,13 +117,13 @@ export default function EquipeE() {
             </li>
           </ul>
         </section>
-        <section className="pl-8">
+        <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
           <h2 className="font-bold text-4xl">
             Qual foi o papel da Equipe E durante o projeto?
           </h2>
 
           {/* Card tarefa 1 */}
-          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10">
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]">
             <div>
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762123088/pagina-cadastro_ddigo9.jpg"
@@ -138,13 +139,16 @@ export default function EquipeE() {
               validação dos dados inseridos e integração com o sistema de
               armazenamento das informações.
             </p>
-            <Link to="/cadastro" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center">
+            <Link to="/cadastro" target="_blank" rel="noopener noreferrer"
+            className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+            sm:w-[60%]
+            md:w-[50%]">
               Clique aqui para ver mais
             </Link>
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10">
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]">
             <div>
               <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
               alt="Foto da tela de produtos"
@@ -158,7 +162,9 @@ export default function EquipeE() {
               proporcionando uma visualização clara e organizada para os
               usuários.
             </p>
-            <Link to="/produtos" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center">
+            <Link to="/produtos" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center
+            sm:w-[60%]
+            md:w-[50%]">
               Clique aqui para ver mais
             </Link>
           </div>
