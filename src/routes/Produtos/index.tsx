@@ -1,8 +1,9 @@
-// routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Spinner from "../../components/Spinner";
+import AddItemModal from "../../components/AddItemModal/AddItemModal";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
+import type { AddItemField } from "../../types/addItemModal";
 import type { TipoProduto } from "../../types/tipoProduto";
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -13,6 +14,21 @@ export default function Produtos() {
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
   const [loading, setLoading] = useState(true);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [addLoading, setAddLoading] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
+  const produtoFields: AddItemField[] = [
+    { name: "nome", label: "Nome do produto", type: "text", required: true },
+    {
+      name: "dataDeFabricacao",
+      label: "Data de fabricação",
+      type: "date",
+      required: true,
+    },
+    { name: "dataDeValidade", label: "Validade", type: "date", required: true },
+    { name: "preco", label: "Preço (R$)", type: "number", required: true },
+    { name: "imagem", label: "Imagem (URL)", type: "text" },
+  ];
 
   useEffect(() => {
     async function fetchProdutos() {
@@ -75,7 +91,45 @@ export default function Produtos() {
                 : "bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-indigo-500"
             }`}
           />
+          <button
+            onClick={() => setShowAddModal(true)}
+            className={`bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md shadow-md transition`}
+          >
+            + Novo produto
+          </button>
         </div>
+        <AddItemModal
+          open={showAddModal}
+          onClose={() => setShowAddModal(false)}
+          onSubmit={async (values) => {
+            setAddLoading(true);
+            setAddError(null);
+            try {
+              const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+              });
+              if (!res.ok) throw new Error("Erro ao adicionar produto");
+              setShowAddModal(false);
+              const response = await fetch(API_URL);
+              if (response.ok) {
+                const produtosData: TipoProduto[] = await response.json();
+                setProdutos(produtosData);
+              }
+            } catch {
+              setAddError("Falha ao adicionar produto.");
+            } finally {
+              setAddLoading(false);
+            }
+          }}
+          fields={produtoFields}
+          title="Adicionar produto"
+          loading={addLoading}
+          error={addError}
+          submitLabel="Salvar"
+          dark={isDark}
+        />
 
         {loading ? (
           <div className="flex justify-center items-center py-12">
@@ -109,7 +163,7 @@ export default function Produtos() {
                     >
                       {produto.nome}
                     </h3>
-                    <p className="text-indigo-600 font-medium mt-2">
+                    <p className="text-1xl font-bold mt-2 text-indigo-500 drop-shadow-sm">
                       R$ {produto.preco.toFixed(2)}
                     </p>
                     <p
