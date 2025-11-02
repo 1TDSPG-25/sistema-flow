@@ -96,7 +96,7 @@ export default function Integrantes() {
       linkPagina: "",
       bgCard: "bg-[#B4B2DC]",
       borderCard: "border-[#433BE5]",
-      equipeTitulo: "Equipe F",
+      equipeTitulo: "Equipe G",
       borderImg: "border-[#433BE5]",
       img: [
         "https://github.com/moisesBarsoti.png",
