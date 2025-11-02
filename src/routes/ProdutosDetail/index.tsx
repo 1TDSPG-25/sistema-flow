@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
@@ -15,21 +16,18 @@ export default function ProdutoDetail() {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-        const response = await fetch(`${API_URL}/${id}`);
+        const response = await fetch(`${API_URL}`); // API now returns all products
         if (!response.ok) throw new Error("Produto não encontrado");
-
-        const produtoData: TipoProduto = await response.json();
-        setProduto(produtoData);
-      } catch (error: unknown) {
-        console.error("Erro ao carregar produto:", error);
-        alert(
-          error instanceof Error ? error.message : "Erro ao carregar produto"
-        );
+        const produtosData: TipoProduto[] = await response.json();
+        // Find by index since no id
+        const idx = Number(id) - 1;
+        setProduto(produtosData[idx] || null);
+      } catch {
+        setProduto(null);
       } finally {
         setLoading(false);
       }
     };
-
     if (id) fetchProduto();
   }, [id]);
 
@@ -87,7 +85,7 @@ export default function ProdutoDetail() {
               : "text-gray-600 hover:text-gray-800"
           }`}
         >
-          ← Voltar para produtos
+          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para produtos
         </Link>
 
         <div
@@ -144,7 +142,7 @@ export default function ProdutoDetail() {
                       }`}
                     >
                       <span className="font-medium">Fabricação:</span>{" "}
-                      {new Date(produto.dataFabricacao).toLocaleDateString(
+                      {new Date(produto.dataDeFabricacao).toLocaleDateString(
                         "pt-BR"
                       )}
                     </p>
@@ -154,7 +152,7 @@ export default function ProdutoDetail() {
                       }`}
                     >
                       <span className="font-medium">Validade:</span>{" "}
-                      {new Date(produto.dataValidade).toLocaleDateString(
+                      {new Date(produto.dataDeValidade).toLocaleDateString(
                         "pt-BR"
                       )}
                     </p>

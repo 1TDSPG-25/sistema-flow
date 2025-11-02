@@ -1,9 +1,8 @@
 // routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
-import useTheme from "../../context/useTheme";
 import { Link } from "react-router-dom";
+import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
-
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function Produtos() {
@@ -15,7 +14,7 @@ export default function Produtos() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProdutos = async () => {
+    async function fetchProdutos() {
       try {
         const response = await fetch(API_URL);
         if (!response.ok) {
@@ -24,17 +23,17 @@ export default function Produtos() {
         const produtosData: TipoProduto[] = await response.json();
         await new Promise((resolve) => setTimeout(resolve, 500));
         setProdutos(produtosData);
-      } catch (error: unknown) {
-  // Erro já tratado pelo spinner, pode logar se quiser
+      } catch (e) {
+        console.error("Erro ao buscar produtos:", e);
       } finally {
         setLoading(false);
       }
-    };
+    }
     fetchProdutos();
   }, []);
 
   const produtosFiltrados = produtos.filter((p) =>
-  busca === "" ? true : p.nome.toLowerCase().startsWith(busca.toLowerCase())
+    busca === "" ? true : p.nome.toLowerCase().startsWith(busca.toLowerCase())
   );
 
   return (
