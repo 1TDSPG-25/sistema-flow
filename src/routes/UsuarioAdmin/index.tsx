@@ -9,8 +9,7 @@ export type Produto = {
   valor: number;
 };
 
-const API_URL =
-  import.meta.env.VITE_API_URL_PRODUTOS || "http://localhost:3001/produtos";
+const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function AdminProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -44,8 +43,10 @@ export default function AdminProdutos() {
   async function buscarProdutos(): Promise<void> {
     try {
       setLoading(true);
-      const res = await axios.get<Produto[]>(API_URL);
-      setProdutos(res.data);
+      const res = await fetch(API_URL);
+      if (!res.ok) throw new Error("Falha ao carregar produtos.");
+      const data: Produto[] = await res.json();
+      setProdutos(data);
     } catch (err) {
       console.error("Erro ao buscar produtos:", err);
       setError("Falha ao carregar produtos.");
@@ -81,11 +82,22 @@ export default function AdminProdutos() {
     };
 
     try {
+      let res;
       if (editing) {
-        await axios.put(`${API_URL}/${editing.id}`, novoProduto);
+        res = await fetch(`${API_URL}/${editing.id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(novoProduto),
+        });
+        if (!res.ok) throw new Error("Falha ao atualizar produto.");
         setMessage("Produto atualizado com sucesso!");
       } else {
-        await axios.post(API_URL, novoProduto);
+        res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(novoProduto),
+        });
+        if (!res.ok) throw new Error("Falha ao adicionar produto.");
         setMessage("Produto adicionado com sucesso!");
       }
       setShowForm(false);
@@ -107,7 +119,10 @@ export default function AdminProdutos() {
     if (!id) return;
     if (!confirm("Deseja realmente excluir este produto?")) return;
     try {
-      await axios.delete(`${API_URL}/${id}`);
+      const res = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+      });
+      if (!res.ok) throw new Error("Falha ao remover o produto.");
       setMessage("Produto removido com sucesso!");
       await buscarProdutos();
     } catch (err) {
