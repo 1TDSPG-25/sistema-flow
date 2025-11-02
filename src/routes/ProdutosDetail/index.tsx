@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Spinner from "../../components/Spinner";
 import { Link, useParams } from "react-router-dom";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
@@ -38,10 +39,7 @@ export default function ProdutoDetail() {
           isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
         }`}
       >
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
-          <p className="mt-4">Carregando produto...</p>
-        </div>
+        <Spinner text="Carregando produto..." />
       </main>
     );
   }

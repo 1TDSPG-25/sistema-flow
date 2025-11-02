@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Spinner from "../../components/Spinner";
  
 export type Produto = {
   id?: number;
@@ -165,9 +166,9 @@ export default function AdminProdutos() {
  
       <main>
         {loading ? (
-          <p className="text-center text-slate-400 py-8">
-            Carregando produtos...
-          </p>
+          <div className="text-center py-8">
+            <Spinner text="Carregando produtos..." />
+          </div>
         ) : produtos.length === 0 ? (
           <p className="text-center text-slate-400 py-8">
             Nenhum produto encontrado.
