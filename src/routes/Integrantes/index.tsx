@@ -92,6 +92,21 @@ export default function Integrantes() {
       borderBotao: "border-[#B52783]",
       corTextoBotao: "text-[#B52783]",
     },
+    equipeG: {
+      linkPagina: "",
+      bgCard: "bg-[#B4B2DC]",
+      borderCard: "border-[#433BE5]",
+      equipeTitulo: "Equipe F",
+      borderImg: "border-[#433BE5]",
+      img: [
+        "https://github.com/moisesBarsoti.png",
+        "https://github.com/sSofia-s.png",
+        "https://github.com/FeKiModesto.png",
+      ],
+      integrantes: ["Moisés", "Sofia", "Felipe"],
+      borderBotao: "border-[#251DBC]",
+      corTextoBotao: "text-[#251DBC]",
+    },
   }
 
     return (
