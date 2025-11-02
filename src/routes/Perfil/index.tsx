@@ -146,7 +146,7 @@ export default function Perfil() {
   //   </span>
   // );
   return (
-    <section className="max-w-2xl mx-auto p-4">
+    <section className="min-h-screen pb-20 max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-start">
         <h1 className="text-2xl font-semibold flex items-center gap-2">
           <FiUser aria-hidden /> Perfil
