@@ -62,6 +62,21 @@ export default function Integrantes() {
       borderBotao: "border-[#A19F5A]",
       corTextoBotao: "text-[#A19F5A]",
     },
+    equipeE: {
+      linkPagina: "",
+      bgCard: "bg-[#EFD2C3]",
+      borderCard: "border-[#EA7D44]",
+      equipeTitulo: "Equipe E",
+      borderImg: "border-[#EA7D44]",
+      img: [
+        "https://github.com/orlando-IDA.png",
+        "https://github.com/KiuboHIrata.png",
+        "https://github.com/ggabmartins.png",
+      ],
+      integrantes: ["Orlando", "Alex", "Gabriel"],
+      borderBotao: "border-[#CD632B]",
+      corTextoBotao: "text-[#CD632B]",
+    },
   }
 
     return (
