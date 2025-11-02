@@ -107,6 +107,14 @@ export default function EquipeE() {
                 <p>Equipe responsável pelo desenvolvimento da página de cadastro de conta, implementando o formulário de registro de novos usuários, validação dos dados inseridos e integração com o sistema de armazenamento das informações.</p>
                 <Link to="" target="_blank" rel="noopener noreferrer">Clique aqui para ver mais</Link>
             </div>
+
+            {/* Card tarefa 2 */}
+            <div>
+                <img src="" alt="" />
+                <h2>Página de Produtos</h2>
+                <p>Desenvolveram também uma página de produtos, que exibe o nome, o preço e as informações detalhadas de cada item disponível, proporcionando uma visualização clara e organizada para os usuários.</p>
+                <Link to="" target="_blank" rel="noopener noreferrer">Clique aqui para ver mais</Link>
+            </div>
         </section>
       </>
     );
