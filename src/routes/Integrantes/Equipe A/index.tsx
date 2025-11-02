@@ -98,6 +98,16 @@ export default function EquipeA() {
                     </div>
                 </div>
             </section>
+            <section className="px-10 py-20">
+            <h2>Qual foi o papel da Equipe A durante o projeto?</h2>
+            {/* Card tarefa */}
+            <div>
+                <img src="" alt="" />
+                <h2>Bugfix</h2>
+                <p>Equipe responsável pelo conserto de diversos erros no site. Desde API da página Home, reformulação de rotas.</p>
+                <Link to="" target="_blank" rel="noopener noreferrer">Clique aqui para ver mais</Link>
+            </div>
+        </section>
         </>
     );
 }
