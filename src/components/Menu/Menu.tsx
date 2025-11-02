@@ -26,6 +26,7 @@ export default function Menu() {
     { path: "/unidade", label: "Unidade" },
     { path: "/faq", label: "FAQ" },
     { path: "/contato", label: "Contato" },
+    { path: "/integrantes", label: "Integrantes" },
     isLoggedIn
       ? { path: "/perfil", label: perfilIcon }
       : { path: "/login", label: loginIcon },
