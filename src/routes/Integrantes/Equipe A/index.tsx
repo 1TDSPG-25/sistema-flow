@@ -16,7 +16,88 @@ export default function EquipeA() {
                 <p>
                     Conheça um pouco mais a Equipe A:
                 </p>
+
+                <div className="flex gap-5">
+                    {/* Card 1 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Enrico Delesporte</h2>
+                    <p>Desenvolvedor</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/enricodelesporte.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                    {/* Card 2 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Iago Liziero</h2>
+                    <p>Desenvolvedor front-end e back-end</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/iagoliziero.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                    {/* Card 3 */}
+                    <div className="bg-[#EFD2C3]">
+                    <img
+                        src="https://github.com/orlando-IDA.png"
+                        alt="Foto de um usuário do GitHub."
+                    />
+                    <h2>Vitor Santos</h2>
+                    <p>Desenvolvedor</p>
+                    <p>Redes Sociais:</p>
+                    <Link
+                        to="https://github.com/vitordias1006.png"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                        alt="ícone do GitHub"
+                        />
+                    </Link>
+                    <Link to="" target="_blank" rel="noopener noreferrer">
+                        <img
+                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                        alt="ícone do LinkedIn"
+                        />
+                    </Link>
+                    </div>
+                </div>
             </section>
         </>
-    )
+    );
 }
