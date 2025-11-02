@@ -20,7 +20,7 @@ export default function Integrantes() {
 
   const IntegrantesData: IntegrantesDataType  = {
     equipeA: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeA",
       bgCard: "bg-[#C3D5EF]",
       borderCard: "border-[#2577EF]",
       hoverCard: "rgba(31,114,238,0.1)",
@@ -36,7 +36,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#0059D8]",
     },
     equipeB: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeB",
       bgCard: "bg-[#B2DCBD]",
       borderCard: "border-[#25D553]",
       hoverCard: "rgba(28,193,102,0.1)",
@@ -52,7 +52,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#337B45]",
     },
     equipeC: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeC",
       bgCard: "bg-[#E0A5AF]",
       borderCard: "border-[#E42645]",
       hoverCard: "rgba(193,72,28,0.1)",
@@ -68,7 +68,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#C7354D]",
     },
     equipeD: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeD",
       bgCard: "bg-[#EFEEC3]",
       borderCard: "border-[#DEDA21]",
       hoverCard: "rgba(255,247,0,0.1)", 
@@ -84,7 +84,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#A19F5A]",
     },
     equipeE: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeE",
       bgCard: "bg-[#EFD2C3]",
       borderCard: "border-[#EA7D44]",
       hoverCard: "rgba(255,174,0,0.2)",
@@ -100,7 +100,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#CD632B]",
     },
     equipeF: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeF",
       bgCard: "bg-[#DCB2CD]",
       borderCard: "border-[#EF3CB1]",
       hoverCard: "rgba(255,0,238,0.2)",
@@ -116,7 +116,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#B52783]",
     },
     equipeG: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeG",
       bgCard: "bg-[#B4B2DC]",
       borderCard: "border-[#433BE5]",
       hoverCard: "rgba(69,1,255,0.2)",
@@ -132,7 +132,7 @@ export default function Integrantes() {
       corTextoBotao: "text-[#251DBC]",
     },
     equipeH: {
-      linkPagina: "",
+      linkPagina: "/integrantes/equipeH",
       bgCard: "bg-[#E79595]",
       borderCard: "border-[#ED3535]",
       hoverCard: "rgba(209,28,28,0.2)",
