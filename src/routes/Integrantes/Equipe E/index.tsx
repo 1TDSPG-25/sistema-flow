@@ -20,9 +20,9 @@ export default function EquipeE() {
             Conheça um pouco mais a Equipe E:
           </p>
 
-          <div className="flex flex-col justify-center items-center gap-10 py-10">
+          <ul className="flex flex-col justify-center items-center gap-10 py-10">
             {/* Card 1 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/orlando-IDA.png"
                 alt="Foto de um usuário do GitHub."
@@ -51,10 +51,10 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
+            </li>
 
             {/* Card 2 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/KiuboHIrata.png"
                 alt="Foto de um usuário do GitHub."
@@ -81,10 +81,10 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
+            </li>
 
             {/* Card 3 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762102170/photo-git-user_xq1xkd.png"
                 alt="Foto de um usuário do GitHub."
@@ -113,8 +113,8 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </section>
         <section className="px-10 py-20">
           <h2>Qual foi o papel da Equipe E durante o projeto?</h2>
