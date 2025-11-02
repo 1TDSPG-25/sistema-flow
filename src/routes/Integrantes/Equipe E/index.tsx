@@ -116,34 +116,49 @@ export default function EquipeE() {
             </li>
           </ul>
         </section>
-        <section className="px-10 py-20">
-          <h2>Qual foi o papel da Equipe E durante o projeto?</h2>
+        <section className="pl-8">
+          <h2 className="font-bold text-4xl">
+            Qual foi o papel da Equipe E durante o projeto?
+          </h2>
+
           {/* Card tarefa 1 */}
-          <div>
-            <img src="" alt="" />
-            <h2>Página de Cadastro</h2>
-            <p>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10">
+            <div>
+              <img
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762123088/pagina-cadastro_ddigo9.jpg"
+                alt="Foto da tela de cadastro de usuário"
+                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]"
+              />
+            </div>
+
+            <h2 className="font-bold text-4xl mt-5 mb-3 text-center">Página de Cadastro</h2>
+            <p className="text-2xl mb-10">
               Equipe responsável pelo desenvolvimento da página de cadastro de
               conta, implementando o formulário de registro de novos usuários,
               validação dos dados inseridos e integração com o sistema de
               armazenamento das informações.
             </p>
-            <Link to="" target="_blank" rel="noopener noreferrer">
+            <Link to="/cadastro" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center">
               Clique aqui para ver mais
             </Link>
           </div>
 
           {/* Card tarefa 2 */}
-          <div>
-            <img src="" alt="" />
-            <h2>Página de Produtos</h2>
-            <p>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10">
+            <div>
+              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
+              alt="Foto da tela de produtos"
+              className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]"/>
+            </div>
+            
+            <h2 className="font-bold text-4xl mt-5 mb-3 text-center">Página de Produtos</h2>
+            <p className="text-2xl mb-10">
               Desenvolveram também uma página de produtos, que exibe o nome, o
               preço e as informações detalhadas de cada item disponível,
               proporcionando uma visualização clara e organizada para os
               usuários.
             </p>
-            <Link to="" target="_blank" rel="noopener noreferrer">
+            <Link to="/produtos" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center">
               Clique aqui para ver mais
             </Link>
           </div>
