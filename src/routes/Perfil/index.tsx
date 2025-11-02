@@ -106,8 +106,8 @@ export default function Perfil() {
   if (carregando) {
     return (
       <div className="max-w-2xl mx-auto p-4 text-gray-500">
-        <div className="flex items-center gap-2">
-          <FiUser className="animate-pulse" aria-hidden />
+        <div className="flex items-center gap-2 justify-center">
+          <span className="inline-block w-5 h-5 mr-2 border-2 border-t-2 border-gray-400 border-t-indigo-500 rounded-full animate-spin"></span>
           <span>Carregando dados do usuário…</span>
         </div>
       </div>
