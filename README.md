@@ -5,6 +5,16 @@ Nosso objetivo é desenvolver o site **Megafarma**, um sistema de farmácia onli
 Também haverá uma área de login e cadastro, com dois tipos de acesso: usuário comum (para gerenciar suas informações e pedidos) e administrador (para controlar produtos).  
 No futuro, o sistema será integrado a um backend em **Java**.
 
+## 🔗 API Backend
+
+O repositório da API utilizada neste projeto está disponível em:
+
+[https://github.com/PxS00/megafarma](https://github.com/PxS00/megafarma)
+
+Sinta-se à vontade para dar palpites, ideias e melhorias via issues ou pull requests!
+
+---
+
 ## 🏗️ Estrutura do Site
 
  Home | Produtos | Unidades | FAQ | Contato | Minha Conta
