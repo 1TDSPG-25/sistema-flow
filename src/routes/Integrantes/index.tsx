@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 
 export default function Integrantes() {
-  const IntegrantesData = {
+
+  interface EquipeProps {
+    linkPagina: string;
+    bgCard: string;
+    borderCard: string;
+    equipeTitulo: string;
+    borderImg: string;
+    img: string[];
+    integrantes: string[];
+    borderBotao: string;
+    corTextoBotao: string;
+    tamanhoImg?: string;
+  }
+
+  type IntegrantesDataType = Record<string, EquipeProps>;
+
+  const IntegrantesData: IntegrantesDataType  = {
     equipeA: {
       linkPagina: "",
       bgCard: "bg-[#C3D5EF]",
@@ -120,7 +136,6 @@ export default function Integrantes() {
       integrantes: ["João", "Pedro"], 
       borderBotao: "border-[#BE2121]",
       corTextoBotao: "text-[#BE2121]",
-      tamanhoImg: "w-[]"
     },
   }
 
