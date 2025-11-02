@@ -1,7 +1,7 @@
 // routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;

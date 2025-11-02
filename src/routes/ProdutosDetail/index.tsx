@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import Spinner from "../../components/Spinner";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoProduto } from "../../types/tipoProduto";
 
@@ -20,10 +20,9 @@ export default function ProdutoDetail() {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-        const response = await fetch(`${API_URL}`); // API now returns all products
+        const response = await fetch(`${API_URL}`);
         if (!response.ok) throw new Error("Produto não encontrado");
         const produtosData: TipoProduto[] = await response.json();
-        // Find by index since no id
         const idx = Number(id) - 1;
         setProduto(produtosData[idx] || null);
       } catch {
