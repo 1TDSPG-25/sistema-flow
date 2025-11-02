@@ -24,13 +24,13 @@ export default function Integrantes() {
       equipeTitulo: "Equipe B",
       borderImg: "border-[#25D553]",
       img: [
-        "https://github.com/enricodelesporte.png",
-        "https://github.com/iagoliziero.png",
-        "https://github.com/vitordias1006.png",
+        "https://github.com/KelsonZh0.png",
+        "https://github.com/alex-isidro.png",
+        "https://github.com/PxS00.png",
       ],
-      integrantes: ["Enrico", "Iago", "Vitor"],
-      borderBotao: "border-[#0059D8]",
-      corTextoBotao: "text-[#0059D8]",
+      integrantes: ["Kelson", "Alexander", "Lucas"], 
+      borderBotao: "border-[#337B45]",
+      corTextoBotao: "text-[#337B45]",
     },
   }
 
@@ -73,7 +73,7 @@ export default function Integrantes() {
                         </figure>
 
                         {/* Nomes */}
-                        <ul className="flex justify-between w-[80%]">
+                        <ul className="flex justify-between gap-3 w-[80%]">
                             {equipe.integrantes.map((nome, i) => (
                             <li key={i}>
                                 <h3 className="font-bold text-3xl">{nome}</h3>
