@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default function EquipeF() {
   return (
     <>
-      <section>
+      <section className="flex flex-col justify-center pl-8">
         <div className="flex items-center justify-between">
-          <h1>Equipe F</h1>
+          <h1 className="font-bold text-4xl">Equipe F</h1>
           <Link
             to="/integrantes"
             className="flex font-bold items-center text-xl gap-1"
@@ -16,19 +16,21 @@ export default function EquipeF() {
           </Link>
         </div>
         <hr className="border-2 my-3" />
-        <p>Conheça um pouco mais a Equipe F:</p>
+        <p className="text-2xl font-bold">Conheça um pouco mais a Equipe F:</p>
 
         <ul className="flex flex-col justify-center items-center gap-10 py-10">
+
           {/* Card pessoa 1 */}
-          <li className="bg-[#B4B2DC]">
+          <li className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/felipeflosii.png"
               alt="Foto de um usuário do GitHub."
+              className="border-[#433BE5] rounded-[30px] border-[3px] mb-5 w-full"
             />
 
-            <h2>Luiz Felipe</h2>
-            <p>Desenvolvedor Back-end</p>
-            <p>Redes Sociais:</p>
+            <h2 className="font-bold text-[32px]">Luiz Felipe</h2>
+            <p className="text-[#433BE5] font-bold text-2xl">Desenvolvedor Back-end</p>
+            <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
                 to="https://github.com/felipeflosii"
@@ -38,7 +40,6 @@ export default function EquipeF() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
-                  className=""
                 />
               </Link>
               <Link
@@ -55,14 +56,15 @@ export default function EquipeF() {
           </li>
 
           {/* Card pessoa 2 */}
-          <li className="bg-[#B4B2DC]">
+          <li className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/thubrito.png"
               alt="Foto de um usuário do GitHub."
+              className="border-[#433BE5] rounded-[30px] border-[3px] mb-5"
             />
-            <h2>Alexandre Hirata</h2>
-            <p>Desenvolvedor</p>
-            <p>Redes Sociais:</p>
+            <h2 className="font-bold text-[32px]">Arthur Brito</h2>
+            <p className="text-[#433BE5] font-bold text-2xl">Desenvolvedor</p>
+            <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
                 to="https://github.com/thubrito"
@@ -84,14 +86,15 @@ export default function EquipeF() {
           </li>
 
           {/* Card pessoa 3 */}
-          <li className="bg-[#B4B2DC]">
+          <li className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/PedroBrum-DEV.png"
               alt="Foto de um usuário do GitHub."
+              className="border-[#433BE5] rounded-[30px] border-[3px] mb-5"
             />
-            <h2>Pedro Brum</h2>
-            <p>Desenvolvedor</p>
-            <p>Redes Sociais:</p>
+            <h2 className="font-bold text-[32px]">Pedro Brum</h2>
+            <p className="text-[#433BE5] font-bold text-2xl">Desenvolvedor</p>
+            <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
                 to="https://github.com/PedroBrum-DEV"

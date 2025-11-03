@@ -47,7 +47,6 @@ export default function EquipeE() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                     alt="ícone do GitHub"
-                    className=""
                   />
                 </Link>
                 <Link to="" target="_blank" rel="noopener noreferrer">
