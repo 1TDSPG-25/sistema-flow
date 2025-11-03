@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 export default function EquipeE() {
     return (
       <>
-        <section className="flex flex-col justify-center pl-8
-        sm:px-8">
+        <section
+          className="flex flex-col justify-center pl-8
+        sm:px-8"
+        >
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-4xl">Equipe E</h1>
             <Link
@@ -21,7 +23,10 @@ export default function EquipeE() {
             Conheça um pouco mais a Equipe E:
           </p>
 
-          <ul className="flex flex-col justify-center items-center gap-10 py-10">
+          <ul
+            className="flex flex-col justify-center items-center gap-10 py-10
+          lg:flex-row"
+          >
             {/* Card 1 */}
             <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
@@ -118,55 +123,90 @@ export default function EquipeE() {
           </ul>
         </section>
         <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
-          <h2 className="font-bold text-4xl">
+          <h2 className="font-bold text-4xl self-start">
             Qual foi o papel da Equipe E durante o projeto?
           </h2>
 
           {/* Card tarefa 1 */}
-          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]">
-            <div>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
+          lg:p-8
+          2xl:p-13">
+            <div className="lg:flex flex-row
+            lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762123088/pagina-cadastro_ddigo9.jpg"
                 alt="Foto da tela de cadastro de usuário"
-                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]"
+                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]
+                lg:w-[30%]
+                2xl:w-[20%]"
               />
+              <div>
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página de Cadastro
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                  Equipe responsável pelo desenvolvimento da página de cadastro
+                  de conta, implementando o formulário de registro de novos
+                  usuários, validação dos dados inseridos e integração com o
+                  sistema de armazenamento das informações.
+                </p>
+                <Link
+                  to="/cadastro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+              sm:w-[60%]
+              md:w-[50%]
+              lg:w-[40%]
+              2xl:p-3"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
             </div>
-
-            <h2 className="font-bold text-4xl mt-5 mb-3 text-center">Página de Cadastro</h2>
-            <p className="text-2xl mb-10">
-              Equipe responsável pelo desenvolvimento da página de cadastro de
-              conta, implementando o formulário de registro de novos usuários,
-              validação dos dados inseridos e integração com o sistema de
-              armazenamento das informações.
-            </p>
-            <Link to="/cadastro" target="_blank" rel="noopener noreferrer"
-            className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
-            sm:w-[60%]
-            md:w-[50%]">
-              Clique aqui para ver mais
-            </Link>
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]">
-            <div>
-              <img src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
-              alt="Foto da tela de produtos"
-              className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]"/>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          2xl:p-13">
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+              <img
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
+                alt="Foto da tela de produtos"
+                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]
+                lg:w-[30%]
+                2xl:w-[20%]"
+              />
+              <div>
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página de Produtos
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                  Desenvolveram também uma página de produtos, que exibe o nome,
+                  o preço e as informações detalhadas de cada item disponível,
+                  proporcionando uma visualização clara e organizada para os
+                  usuários.
+                </p>
+                <Link
+                  to="/produtos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+              sm:w-[60%]
+              md:w-[50%]
+              lg:w-[40%]
+              2xl:p-3"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
             </div>
-            
-            <h2 className="font-bold text-4xl mt-5 mb-3 text-center">Página de Produtos</h2>
-            <p className="text-2xl mb-10">
-              Desenvolveram também uma página de produtos, que exibe o nome, o
-              preço e as informações detalhadas de cada item disponível,
-              proporcionando uma visualização clara e organizada para os
-              usuários.
-            </p>
-            <Link to="/produtos" target="_blank" rel="noopener noreferrer" className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2 flex justify-center
-            sm:w-[60%]
-            md:w-[50%]">
-              Clique aqui para ver mais
-            </Link>
           </div>
         </section>
       </>
