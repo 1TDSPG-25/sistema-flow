@@ -99,7 +99,8 @@ export default function EquipeH() {
             <img
               src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762137963/pagina-faq_zhgrih.jpg"
               alt="Foto da tela de cadastro de usuário"
-              className="bg-[#E79595] border-[#ED3535] rounded-[10px] border-[3px]"
+              className="bg-[#E79595] border-[#ED3535] rounded-[10px] border-[3px]lg:w-[30%]
+            2xl:w-[20%]"
             />
             <div>
               <h2
