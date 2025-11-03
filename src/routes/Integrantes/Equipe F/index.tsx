@@ -53,6 +53,35 @@ export default function EquipeF() {
               </div>
             </li>
 
+            {/* Card pessoa 2 */}
+            <li className="bg-[#B4B2DC]">
+              <img
+                src="https://github.com/thubrito.png"
+                alt="Foto de um usuário do GitHub."
+              />
+              <h2>Alexandre Hirata</h2>
+              <p>Desenvolvedor</p>
+              <p>Redes Sociais:</p>
+              <div className="flex gap-7">
+                <Link
+                  to="https://github.com/thubrito"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                    alt="ícone do GitHub"
+                  />
+                </Link>
+                <Link to="" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                    alt="ícone do LinkedIn"
+                  />
+                </Link>
+              </div>
+            </li>
+
           </ul>
         </section>
     );
