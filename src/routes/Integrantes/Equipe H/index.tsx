@@ -21,7 +21,8 @@ export default function EquipeH() {
         <p className="text-2xl font-bold">Conheça um pouco mais a Equipe E:</p>
 
         <ul
-          className="flex flex-col justify-center items-center gap-10 py-10"
+          className="flex flex-col justify-center items-center gap-10 py-10
+          lg:flex-row"
         >
           {/* Card 1 */}
           <li className="bg-[#E79595] border-[#ED3535] rounded-[30px] border-[3px] p-6">
@@ -94,7 +95,7 @@ export default function EquipeH() {
         <div
           className="bg-[#E79595] border-[#ED3535] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
         >
-          <div>
+          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
               src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762137963/pagina-faq_zhgrih.jpg"
               alt="Foto da tela de cadastro de usuário"
