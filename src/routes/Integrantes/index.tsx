@@ -13,7 +13,6 @@ export default function Integrantes() {
     integrantes: string[];
     borderBotao: string;
     corTextoBotao: string;
-    tamanhoImg?: string;
   }
 
   type IntegrantesDataType = Record<string, EquipeProps>;
