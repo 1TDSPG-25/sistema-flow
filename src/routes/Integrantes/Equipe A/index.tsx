@@ -105,6 +105,40 @@ export default function EquipeA() {
                     </li>
                 ))}
             </ul>
+            <h4 
+            className="
+            font-bold text-4xl 
+            mt-[100px] px-2.5">
+                Qual foi o papel da Equipe A durante o projeto?
+            </h4>
+            <ul className="px-2.5 mt-10">
+                <li className="bg-[#C3D5EF] border-5 border-[#6D9BDD] rounded-[30px] p-12">
+                    <Link 
+                    to=""
+                    className="flex gap-[100px]"
+                    >
+                        <figure className="w-[50%]">
+                            <img 
+                            src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762136841/api-e1649279794668-scaled_rl3mfk.webp" 
+                            alt="" 
+                            className="w-full h-[190px] border-3 border-[#6D9BDD] rounded-[10px]"
+                            />
+                        </figure>
+                        <div className="flex flex-col gap-[15px]">
+                            <h5 className="font-semibold text-4xl">
+                                API
+                            </h5>
+                            <p className="w-[90%] text-xl">
+                                Equipe A foi responsável pelo desenvolvimento da API da página Home, que tem como objetivo fornecer os dados principais exibidos 
+                                logo na entrada do site.
+                                Nela, estruturamos os endpoints para gerenciar informações dinâmicas, como textos de apresentação, seções de destaque e dados gerais do projeto.
+                                A integração foi feita pensando na escalabilidade e na facilidade de manutenção, 
+                                garantindo que futuras atualizações possam ser feitas sem complicar o código.
+                            </p>
+                        </div>
+                    </Link>
+                </li>
+            </ul>
         </section>
       </>
     );
