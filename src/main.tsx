@@ -19,6 +19,7 @@ import Integrantes from './routes/Integrantes/index.tsx'
 import EquipeA from './routes/Integrantes/Equipe A/index.tsx'
 import EquipeE from './routes/Integrantes/Equipe E/index.tsx'
 import EquipeF from './routes/Integrantes/Equipe F/index.tsx'
+import EquipeG from './routes/Integrantes/Equipe G/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
@@ -37,6 +38,8 @@ const router = createBrowserRouter([{
     { path:"/integrantes/equipeA", element: <EquipeA/> },
     { path:"/integrantes/equipeE", element: <EquipeE/> },
     { path:"/integrantes/equipeF", element: <EquipeF/> },
+    { path:"/integrantes/equipeG", element: <EquipeG/> },
+  
   ]
 }], { basename: "/sistema-flow" })
 
