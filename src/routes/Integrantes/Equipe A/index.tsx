@@ -1,11 +1,40 @@
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { string } from "zod";
+
+interface CardAluno {
+
+}
+
+const CardAlunoData = [
+    {
+        img:"https://github.com/enricodelesporte.png",
+        nome: "Enrico Delesporte",
+        tipoDev: "Desenvolvedor Back-End",
+        gitHub: "https://github.com/enricodelesporte",
+        linkedin: "https://www.linkedin.com/in/enricodelesporte"
+     },
+    {
+        img:"https://github.com/iagoliziero.png",
+        nome: "Iago Liziero",
+        tipoDev: "Desenvolvedor Fullstack",
+        gitHub: "https://github.com/iagoliziero",
+        linkedin: "https://www.linkedin.com/in/iagoliziero"
+     },
+    {
+        img:"https://github.com/vitordias1006.png",
+        nome: "Vitor Dias",
+        tipoDev: "Desenvolvedor Back-End",
+        gitHub: "https://github.com/vitordias1006",
+        linkedin: "#"
+     },
+]
 
 export default function EquipeA() {
     return (
       <>
         <section className="flex flex-col justify-center px-[50px] py-[30px]">
-            <div className="flex items-center justify-between">
+            <header className="flex items-center justify-between">
                 <h1 className="font-bold text-5xl">Equipe A</h1>
                 <Link
                     to="/integrantes"
@@ -14,139 +43,68 @@ export default function EquipeA() {
                 <IoArrowBackCircleOutline className="size-8 bg" />
                     <span className="text-2xl hover:">Voltar</span>
                 </Link>
-            </div>
+            </header>
             <hr className="my-3" />
             <p className="text-3xl font-bold">
                 Conheça um pouco mais a Equipe A:
             </p>
 
-            <div className="flex flex-col justify-center items-center gap-10 py-10">
-                <ul>
-                    <li className="">
-                {/* Card 1 */}
-                <div className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] p-6">
-                    <img
-                        src="https://github.com/enricodelesporte.png"
-                        alt="Foto de um usuário do GitHub."
-                        className="border-[#0077B5] rounded-[30px] border-[3px] mb-5"
-                    />
-
-                <h2 className="font-bold text-[32px]">Enrico Delesporte</h2>
-                <p className="text-[#0077B5] font-bold text-2xl">Desenvolvedor</p>
-                <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
-                <div className="flex gap-7">
-                    <Link
-                        to="https://github.com/enricodelesporte"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                            alt="ícone do GitHub"
-                            className=""
+            <ul className="flex justify-between mt-10 px-2.5">
+                {CardAlunoData.map((card, index) => (
+                    <li
+                    key={index} 
+                        className="
+                        bg-[#C3D5EF] w-[480px] px-10 py-10 
+                    flex flex-col border-5 border-[#6D9BDD] 
+                    rounded-[30px] gap-3
+                    ">
+                    <div className="flex justify-center">
+                        <img 
+                        src={`${card.img}`} 
+                        alt="Foto de um usuário do GitHub." 
+                        className="w-full border-4 border-[#0077B5] rounded-[20px]"
                         />
-                    </Link>
-                    <Link 
-                        to="https://www.linkedin.com/in/enricodelesporte" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
+                    </div>
+                    <h2 className="text-4xl font-bold">{card.nome}</h2>
+                    <p className="font-bold text-2xl text-[#0077B5]">{card.tipoDev}</p>
 
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
-                            alt="ícone do LinkedIn"
-                        />
-                    </Link>
-                </div>
-            </div>
-
-                {/* Card 2 */}
-                <div className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] p-6">
-                    <img
-                        src="https://github.com/iagoliziero.png"
-                        alt="Foto de um usuário do GitHub."
-                        className="border-[#0077B5] rounded-[30px] border-[3px] mb-5"
-                    />
-                <h2 className="font-bold text-[32px]">Iago Liziero</h2>
-                <p className="text-[#0077B5] font-bold text-2xl">Desenvolvedor Front-End & Back-End</p>
-                <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
-                <div className="flex gap-7">
-                    <Link
-                        to="https://github.com/iagoliziero"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                            alt="ícone do GitHub"
-                        />
-                    </Link>
-                    <Link 
-                        to="https://www.linkedin.com/in/iagoliziero" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
-                            alt="ícone do LinkedIn"
-                        />
-                    </Link>
-                </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] p-6"></div>
-                    <img
-                        src="https://github.com/vitordias1006.png"
-                        alt="Foto de um usuário do GitHub."
-                        className="border-[#0077B5] rounded-[30px] border-[3px] mb-5"
-                    />
-                <h2 className="font-bold text-[32px]">Vitor Dias</h2>
-                <p className="text-[#0077B5] font-bold text-2xl">
-                    Desenvolvedor
-                </p>
-                <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
-                <div className="flex gap-7">
-                    <Link
-                        to="https://github.com/vitordias1006"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                            alt="ícone do GitHub"
-                        />
-                    </Link>
-                    <Link 
-                        to="#" 
-                        target="_blank" 
-                        rel="noopener noreferrer">
-
-                        <img
-                            src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
-                            alt="ícone do LinkedIn"
-                        />
-                    </Link>
-                </div>
-                </li>
-                </ul>  
-            </div>
-        </section>
-        <section className="px-10 py-20">
-          <h2>Qual foi o papel da Equipe A durante o projeto?</h2>
-          {/* Card tarefa */}
-          <div>
-            <img src="" alt="" />
-            <h2>Bugfix</h2>
-            <p>
-              Equipe responsável por reformular as rotas e consertar a API da página Home.
-            </p>
-            <Link 
-            to="" 
-            target="_blank" 
-            rel="noopener noreferrer">
-              Clique aqui para ver mais
-            </Link>
-          </div>
+                    <div className="flex flex-col gap-4 mt-8">
+                        <h3 className="font-bold text-3xl">Redes Sociais:</h3>
+                        <ul className="flex justify-between max-w-[90%]">
+                            <li>
+                                <Link
+                                    to={`${card.gitHub}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                <figure>
+                                    <img
+                                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
+                                        alt="ícone do GitHub"
+                                        className=""
+                                    />
+                                </figure>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to={`${card.linkedin}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                <figure>
+                                    <img
+                                        src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                                        alt="ícone do LinkedIn"
+                                    />
+                                </figure>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    </li>
+                ))}
+            </ul>
         </section>
       </>
     );
