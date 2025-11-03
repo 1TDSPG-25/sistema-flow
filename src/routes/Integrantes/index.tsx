@@ -93,7 +93,7 @@ export default function Integrantes() {
       img: [
         "https://github.com/orlando-IDA.png",
         "https://github.com/KiuboHIrata.png",
-        "https://github.com/ggabmartins.png",
+        "https://res.cloudinary.com/dt26mfzpw/image/upload/v1762102170/photo-git-user_xq1xkd.png",
       ],
       integrantes: ["Orlando", "Alex", "Gabriel"],
       borderBotao: "border-[#CD632B]",
