@@ -120,23 +120,24 @@ export default function EquipeG() {
         </ul>
       </section>
 
-      <section>
-          <h2>
+      <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
+          <h2 className="font-bold text-4xl self-start">
             Qual foi o papel da Equipe G durante o projeto?
           </h2>
 
           {/* Card tarefa 1 */}
-          <div>
+          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]">
             <div>
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136079/pagina-contato_skhd3i.jpg"
                 alt="Foto da tela de contato"
+                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]"
                 />
               <div>
-                <h2>
+                <h2  className="font-bold text-4xl mt-5 mb-3 text-center">
                   Página de Contato
                 </h2>
-                <p>
+                <p className="text-2xl mb-10">
                   Desenvolveram um card de informações com telefones, e-mail, e localização.
                   Com acesso também as Redes Sociais da empresa. Um formulário de contato no qual o
                   cliente é capaz de enviar suas mensagens.
@@ -145,6 +146,7 @@ export default function EquipeG() {
                   to="/contato"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -153,24 +155,26 @@ export default function EquipeG() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div>
+          <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[91%]">
             <div>
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136387/pagina-integrantes_bsdh09.jpg"
                 alt="Foto da tela de integrantes"
+                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]"
               />
               <div>
-                <h2>
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center">
                   Página de Integrantes
                 </h2>
-                <p>
+                <p className="text-2xl mb-10">
                   Desenvolveram uma página apresentando cada integrante que contribuiu para o projeto,
                   com a descrição das atividades realizadas por cada equipe.
                 </p>
                 <Link
-                  to="/produtos"
+                  to="/integrantes"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2"
                   >
                   Clique aqui para ver mais
                 </Link>
