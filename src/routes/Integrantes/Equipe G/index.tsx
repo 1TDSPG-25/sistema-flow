@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export default function EquipeG() {
   return (
     <>
-      <section>
+      <section className="flex flex-col justify-center pl-8
+        sm:px-8">
         <div className="flex items-center justify-between">
           <h1 className="font-bold text-4xl">Equipe G</h1>
           <Link
@@ -18,7 +19,8 @@ export default function EquipeG() {
         <hr className="border-2 my-3" />
         <p className="text-2xl font-bold">Conheça um pouco mais a Equipe G:</p>
 
-        <ul className="flex flex-col justify-center items-center gap-10 py-10">
+        <ul className="flex flex-col justify-center items-center gap-10 py-10
+         lg:flex-row">
           {/* Card 1 */}
           <li className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6">
             <img
@@ -34,7 +36,7 @@ export default function EquipeG() {
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
-                to="https://github.com/orlando-IDA"
+                to="https://github.com/moisesBarsoti"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -68,7 +70,7 @@ export default function EquipeG() {
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
-                to="https://github.com/KiuboHIrata"
+                to="https://github.com/sSofia-s"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -100,7 +102,7 @@ export default function EquipeG() {
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
-                to="https://github.com/ggabmartins"
+                to="https://github.com/FeKiModesto"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -126,18 +128,24 @@ export default function EquipeG() {
           </h2>
 
           {/* Card tarefa 1 */}
-          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]">
-            <div>
+          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
+          lg:p-8">
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136079/pagina-contato_skhd3i.jpg"
                 alt="Foto da tela de contato"
-                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]"
+                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]
+                lg:w-[35%]
+                2xl:w-[20%]"
                 />
               <div>
-                <h2  className="font-bold text-4xl mt-5 mb-3 text-center">
+                <h2  className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
                   Página de Contato
                 </h2>
-                <p className="text-2xl mb-10">
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
                   Desenvolveram um card de informações com telefones, e-mail, e localização.
                   Com acesso também as Redes Sociais da empresa. Um formulário de contato no qual o
                   cliente é capaz de enviar suas mensagens.
@@ -156,17 +164,22 @@ export default function EquipeG() {
 
           {/* Card tarefa 2 */}
           <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[91%]">
-            <div>
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136387/pagina-integrantes_bsdh09.jpg"
                 alt="Foto da tela de integrantes"
-                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]"
+                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]
+                lg:w-[35%]
+                2xl:w-[20%]"
               />
               <div>
-                <h2 className="font-bold text-4xl mt-5 mb-3 text-center">
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
                   Página de Integrantes
                 </h2>
-                <p className="text-2xl mb-10">
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
                   Desenvolveram uma página apresentando cada integrante que contribuiu para o projeto,
                   com a descrição das atividades realizadas por cada equipe.
                 </p>
