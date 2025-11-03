@@ -114,21 +114,29 @@ export default function EquipeF() {
         </ul>
       </section>
       <section>
-        <h2>
-          Qual foi o papel da Equipe F durante o projeto?
-        </h2>
+        <h2>Qual foi o papel da Equipe F durante o projeto?</h2>
 
         {/* Card tarefa 1 */}
         <div className="bg-[#B4B2DC]">
           <h2>Componentes principais</h2>
-          <p>A equipe foi responsável pelo desenvolvimento das partes principais do site, como o Cabeçalho, o Rodapé e o Menu de navegação. Além disso, criaram uma página exclusiva para o usuário administrador.</p>
-          <Link
-            to="/home"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
+          <p>
+            A equipe foi responsável pelo desenvolvimento das partes principais
+            do site, como o Cabeçalho, o Rodapé e o Menu de navegação. Além
+            disso, criaram uma página exclusiva para o usuário administrador.
+          </p>
+          <Link to="/home" target="_blank" rel="noopener noreferrer">
             Clique aqui para ver mais
           </Link>
+        </div>
+
+        {/* Card tarefa 2 */}
+        <div className="bg-[#B4B2DC]">
+          <h2>Correções e aperfeiçoamento</h2>
+          <p>
+            Realizaram ajustes na página de produtos e implementaram a rota para a lista de produtos.
+            Contribuíram também para o “aperfeiçoamento geral” do site, realizando correções e melhorias
+            inesperadas nas páginas desenvolvidas por outras equipes.
+          </p>
         </div>
       </section>
     </>
