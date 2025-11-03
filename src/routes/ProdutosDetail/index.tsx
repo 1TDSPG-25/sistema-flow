@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import type { TipoProduto } from "../../types/tipoProduto";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { Link, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
+import type { TipoProduto } from "../../types/tipoProduto";
 
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function ProdutoDetail() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { id } = useParams<{ id: string }>();
   const [produto, setProduto] = useState<TipoProduto | null>(null);
   const [loading, setLoading] = useState(true);
@@ -15,46 +20,47 @@ export default function ProdutoDetail() {
   useEffect(() => {
     const fetchProduto = async () => {
       try {
-       const response = await fetch(`${API_URL}/${id}`);
-    if (!response.ok) throw new Error("Produto não encontrado");
-    
-    const produtoData: TipoProduto = await response.json();
-    setProduto(produtoData);
-      } catch (error: unknown) {
-        console.error("Erro ao carregar produto:", error);
-        alert(error instanceof Error ? error.message : "Erro ao carregar produto");
+        const response = await fetch(`${API_URL}`);
+        if (!response.ok) throw new Error("Produto não encontrado");
+        const produtosData: TipoProduto[] = await response.json();
+        const idx = Number(id) - 1;
+        setProduto(produtosData[idx] || null);
+      } catch {
+        setProduto(null);
       } finally {
         setLoading(false);
       }
     };
-
     if (id) fetchProduto();
   }, [id]);
 
   if (loading) {
     return (
-      <main className={`min-h-screen flex items-center justify-center ${
-        isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
-      }`}>
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
-          <p className="mt-4">Carregando produto...</p>
-        </div>
+      <main
+        className={`min-h-screen flex items-center justify-center ${
+          isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
+        }`}
+      >
+        <Spinner text="Carregando produto..." />
       </main>
     );
   }
 
   if (!produto) {
     return (
-      <main className={`min-h-screen flex items-center justify-center ${
-        isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
-      }`}>
+      <main
+        className={`min-h-screen flex items-center justify-center ${
+          isDark ? "bg-gray-900 text-gray-300" : "bg-gray-50 text-gray-800"
+        }`}
+      >
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Produto não encontrado</h2>
-          <Link 
-            to="/produtos" 
+          <Link
+            to="/produtos"
             className={`px-4 py-2 rounded-md transition-colors ${
-              isDark ? "bg-indigo-600 hover:bg-indigo-700" : "bg-indigo-500 hover:bg-indigo-600"
+              isDark
+                ? "bg-indigo-600 hover:bg-indigo-700"
+                : "bg-indigo-500 hover:bg-indigo-600"
             } text-white`}
           >
             Voltar para produtos
@@ -74,10 +80,13 @@ export default function ProdutoDetail() {
         <Link
           to="/produtos"
           className={`inline-flex items-center mb-6 transition-colors duration-500 ${
-            isDark ? "text-gray-300 hover:text-white" : "text-gray-600 hover:text-gray-800"
+            isDark
+              ? "text-gray-300 hover:text-white"
+              : "text-gray-600 hover:text-gray-800"
           }`}
         >
-          ← Voltar para produtos
+          <IoIosArrowRoundBack className="mr-2" size={32} /> Voltar para
+          produtos
         </Link>
 
         <div
@@ -89,13 +98,13 @@ export default function ProdutoDetail() {
             <div className="flex items-center justify-center">
               <div className="w-full h-80 flex items-center justify-center rounded-lg overflow-hidden bg-white p-4">
                 <img
-                  src={produto.avatar}
+                  src={produto.imagem}
                   alt={produto.nome}
                   className="w-full h-full object-contain"
                 />
               </div>
             </div>
-            
+
             <div>
               <h1
                 className={`text-3xl font-bold mb-4 transition-colors duration-500 ${
@@ -104,37 +113,49 @@ export default function ProdutoDetail() {
               >
                 {produto.nome}
               </h1>
-              
+
               <div className="mb-6">
                 <p className="text-4xl font-bold text-indigo-600 mb-2">
                   R$ {produto.preco.toFixed(2)}
                 </p>
-                <p className={`text-sm transition-colors duration-500 ${
-                  isDark ? "text-gray-400" : "text-gray-500"
-                }`}>
+                <p
+                  className={`text-sm transition-colors duration-500 ${
+                    isDark ? "text-gray-400" : "text-gray-500"
+                  }`}
+                >
                   Em estoque • Pronta entrega
                 </p>
               </div>
 
               <div className="space-y-4 mb-8">
                 <div>
-                  <h3 className={`font-semibold mb-2 transition-colors duration-500 ${
-                    isDark ? "text-gray-200" : "text-gray-700"
-                  }`}>
+                  <h3
+                    className={`font-semibold mb-2 transition-colors duration-500 ${
+                      isDark ? "text-gray-200" : "text-gray-700"
+                    }`}
+                  >
                     Informações do Produto
                   </h3>
                   <div className="space-y-2">
-                    <p className={`transition-colors duration-500 ${
-                      isDark ? "text-gray-300" : "text-gray-600"
-                    }`}>
+                    <p
+                      className={`transition-colors duration-500 ${
+                        isDark ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
                       <span className="font-medium">Fabricação:</span>{" "}
-                      {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataDeFabricacao).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
-                    <p className={`transition-colors duration-500 ${
-                      isDark ? "text-gray-300" : "text-gray-600"
-                    }`}>
+                    <p
+                      className={`transition-colors duration-500 ${
+                        isDark ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
                       <span className="font-medium">Validade:</span>{" "}
-                      {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataDeValidade).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
                   </div>
                 </div>

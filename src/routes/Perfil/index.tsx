@@ -1,8 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import type { TipoUser } from "../../types/tipoUsuario";
-import { FiUser, FiMail, FiCreditCard, FiAlertCircle, FiImage, FiLogOut } from "react-icons/fi";
+import {
+  FiAlertCircle,
+  FiCreditCard,
+  FiImage,
+  FiLogOut,
+  FiMail,
+  FiUser,
+} from "react-icons/fi";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
+import type { TipoUser } from "../../types/tipoUsuario";
 
 const API_USERS = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -28,7 +36,8 @@ export default function Perfil() {
         const u2 = JSON.parse(rawAuthUser);
         if (u2?.id != null) return String(u2.id);
       }
-      const rawId = localStorage.getItem("userId") || localStorage.getItem("auth:userId");
+      const rawId =
+        localStorage.getItem("userId") || localStorage.getItem("auth:userId");
       return rawId ? rawId : null;
     } catch {
       return null;
@@ -41,29 +50,34 @@ export default function Perfil() {
         setCarregando(true);
         setErro(null);
 
-        let targetId: string | null = null;
-        if (id != null) {
-          targetId = id;
-        } else if (loggedId != null) {
-          targetId = loggedId;
+        const rawUsuario = localStorage.getItem("usuarioLogado");
+        if (!rawUsuario) {
+          navigate("/login", { replace: true });
+          return;
         }
-
-        if (targetId == null) {
-          setErro("Nenhum usuário selecionado. Passe o ID na URL (ex.: /perfil/5) ou faça login para ver seu perfil.");
+        const usuario = JSON.parse(rawUsuario);
+        const email = usuario?.email;
+        const senha = usuario?.senha;
+        if (!email || !senha) {
+          setErro("Não foi possível identificar o usuário logado.");
           setUser(null);
           setCarregando(false);
           return;
         }
-
-        const base = API_USERS.replace(/\/$/, "");
-        const r = await fetch(`${base}/${targetId}`, { headers: { Accept: "application/json" } });
-        if (r.status === 404) throw new Error(`Usuário ${targetId} não encontrado.`);
-        if (!r.ok) throw new Error(`Falha ao buscar usuário (${r.status}).`);
-
-        const found = await r.json();
+        const r = await fetch(API_USERS, {
+          headers: { Accept: "application/json" },
+        });
+        if (!r.ok) throw new Error(`Falha ao buscar clientes (${r.status}).`);
+        const clientes = await r.json();
+        const found = clientes.find(
+          (c: TipoUser) => c.email === email && c.senha === senha
+        );
+        if (!found)
+          throw new Error("Usuário logado não encontrado na base de dados.");
         setUser(coerceUser(found));
       } catch (e: unknown) {
-        const message = e instanceof Error ? e.message : String(e ?? "Erro inesperado");
+        const message =
+          e instanceof Error ? e.message : String(e ?? "Erro inesperado");
         setErro(message || "Erro inesperado");
         setUser(null);
       } finally {
@@ -71,7 +85,7 @@ export default function Perfil() {
       }
     };
     run();
-  }, [id, loggedId]);
+  }, [id, loggedId, navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("usuarioLogado");
@@ -80,6 +94,7 @@ export default function Perfil() {
     localStorage.removeItem("userId");
     localStorage.setItem("isLoggedIn", "false");
     navigate("/login", { replace: true });
+    window.location.reload();
   };
 
   const maskCpfStart = (cpf?: string) => {
@@ -92,10 +107,7 @@ export default function Perfil() {
   if (carregando) {
     return (
       <div className="max-w-2xl mx-auto p-4 text-gray-500">
-        <div className="flex items-center gap-2">
-          <FiUser className="animate-pulse" aria-hidden />
-          <span>Carregando dados do usuário…</span>
-        </div>
+        <Spinner text="Carregando dados do usuário…" />
       </div>
     );
   }
@@ -112,10 +124,18 @@ export default function Perfil() {
   if (!user) return null;
 
   const Avatar = () =>
-    user.avatar ? (
-      <img src={user.avatar} alt={`Avatar de ${user.nome}`} className="h-28 w-28 rounded-full object-cover border-slate-900 border-4" />
+    user.imagem ? (
+      <img
+        src={user.imagem}
+        alt={`Avatar de ${user.nome}`}
+        className="h-28 w-28 rounded-full object-cover border-slate-900 border-4"
+      />
     ) : (
-      <div className="h-28 w-28 rounded-full border border-slate-900 flex items-center justify-center text-gray-400" aria-label="Usuário sem avatar" title="Usuário sem avatar">
+      <div
+        className="h-28 w-28 rounded-full border border-slate-900 flex items-center justify-center text-gray-400"
+        aria-label="Usuário sem avatar"
+        title="Usuário sem avatar"
+      >
         <FiImage className="text-2xl" aria-hidden />
       </div>
     );
@@ -126,47 +146,92 @@ export default function Perfil() {
   //   </span>
   // );
   return (
-    <section className="max-w-2xl mx-auto p-4">
+    <section className="min-h-screen pb-20 max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-start">
         <h1 className="text-2xl font-semibold flex items-center gap-2">
           <FiUser aria-hidden /> Perfil
         </h1>
         <div className="flex items-center gap-2">
-          <button onClick={handleLogout} className="inline-flex items-center gap-2 px-3 py-1 rounded bg-red-600 text-white">
+          <button
+            onClick={handleLogout}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded bg-red-600 text-white"
+          >
             <FiLogOut aria-hidden /> Sair
           </button>
         </div>
       </div>
 
-  <div className={`mt-4 flex flex-col items-center rounded-xl border-4 p-4 ${isDark ? 'bg-slate-800 border-slate-700' : 'bg-white border-black'}`}>
+      <div
+        className={`mt-4 flex flex-col items-center rounded-xl border-4 p-4 ${
+          isDark ? "bg-slate-800 border-slate-700" : "bg-white border-black"
+        }`}
+      >
         <Avatar />
-        <p className={`mt-3 text-2xl font-semibold ${isDark ? 'text-amber-50' : 'text-gray-900'}`}>{user.nomeUser ?? user.nome ?? "—"}</p>
+        <p
+          className={`mt-3 text-2xl font-semibold ${
+            isDark ? "text-amber-50" : "text-gray-900"
+          }`}
+        ></p>
         <div className="mt-6 w-full">
-          {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
-            <InfoPill icon={FiHash} text={`ID: ${user.id}`} />
-          </div> */}
           <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className={`rounded-lg border p-3 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
-              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
+            <div
+              className={`rounded-lg border p-3 ${
+                isDark ? "border-slate-700" : "border-slate-900"
+              }`}
+            >
+              <dt
+                className={`text-xs uppercase flex items-center gap-2 ${
+                  isDark ? "text-blue-200" : "text-black"
+                }`}
+              >
                 <FiUser aria-hidden /> Nome completo
               </dt>
-              <dd className={`text-sm mt-1 ${isDark ? '' : 'text-black'}`}>{user.nome || "—"}</dd>
+              <dd className={`text-sm mt-1 ${isDark ? "" : "text-black"}`}>
+                {user.nome || "—"}
+              </dd>
             </div>
 
-            <div className={`rounded-lg border p-3 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
-              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
+            <div
+              className={`rounded-lg border p-3 ${
+                isDark ? "border-slate-700" : "border-slate-900"
+              }`}
+            >
+              <dt
+                className={`text-xs uppercase flex items-center gap-2 ${
+                  isDark ? "text-blue-200" : "text-black"
+                }`}
+              >
                 <FiMail aria-hidden /> E-mail
               </dt>
-              <dd className={`text-sm mt-1 ${isDark ? '' : 'text-black'}`}>{user.email || "—"}</dd>
+              <dd className={`text-sm mt-1 ${isDark ? "" : "text-black"}`}>
+                {user.email || "—"}
+              </dd>
             </div>
 
-            <div className={`rounded-lg border p-3 sm:col-span-2 ${isDark ? 'border-slate-700' : 'border-slate-900'}`}>
-              <dt className={`text-xs uppercase flex items-center gap-2 ${isDark ? 'text-blue-200' : 'text-black'}`}>
+            <div
+              className={`rounded-lg border p-3 sm:col-span-2 ${
+                isDark ? "border-slate-700" : "border-slate-900"
+              }`}
+            >
+              <dt
+                className={`text-xs uppercase flex items-center gap-2 ${
+                  isDark ? "text-blue-200" : "text-black"
+                }`}
+              >
                 <FiCreditCard aria-hidden /> CPF
               </dt>
-              <dd className={`text-sm mt-1 flex items-center justify-between ${isDark ? '' : 'text-black'}`}>
-                <span>{mostrarCpf ? user.cpf || "—" : maskCpfStart(user.cpf)}</span>
-                <button onClick={() => setMostrarCpf((s) => !s)} className="px-4 py-2 rounded bg-slate-700 text-amber-50 hover:bg-slate-600">
+              <dd
+                className={`text-sm mt-1 flex items-center justify-between ${
+                  isDark ? "" : "text-black"
+                }`}
+              >
+                <span>
+                  {mostrarCpf ? user.cpf || "—" : maskCpfStart(user.cpf)}
+                </span>
+                <button
+                  onClick={() => setMostrarCpf((s) => !s)}
+                  className="px-4 py-2 rounded bg-slate-700 text-amber-50 hover:bg-slate-600"
+                >
                   {mostrarCpf ? "Ocultar" : "Mostrar"}
                 </button>
               </dd>
@@ -174,7 +239,12 @@ export default function Perfil() {
           </div>
 
           <div className="mt-4 flex justify-center gap-3">
-            <Link to="/" className="px-4 py-2 rounded self-center bg-slate-700 text-amber-50 hover:bg-slate-600">Voltar</Link>
+            <Link
+              to="/"
+              className="px-4 py-2 rounded self-center bg-slate-700 text-amber-50 hover:bg-slate-600"
+            >
+              Voltar
+            </Link>
           </div>
         </div>
       </div>
@@ -182,23 +252,21 @@ export default function Perfil() {
   );
 }
 
-
 function coerceUser(found: unknown): TipoUser {
   const f = found as Record<string, unknown>;
 
   const toString = (v: unknown): string => {
-    if (v == null) return '';
-    if (typeof v === 'string') return v;
+    if (v == null) return "";
+    if (typeof v === "string") return v;
     return String(v);
   };
 
   return {
     id: toString(f.id),
-    nome: toString(f.nome ?? ''),
-    nomeUser: toString(f.nomeUser ?? ''),
-    cpf: toString(f.cpf ?? ''),
-    email: toString(f.email ?? ''),
-    senha: toString(f.senha ?? ''),
-    avatar: toString(f.avatar ?? ''),
+    nome: toString(f.nome ?? ""),
+    cpf: toString(f.cpf ?? ""),
+    email: toString(f.email ?? ""),
+    senha: toString(f.senha ?? ""),
+    imagem: toString(f.imagem ?? ""),
   };
 }

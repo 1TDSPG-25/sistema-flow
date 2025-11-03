@@ -15,6 +15,9 @@ import Home from './routes/Home/index.tsx'
 import { ThemeProvider } from './context/ThemeContext.tsx'
 
 import Perfil from './routes/Perfil/index.tsx';
+import Integrantes from './routes/Integrantes/index.tsx'
+import EquipeA from './routes/Integrantes/Equipe A/index.tsx'
+import EquipeE from './routes/Integrantes/Equipe E/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
@@ -29,6 +32,9 @@ const router = createBrowserRouter([{
     { path:"/home", element:<Home/> },
     { path:"/perfil", element:<Perfil/> },
     { path:"/perfil/:id", element:<Perfil/> },
+    { path:"/integrantes", element: <Integrantes/> },
+    { path:"/integrantes/equipeA", element: <EquipeA/> },
+    { path:"/integrantes/equipeE", element: <EquipeE/> },
   ]
 }], { basename: "/sistema-flow" })
 

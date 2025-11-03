@@ -1,9 +1,10 @@
-// routes/Produtos/index.tsx (atualizado)
 import { useEffect, useState } from "react";
-import type { TipoProduto } from "../../types/tipoProduto";
+import { Link } from "react-router-dom";
+import AddItemModal from "../../components/AddItemModal/AddItemModal";
+import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
-import { Link } from "react-router-dom"; // ← Nova importação
-
+import type { AddItemField } from "../../types/addItemModal";
+import type { TipoProduto } from "../../types/tipoProduto";
 const API_URL = import.meta.env.VITE_API_URL_PRODUTOS;
 
 export default function Produtos() {
@@ -12,37 +13,52 @@ export default function Produtos() {
 
   const [produtos, setProdutos] = useState<TipoProduto[]>([]);
   const [busca, setBusca] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [addLoading, setAddLoading] = useState(false);
+  const [addError, setAddError] = useState<string | null>(null);
+  const produtoFields: AddItemField[] = [
+    { name: "nome", label: "Nome do produto", type: "text", required: true },
+    {
+      name: "dataDeFabricacao",
+      label: "Data de fabricação",
+      type: "date",
+      required: true,
+    },
+    { name: "dataDeValidade", label: "Validade", type: "date", required: true },
+    { name: "preco", label: "Preço (R$)", type: "number", required: true },
+    { name: "imagem", label: "Imagem (URL)", type: "text" },
+  ];
 
   useEffect(() => {
-    const fetchProdutos = async () => {
+    async function fetchProdutos() {
       try {
         const response = await fetch(API_URL);
-
         if (!response.ok) {
-          throw new Error("Erro ao carregar dados locais");
+          throw new Error("Erro ao carregar dados da API");
         }
-
         const produtosData: TipoProduto[] = await response.json();
-
         await new Promise((resolve) => setTimeout(resolve, 500));
         setProdutos(produtosData);
-      } catch (error: unknown) {
-        if (error instanceof Error) {
-          alert("Erro ao carregar dados locais: " + error.message);
-        } else {
-          alert("Erro ao carregar dados locais");
-        }
+      } catch (e) {
+        console.error("Erro ao buscar produtos:", e);
+      } finally {
+        setLoading(false);
       }
-    };
-
+    }
     fetchProdutos();
   }, []);
 
-  const produtosFiltrados = produtos.filter((p) =>
-    busca === ""
-      ? true
-      : p.nome.toLowerCase().startsWith(busca.toLowerCase())
-  );
+  const buscaTrim = busca.trim();
+  const isBuscaNumero = buscaTrim !== "" && !isNaN(Number(buscaTrim));
+  const buscaLower = buscaTrim.toLowerCase();
+  const produtosFiltrados = produtos.filter((p, idx) => {
+    if (buscaTrim === "") return true;
+    if (isBuscaNumero) {
+      if ((idx + 1).toString() === buscaTrim) return true;
+    }
+    return p.nome.toLowerCase().includes(buscaLower);
+  });
 
   return (
     <main
@@ -75,24 +91,66 @@ export default function Produtos() {
                 : "bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-indigo-500"
             }`}
           />
+          <button
+            onClick={() => setShowAddModal(true)}
+            className={`bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md shadow-md transition`}
+          >
+            + Novo produto
+          </button>
         </div>
+        <AddItemModal
+          open={showAddModal}
+          onClose={() => setShowAddModal(false)}
+          onSubmit={async (values) => {
+            setAddLoading(true);
+            setAddError(null);
+            try {
+              const res = await fetch(API_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+              });
+              if (!res.ok) throw new Error("Erro ao adicionar produto");
+              setShowAddModal(false);
+              const response = await fetch(API_URL);
+              if (response.ok) {
+                const produtosData: TipoProduto[] = await response.json();
+                setProdutos(produtosData);
+              }
+            } catch {
+              setAddError("Falha ao adicionar produto.");
+            } finally {
+              setAddLoading(false);
+            }
+          }}
+          fields={produtoFields}
+          title="Adicionar produto"
+          loading={addLoading}
+          error={addError}
+          submitLabel="Salvar"
+          dark={isDark}
+        />
 
-        {produtosFiltrados.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <Spinner />
+          </div>
+        ) : produtosFiltrados.length > 0 ? (
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {produtosFiltrados.map((produto) => (
-              <li key={produto.id}>
-                <Link to={`/produtos/${produto.id}`}>
+            {produtosFiltrados.map((produto, idx) => (
+              <li key={idx}>
+                <Link to={`/produtos/${idx + 1}`}>
                   <div
                     className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer ${
-                      isDark 
-                        ? "border-gray-700 bg-gray-700 hover:border-gray-600" 
+                      isDark
+                        ? "border-gray-700 bg-gray-700 hover:border-gray-600"
                         : "border-gray-200 bg-white hover:border-gray-300"
                     }`}
                   >
-                    {produto.avatar && (
+                    {produto.imagem && (
                       <div className="w-full h-40 flex items-center justify-center rounded-md mb-3 overflow-hidden bg-white">
                         <img
-                          src={produto.avatar}
+                          src={produto.imagem}
                           alt={produto.nome}
                           className="w-full h-full object-contain"
                         />
@@ -105,7 +163,7 @@ export default function Produtos() {
                     >
                       {produto.nome}
                     </h3>
-                    <p className="text-indigo-600 font-medium mt-2">
+                    <p className="text-1xl font-bold mt-2 text-indigo-500 drop-shadow-sm">
                       R$ {produto.preco.toFixed(2)}
                     </p>
                     <p
@@ -114,7 +172,9 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Fabricação:</span>{" "}
-                      {new Date(produto.dataFabricacao).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataDeFabricacao).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
                     <p
                       className={`transition-colors duration-500 ${
@@ -122,7 +182,9 @@ export default function Produtos() {
                       }`}
                     >
                       <span className="font-medium">Validade:</span>{" "}
-                      {new Date(produto.dataValidade).toLocaleDateString("pt-BR")}
+                      {new Date(produto.dataDeValidade).toLocaleDateString(
+                        "pt-BR"
+                      )}
                     </p>
                   </div>
                 </Link>

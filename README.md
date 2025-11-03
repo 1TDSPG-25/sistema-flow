@@ -5,6 +5,16 @@ Nosso objetivo é desenvolver o site **Megafarma**, um sistema de farmácia onli
 Também haverá uma área de login e cadastro, com dois tipos de acesso: usuário comum (para gerenciar suas informações e pedidos) e administrador (para controlar produtos).  
 No futuro, o sistema será integrado a um backend em **Java**.
 
+## 🔗 API Backend
+
+O repositório da API utilizada neste projeto está disponível em:
+
+[https://github.com/PxS00/megafarma](https://github.com/PxS00/megafarma)
+
+Sinta-se à vontade para dar palpites, ideias e melhorias via issues ou pull requests!
+
+---
+
 ## 🏗️ Estrutura do Site
 
  Home | Produtos | Unidades | FAQ | Contato | Minha Conta
@@ -35,10 +45,10 @@ Serão criados dois tipos de acesso:
 
 .env
 ```
-VITE_API_URL_USUARIOS=http://localhost:3001/usuarios
-VITE_API_URL_PRODUTOS=http://localhost:3001/produtos
 VITE_API_URL_UNIDADES=http://localhost:3001/unidades
 VITE_HOME_URL=https://dummyjson.com/quotes
+VITE_API_URL_USUARIOS=https://megafarma-g620.onrender.com/clientes
+VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 ```
 
 ---
@@ -68,16 +78,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe B</span>
-
-- **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe D</span>
-
-- **Fix:** Aplicar APIs de Java - megafarma -> <span style="color:white">Equipe C</span>
-
----
-
-- **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
-
 - **FEATURE:** Criar uma página de Integrantes -> <span style="color:white">Equipe G</span>
 
 </ul>
@@ -85,14 +85,6 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 
 ## 🟧 Em Homologação QA - ROSSONI
 <ul style="color:orange">
-
-- **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe C</span>
-
-- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe B</span>
-
-- **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
-
-- **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe H</span>
 
 </ul>
 
@@ -106,6 +98,11 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
+- **REFACTOR:** Organizar melhor o codigo-> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Unidades -> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Integrantes -> <span style="color:white">Equipe ?</span>
 </ul>
 
 ---
@@ -170,5 +167,25 @@ VITE_HOME_URL=https://dummyjson.com/quotes
 - **FIX:** Arrumar posicionamento botão de mudar Tema -> <span style="color:white">Equipe C</span>
 
 - **REFACTOR:** Refatorar css para global -> <span style="color:white">Equipe G</span>
+
+- **FIX:** Arrumar API da página Home -> <span style="color:white">Equipe C</span>
+
+- **FEATURE:** Desenvolver a página do Usuário Comum -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a página de um Produto (Exibindo Nome / Preço / Informações de um produto) -> <span style="color:white">Equipe E</span>
+
+- **FEATURE:** Adicionar React Icons e mudar o botão de Login para um react Icon -> <span style="color:white">Equipe H</span>
+
+- **FIX:** Arrumar Login e Cadastro -> <span style="color:white">Equipe B</span>
+
+- **FIX:** Arrumar CSS nas páginas FAQ, Contato e Login -> <span style="color:white">Equipe D</span>
+
+- **FEATURE:** Melhorar footer -> <span style="color:white">Equipe E</span>
+
+- **Fix:** Aplicar APIs de Java - megafarma -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a componente de Spinner -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver um componente de adição de produtos(reutilizavel) -> <span style="color:white">Equipe B</span>
 </ul>
 
