@@ -43,6 +43,16 @@ export default function EquipeB() {
                   alt="ícone do GitHub"
                 />
               </Link>
+              <Link
+                to="https://www.linkedin.com/in/kelson-zhang-211456323/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                  alt="ícone do LinkedIn"
+                />
+              </Link>
             </div>
           </li>
 
@@ -65,6 +75,16 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                />
+              </Link>
+              <Link
+                to="https://www.linkedin.com/in/alexander-dennis-a3b48824b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                  alt="ícone do LinkedIn"
                 />
               </Link>
             </div>
@@ -90,6 +110,16 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                />
+              </Link>
+              <Link
+                to="https://www.linkedin.com/in/lucas-rossoni-dieder-32242a353/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
+                  alt="ícone do LinkedIn"
                 />
               </Link>
             </div>
