@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import AddItemModal from "../../components/AddItemModal/AddItemModal";
 import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
-import type { AddItemField } from "../../types/addItemModal";
 import type { Unidade } from "../../types/tipoUnidade";
 
 const API_URL =
@@ -14,9 +12,6 @@ export default function Unidades() {
   const [busca, setBusca] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [addLoading, setAddLoading] = useState(false);
-  const [addError, setAddError] = useState<string | null>(null);
   const theme = useTheme();
   const { isDark } = theme;
 
@@ -34,8 +29,6 @@ export default function Unidades() {
       const unidadesData: Unidade[] = Array.isArray(raw)
         ? raw
         : ((raw?.unidades ?? []) as Unidade[]);
-
-      // small delay so spinner is visible on fast networks
       await new Promise((resolve) => setTimeout(resolve, 300));
 
       setUnidades(unidadesData);
@@ -51,17 +44,6 @@ export default function Unidades() {
   useEffect(() => {
     fetchUnidades();
   }, [fetchUnidades]);
-
-  const unidadeFields: AddItemField[] = [
-    { name: "nome", label: "Nome da unidade", type: "text", required: true },
-    { name: "endereco", label: "Endereço", type: "text", required: true },
-    { name: "cidade", label: "Cidade", type: "text", required: true },
-    { name: "uf", label: "UF", type: "text", required: true },
-    { name: "telefone", label: "Telefone", type: "text" },
-    { name: "horario", label: "Horário", type: "text" },
-    { name: "imagem", label: "Imagem (URL)", type: "text" },
-    { name: "localizacao", label: "Localização (HTML)", type: "textarea" },
-  ];
 
   const unidadesFiltradas = unidades.filter((u) =>
     `${u.nome} ${u.endereco} ${u.cidade} ${u.uf}`
@@ -99,46 +81,8 @@ export default function Unidades() {
                 : "bg-white border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-indigo-500"
             }`}
           />
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md shadow-md transition"
-          >
-            + Nova unidade
-          </button>
         </div>
 
-        <AddItemModal
-          open={showAddModal}
-          onClose={() => setShowAddModal(false)}
-          onSubmit={async (values) => {
-            setAddLoading(true);
-            setAddError(null);
-            try {
-              const res = await fetch(API_URL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(values),
-              });
-              if (!res.ok) throw new Error("Erro ao adicionar unidade");
-              setShowAddModal(false);
-              await fetchUnidades();
-            } catch (err: unknown) {
-              setAddError(
-                err instanceof Error
-                  ? err.message
-                  : "Falha ao adicionar unidade."
-              );
-            } finally {
-              setAddLoading(false);
-            }
-          }}
-          fields={unidadeFields}
-          title="Adicionar unidade"
-          loading={addLoading}
-          error={addError}
-          submitLabel="Salvar"
-          dark={isDark}
-        />
         {loading ? (
           <div className="flex justify-center py-8">
             <Spinner text="Carregando unidades..." />
