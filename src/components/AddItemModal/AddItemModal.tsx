@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import type { AddItemModalProps } from "../../types/addItemModal";
 
-
 function AddItemModal({
   open,
   onClose,
@@ -24,13 +23,18 @@ function AddItemModal({
     }
   }, [open]);
 
-  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type } = e.target;
-    setValues((prev) => ({
-      ...prev,
-      [name]: type === "number" ? parseFloat(value) : value,
-    }));
-  }, []);
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value, type } = e.target as HTMLInputElement & {
+        value: string;
+      };
+      setValues((prev) => ({
+        ...prev,
+        [name]: type === "number" ? parseFloat(value) : value,
+      }));
+    },
+    []
+  );
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
@@ -62,7 +66,7 @@ function AddItemModal({
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-start md:items-center justify-center p-4 z-50 overflow-auto"
       onClick={onClose}
     >
       <div
@@ -70,33 +74,59 @@ function AddItemModal({
           dark
             ? "bg-gray-900 text-gray-100 border border-gray-700"
             : "bg-white text-gray-900 border border-gray-200"
-        }
-          rounded-xl max-w-2xl w-full min-h-[500px] p-12 shadow-xl flex flex-col justify-between`}
+        } rounded-xl w-full max-w-2xl max-h-[90vh] p-6 md:p-12 shadow-xl flex flex-col`}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-lg font-semibold mb-4 text-white">{title}</h2>
-        <form className="flex flex-col gap-6 flex-1" onSubmit={handleSubmit}>
+        <h2
+          className={`text-lg font-semibold mb-4 ${
+            dark ? "text-gray-100" : "text-gray-900"
+          }`}
+        >
+          {title}
+        </h2>
+        <form
+          className="flex flex-col gap-6 flex-1 overflow-y-auto no-scrollbar"
+          onSubmit={handleSubmit}
+        >
           {fields.map((field) => (
             <label className="text-sm flex flex-col gap-2" key={field.name}>
               {field.label}
-              <input
-                name={field.name}
-                type={field.type}
-                value={
-                  typeof values[field.name] === "string"
-                    ? (values[field.name] as string)
-                    : typeof values[field.name] === "number"
-                    ? (values[field.name] as number)
-                    : ""
-                }
-                onChange={handleChange}
-                required={field.required}
-                className={`h-12 px-4 block w-full rounded-md border text-base ${
-                  dark
-                    ? "border-gray-700 bg-gray-800 text-gray-100"
-                    : "border-gray-300 bg-gray-100 text-gray-900"
-                }`}
-              />
+              {field.type === "textarea" ? (
+                <textarea
+                  name={field.name}
+                  value={
+                    typeof values[field.name] === "string"
+                      ? (values[field.name] as string)
+                      : ""
+                  }
+                  onChange={handleChange}
+                  required={field.required}
+                  className={`min-h-[120px] px-4 py-2 block w-full rounded-md border text-base ${
+                    dark
+                      ? "border-gray-700 bg-gray-800 text-gray-100"
+                      : "border-gray-300 bg-gray-100 text-gray-900"
+                  } resize-y`}
+                />
+              ) : (
+                <input
+                  name={field.name}
+                  type={field.type}
+                  value={
+                    typeof values[field.name] === "string"
+                      ? (values[field.name] as string)
+                      : typeof values[field.name] === "number"
+                      ? (values[field.name] as number)
+                      : ""
+                  }
+                  onChange={handleChange}
+                  required={field.required}
+                  className={`h-12 px-4 block w-full rounded-md border text-base ${
+                    dark
+                      ? "border-gray-700 bg-gray-800 text-gray-100"
+                      : "border-gray-300 bg-gray-100 text-gray-900"
+                  }`}
+                />
+              )}
             </label>
           ))}
           {(localError || error) && (
@@ -104,7 +134,7 @@ function AddItemModal({
               {localError || error}
             </div>
           )}
-          <div className="flex justify-end gap-4 mt-8">
+          <div className="flex justify-end gap-4 mt-4 md:mt-8">
             <button
               type="button"
               onClick={onClose}
