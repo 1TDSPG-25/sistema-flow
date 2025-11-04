@@ -1,10 +1,5 @@
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { string } from "zod";
-
-interface CardAluno {
-
-}
 
 const CardAlunoData = [
     {
@@ -117,7 +112,7 @@ export default function EquipeA() {
                     to=""
                     className="flex gap-[100px]"
                     >
-                        <figure className="w-[50%]">
+                        <figure className="w-[70%]">
                             <img 
                             src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762136841/api-e1649279794668-scaled_rl3mfk.webp" 
                             alt="" 
@@ -135,6 +130,11 @@ export default function EquipeA() {
                                 A integração foi feita pensando na escalabilidade e na facilidade de manutenção, 
                                 garantindo que futuras atualizações possam ser feitas sem complicar o código.
                             </p>
+                            <Link
+                            to="" 
+                            className="w-[20%] bg-[#6D9BDD] text-white text-center border border-[#6D9BDD] rounded-[10px]">
+                                Clique aqui para ver mais
+                            </Link>
                         </div>
                     </Link>
                 </li>
