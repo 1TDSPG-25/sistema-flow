@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 export default function EquipeE() {
     return (
       <>
-        <section className="flex flex-col justify-center pl-8">
+        <section
+          className="flex flex-col justify-center pl-8
+        sm:px-8"
+        >
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-4xl">Equipe E</h1>
             <Link
               to="/integrantes"
-              className="flex font-bold items-center gap-1"
+              className="flex font-bold items-center text-xl gap-1"
             >
               <IoArrowBackCircleOutline className="size-8" />
               Voltar
@@ -20,13 +23,16 @@ export default function EquipeE() {
             Conheça um pouco mais a Equipe E:
           </p>
 
-          <div className="flex flex-col justify-center items-center gap-10 py-10">
+          <ul
+            className="flex flex-col justify-center items-center gap-10 py-10
+          lg:flex-row"
+          >
             {/* Card 1 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/orlando-IDA.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
+                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5 w-full"
               />
 
               <h2 className="font-bold text-[32px]">Orlando Gonçalves</h2>
@@ -41,7 +47,6 @@ export default function EquipeE() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                     alt="ícone do GitHub"
-                    className=""
                   />
                 </Link>
                 <Link to="" target="_blank" rel="noopener noreferrer">
@@ -51,10 +56,10 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
+            </li>
 
             {/* Card 2 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/KiuboHIrata.png"
                 alt="Foto de um usuário do GitHub."
@@ -81,10 +86,10 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
+            </li>
 
             {/* Card 3 */}
-            <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762102170/photo-git-user_xq1xkd.png"
                 alt="Foto de um usuário do GitHub."
@@ -113,39 +118,94 @@ export default function EquipeE() {
                   />
                 </Link>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </section>
-        <section className="px-10 py-20">
-          <h2>Qual foi o papel da Equipe E durante o projeto?</h2>
+        <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
+          <h2 className="font-bold text-4xl self-start">
+            Qual foi o papel da Equipe E durante o projeto?
+          </h2>
+
           {/* Card tarefa 1 */}
-          <div>
-            <img src="" alt="" />
-            <h2>Página de Cadastro</h2>
-            <p>
-              Equipe responsável pelo desenvolvimento da página de cadastro de
-              conta, implementando o formulário de registro de novos usuários,
-              validação dos dados inseridos e integração com o sistema de
-              armazenamento das informações.
-            </p>
-            <Link to="" target="_blank" rel="noopener noreferrer">
-              Clique aqui para ver mais
-            </Link>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
+          lg:p-8
+          2xl:p-13">
+            <div className="lg:flex flex-row
+            lg:gap-8 lg:items-center">
+              <img
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762123088/pagina-cadastro_ddigo9.jpg"
+                alt="Foto da tela de cadastro de usuário"
+                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]
+                lg:w-[30%]
+                2xl:w-[20%]"
+              />
+              <div>
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página de Cadastro
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                  Equipe responsável pelo desenvolvimento da página de cadastro
+                  de conta, implementando o formulário de registro de novos
+                  usuários, validação dos dados inseridos e integração com o
+                  sistema de armazenamento das informações.
+                </p>
+                <Link
+                  to="/cadastro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+              sm:w-[60%]
+              md:w-[50%]
+              lg:w-[40%]
+              2xl:p-3"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Card tarefa 2 */}
-          <div>
-            <img src="" alt="" />
-            <h2>Página de Produtos</h2>
-            <p>
-              Desenvolveram também uma página de produtos, que exibe o nome, o
-              preço e as informações detalhadas de cada item disponível,
-              proporcionando uma visualização clara e organizada para os
-              usuários.
-            </p>
-            <Link to="" target="_blank" rel="noopener noreferrer">
-              Clique aqui para ver mais
-            </Link>
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          2xl:p-13">
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+              <img
+                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
+                alt="Foto da tela de produtos"
+                className="bg-[#EFD2C3] border-[#EA7D44] rounded-[10px] border-[3px]
+                lg:w-[30%]
+                2xl:w-[20%]"
+              />
+              <div>
+                <h2 className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página de Produtos
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                  Desenvolveram também uma página de produtos, que exibe o nome,
+                  o preço e as informações detalhadas de cada item disponível,
+                  proporcionando uma visualização clara e organizada para os
+                  usuários.
+                </p>
+                <Link
+                  to="/produtos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+              sm:w-[60%]
+              md:w-[50%]
+              lg:w-[40%]
+              2xl:p-3"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </>
