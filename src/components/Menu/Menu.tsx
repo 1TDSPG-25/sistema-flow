@@ -23,7 +23,7 @@ export default function Menu() {
   const links = [
     { path: "/", label: "Home" },
     { path: "/produtos", label: "Produtos" },
-    { path: "/unidade", label: "Unidade" },
+    { path: "/unidades", label: "Unidade" },
     { path: "/faq", label: "FAQ" },
     { path: "/contato", label: "Contato" },
     { path: "/integrantes", label: "Integrantes" },
