@@ -106,7 +106,7 @@ export default function EquipeB() {
         <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
-              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136387/pagina-integrantes_bsdh09.jpg"
+              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762293908/imagem_2025-11-04_190505051_k3xpvj.png"
               alt="Tela de unidades"
               className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
             />
@@ -132,7 +132,7 @@ export default function EquipeB() {
         <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[91%]">
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
-              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136079/pagina-contato_skhd3i.jpg"
+              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762294179/imagem_2025-11-04_190936562_qursh3.png"
               alt="Tela de usuário"
               className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
             />
@@ -158,7 +158,7 @@ export default function EquipeB() {
         <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
-              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136079/pagina-contato_skhd3i.jpg"
+              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762295153/imagem_2025-11-04_192549598_opg4zx.png"
               alt="Componentes Spinner e AddItemModal"
               className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
             />
@@ -179,7 +179,7 @@ export default function EquipeB() {
         <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
-              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136387/pagina-integrantes_bsdh09.jpg"
+              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762293859/imagem_2025-11-04_190415517_dedl54.png"
               alt="Integração com a API Megafarma"
               className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
             />
