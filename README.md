@@ -45,7 +45,7 @@ Serão criados dois tipos de acesso:
 
 .env
 ```
-VITE_API_URL_UNIDADES=http://localhost:3001/unidades
+VITE_API_URL_UNIDADES=https://megafarma-g620.onrender.com/unidades
 VITE_HOME_URL=https://dummyjson.com/quotes
 VITE_API_URL_USUARIOS=https://megafarma-g620.onrender.com/clientes
 VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
