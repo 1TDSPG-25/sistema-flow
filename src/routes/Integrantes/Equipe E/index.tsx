@@ -50,13 +50,15 @@ export default function EquipeE() {
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                    alt="ícone do GitHub"
+                    alt="ícone do Github"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
                 <Link to="" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -81,13 +83,15 @@ export default function EquipeE() {
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                    alt="ícone do GitHub"
+                    alt="ícone do Github"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
                 <Link to="" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -115,13 +119,15 @@ export default function EquipeE() {
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
-                    alt="ícone do GitHub"
+                    alt="ícone do Github"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
                 <Link to="" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -165,7 +171,8 @@ export default function EquipeE() {
                   to="/cadastro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#EA7D44] rounded-[10px] text-white text-[15px] text-center font-bold p-2
+                  className="bg-[rgb(234,125,68)] rounded-[10px] text-white text-[15px] text-center font-semibold p-2
+                  hover:bg-[rgb(207,77,7)]
                   sm:text-xl
                   md:text-2xl
                   lg:w-[30%]
@@ -208,11 +215,12 @@ export default function EquipeE() {
                   to="/produtos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#EA7D44] rounded-[10px] text-white text-[15px] text-center font-bold p-2
-                sm:text-xl
-                md:text-2xl
-                lg:w-[30%]
-                2xl:p-3"
+                  className="bg-[#EA7D44] rounded-[10px] text-white text-[15px] text-center font-semibold p-2
+                  hover:bg-[rgba(255,174,0,0.2)]
+                  sm:text-xl
+                  md:text-2xl
+                  lg:w-[30%]
+                  2xl:p-3"
                 >
                   Clique aqui para ver mais
                 </Link>
