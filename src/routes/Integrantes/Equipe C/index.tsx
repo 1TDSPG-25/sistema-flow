@@ -28,15 +28,15 @@ export default function EquipeC() {
           lg:flex-row"
           >
             {/* Card 1 */}
-            <li className="bg-[#DCB2B9] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/EnzoOkuizumiFiap.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5 w-full"
+                className="border-[#D42A46] rounded-[30px] border-[3px] mb-5 w-full"
               />
 
               <h2 className="font-bold text-[32px]">Enzo Okuizumi</h2>
-              <p className="text-[#EA7D44] font-bold text-2xl">Desenvolvedor</p>
+              <p className="text-[#C7354D] font-bold text-2xl">Desenvolvedor</p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
                 <Link
@@ -59,14 +59,14 @@ export default function EquipeC() {
             </li>
 
             {/* Card 2 */}
-            <li className="bg-[#DCB2B9] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/LuzBGouveia.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
+                className="border-[#D42A46] rounded-[30px] border-[3px] mb-5"
               />
               <h2 className="font-bold text-[32px]">Lucas Barros</h2>
-              <p className="text-[#EA7D44] font-bold text-2xl">Desenvolvedor</p>
+              <p className="text-[#C7354D] font-bold text-2xl">Desenvolvedor</p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
                 <Link
@@ -89,14 +89,14 @@ export default function EquipeC() {
             </li>
 
             {/* Card 3 */}
-            <li className="bg-[#DCB2B9] border-[#EA7D44] rounded-[30px] border-[3px] p-6">
+            <li className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6">
               <img
                 src="https://github.com/MiltonMarcelino.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
+                className="border-[#D42A46] rounded-[30px] border-[3px] mb-5"
               />
               <h2 className="font-bold text-[32px]">Milton Marcelino</h2>
-              <p className="text-[#EA7D44] font-bold text-2xl">
+              <p className="text-[#C7354D] font-bold text-2xl">
                 Desenvolvedor
               </p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
@@ -123,19 +123,19 @@ export default function EquipeC() {
         </section>
         <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
           <h2 className="font-bold text-4xl self-start">
-            Qual foi o papel da Equipe E durante o projeto?
+            Qual foi o papel da Equipe C durante o projeto?
           </h2>
 
           {/* Card tarefa 1 */}
-          <div className="bg-[#DCB2B9] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
+          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
           lg:p-8
           2xl:p-13">
             <div className="lg:flex flex-row
             lg:gap-8 lg:items-center">
               <img
-                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762123088/pagina-cadastro_ddigo9.jpg"
+                src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762310575/download_hgwm3u.jpg"
                 alt="Foto da tela de cadastro de usuário"
-                className="bg-[#DCB2B9] border-[#EA7D44] rounded-[10px] border-[3px]
+                className="bg-[#DCB2B9] border-[#D42A46] rounded-[10px] border-[3px]
                 lg:w-[30%]
                 2xl:w-[20%]"
               />
@@ -143,20 +143,18 @@ export default function EquipeC() {
                 <h2 className="font-bold text-4xl mt-5 mb-3 text-center
                 lg:text-start
                 2xl:text-6xl">
-                  Página de Cadastro
+                  Feature
                 </h2>
                 <p className="text-2xl mb-10
                 2xl:text-4xl">
-                  Equipe responsável pelo desenvolvimento da página de cadastro
-                  de conta, implementando o formulário de registro de novos
-                  usuários, validação dos dados inseridos e integração com o
-                  sistema de armazenamento das informações.
+                  Foi adicionada a senha à entidade TipoUser, ampliando a segurança e permitindo autenticação adequada dos usuários. E A página de Login foi ajustada 
+                  para seguir o padrão visual e funcional do projeto, garantindo consistência na interface e melhor experiência do usuário.
                 </p>
                 <Link
                   to="/cadastro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
+                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
               sm:w-[60%]
               md:w-[50%]
               lg:w-[40%]
@@ -169,13 +167,13 @@ export default function EquipeC() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#DCB2B9] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
           2xl:p-13">
             <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
-                src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762125275/pagina-produtos_o1fuly.jpg"
+                src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762136841/api-e1649279794668-scaled_rl3mfk.webp"
                 alt="Foto da tela de produtos"
-                className="bg-[#DCB2B9] border-[#EA7D44] rounded-[10px] border-[3px]
+                className="bg-[#DCB2B9] border-[#D42A46] rounded-[10px] border-[3px]
                 lg:w-[30%]
                 2xl:w-[20%]"
               />
@@ -183,20 +181,18 @@ export default function EquipeC() {
                 <h2 className="font-bold text-4xl mt-5 mb-3 text-center
                 lg:text-start
                 2xl:text-6xl">
-                  Página de Produtos
+                  BugFix e Fix
                 </h2>
                 <p className="text-2xl mb-10
                 2xl:text-4xl">
-                  Desenvolveram também uma página de produtos, que exibe o nome,
-                  o preço e as informações detalhadas de cada item disponível,
-                  proporcionando uma visualização clara e organizada para os
-                  usuários.
+                  O Zod foi centralizado, otimizando a validação de dados e facilitando a manutenção do código. A API da página Home foi corrigida, 
+                  restabelecendo a comunicação correta entre o front-end e o back-end.
                 </p>
                 <Link
                   to="/produtos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#DCB2B9] rounded-[10px] text-white text-2xl text-center font-bold p-2
+                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
               sm:w-[60%]
               md:w-[50%]
               lg:w-[40%]
