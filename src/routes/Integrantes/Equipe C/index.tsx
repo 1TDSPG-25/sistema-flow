@@ -70,7 +70,7 @@ export default function EquipeC() {
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
                 <Link
-                  to="https://github.com/KiuboHIrata"
+                  to="https://github.com/LuzBGouveia"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -79,7 +79,7 @@ export default function EquipeC() {
                     alt="ícone do GitHub"
                   />
                 </Link>
-                <Link to="" target="_blank" rel="noopener noreferrer">
+                <Link to="#" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
