@@ -32,7 +32,7 @@ export default function EquipeE() {
               <img
                 src="https://github.com/orlando-IDA.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5 w-full"
+                className="w-[450px] h-[465px] border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
               />
 
               <h2 className="font-bold text-[32px]">Orlando Gonçalves</h2>
@@ -169,7 +169,7 @@ export default function EquipeE() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          <div className="bg-[#EFD2C3] border-[#EA7D44] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%] lg:p-8
           2xl:p-13">
             <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
@@ -197,10 +197,10 @@ export default function EquipeE() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#EA7D44] rounded-[10px] text-white text-2xl text-center font-bold p-2
-              sm:w-[60%]
-              md:w-[50%]
-              lg:w-[40%]
-              2xl:p-3"
+                  sm:w-[60%]
+                  md:w-[50%]
+                  lg:w-[40%]
+                  2xl:p-3"
                 >
                   Clique aqui para ver mais
                 </Link>

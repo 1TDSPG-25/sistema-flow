@@ -93,7 +93,7 @@ export default function EquipeC() {
               <img
                 src="https://github.com/MiltonMarcelino.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#D42A46] rounded-[30px] border-[3px] mb-5"
+                className="w-[] border-[#D42A46] rounded-[30px] border-[3px] mb-5"
               />
               <h2 className="font-bold text-[32px]">Milton Marcelino</h2>
               <p className="text-[#C7354D] font-bold text-2xl">
@@ -154,11 +154,7 @@ export default function EquipeC() {
                   to="/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
-              sm:w-[60%]
-              md:w-[50%]
-              lg:w-[40%]
-              2xl:p-3"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -192,11 +188,8 @@ export default function EquipeC() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
-              sm:w-[60%]
-              md:w-[50%]
-              lg:w-[40%]
-              2xl:p-3"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2
+                  "
                 >
                   Clique aqui para ver mais
                 </Link>

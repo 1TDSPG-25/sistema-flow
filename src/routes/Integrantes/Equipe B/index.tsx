@@ -165,6 +165,7 @@ export default function EquipeB() {
               </div>
             </div>
           </div>
+
         {/* Card tarefa 2 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
@@ -198,6 +199,7 @@ export default function EquipeB() {
               </div>
             </div>
           </div>
+
         {/* Card tarefa 3 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
@@ -224,6 +226,7 @@ export default function EquipeB() {
               </div>
             </div>
           </div>
+          
           {/* Card tarefa 4 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
