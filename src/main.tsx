@@ -22,6 +22,7 @@ import EquipeF from './routes/Integrantes/Equipe F/index.tsx'
 import EquipeG from './routes/Integrantes/Equipe G/index.tsx'
 import EquipeH from './routes/Integrantes/Equipe H/index.tsx'
 import EquipeB from './routes/Integrantes/Equipe B/index.tsx'
+import EquipeC from './routes/Integrantes/Equipe C/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[
@@ -39,6 +40,7 @@ const router = createBrowserRouter([{
     { path:"/integrantes", element: <Integrantes/> },
     { path:"/integrantes/equipeA", element: <EquipeA/> },
     { path: "/integrantes/equipeB", element: <EquipeB /> },
+    { path: "/integrantes/equipeC", element: <EquipeC />},
     { path:"/integrantes/equipeE", element: <EquipeE/> },
     { path:"/integrantes/equipeF", element: <EquipeF/> },
     { path:"/integrantes/equipeG", element: <EquipeG/> },
