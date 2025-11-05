@@ -133,7 +133,7 @@ export default function EquipeA() {
             <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762136841/api-e1649279794668-scaled_rl3mfk.webp"
-                alt="Foto da tela de contato"
+                alt="Imagem com mensagem escrita API"
                 className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[10px] border-[3px]
                 lg:w-[35%]
                 2xl:w-[20%]"

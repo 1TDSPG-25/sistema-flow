@@ -28,7 +28,7 @@ export default function EquipeB() {
             />
 
             <h2 className="font-bold text-[32px]">Kelson Zhang</h2>
-            <p className="text-[#0B3A12] font-bold text-2xl">
+            <p className="text-[#337B45] font-bold text-2xl">
               Desenvolvedor Front-end
             </p>
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
@@ -64,7 +64,7 @@ export default function EquipeB() {
               className="border-[#25D553] rounded-[30px] border-[3px] mb-5"
             />
             <h2 className="font-bold text-[32px]">Alex Isidro</h2>
-            <p className="text-[#0B3A12] font-bold text-2xl">Desenvolvedor</p>
+            <p className="text-[#337B45] font-bold text-2xl">Desenvolvedor</p>
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
@@ -98,7 +98,7 @@ export default function EquipeB() {
               className="border-[#25D553] rounded-[30px] border-[3px] mb-5"
             />
             <h2 className="font-bold text-[32px]">Lucas Rossoni</h2>
-            <p className="text-[#0B3A12] font-bold text-2xl">QA / Back-end</p>
+            <p className="text-[#337B45] font-bold text-2xl">QA / Back-end</p>
 
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
@@ -133,105 +133,71 @@ export default function EquipeB() {
         </h2>
 
         {/* Card tarefa 1 */}
-        <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
-          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
-            <img
-              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762293908/imagem_2025-11-04_190505051_k3xpvj.png"
-              alt="Tela de unidades"
-              className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
-            />
-            <div>
-              <h2 className="font-bold text-4xl mt-5 mb-3 text-center lg:text-start 2xl:text-6xl text-[#0B3A12]">
-                Página de Unidades
-              </h2>
-              <p className="text-2xl mb-10 2xl:text-4xl text-[#0B3A12]">
-                Implementaram os cards e o layout responsivo da página de
+          <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
+          lg:p-8">
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+              <img
+                src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762293908/imagem_2025-11-04_190505051_k3xpvj.png"
+                alt="Foto da tela de unidades"
+                className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px]
+                lg:w-[35%]
+                2xl:w-[20%]"
+                />
+              <div>
+                <h2  className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página de Unidades
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                    Implementaram os cards e o layout responsivo da página de
                 Unidades, exibindo endereços e contatos das lojas.
-              </p>
-              <Link
-                to="/unidades"
-                className="bg-[#25D553] rounded-[10px] text-[#0B3A12] text-2xl text-center font-bold p-2"
-              >
-                Clique aqui para ver mais
-              </Link>
+                </p>
+                <Link
+                  to="/unidades"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
         {/* Card tarefa 2 */}
-        <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[91%]">
-          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
-            <img
-              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762294179/imagem_2025-11-04_190936562_qursh3.png"
-              alt="Tela de usuário"
-              className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
-            />
-            <div>
-              <h2 className="font-bold text-4xl mt-5 mb-3 text-center lg:text-start 2xl:text-6xl text-[#0B3A12]">
-                Página do Usuário Comum
-              </h2>
-              <p className="text-2xl mb-10 2xl:text-4xl text-[#0B3A12]">
-                Desenvolveram a tela do usuário comum, permitindo visualizar e
+          <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
+          lg:p-8">
+            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+              <img
+                src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762294179/imagem_2025-11-04_190936562_qursh3.png"
+                alt="Tela de usuário"
+                className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px]
+                lg:w-[35%]
+                2xl:w-[20%]"
+                />
+              <div>
+                <h2  className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-6xl">
+                  Página do Usuário Comum
+                </h2>
+                <p className="text-2xl mb-10
+                2xl:text-4xl">
+                    Desenvolveram a tela do usuário comum, permitindo visualizar e
                 editar informações do perfil.
-              </p>
-              <Link
-                to="/perfil"
-                className="bg-[#25D553] rounded-[10px] text-[#0B3A12] text-2xl text-center font-bold p-2"
-              >
-                Clique aqui para ver mais
-              </Link>
+                </p>
+                <Link
+                  to="/unidades"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                >
+                  Clique aqui para ver mais
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Card tarefa 3 */}
-        <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
-          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
-            <img
-              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762295153/imagem_2025-11-04_192549598_opg4zx.png"
-              alt="Componentes Spinner e AddItemModal"
-              className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
-            />
-            <div>
-              <h2 className="font-bold text-4xl mt-5 mb-3 text-center lg:text-start 2xl:text-6xl text-[#0B3A12]">
-                Componentes reutilizáveis
-              </h2>
-              <p className="text-2xl mb-10 2xl:text-4xl text-[#0B3A12]">
-                Desenvolveram o componente <strong>Spinner</strong> (loading
-                acessível) e o modal/form <strong>AddItemModal</strong> para
-                adicionar produtos/unidades de forma reutilizável.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Card tarefa 4 */}
-        <div className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%] lg:p-8">
-          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
-            <img
-              src="https://res.cloudinary.com/dpdxfunke/image/upload/v1762293859/imagem_2025-11-04_190415517_dedl54.png"
-              alt="Integração com a API Megafarma"
-              className="bg-[#B2DCBD] border-[#25D553] rounded-[10px] border-[3px] lg:w-[35%] 2xl:w-[20%]"
-            />
-            <div>
-              <h2 className="font-bold text-4xl mt-5 mb-3 text-center lg:text-start 2xl:text-6xl text-[#0B3A12]">
-                Integração com API Megafarma (Java)
-              </h2>
-              <p className="text-2xl mb-10 2xl:text-4xl text-[#0B3A12]">
-                Implementaram a integração com a API Java do projeto Megafarma,
-                realizando chamadas, mapeamento de dados e testes de integração.
-              </p>
-              <a
-                href="https://github.com/PxS00/megafarma"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#25D553] rounded-[10px] text-[#0B3A12] text-2xl text-center font-bold p-2"
-              >
-                Ver integrações
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );
