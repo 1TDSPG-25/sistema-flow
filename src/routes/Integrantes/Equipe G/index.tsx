@@ -122,13 +122,13 @@ export default function EquipeG() {
         </ul>
       </section>
 
-      <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
+      <section className="pl-8 flex flex-col justify-center items-center gap-10 pt-20">
           <h2 className="font-bold text-4xl self-start">
             Qual foi o papel da Equipe G durante o projeto?
           </h2>
 
           {/* Card tarefa 1 */}
-          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center text-center w-[91%]
+          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-2 flex flex-col justify-center items-center text-center w-[91%]
           lg:p-8
           2xl:p-13">
             <div className="flex flex-col justify-center items-center
@@ -167,7 +167,8 @@ export default function EquipeG() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center text-center w-[91%]">
+          <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center text-center w-[91%]
+          2xl:p-13">
             <div className="flex flex-col justify-center items-center
             lg:flex-row lg:text-start
             lg:gap-8 lg:items-center">
