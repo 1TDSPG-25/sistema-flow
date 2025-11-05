@@ -151,7 +151,7 @@ export default function EquipeC() {
                   para seguir o padrão visual e funcional do projeto, garantindo consistência na interface e melhor experiência do usuário.
                 </p>
                 <Link
-                  to="/cadastro"
+                  to="/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
@@ -189,7 +189,7 @@ export default function EquipeC() {
                   restabelecendo a comunicação correta entre o front-end e o back-end.
                 </p>
                 <Link
-                  to="/produtos"
+                  to="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
