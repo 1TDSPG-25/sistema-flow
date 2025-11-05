@@ -43,6 +43,7 @@ export default function EquipeC() {
                   to="https://github.com/EnzoOkuizumiFiap"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -53,6 +54,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -73,6 +75,7 @@ export default function EquipeC() {
                   to="https://github.com/LuzBGouveia"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -83,6 +86,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -93,7 +97,7 @@ export default function EquipeC() {
               <img
                 src="https://github.com/MiltonMarcelino.png"
                 alt="Foto de um usuário do GitHub."
-                className="w-[] border-[#D42A46] rounded-[30px] border-[3px] mb-5"
+                className="w-[465px] h-[435px] border-[#D42A46] rounded-[30px] border-[3px] mb-5"
               />
               <h2 className="font-bold text-[32px]">Milton Marcelino</h2>
               <p className="text-[#C7354D] font-bold text-2xl">
@@ -105,6 +109,7 @@ export default function EquipeC() {
                   to="https://github.com/MiltonMarcelino"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -115,6 +120,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
