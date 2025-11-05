@@ -35,7 +35,7 @@ export default function EquipeC() {
                 className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5 w-full"
               />
 
-              <h2 className="font-bold text-[32px]">Orlando Gonçalves</h2>
+              <h2 className="font-bold text-[32px]">Enzo Okuizumi</h2>
               <p className="text-[#EA7D44] font-bold text-2xl">Desenvolvedor</p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
@@ -65,7 +65,7 @@ export default function EquipeC() {
                 alt="Foto de um usuário do GitHub."
                 className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
               />
-              <h2 className="font-bold text-[32px]">Alexandre Hirata</h2>
+              <h2 className="font-bold text-[32px]">Lucas Barros</h2>
               <p className="text-[#EA7D44] font-bold text-2xl">Desenvolvedor</p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
@@ -95,14 +95,14 @@ export default function EquipeC() {
                 alt="Foto de um usuário do GitHub."
                 className="border-[#EA7D44] rounded-[30px] border-[3px] mb-5"
               />
-              <h2 className="font-bold text-[32px]">Gabriel Martins</h2>
+              <h2 className="font-bold text-[32px]">Milton Marcelino</h2>
               <p className="text-[#EA7D44] font-bold text-2xl">
-                Desenvolvedor Back-end
+                Desenvolvedor
               </p>
               <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
               <div className="flex gap-7">
                 <Link
-                  to="https://github.com/ggabmartins"
+                  to="https://github.com/MiltonMarcelino"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -111,7 +111,7 @@ export default function EquipeC() {
                     alt="ícone do GitHub"
                   />
                 </Link>
-                <Link to="" target="_blank" rel="noopener noreferrer">
+                <Link to="#" target="_blank" rel="noopener noreferrer">
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
