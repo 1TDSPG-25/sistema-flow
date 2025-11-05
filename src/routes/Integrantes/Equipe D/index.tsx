@@ -5,7 +5,8 @@ export default function EquipeD() {
   return (
     <>
       <section
-        className="flex flex-col justify-center pl-8"
+        className="flex flex-col justify-center pl-8
+        sm:px-8"
       >
         <div className="flex items-center justify-between">
           <h1 className="font-bold text-4xl">Equipe D</h1>
@@ -18,18 +19,20 @@ export default function EquipeD() {
           </Link>
         </div>
         <hr className="border-2 my-3" />
-        <p className="text-2xl font-bold">Conheça um pouco mais a Equipe D:</p>
+        <p className="text-2xl font-bold">
+          Conheça um pouco mais a Equipe D:
+        </p>
 
         <ul
           className="flex flex-col justify-center items-center gap-10 py-10
           lg:flex-row"
         >
           {/* Card 1 */}
-          <li className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
+          <li className="bg-[#efeec3d8] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/Asuyz.png"
               alt="Foto de um usuário do GitHub."
-              className="border-[#DEDA21] rounded-[30px] border-[3px] mb-5 w-full"
+              className="w-[467px] border-[#DEDA21] rounded-[30px] border-[3px] mb-5"
             />
 
             <h2 className="font-bold text-[32px]">André Emygdio Ferreira</h2>
@@ -40,6 +43,7 @@ export default function EquipeD() {
                 to="https://github.com/Asuyz"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -50,17 +54,18 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
           </li>
 
           {/* Card 2 */}
-          <li className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
+          <li className="bg-[#efeec3d8] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/JoaooResende.png"
               alt="Foto de um usuário do GitHub."
-              className="border-[#DEDA21] rounded-[30px] border-[3px] mb-5"
+              className="w-[467px] border-[#DEDA21] rounded-[30px] border-[3px] mb-5"
             />
             <h2 className="font-bold text-[32px]">João Resende</h2>
             <p className="text-[#A19F5A] font-bold text-2xl">Desenvolvedor</p>
@@ -70,6 +75,7 @@ export default function EquipeD() {
                 to="https://github.com/JoaooResende"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -80,13 +86,14 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
           </li>
 
           {/* Card 3 */}
-          <li className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
+          <li className="bg-[#efeec3d8] border-[#DEDA21] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/lucastdag.png"
               alt="Foto de um usuário do GitHub."
@@ -100,6 +107,7 @@ export default function EquipeD() {
                 to="https://github.com/lucastdag"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -110,6 +118,7 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -123,7 +132,7 @@ export default function EquipeD() {
 
         {/* Card tarefa 1 */}
         <div
-          className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
+          className="bg-[#efeec3d8] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
         >
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
@@ -139,7 +148,7 @@ export default function EquipeD() {
                 Página de FAQ
               </h2>
               <p
-                className="text-2xl mb-10"
+                className="text-2xl mb-10 text-[#000000]"
               >
                 Ajustes no CSS das páginas FAQ, aprimorando a aparência, alinhamento e responsividade para manter a identidade visual do sistema.
               </p>
@@ -147,7 +156,11 @@ export default function EquipeD() {
                 to="/faq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#EFEEC3] rounded-[10px] text-[#A19F5A] text-2xl text-center font-bold p-2"
+                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)] hover:duration-300
+                sm:w-[60%]
+                md:w-[50%]
+                lg:w-[40%]
+                2xl:p-3"
               >
                 Clique aqui para ver mais
               </Link>
@@ -156,7 +169,7 @@ export default function EquipeD() {
         </div>
         {/* Card tarefa 2 */}
         <div
-          className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
+          className="bg-[#efeec3d8] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
         >
           <div className="lg:flex flex-row lg:gap-8 lg:items-center">
             <img
@@ -172,7 +185,7 @@ export default function EquipeD() {
                 Página de Contato
               </h2>
               <p
-                className="text-2xl mb-10"
+                className="text-2xl mb-10 text-[#000000]"
               >
                 Também houve um pequeno ajuste no CSS da página de Contato, garantindo uma aparência… digamos, surpreendentemente aprimorada.
               </p>
@@ -180,7 +193,11 @@ export default function EquipeD() {
                 to="/contato"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#EFEEC3] rounded-[10px] text-[#A19F5A] text-2xl text-center font-bold p-2"
+                className="bg-[#a19f5a] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)] hover:duration-300
+                sm:w-[60%]
+                md:w-[50%]
+                lg:w-[40%]
+                2xl:p-3"
               >
                 Clique aqui para ver mais
               </Link>

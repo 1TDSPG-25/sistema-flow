@@ -39,6 +39,7 @@ export default function EquipeA() {
                 to="https://github.com/enricodelesporte"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -49,6 +50,7 @@ export default function EquipeA() {
                 to="https://www.linkedin.com/in/enricodelesporte"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
@@ -73,13 +75,19 @@ export default function EquipeA() {
                 to="https://github.com/iagoliziero"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
                 />
               </Link>
-              <Link to="https://www.linkedin.com/in/iagoliziero" target="_blank" rel="noopener noreferrer">
+              <Link 
+                to="https://www.linkedin.com/in/iagoliziero" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
+              >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
@@ -89,11 +97,11 @@ export default function EquipeA() {
           </li>
 
           {/* Card 3 */}
-          <li className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] px-6 py-11">
+          <li className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] p-6">
             <img
               src="https://github.com/vitordias1006.png"
               alt="Foto de um usuário do GitHub."
-              className="border-[#6D9BDD] rounded-[30px] border-[3px] mb-5"
+              className="w-[465px] border-[#6D9BDD] rounded-[30px] border-[3px] mb-5"
             />
             <h2 className="font-bold text-[32px]">Vitor Dias</h2>
             <p className="text-[#433BE5] font-bold text-2xl">
@@ -105,6 +113,7 @@ export default function EquipeA() {
                 to="https://github.com/vitordias1006"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -115,6 +124,7 @@ export default function EquipeA() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -156,7 +166,8 @@ export default function EquipeA() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#6D9BDD] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                  className="bg-[#6D9BDD] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(31,114,238,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
