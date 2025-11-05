@@ -43,6 +43,7 @@ export default function EquipeF() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link
@@ -53,6 +54,7 @@ export default function EquipeF() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -77,12 +79,14 @@ export default function EquipeF() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -107,12 +111,14 @@ export default function EquipeF() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -140,7 +146,8 @@ export default function EquipeF() {
             disso, criaram uma página exclusiva para o usuário administrador.
           </p>
           <Link to="/home" target="_blank" rel="noopener noreferrer"
-          className="bg-[#EF3CB1] rounded-[10px] text-white text-2xl text-center font-bold p-2
+          className="bg-[#ef3cb1] rounded-[10px] text-white text-2xl text-center font-bold p-2
+          hover:bg-[rgb(177,33,126)] transition duration-300 ease-in-out
           sm:w-[70%]
           md:w-[55%]
           lg:w-[40%]

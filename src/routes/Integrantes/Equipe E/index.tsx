@@ -171,7 +171,7 @@ export default function EquipeE() {
                   to="/cadastro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[rgb(234,125,68)] rounded-[10px] text-white text-[15px] text-center font-semibold p-2
+                  className="bg-[#ea7d44] rounded-[10px] text-white text-[15px] text-center font-semibold p-2
                   hover:bg-[rgb(207,77,7)]
                   sm:text-xl
                   md:text-2xl
