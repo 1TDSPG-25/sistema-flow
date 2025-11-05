@@ -216,7 +216,7 @@ export default function EquipeE() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#EA7D44] rounded-[10px] text-white text-[15px] text-center font-semibold p-2
-                  hover:bg-[rgba(255,174,0,0.2)]
+                  hover:bg-[rgb(207,77,7)]
                   sm:text-xl
                   md:text-2xl
                   lg:w-[30%]
