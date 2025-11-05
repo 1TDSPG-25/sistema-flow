@@ -1,7 +1,8 @@
 import useTheme from "../../context/useTheme";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import type { SocialLinkProps } from "../../types/socialLink";
 
-const SocialLink = ({ href, label, icon: Icon }) => (
+const SocialLink = ({ href, label, icon: Icon }: SocialLinkProps) => (
   <li>
     <a
       href={href}

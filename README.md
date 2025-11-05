@@ -45,7 +45,7 @@ Serão criados dois tipos de acesso:
 
 .env
 ```
-VITE_API_URL_UNIDADES=http://localhost:3001/unidades
+VITE_API_URL_UNIDADES=https://megafarma-g620.onrender.com/unidades
 VITE_HOME_URL=https://dummyjson.com/quotes
 VITE_API_URL_USUARIOS=https://megafarma-g620.onrender.com/clientes
 VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
@@ -78,10 +78,6 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 ## 🟨 Em Desenvolvimento 
 <ul style="color:yellow">
 
-- **FEATURE:** Desenvolver a página do Usuário Admin -> <span style="color:white">Equipe F</span>
-
-- **FEATURE:** Criar uma página de Integrantes -> <span style="color:white">Equipe G</span>
-
 </ul>
 
 
@@ -100,6 +96,11 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 ## Possíveis Features Futuras
 <ul style="color:lightgreen">
 
+- **REFACTOR:** Organizar melhor o codigo-> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Unidades -> <span style="color:white">Equipe ?</span>
+
+- **FEATURE:** Implementar modal na pagina de Integrantes -> <span style="color:white">Equipe ?</span>
 </ul>
 
 ---
@@ -180,5 +181,11 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 - **FEATURE:** Melhorar footer -> <span style="color:white">Equipe E</span>
 
 - **Fix:** Aplicar APIs de Java - megafarma -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver a componente de Spinner -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Desenvolver um componente de adição de produtos(reutilizavel) -> <span style="color:white">Equipe B</span>
+
+- **FEATURE:** Criar uma página de Integrantes -> <span style="color:white">Equipe G</span>
 </ul>
 
