@@ -128,24 +128,28 @@ export default function EquipeG() {
           </h2>
 
           {/* Card tarefa 1 */}
-          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
-          lg:p-8">
-            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+          <div  className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center text-center w-[91%]
+          lg:p-8
+          2xl:p-13">
+            <div className="flex flex-col justify-center items-center
+            lg:flex-row lg:text-start
+            lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136079/pagina-contato_skhd3i.jpg"
                 alt="Foto da tela de contato"
-                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]
-                lg:w-[35%]
+                className="border-[#433BE5] rounded-[10px] border-[3px]
+                md:w-[80%]
+                lg:w-[30%]
                 2xl:w-[20%]"
                 />
               <div>
                 <h2  className="font-bold text-4xl mt-5 mb-3 text-center
                 lg:text-start
-                2xl:text-6xl">
+                2xl:text-5xl">
                   Página de Contato
                 </h2>
                 <p className="text-2xl mb-10
-                2xl:text-4xl">
+                2xl:text-3xl">
                   Desenvolveram um card de informações com telefones, e-mail, e localização.
                   Com acesso também as Redes Sociais da empresa. Um formulário de contato no qual o
                   cliente é capaz de enviar suas mensagens.
@@ -163,23 +167,26 @@ export default function EquipeG() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[91%]">
-            <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+          <div className="bg-[#B4B2DC] border-[#433BE5] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center text-center w-[91%]">
+            <div className="flex flex-col justify-center items-center
+            lg:flex-row lg:text-start
+            lg:gap-8 lg:items-center">
               <img
                 src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762136387/pagina-integrantes_bsdh09.jpg"
                 alt="Foto da tela de integrantes"
-                className="bg-[#B4B2DC] border-[#433BE5] rounded-[10px] border-[3px]
-                lg:w-[35%]
+                className="border-[#433BE5] rounded-[10px] border-[3px]
+                md:w-[80%]
+                lg:w-[30%]
                 2xl:w-[20%]"
               />
               <div>
                 <h2 className="font-bold text-4xl mt-5 mb-3 text-center
                 lg:text-start
-                2xl:text-6xl">
+                2xl:text-5xl">
                   Página de Integrantes
                 </h2>
                 <p className="text-2xl mb-10
-                2xl:text-4xl">
+                2xl:text-3xl">
                   Desenvolveram uma página apresentando cada integrante que contribuiu para o projeto,
                   com a descrição das atividades realizadas por cada equipe.
                 </p>
