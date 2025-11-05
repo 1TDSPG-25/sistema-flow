@@ -156,7 +156,7 @@ export default function EquipeA() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#6D9BDD] rounded-[10px] text-white text-2xl text-center font-bold p-2"
+                  className="bg-[#6D9BDD] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
                 >
                   Clique aqui para ver mais
                 </Link>
