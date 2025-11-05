@@ -153,7 +153,7 @@ export default function EquipeA() {
                     garantindo que futuras atualizações possam ser feitas sem complicar o código.
                 </p>
                 <Link
-                  to="/contato"
+                  to="/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#6D9BDD] rounded-[10px] text-white text-2xl text-center font-bold p-2"
