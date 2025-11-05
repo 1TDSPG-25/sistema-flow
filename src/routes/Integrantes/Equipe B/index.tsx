@@ -37,6 +37,7 @@ export default function EquipeB() {
                 to="https://github.com/KelsonZh0"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -47,6 +48,7 @@ export default function EquipeB() {
                 to="https://www.linkedin.com/in/kelson-zhang-211456323/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
@@ -71,6 +73,7 @@ export default function EquipeB() {
                 to="https://github.com/alex-isidro"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -85,6 +88,7 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -106,6 +110,7 @@ export default function EquipeB() {
                 to="https://github.com/PxS00"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -120,6 +125,7 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -158,13 +164,15 @@ export default function EquipeB() {
                   to="/unidades"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
               </div>
             </div>
           </div>
+
         {/* Card tarefa 2 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
@@ -191,13 +199,15 @@ export default function EquipeB() {
                   to="/perfil"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
               </div>
             </div>
           </div>
+
         {/* Card tarefa 3 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
@@ -224,6 +234,7 @@ export default function EquipeB() {
               </div>
             </div>
           </div>
+          
           {/* Card tarefa 4 */}
           <div  className="bg-[#B2DCBD] border-[#25D553] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[91%]
           lg:p-8">
@@ -250,7 +261,8 @@ export default function EquipeB() {
                   to="https://github.com/PxS00/megafarma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver integrações
                 </Link>

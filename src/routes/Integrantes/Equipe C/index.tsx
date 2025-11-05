@@ -43,6 +43,7 @@ export default function EquipeC() {
                   to="https://github.com/EnzoOkuizumiFiap"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -53,6 +54,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -73,6 +75,7 @@ export default function EquipeC() {
                   to="https://github.com/LuzBGouveia"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -83,6 +86,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -93,7 +97,7 @@ export default function EquipeC() {
               <img
                 src="https://github.com/MiltonMarcelino.png"
                 alt="Foto de um usuário do GitHub."
-                className="border-[#D42A46] rounded-[30px] border-[3px] mb-5"
+                className="w-[465px] h-[435px] border-[#D42A46] rounded-[30px] border-[3px] mb-5"
               />
               <h2 className="font-bold text-[32px]">Milton Marcelino</h2>
               <p className="text-[#C7354D] font-bold text-2xl">
@@ -105,6 +109,7 @@ export default function EquipeC() {
                   to="https://github.com/MiltonMarcelino"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="hover:opacity-60 duration-300"
                 >
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -115,6 +120,7 @@ export default function EquipeC() {
                   <img
                     src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                     alt="ícone do LinkedIn"
+                    className="hover:opacity-60 duration-300"
                   />
                 </Link>
               </div>
@@ -136,8 +142,8 @@ export default function EquipeC() {
                 src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762310575/download_hgwm3u.jpg"
                 alt="Foto da tela de cadastro de usuário"
                 className="bg-[#DCB2B9] border-[#D42A46] rounded-[10px] border-[3px]
-                lg:w-[30%]
-                2xl:w-[20%]"
+                w-full
+                2xl:w-[50%]"
               />
               <div>
                 <h2 className="font-bold text-4xl mt-5 mb-3 text-center
@@ -154,11 +160,8 @@ export default function EquipeC() {
                   to="/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
-              sm:w-[60%]
-              md:w-[50%]
-              lg:w-[40%]
-              2xl:p-3"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(193,72,28,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -167,7 +170,8 @@ export default function EquipeC() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
+          lg:p-8
           2xl:p-13">
             <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
@@ -192,11 +196,8 @@ export default function EquipeC() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#DCB2B9] rounded-[10px] text-[#C7354D] text-2xl text-center font-bold p-2
-              sm:w-[60%]
-              md:w-[50%]
-              lg:w-[40%]
-              2xl:p-3"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(193,72,28,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
