@@ -141,13 +141,76 @@ export default function EquipeD() {
               <p
                 className="text-2xl mb-10"
               >
-                Equipe responsável pelo desenvolvimento da página de cadastro de
-                conta, implementando o formulário de registro de novos usuários,
-                validação dos dados inseridos e integração com o sistema de
-                armazenamento das informações.
+                Ajustes no CSS das páginas FAQ, aprimorando a aparência, alinhamento e responsividade para manter a identidade visual do sistema.
               </p>
               <Link
                 to="/faq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#EFEEC3] rounded-[10px] text-[#A19F5A] text-2xl text-center font-bold p-2"
+              >
+                Clique aqui para ver mais
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Card tarefa 2 */}
+        <div
+          className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
+        >
+          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+            <img
+              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762137963/pagina-faq_zhgrih.jpg"
+              alt="Foto da tela de cadastro de usuário"
+              className="bg-[#EFEEC3] border-[#DEDA21] rounded-[10px] border-[3px]lg:w-[30%]
+            2xl:w-[20%]"
+            />
+            <div>
+              <h2
+                className="font-bold text-4xl mt-5 mb-3 text-center"
+              >
+                Página de Contato
+              </h2>
+              <p
+                className="text-2xl mb-10"
+              >
+                Ajustes no CSS das páginas Contato, aprimorando a aparência, alinhamento e responsividade para manter a identidade visual do sistema.
+              </p>
+              <Link
+                to="/contato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#EFEEC3] rounded-[10px] text-[#A19F5A] text-2xl text-center font-bold p-2"
+              >
+                Clique aqui para ver mais
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Card tarefa 3 */}
+        <div
+          className="bg-[#EFEEC3] border-[#DEDA21] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
+        >
+          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+            <img
+              src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762137963/pagina-faq_zhgrih.jpg"
+              alt="Foto da tela de cadastro de usuário"
+              className="bg-[#EFEEC3] border-[#DEDA21] rounded-[10px] border-[3px]lg:w-[30%]
+            2xl:w-[20%]"
+            />
+            <div>
+              <h2
+                className="font-bold text-4xl mt-5 mb-3 text-center"
+              >
+                Página de Login
+              </h2>
+              <p
+                className="text-2xl mb-10"
+              >
+                Ajustes no CSS das páginas Login, aprimorando a aparência, alinhamento e responsividade para manter a identidade visual do sistema.
+              </p>
+              <Link
+                to="/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#EFEEC3] rounded-[10px] text-[#A19F5A] text-2xl text-center font-bold p-2"
