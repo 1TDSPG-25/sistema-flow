@@ -89,20 +89,20 @@ export default function EquipeA() {
           </li>
 
           {/* Card 3 */}
-          <li className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] p-6">
+          <li className="bg-[#C3D5EF] border-[#6D9BDD] rounded-[30px] border-[3px] px-6 py-11">
             <img
-              src=""
+              src="https://github.com/vitordias1006.png"
               alt="Foto de um usuário do GitHub."
               className="border-[#6D9BDD] rounded-[30px] border-[3px] mb-5"
             />
-            <h2 className="font-bold text-[32px]"></h2>
+            <h2 className="font-bold text-[32px]">Vitor Dias</h2>
             <p className="text-[#433BE5] font-bold text-2xl">
-              
+              Desenvolvedor Back-End
             </p>
             <p className="font-bold text-3xl mt-5 mb-3">Redes Sociais:</p>
             <div className="flex gap-7">
               <Link
-                to=""
+                to="https://github.com/vitordias1006"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -111,7 +111,7 @@ export default function EquipeA() {
                   alt="ícone do GitHub"
                 />
               </Link>
-              <Link to="" target="_blank" rel="noopener noreferrer">
+              <Link to="#" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
