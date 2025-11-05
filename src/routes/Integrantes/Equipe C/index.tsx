@@ -136,8 +136,8 @@ export default function EquipeC() {
                 src="https://res.cloudinary.com/dd5hbmr2v/image/upload/v1762310575/download_hgwm3u.jpg"
                 alt="Foto da tela de cadastro de usuário"
                 className="bg-[#DCB2B9] border-[#D42A46] rounded-[10px] border-[3px]
-                lg:w-[30%]
-                2xl:w-[20%]"
+                w-full
+                2xl:w-[50%]"
               />
               <div>
                 <h2 className="font-bold text-4xl mt-5 mb-3 text-center
@@ -154,7 +154,7 @@ export default function EquipeC() {
                   to="/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(193,72,28,0.2)]"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -163,7 +163,8 @@ export default function EquipeC() {
           </div>
 
           {/* Card tarefa 2 */}
-          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col items-center w-[90%]
+          <div className="bg-[#DCB2B9] border-[#D42A46] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]
+          lg:p-8
           2xl:p-13">
             <div className="lg:flex flex-row lg:gap-8 lg:items-center">
               <img
@@ -188,8 +189,7 @@ export default function EquipeC() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2
-                  "
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(193,72,28,0.2)]"
                 >
                   Clique aqui para ver mais
                 </Link>

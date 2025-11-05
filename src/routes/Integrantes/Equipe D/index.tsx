@@ -147,7 +147,7 @@ export default function EquipeD() {
                 to="/faq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2
+                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)]
                 sm:w-[60%]
                 md:w-[50%]
                 lg:w-[40%]
@@ -184,7 +184,7 @@ export default function EquipeD() {
                 to="/contato"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2
+                className="bg-[#a19f5a] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)]
                 sm:w-[60%]
                 md:w-[50%]
                 lg:w-[40%]
