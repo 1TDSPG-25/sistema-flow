@@ -5,7 +5,8 @@ export default function EquipeD() {
   return (
     <>
       <section
-        className="flex flex-col justify-center pl-8"
+        className="flex flex-col justify-center pl-8
+        sm:px-8"
       >
         <div className="flex items-center justify-between">
           <h1 className="font-bold text-4xl">Equipe D</h1>
@@ -18,7 +19,9 @@ export default function EquipeD() {
           </Link>
         </div>
         <hr className="border-2 my-3" />
-        <p className="text-2xl font-bold">Conheça um pouco mais a Equipe D:</p>
+        <p className="text-2xl font-bold">
+          Conheça um pouco mais a Equipe D:
+        </p>
 
         <ul
           className="flex flex-col justify-center items-center gap-10 py-10
