@@ -37,6 +37,7 @@ export default function EquipeB() {
                 to="https://github.com/KelsonZh0"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -47,6 +48,7 @@ export default function EquipeB() {
                 to="https://www.linkedin.com/in/kelson-zhang-211456323/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
@@ -71,6 +73,7 @@ export default function EquipeB() {
                 to="https://github.com/alex-isidro"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -85,6 +88,7 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -106,6 +110,7 @@ export default function EquipeB() {
                 to="https://github.com/PxS00"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -120,6 +125,7 @@ export default function EquipeB() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>

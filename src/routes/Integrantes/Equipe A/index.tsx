@@ -39,6 +39,7 @@ export default function EquipeA() {
                 to="https://github.com/enricodelesporte"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -49,6 +50,7 @@ export default function EquipeA() {
                 to="https://www.linkedin.com/in/enricodelesporte"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
@@ -73,13 +75,19 @@ export default function EquipeA() {
                 to="https://github.com/iagoliziero"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
                 />
               </Link>
-              <Link to="https://www.linkedin.com/in/iagoliziero" target="_blank" rel="noopener noreferrer">
+              <Link 
+                to="https://www.linkedin.com/in/iagoliziero" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
+              >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
@@ -105,6 +113,7 @@ export default function EquipeA() {
                 to="https://github.com/vitordias1006"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -115,6 +124,7 @@ export default function EquipeA() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
