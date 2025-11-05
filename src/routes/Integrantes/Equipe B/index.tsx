@@ -158,7 +158,8 @@ export default function EquipeB() {
                   to="/unidades"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(28,193,102,0.2)]"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -192,7 +193,8 @@ export default function EquipeB() {
                   to="/perfil"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(28,193,102,0.2)]"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -253,7 +255,8 @@ export default function EquipeB() {
                   to="https://github.com/PxS00/megafarma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(28,193,102,0.2)]"
+                  className="bg-[#25D553] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(28,193,102,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver integrações
                 </Link>

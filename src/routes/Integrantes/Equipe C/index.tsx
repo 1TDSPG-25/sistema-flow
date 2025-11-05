@@ -160,7 +160,8 @@ export default function EquipeC() {
                   to="/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(193,72,28,0.2)]"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(193,72,28,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -195,7 +196,8 @@ export default function EquipeC() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(193,72,28,0.2)]"
+                  className="bg-[#D42A46] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(193,72,28,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>

@@ -43,6 +43,7 @@ export default function EquipeD() {
                 to="https://github.com/Asuyz"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -53,6 +54,7 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -73,6 +75,7 @@ export default function EquipeD() {
                 to="https://github.com/JoaooResende"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -83,6 +86,7 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -103,6 +107,7 @@ export default function EquipeD() {
                 to="https://github.com/lucastdag"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:opacity-60 duration-300"
               >
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
@@ -113,6 +118,7 @@ export default function EquipeD() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -150,7 +156,7 @@ export default function EquipeD() {
                 to="/faq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)]
+                className="bg-[#A19F5A] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)] hover:duration-300
                 sm:w-[60%]
                 md:w-[50%]
                 lg:w-[40%]
@@ -187,7 +193,7 @@ export default function EquipeD() {
                 to="/contato"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#a19f5a] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)]
+                className="bg-[#a19f5a] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(255,247,0,0.2)] hover:duration-300
                 sm:w-[60%]
                 md:w-[50%]
                 lg:w-[40%]

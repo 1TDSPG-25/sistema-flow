@@ -156,7 +156,8 @@ export default function EquipeA() {
                   to="/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#6D9BDD] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 hover:bg-[rgba(31,114,238,0.2)]"
+                  className="bg-[#6D9BDD] rounded-[10px] text-white text-[18px] lg:text-2xl text-center font-bold p-2 
+                  hover:bg-[rgba(31,114,238,0.2)] hover:duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
