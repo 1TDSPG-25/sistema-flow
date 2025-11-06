@@ -59,6 +59,7 @@ export default function CadastroForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<CadastroInput>({
     resolver: zodResolver(cadastroSchema),
@@ -76,7 +77,7 @@ export default function CadastroForm() {
           "0"
         )}`;
       }
-    
+
       const dadosFormatados = {
         nome: data.nome,
         cpf: data.cpf,
@@ -240,8 +241,7 @@ export default function CadastroForm() {
                   if (v.length > 9)
                     masked = masked.slice(0, 11) + "-" + masked.slice(11);
                   setCpfMasked(masked);
-                  e.target.value = v;
-                  register("cpf").onChange(e);
+                  setValue("cpf", v, { shouldValidate: true });
                 }}
                 placeholder="000.000.000-00"
               />
