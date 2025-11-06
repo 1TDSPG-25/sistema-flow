@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import Toast from "../../components/Toast/Toast";
 import useTheme from "../../context/useTheme";
+import { maskCpf } from "../../utils/maskCpf";
 import type { ToastType } from "../../types/toast";
 
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
@@ -80,7 +81,7 @@ export default function CadastroForm() {
 
       const dadosFormatados = {
         nome: data.nome,
-        cpf: data.cpf,
+        cpf: maskCpf(data.cpf),
         email: data.email.toLowerCase(),
         dataDeNascimento: dataAmericana,
         senha: data.senha,
@@ -251,15 +252,8 @@ export default function CadastroForm() {
                 }`}
                 value={cpfMasked}
                 onChange={(e) => {
-                  let v = e.target.value.replace(/\D/g, "");
-                  if (v.length > 11) v = v.slice(0, 11);
-                  let masked = v;
-                  if (v.length > 3) masked = v.slice(0, 3) + "." + v.slice(3);
-                  if (v.length > 6)
-                    masked = masked.slice(0, 7) + "." + masked.slice(7);
-                  if (v.length > 9)
-                    masked = masked.slice(0, 11) + "-" + masked.slice(11);
-                  setCpfMasked(masked);
+                  const v = e.target.value.replace(/\D/g, "");
+                  setCpfMasked(maskCpf(v));
                   setValue("cpf", v, { shouldValidate: true });
                 }}
                 placeholder="000.000.000-00"

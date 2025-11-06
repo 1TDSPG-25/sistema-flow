@@ -1,10 +1,14 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiLogIn } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
+import Toast from "../../components/Toast/Toast";
 import useTheme from "../../context/useTheme";
+import { maskCpf } from "../../utils/maskCpf";
 import type { TipoUser } from "../../types/tipoUsuario";
+import type { ToastType } from "../../types/toast";
 
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -23,6 +27,11 @@ type LoginInput = z.infer<typeof loginSchema>;
 export default function LoginForm() {
   const { isDark } = useTheme();
   const navigate = useNavigate();
+  const [toast, setToast] = useState<{
+    message: string;
+    type: ToastType;
+  } | null>(null);
+  const [identificadorMasked, setIdentificadorMasked] = useState("");
 
   const {
     register,
@@ -59,15 +68,17 @@ export default function LoginForm() {
         );
         localStorage.setItem("authToken", authToken);
         localStorage.setItem("isLoggedIn", "true");
-
-        navigate("/", { replace: true });
-        window.location.reload();
+        setToast({ message: "Login realizado com sucesso!", type: "success" });
+        setTimeout(() => {
+          navigate("/", { replace: true });
+          window.location.reload();
+        }, 1200);
       } else {
-        alert("Credenciais Inválidas.");
+        setToast({ message: "Credenciais inválidas.", type: "error" });
         reset();
       }
     } catch (error) {
-      alert("Erro: " + error);
+      setToast({ message: "Erro: " + error, type: "error" });
     }
   };
 
@@ -82,77 +93,101 @@ export default function LoginForm() {
   const linkClass = isDark ? "hover:text-blue-400" : "hover:text-blue-500";
 
   return (
-    <main
-      className={`p-8 min-h-screen flex items-center justify-center ${bgClass} transition-colors duration-500`}
-    >
-      <div
-        className={`p-8 rounded-xl shadow-md w-full max-w-md ${cardClass} transition-colors duration-500`}
+    <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
+      <main
+        className={`p-8 min-h-screen flex items-center justify-center ${bgClass} transition-colors duration-500`}
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Página de Login</h2>
+        <div
+          className={`p-8 rounded-xl shadow-md w-full max-w-md ${cardClass} transition-colors duration-500`}
+        >
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Página de Login
+          </h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div>
-            <label
-              htmlFor="identificador"
-              className={`block text-sm font-medium ${labelClass}`}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div>
+              <label
+                htmlFor="identificador"
+                className={`block text-sm font-medium ${labelClass}`}
+              >
+                CPF ou E-mail
+              </label>
+              <input
+                id="identificador"
+                type="text"
+                className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
+                value={identificadorMasked}
+                onChange={e => {
+                  const raw = e.target.value.replace(/\D/g, "");
+                  if (raw.length <= 11 && /^\d{0,11}$/.test(raw)) {
+                    const masked = maskCpf(raw);
+                    setIdentificadorMasked(masked);
+                    register("identificador").onChange({
+                      target: { value: masked }
+                    });
+                  } else {
+                    setIdentificadorMasked(e.target.value);
+                    register("identificador").onChange(e);
+                  }
+                }}
+                placeholder="Digite seu CPF ou e-mail"
+              />
+              {errors.identificador && (
+                <p className="text-red-500 text-sm">
+                  {errors.identificador.message}
+                </p>
+              )}
+            </div>
+
+            {/* Campo de senha */}
+            <div>
+              <label
+                htmlFor="senha"
+                className={`block text-sm font-medium ${labelClass}`}
+              >
+                Senha
+              </label>
+              <input
+                id="senha"
+                type="password"
+                className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
+                {...register("senha")}
+              />
+              {errors.senha && (
+                <p className="text-red-500 text-sm">{errors.senha.message}</p>
+              )}
+            </div>
+
+            {/* Botão */}
+            <button
+              type="submit"
+              className="w-full flex justify-center items-center gap-2 py-2 px-4 rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
             >
-              CPF ou E-mail
-            </label>
-            <input
-              id="identificador"
-              type="text"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
-              {...register("identificador")}
-              placeholder="Digite seu CPF ou e-mail"
-            />
-            {errors.identificador && (
-              <p className="text-red-500 text-sm">
-                {errors.identificador.message}
-              </p>
-            )}
-          </div>
+              <FiLogIn size={18} /> Entrar
+            </button>
 
-          {/* Campo de senha */}
-          <div>
-            <label
-              htmlFor="senha"
-              className={`block text-sm font-medium ${labelClass}`}
+            {/* Link de cadastro */}
+            <p
+              className={`block text-sm sm:text-base mt-4 text-center ${labelClass}`}
             >
-              Senha
-            </label>
-            <input
-              id="senha"
-              type="password"
-              className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
-              {...register("senha")}
-            />
-            {errors.senha && (
-              <p className="text-red-500 text-sm">{errors.senha.message}</p>
-            )}
-          </div>
-
-          {/* Botão */}
-          <button
-            type="submit"
-            className="w-full flex justify-center items-center gap-2 py-2 px-4 rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
-          >
-            <FiLogIn size={18} /> Entrar
-          </button>
-
-          {/* Link de cadastro */}
-          <p
-            className={`block text-sm sm:text-base mt-4 text-center ${labelClass}`}
-          >
-            Caso não tenha um usuário, clique em{" "}
-            <Link
-              to="/cadastro"
-              className={`hover:underline font-bold ${linkClass}`}
-            >
-              Cadastrar
-            </Link>
-          </p>
-        </form>
-      </div>
-    </main>
+              Caso não tenha um usuário, clique em{" "}
+              <Link
+                to="/cadastro"
+                className={`hover:underline font-bold ${linkClass}`}
+              >
+                Cadastrar
+              </Link>
+            </p>
+          </form>
+        </div>
+      </main>
+    </>
   );
 }
