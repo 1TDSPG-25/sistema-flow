@@ -16,14 +16,14 @@ import { ThemeProvider } from './context/ThemeContext.tsx'
 
 import Perfil from './routes/Perfil/index.tsx';
 import Integrantes from './routes/Integrantes/index.tsx'
-import EquipeA from './routes/Integrantes/Equipe A/index.tsx'
-import EquipeE from './routes/Integrantes/Equipe E/index.tsx'
-import EquipeF from './routes/Integrantes/Equipe F/index.tsx'
-import EquipeG from './routes/Integrantes/Equipe G/index.tsx'
-import EquipeH from './routes/Integrantes/Equipe H/index.tsx'
-import EquipeB from './routes/Integrantes/Equipe B/index.tsx'
-import EquipeC from './routes/Integrantes/Equipe C/index.tsx'
-import EquipeD from './routes/Integrantes/Equipe D/index.tsx'
+import EquipeA from './routes/Integrantes/EquipeA/index.tsx'
+import EquipeE from './routes/Integrantes/EquipeE/index.tsx'
+import EquipeF from './routes/Integrantes/EquipeF/index.tsx'
+import EquipeG from './routes/Integrantes/EquipeG/index.tsx'
+import EquipeH from './routes/Integrantes/EquipeH/index.tsx'
+import EquipeB from './routes/Integrantes/EquipeB/index.tsx'
+import EquipeC from './routes/Integrantes/EquipeC/index.tsx'
+import EquipeD from './routes/Integrantes/EquipeD/index.tsx'
 
 const router = createBrowserRouter([{
   path:"/", element:<App/>, errorElement: <Error404/>, children:[

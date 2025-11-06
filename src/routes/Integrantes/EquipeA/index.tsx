@@ -1,34 +1,5 @@
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { string } from "zod";
-
-interface CardAluno {
-
-}
-
-const CardAlunoData = [
-    {
-        img:"https://github.com/enricodelesporte.png",
-        nome: "Enrico Delesporte",
-        tipoDev: "Desenvolvedor Back-End",
-        gitHub: "https://github.com/enricodelesporte",
-        linkedin: "https://www.linkedin.com/in/enricodelesporte"
-     },
-    {
-        img:"https://github.com/iagoliziero.png",
-        nome: "Iago Liziero",
-        tipoDev: "Desenvolvedor Fullstack",
-        gitHub: "https://github.com/iagoliziero",
-        linkedin: "https://www.linkedin.com/in/iagoliziero"
-     },
-    {
-        img:"https://github.com/vitordias1006.png",
-        nome: "Vitor Dias",
-        tipoDev: "Desenvolvedor Back-End",
-        gitHub: "https://github.com/vitordias1006",
-        linkedin: "#"
-     },
-]
 
 export default function EquipeA() {
   return (
