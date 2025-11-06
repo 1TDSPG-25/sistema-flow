@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
+import Toast from "../../components/Toast/Toast";
 import useTheme from "../../context/useTheme";
 import type { ToastType } from "../../types/toast";
-import Toast from "../../components/Toast/Toast";
 
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -54,6 +54,7 @@ export default function CadastroForm() {
     message: string;
     type: ToastType;
   } | null>(null);
+  const [cpfMasked, setCpfMasked] = useState("");
 
   const {
     register,
@@ -66,7 +67,24 @@ export default function CadastroForm() {
 
   const onSubmit = async (data: CadastroInput) => {
     try {
-      const dadosFormatados = { ...data, email: data.email.toLowerCase() };
+      // Converte data para formato americano yyyy-mm-dd
+      let dataAmericana = data.dataNascimento;
+      if (dataAmericana.includes("/")) {
+        const [dia, mes, ano] = dataAmericana.split("/");
+        dataAmericana = `${ano}-${mes.padStart(2, "0")}-${dia.padStart(
+          2,
+          "0"
+        )}`;
+      }
+    
+      const dadosFormatados = {
+        nome: data.nome,
+        cpf: data.cpf,
+        email: data.email.toLowerCase(),
+        dataDeNascimento: dataAmericana,
+        senha: data.senha,
+        imagem: "https://avatars.githubusercontent.com/u/1?v=4",
+      };
 
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error("Erro ao buscar usuários existentes");
@@ -203,12 +221,29 @@ export default function CadastroForm() {
               <input
                 id="cpf"
                 type="text"
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={14}
                 className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
                 }`}
-                {...register("cpf")}
+                value={cpfMasked}
+                onChange={(e) => {
+                  let v = e.target.value.replace(/\D/g, "");
+                  if (v.length > 11) v = v.slice(0, 11);
+                  let masked = v;
+                  if (v.length > 3) masked = v.slice(0, 3) + "." + v.slice(3);
+                  if (v.length > 6)
+                    masked = masked.slice(0, 7) + "." + masked.slice(7);
+                  if (v.length > 9)
+                    masked = masked.slice(0, 11) + "-" + masked.slice(11);
+                  setCpfMasked(masked);
+                  e.target.value = v;
+                  register("cpf").onChange(e);
+                }}
+                placeholder="000.000.000-00"
               />
               {errors.cpf && (
                 <p className="text-red-500 text-sm">{errors.cpf.message}</p>
