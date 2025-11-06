@@ -6,9 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import Toast from "../../components/Toast/Toast";
 import useTheme from "../../context/useTheme";
-import { maskCpf } from "../../utils/maskCpf";
 import type { TipoUser } from "../../types/tipoUsuario";
 import type { ToastType } from "../../types/toast";
+import { maskCpf } from "../../utils/maskCpf";
 
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -31,7 +31,7 @@ export default function LoginForm() {
     message: string;
     type: ToastType;
   } | null>(null);
-  const [identificadorMasked, setIdentificadorMasked] = useState("");
+  const [identificadorMasked, setIdentificadorMasked] = useState<string | undefined>(undefined);
 
   const {
     register,
@@ -123,21 +123,24 @@ export default function LoginForm() {
                 id="identificador"
                 type="text"
                 className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
-                value={identificadorMasked}
+                placeholder="Digite seu CPF ou e-mail"
+                {...register("identificador")}
+                value={identificadorMasked !== undefined ? identificadorMasked : undefined}
                 onChange={e => {
-                  const raw = e.target.value.replace(/\D/g, "");
-                  if (raw.length <= 11 && /^\d{0,11}$/.test(raw)) {
-                    const masked = maskCpf(raw);
+                  const value = e.target.value;
+                  const onlyDigits = value.replace(/\D/g, "");
+                  // Se contém apenas números e até 11 dígitos, aplica máscara de CPF
+                  if (/^\d{0,11}$/.test(onlyDigits) && onlyDigits.length <= 11 && onlyDigits.length > 0) {
+                    const masked = maskCpf(onlyDigits);
                     setIdentificadorMasked(masked);
-                    register("identificador").onChange({
-                      target: { value: masked }
-                    });
+                    // Atualiza o valor do RHF
+                    register("identificador").onChange({ target: { value: masked } });
                   } else {
-                    setIdentificadorMasked(e.target.value);
+                    // Se contém letras, @ ou ., trata como e-mail e não aplica máscara
+                    setIdentificadorMasked(undefined);
                     register("identificador").onChange(e);
                   }
                 }}
-                placeholder="Digite seu CPF ou e-mail"
               />
               {errors.identificador && (
                 <p className="text-red-500 text-sm">
