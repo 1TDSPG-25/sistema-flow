@@ -1,7 +1,7 @@
 export type AddItemField = {
   name: string;
   label: string;
-  type: "text" | "number" | "date";
+  type: "text" | "number" | "date" | "textarea";
   required?: boolean;
 };
 

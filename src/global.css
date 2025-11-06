@@ -1,5 +1,8 @@
 @import "tailwindcss";
-html { height: 100%; overflow-x: hidden; }
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
 body {
   @apply min-h-dvh antialiased;
 }
@@ -14,4 +17,12 @@ main {
 }
 .light-mode {
   @apply bg-white text-slate-900 transition-colors duration-200;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
