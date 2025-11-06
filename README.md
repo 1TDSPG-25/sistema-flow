@@ -1,9 +1,13 @@
 # Projeto Front-End - Roadmap de Features
 
 ## Objetivo
-Nosso objetivo é desenvolver o site **Megafarma**, um sistema de farmácia online que exibe produtos, mostra as unidades físicas, responde dúvidas e permite contato direto com o usuário.  
-Também haverá uma área de login e cadastro, com dois tipos de acesso: usuário comum (para gerenciar suas informações e pedidos) e administrador (para controlar produtos).  
-No futuro, o sistema será integrado a um backend em **Java**.
+O projeto **Megafarma** é um sistema de farmácia online desenvolvido com **React + Vite + TypeScript**, totalmente responsivo e acessível. O site exibe produtos, mostra as unidades físicas, responde dúvidas e permite contato direto com o usuário.
+
+Há uma área de login e cadastro, com dois tipos de acesso:
+- **Usuário comum:** gerencia suas informações e pedidos.
+- **Administrador:** controla produtos e configurações do sistema.
+
+O frontend prioriza a segurança: nenhum dado sensível do usuário é salvo no localStorage. O perfil do usuário conta com upload de foto via localStorage, preview instantâneo e interface moderna, mantendo privacidade e usabilidade.
 
 ## 🔗 API Backend
 
@@ -17,7 +21,7 @@ Sinta-se à vontade para dar palpites, ideias e melhorias via issues ou pull req
 
 ## 🏗️ Estrutura do Site
 
- Home | Produtos | Unidades | FAQ | Contato | Minha Conta
+ Home | Produtos | Unidades | FAQ | Contato | Integrantes | Perfil
 
 ### 🏠 Home
 Visão geral da farmácia, com destaque para promoções, produtos em alta e links principais do site.
@@ -36,12 +40,6 @@ Formulário para mensagens e dados de contato (telefone, e-mail, WhatsApp).
 
 ### 👤 Minha Conta
 Login e cadastro de usuários.
-
-
-
-Serão criados dois tipos de acesso:
-- **Usuário comum:** poderá visualizar e gerenciar suas próprias informações, além de acompanhar os seus pedidos.  
-- **Administrador:** terá acesso a um painel separado para gerenciar produtos e outras configurações do sistema.
 
 .env
 ```
@@ -69,39 +67,6 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 | **Equipe F** | Luiz Flosi, Arthur Brito, Pedro Brum |
 | **Equipe G** | Moisés, Sofia, Felipe |
 | **Equipe H** | João Victor L, Pedro Vaz |
-
-
-# FEATURES LIST:
-
-## Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
-
-## 🟨 Em Desenvolvimento 
-<ul style="color:yellow">
-
-</ul>
-
-
-## 🟧 Em Homologação QA - ROSSONI
-<ul style="color:orange">
-
-</ul>
-
-## 🟦 Time Livre
-<ul style="color:lightblue">
-
-- <span style="color:white">Equipe ?</span>
-
-</ul>
-
-## Possíveis Features Futuras
-<ul style="color:lightgreen">
-
-- **REFACTOR:** Organizar melhor o codigo-> <span style="color:white">Equipe ?</span>
-
-- **FEATURE:** Implementar modal na pagina de Unidades -> <span style="color:white">Equipe ?</span>
-
-- **FEATURE:** Implementar modal na pagina de Integrantes -> <span style="color:white">Equipe ?</span>
-</ul>
 
 ---
 
@@ -187,5 +152,7 @@ VITE_API_URL_PRODUTOS=https://megafarma-g620.onrender.com/produtos
 - **FEATURE:** Desenvolver um componente de adição de produtos(reutilizavel) -> <span style="color:white">Equipe B</span>
 
 - **FEATURE:** Criar uma página de Integrantes -> <span style="color:white">Equipe G</span>
+
+- **FEATURE:** Upload de foto de perfil via localStorage, com preview instantâneo, limite de tamanho, UX aprimorada e botão padronizado. Nenhum dado sensível é salvo no localStorage. <span style="color:white">Equipe B</span>
 </ul>
 
