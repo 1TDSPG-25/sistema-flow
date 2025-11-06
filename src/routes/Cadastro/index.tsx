@@ -6,6 +6,7 @@ import { z } from "zod";
 import Toast from "../../components/Toast/Toast";
 import useTheme from "../../context/useTheme";
 import type { ToastType } from "../../types/toast";
+import { maskCpf } from "../../utils/maskCpf";
 
 const API_URL = import.meta.env.VITE_API_URL_USUARIOS;
 
@@ -13,7 +14,30 @@ const cadastroSchema = z.object({
   nome: z
     .string()
     .min(3, { message: "O nome precisa ter no mínimo 3 caracteres." }),
-  cpf: z.string().min(11, { message: "O CPF deve ter 11 dígitos." }),
+  cpf: z
+    .string()
+    .min(11, { message: "O CPF deve ter 11 dígitos." })
+    .refine(
+      (cpf) => {
+        // Validação de CPF: formato e dígito verificador
+        cpf = cpf.replace(/\D/g, "");
+        if (cpf.length !== 11) return false;
+        // Elimina CPFs inválidos conhecidos
+        if (/^(\d)\1+$/.test(cpf)) return false;
+        let soma = 0;
+        for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+        let resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(9))) return false;
+        soma = 0;
+        for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.charAt(10))) return false;
+        return true;
+      },
+      { message: "CPF inválido." }
+    ),
   email: z.email({ message: "Por favor, insira um e-mail válido." }),
   dataNascimento: z.string().refine(
     (val) => {
@@ -54,12 +78,15 @@ export default function CadastroForm() {
     message: string;
     type: ToastType;
   } | null>(null);
+  const toastRef = useState<HTMLDivElement | null>(null);
   const [cpfMasked, setCpfMasked] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<CadastroInput>({
     resolver: zodResolver(cadastroSchema),
@@ -67,6 +94,7 @@ export default function CadastroForm() {
   });
 
   const onSubmit = async (data: CadastroInput) => {
+    setLoading(true);
     try {
       // Converte data para formato americano yyyy-mm-dd
       let dataAmericana = data.dataNascimento;
@@ -80,7 +108,7 @@ export default function CadastroForm() {
 
       const dadosFormatados = {
         nome: data.nome,
-        cpf: data.cpf,
+        cpf: maskCpf(data.cpf),
         email: data.email.toLowerCase(),
         dataDeNascimento: dataAmericana,
         senha: data.senha,
@@ -88,21 +116,21 @@ export default function CadastroForm() {
       };
 
       const response = await fetch(API_URL);
-      if (!response.ok) throw new Error("Erro ao buscar usuários existentes");
+      if (!response.ok) throw new Error("Erro ao buscar clientes existentes");
 
-      const usuarios: CadastroInput[] = await response.json();
-
-      const usuarioExistente = usuarios.find(
+      const clientes: CadastroInput[] = await response.json();
+      const clienteExistente = clientes.find(
         (user) =>
           user.cpf === dadosFormatados.cpf ||
           user.email === dadosFormatados.email
       );
 
-      if (usuarioExistente) {
+      if (clienteExistente) {
         setToast({
           message: "CPF ou E-mail já cadastrado!",
           type: "error",
         });
+        setLoading(false);
         return;
       }
 
@@ -112,17 +140,59 @@ export default function CadastroForm() {
         body: JSON.stringify(dadosFormatados),
       });
 
-      if (!postResponse.ok) throw new Error("Erro ao cadastrar usuário");
+      if (!postResponse.ok) {
+        setLoading(false);
+        throw new Error("Erro ao cadastrar usuário");
+      }
 
-      setToast({
-        message: "Cadastro realizado com sucesso!",
-        type: "success",
-      });
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+      const clientesAtualizadosResponse = await fetch(API_URL);
+      if (!clientesAtualizadosResponse.ok) {
+        setLoading(false);
+        throw new Error(
+          "Cadastro feito, mas erro ao buscar usuário para login automático."
+        );
+      }
+      const clientesAtualizados: CadastroInput[] =
+        await clientesAtualizadosResponse.json();
+      const usuario = clientesAtualizados.find(
+        (user) => user.email === dadosFormatados.email
+      );
+      if (usuario && usuario.senha === dadosFormatados.senha) {
+  // Filtra dados sensíveis antes de salvar
+  const usuarioPublico = { ...usuario } as Record<string, unknown>;
+  delete usuarioPublico.senha;
+  delete usuarioPublico.cpf;
+  delete usuarioPublico.email;
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioPublico));
+        const authToken = btoa(
+          JSON.stringify({
+            id: usuario.cpf ?? usuario.email,
+            ts: Date.now(),
+          })
+        );
+        localStorage.setItem("authToken", authToken);
+        localStorage.setItem("isLoggedIn", "true");
+        setToast({
+          message: "Cadastro realizado com sucesso!",
+          type: "success",
+        });
+        setTimeout(() => {
+          setLoading(false);
+          reset();
+          navigate("/perfil");
+        }, 1200);
+      } else {
+        setToast({
+          message: "Erro ao cadastrar usuário.",
+          type: "error",
+        });
+        setTimeout(() => {
+          setLoading(false);
+          navigate("/login");
+        }, 1500);
+      }
     } catch (error: unknown) {
+      setLoading(false);
       if (error instanceof Error) {
         setToast({
           message: "Erro ao cadastrar: " + error.message,
@@ -140,11 +210,20 @@ export default function CadastroForm() {
   return (
     <>
       {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={() => setToast(null)}
-        />
+        <div
+          ref={(el) => {
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            toastRef[1](el);
+          }}
+        >
+          <Toast
+            message={toast.message}
+            type={toast.type}
+            onClose={() => setToast(null)}
+          />
+        </div>
       )}
       <div className="min-h-screen pb-20 flex items-center justify-center">
         <div
@@ -177,8 +256,9 @@ export default function CadastroForm() {
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-                }`}
+                } ${errors.dataNascimento ? "border-red-500" : ""}`}
                 {...register("dataNascimento")}
+                disabled={loading}
               />
               {errors.dataNascimento && (
                 <p className="text-red-500 text-sm">
@@ -202,8 +282,9 @@ export default function CadastroForm() {
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-                }`}
+                } ${errors.nome ? "border-red-500" : ""}`}
                 {...register("nome")}
+                disabled={loading}
               />
               {errors.nome && (
                 <p className="text-red-500 text-sm">{errors.nome.message}</p>
@@ -229,21 +310,15 @@ export default function CadastroForm() {
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-                }`}
+                } ${errors.cpf ? "border-red-500" : ""}`}
                 value={cpfMasked}
                 onChange={(e) => {
-                  let v = e.target.value.replace(/\D/g, "");
-                  if (v.length > 11) v = v.slice(0, 11);
-                  let masked = v;
-                  if (v.length > 3) masked = v.slice(0, 3) + "." + v.slice(3);
-                  if (v.length > 6)
-                    masked = masked.slice(0, 7) + "." + masked.slice(7);
-                  if (v.length > 9)
-                    masked = masked.slice(0, 11) + "-" + masked.slice(11);
-                  setCpfMasked(masked);
+                  const v = e.target.value.replace(/\D/g, "");
+                  setCpfMasked(maskCpf(v));
                   setValue("cpf", v, { shouldValidate: true });
                 }}
                 placeholder="000.000.000-00"
+                disabled={loading}
               />
               {errors.cpf && (
                 <p className="text-red-500 text-sm">{errors.cpf.message}</p>
@@ -266,8 +341,9 @@ export default function CadastroForm() {
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-                }`}
+                } ${errors.email ? "border-red-500" : ""}`}
                 {...register("email")}
+                disabled={loading}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -290,8 +366,9 @@ export default function CadastroForm() {
                   isDark
                     ? "bg-gray-700 border-gray-600 text-gray-200 placeholder-gray-400"
                     : "bg-white border-gray-300 text-gray-900 placeholder-gray-400"
-                }`}
+                } ${errors.senha ? "border-red-500" : ""}`}
                 {...register("senha")}
+                disabled={loading}
               />
               {errors.senha && (
                 <p className="text-red-500 text-sm">{errors.senha.message}</p>
@@ -301,9 +378,17 @@ export default function CadastroForm() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+                className={`w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer ${
+                  loading ? "opacity-60 cursor-not-allowed" : ""
+                }`}
+                disabled={loading}
               >
-                Cadastrar
+                {loading ? (
+                  <span className="mr-2">
+                    <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  </span>
+                ) : null}
+                {loading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </div>
 
