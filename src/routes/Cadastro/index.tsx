@@ -77,8 +77,16 @@ export default function CadastroForm() {
         return;
       }
 
-      if (!response.ok) throw new Error("Erro ao cadastrar usuário");
+      // POST para criar o novo usuário
+      const postResponse = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dadosFormatados),
+      });
 
+      if (!postResponse.ok) throw new Error("Erro ao cadastrar usuário");
+
+      alert("Cadastro realizado com sucesso!");
       navigate("/login");
     } catch (error: unknown) {
       if (error instanceof Error) {
