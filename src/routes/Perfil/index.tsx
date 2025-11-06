@@ -34,7 +34,8 @@ export default function Perfil() {
         const u2 = JSON.parse(rawAuthUser);
         if (u2?.id != null) return String(u2.id);
       }
-      const rawId = localStorage.getItem("userId") || localStorage.getItem("auth:userId");
+      const rawId =
+        localStorage.getItem("userId") || localStorage.getItem("auth:userId");
       return rawId ? rawId : null;
     } catch {
       return null;
@@ -61,10 +62,10 @@ export default function Perfil() {
           setCarregando(false);
           return;
         }
-  const coerced = coerceUser(usuario);
-  setUser(coerced);
-  const imgLocal = localStorage.getItem("userImage");
-  if (imgLocal) setImgPreview(imgLocal);
+        const coerced = coerceUser(usuario);
+        setUser(coerced);
+        const imgLocal = localStorage.getItem("userImage");
+        if (imgLocal) setImgPreview(imgLocal);
       } catch (e: unknown) {
         const message =
           e instanceof Error ? e.message : String(e ?? "Erro inesperado");
@@ -88,10 +89,10 @@ export default function Perfil() {
   };
 
   const maskCpfStart = (cpf?: string) => {
-  if (!cpf) return "—";
-  const s = cpf.trim();
-  if (s.length <= 6) return s;
-  return s.slice(0, 6) + " ...";
+    if (!cpf) return "—";
+    const s = cpf.trim();
+    if (s.length <= 6) return s;
+    return s.slice(0, 6) + " ...";
   };
 
   if (carregando) {
@@ -157,8 +158,11 @@ export default function Perfil() {
         >
           <label
             htmlFor="imgUpload"
-            className="text-sm font-medium cursor-pointer text-indigo-600 hover:underline"
+            tabIndex={0}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded bg-slate-700 text-amber-50 font-semibold shadow-md cursor-pointer transition-all duration-200 hover:bg-slate-600 focus:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            aria-label="Alterar foto de perfil"
           >
+            <FiImage className="text-xl" aria-hidden />
             Alterar foto de perfil
           </label>
           <input
@@ -174,7 +178,13 @@ export default function Perfil() {
               }
               const maxSize = 500 * 1024;
               if (file.size > maxSize) {
-                setErro(`Imagem muito grande (${(file.size / 1024).toFixed(1)} KB). Escolha uma imagem menor que ${(maxSize / 1024).toFixed(0)} KB.`);
+                setErro(
+                  `Imagem muito grande (${(file.size / 1024).toFixed(
+                    1
+                  )} KB). Escolha uma imagem menor que ${(
+                    maxSize / 1024
+                  ).toFixed(0)} KB.`
+                );
                 return;
               }
               if (!user) {
