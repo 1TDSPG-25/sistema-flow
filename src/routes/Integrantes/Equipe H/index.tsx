@@ -45,12 +45,14 @@ export default function EquipeH() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -75,12 +77,14 @@ export default function EquipeH() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
-                  alt="ícone do LinkedIn"
+                  alt="ícone do Linked"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -130,6 +134,7 @@ export default function EquipeH() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#ED3535] rounded-[10px] text-white text-2xl text-center text-[15px] font-bold p-2
+                hover:bg-[#a01f1f] transition duration-300
                 sm:text-xl
                 md:text-2xl
                 lg:w-[30%]
