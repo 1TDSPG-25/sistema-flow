@@ -43,6 +43,7 @@ export default function EquipeG() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link
@@ -53,6 +54,7 @@ export default function EquipeG() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -77,12 +79,14 @@ export default function EquipeG() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -109,12 +113,14 @@ export default function EquipeG() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -158,7 +164,8 @@ export default function EquipeG() {
                   to="/contato"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2"
+                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2
+                  hover:bg-[rgb(38,31,160)] transition duration-300"
                 >
                   Clique aqui para ver mais
                 </Link>
@@ -195,7 +202,8 @@ export default function EquipeG() {
                   to="/integrantes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2"
+                  className="bg-[#433BE5] rounded-[10px] text-white text-2xl text-center font-bold p-2
+                  hover:bg-[rgb(38,31,160)] transition duration-300"
                   >
                   Clique aqui para ver mais
                 </Link>
