@@ -107,12 +107,12 @@ export default function CadastroForm() {
       }
 
       const dadosFormatados = {
-        nome: data.nome,
-        cpf: maskCpf(data.cpf),
-        email: data.email.toLowerCase(),
-        dataDeNascimento: dataAmericana,
-        senha: data.senha,
-        imagem: "https://avatars.githubusercontent.com/u/1?v=4",
+  nome: data.nome,
+  cpf: maskCpf(data.cpf),
+  email: data.email.toLowerCase(),
+  dataDeNascimento: dataAmericana,
+  senha: data.senha,
+  imagem: null,
       };
 
       const response = await fetch(API_URL);

@@ -12,19 +12,17 @@ import Spinner from "../../components/Spinner/Spinner";
 import useTheme from "../../context/useTheme";
 import type { TipoUser } from "../../types/tipoUsuario";
 
-const API_USERS = import.meta.env.VITE_API_URL_USUARIOS;
-
 export default function Perfil() {
+  const [imgPreview, setImgPreview] = useState<string | null>(null);
+  const [imgLoading, setImgLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const { isDark } = useTheme();
-
   const [user, setUser] = useState<TipoUser | null>(null);
   const [erro, setErro] = useState<string | null>(null);
   const [carregando, setCarregando] = useState(true);
   const [mostrarCpf, setMostrarCpf] = useState(false);
-
-  const loggedId = useMemo<string | null>(() => {
+  const loggedId = useMemo(() => {
     try {
       const rawUsuario = localStorage.getItem("usuarioLogado");
       if (rawUsuario) {
@@ -64,17 +62,10 @@ export default function Perfil() {
           setCarregando(false);
           return;
         }
-        const r = await fetch(API_USERS, {
-          headers: { Accept: "application/json" },
-        });
-        if (!r.ok) throw new Error(`Falha ao buscar clientes (${r.status}).`);
-        const clientes = await r.json();
-        const found = clientes.find(
-          (c: TipoUser) => c.email === email && c.senha === senha
-        );
-        if (!found)
-          throw new Error("Usuário logado não encontrado na base de dados.");
-        setUser(coerceUser(found));
+        const coerced = coerceUser(usuario);
+        setUser(coerced);
+        const imgLocal = localStorage.getItem("userImage");
+        if (imgLocal) setImgPreview(imgLocal);
       } catch (e: unknown) {
         const message =
           e instanceof Error ? e.message : String(e ?? "Erro inesperado");
@@ -124,9 +115,9 @@ export default function Perfil() {
   if (!user) return null;
 
   const Avatar = () =>
-    user.imagem ? (
+    imgPreview || user.imagem ? (
       <img
-        src={user.imagem}
+        src={imgPreview || user.imagem}
         alt={`Avatar de ${user.nome}`}
         className="h-28 w-28 rounded-full object-cover border-slate-900 border-4"
       />
@@ -139,12 +130,6 @@ export default function Perfil() {
         <FiImage className="text-2xl" aria-hidden />
       </div>
     );
-  // const InfoPill = ({ icon: Icon, text }: { icon: React.ComponentType<React.SVGProps<SVGSVGElement>>; text: string }) => (
-  //   <span className="inline-flex items-center gap-2 rounded-full border border-slate-900 px-2 py-1 text-sm">
-  //     <Icon aria-hidden />
-  //     <span>{text}</span>
-  //   </span>
-  // );
   return (
     <section className="min-h-screen pb-20 max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-start">
@@ -167,6 +152,82 @@ export default function Perfil() {
         }`}
       >
         <Avatar />
+        <form
+          className="mt-3 flex flex-col items-center gap-2"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <label
+            htmlFor="imgUpload"
+            tabIndex={0}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded bg-slate-700 text-amber-50 font-semibold shadow-md cursor-pointer transition-all duration-200 hover:bg-slate-600 focus:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-400"
+            aria-label="Alterar foto de perfil"
+          >
+            <FiImage className="text-xl" aria-hidden />
+            Alterar foto de perfil
+          </label>
+          <input
+            id="imgUpload"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              if (!file) {
+                setErro("Nenhum arquivo selecionado.");
+                return;
+              }
+              const maxSize = 500 * 1024;
+              if (file.size > maxSize) {
+                setErro(
+                  `Imagem muito grande (${(file.size / 1024).toFixed(
+                    1
+                  )} KB). Escolha uma imagem menor que ${(
+                    maxSize / 1024
+                  ).toFixed(0)} KB.`
+                );
+                return;
+              }
+              if (!user) {
+                setErro("Usuário não encontrado. Faça login novamente.");
+                return;
+              }
+              setImgLoading(true);
+              let finished = false;
+              try {
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                  const base64img = ev.target?.result as string;
+                  localStorage.setItem("userImage", base64img);
+                  setImgPreview(base64img);
+                  setImgLoading(false);
+                  finished = true;
+                };
+                reader.onerror = function () {
+                  setErro("Erro ao ler imagem");
+                  setImgLoading(false);
+                  finished = true;
+                };
+                reader.readAsDataURL(file);
+                setTimeout(() => {
+                  if (!finished) {
+                    setImgLoading(false);
+                    setErro("Tempo excedido ao processar imagem");
+                  }
+                }, 10000);
+              } catch (err) {
+                let msg = "Erro ao processar imagem";
+                if (err instanceof Error && err.message) {
+                  msg += ": " + err.message;
+                }
+                setErro(msg);
+                setImgLoading(false);
+              }
+            }}
+          />
+          {imgLoading && (
+            <span className="text-xs text-gray-500">Carregando imagem...</span>
+          )}
+        </form>
         <p
           className={`mt-3 text-2xl font-semibold ${
             isDark ? "text-amber-50" : "text-gray-900"
@@ -262,11 +323,12 @@ function coerceUser(found: unknown): TipoUser {
   };
 
   return {
-    id: toString(f.id),
+    id: toString(f.codigo ?? f.id),
     nome: toString(f.nome ?? ""),
     cpf: toString(f.cpf ?? ""),
     email: toString(f.email ?? ""),
     senha: toString(f.senha ?? ""),
     imagem: toString(f.imagem ?? ""),
+    dataDeNascimento: toString(f.dataDeNascimento ?? ""),
   };
 }
