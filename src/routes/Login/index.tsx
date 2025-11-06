@@ -31,7 +31,10 @@ export default function LoginForm() {
     message: string;
     type: ToastType;
   } | null>(null);
-  const [identificadorMasked, setIdentificadorMasked] = useState<string | undefined>(undefined);
+  const [identificadorMasked, setIdentificadorMasked] = useState<
+    string | undefined
+  >(undefined);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -44,9 +47,14 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: LoginInput) => {
+    setLoading(true);
     try {
       const response = await fetch(API_URL);
-      if (!response.ok) throw new Error("Erro ao buscar usuários");
+      if (!response.ok) {
+        setToast({ message: "Erro de conexão com o servidor.", type: "error" });
+        setLoading(false);
+        return;
+      }
 
       const usuarios: TipoUser[] = await response.json();
       const identificador = data.identificador.trim().toLowerCase();
@@ -70,15 +78,39 @@ export default function LoginForm() {
         localStorage.setItem("isLoggedIn", "true");
         setToast({ message: "Login realizado com sucesso!", type: "success" });
         setTimeout(() => {
+          setLoading(false);
+          reset();
           navigate("/", { replace: true });
           window.location.reload();
         }, 1200);
       } else {
-        setToast({ message: "Credenciais inválidas.", type: "error" });
-        reset();
+        const usuarioExiste = usuarios.find(
+          (user) =>
+            user.cpf === identificador ||
+            user.email?.toLowerCase() === identificador
+        );
+        if (usuarioExiste) {
+          setToast({ message: "Senha incorreta.", type: "error" });
+        } else {
+          setToast({ message: "Usuário não encontrado.", type: "error" });
+        }
+        setLoading(false);
+        setTimeout(() => {
+          reset();
+        }, 1200);
       }
-    } catch (error) {
-      setToast({ message: "Erro: " + error, type: "error" });
+    } catch (error: unknown) {
+      let errorMsg = "Erro inesperado.";
+      if (error instanceof Error) {
+        errorMsg = error.message;
+      } else if (typeof error === "string") {
+        errorMsg = error;
+      }
+      setToast({ message: "Erro inesperado: " + errorMsg, type: "error" });
+      setLoading(false);
+      setTimeout(() => {
+        reset();
+      }, 1200);
     }
   };
 
@@ -125,16 +157,25 @@ export default function LoginForm() {
                 className={`mt-1 block w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder:text-sm transition-colors duration-500 ${inputClass}`}
                 placeholder="Digite seu CPF ou e-mail"
                 {...register("identificador")}
-                value={identificadorMasked !== undefined ? identificadorMasked : undefined}
-                onChange={e => {
+                value={
+                  identificadorMasked !== undefined
+                    ? identificadorMasked
+                    : undefined
+                }
+                onChange={(e) => {
                   const value = e.target.value;
                   const onlyDigits = value.replace(/\D/g, "");
                   // Se contém apenas números e até 11 dígitos, aplica máscara de CPF
-                  if (/^\d{0,11}$/.test(onlyDigits) && onlyDigits.length <= 11 && onlyDigits.length > 0) {
+                  if (
+                    /^\d{0,11}$/.test(onlyDigits) &&
+                    onlyDigits.length <= 11 &&
+                    onlyDigits.length > 0
+                  ) {
                     const masked = maskCpf(onlyDigits);
                     setIdentificadorMasked(masked);
-                    // Atualiza o valor do RHF
-                    register("identificador").onChange({ target: { value: masked } });
+                    register("identificador").onChange({
+                      target: { value: masked },
+                    });
                   } else {
                     // Se contém letras, @ ou ., trata como e-mail e não aplica máscara
                     setIdentificadorMasked(undefined);
@@ -171,9 +212,19 @@ export default function LoginForm() {
             {/* Botão */}
             <button
               type="submit"
-              className="w-full flex justify-center items-center gap-2 py-2 px-4 rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+              className={`w-full flex justify-center items-center gap-2 py-2 px-4 rounded-md shadow-sm text-sm sm:text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer ${
+                loading ? "opacity-60 cursor-not-allowed" : ""
+              }`}
+              disabled={loading}
             >
-              <FiLogIn size={18} /> Entrar
+              {loading ? (
+                <span className="mr-2">
+                  <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                </span>
+              ) : (
+                <FiLogIn size={18} />
+              )}
+              {loading ? "Entrando..." : "Entrar"}
             </button>
 
             {/* Link de cadastro */}

@@ -56,6 +56,7 @@ export default function CadastroForm() {
     type: ToastType;
   } | null>(null);
   const [cpfMasked, setCpfMasked] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -68,7 +69,8 @@ export default function CadastroForm() {
   });
 
   const onSubmit = async (data: CadastroInput) => {
-    try {
+  setLoading(true);
+  try {
       // Converte data para formato americano yyyy-mm-dd
       let dataAmericana = data.dataNascimento;
       if (dataAmericana.includes("/")) {
@@ -103,6 +105,7 @@ export default function CadastroForm() {
           message: "CPF ou E-mail já cadastrado!",
           type: "error",
         });
+        setLoading(false);
         return;
       }
 
@@ -112,13 +115,18 @@ export default function CadastroForm() {
         body: JSON.stringify(dadosFormatados),
       });
 
-      if (!postResponse.ok) throw new Error("Erro ao cadastrar usuário");
+      if (!postResponse.ok) {
+        setLoading(false);
+        throw new Error("Erro ao cadastrar usuário");
+      }
 
       const clientesAtualizadosResponse = await fetch(API_URL);
-      if (!clientesAtualizadosResponse.ok)
+      if (!clientesAtualizadosResponse.ok) {
+        setLoading(false);
         throw new Error(
           "Cadastro feito, mas erro ao buscar usuário para login automático."
         );
+      }
       const clientesAtualizados: CadastroInput[] =
         await clientesAtualizadosResponse.json();
       const usuario = clientesAtualizados.find(
@@ -131,6 +139,7 @@ export default function CadastroForm() {
           type: "success",
         });
         setTimeout(() => {
+          setLoading(false);
           navigate("/perfil");
         }, 1200);
       } else {
@@ -139,10 +148,12 @@ export default function CadastroForm() {
           type: "error",
         });
         setTimeout(() => {
+          setLoading(false);
           navigate("/login");
         }, 1500);
       }
     } catch (error: unknown) {
+      setLoading(false);
       if (error instanceof Error) {
         setToast({
           message: "Erro ao cadastrar: " + error.message,
@@ -314,9 +325,15 @@ export default function CadastroForm() {
             <div>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer"
+                className={`w-full flex justify-center items-center gap-2 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer ${loading ? 'opacity-60 cursor-not-allowed' : ''}`}
+                disabled={loading}
               >
-                Cadastrar
+                {loading ? (
+                  <span className="mr-2">
+                    <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  </span>
+                ) : null}
+                {loading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </div>
 
