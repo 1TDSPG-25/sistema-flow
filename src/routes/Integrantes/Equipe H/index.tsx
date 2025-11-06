@@ -5,7 +5,8 @@ export default function EquipeH() {
   return (
     <>
       <section
-        className="flex flex-col justify-center pl-8"
+        className="flex flex-col justify-center pl-8
+        sm:px-8"
       >
         <div className="flex items-center justify-between">
           <h1 className="font-bold text-4xl">Equipe H</h1>
@@ -18,7 +19,7 @@ export default function EquipeH() {
           </Link>
         </div>
         <hr className="border-2 my-3" />
-        <p className="text-2xl font-bold">Conheça um pouco mais a Equipe E:</p>
+        <p className="text-2xl font-bold">Conheça um pouco mais a Equipe H:</p>
 
         <ul
           className="flex flex-col justify-center items-center gap-10 py-10
@@ -44,12 +45,14 @@ export default function EquipeH() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
                   alt="ícone do LinkedIn"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
@@ -74,42 +77,52 @@ export default function EquipeH() {
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103071/icon-github_ep9pkr.png"
                   alt="ícone do GitHub"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
               <Link to="" target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762103088/icon-linkedin_p3uaxp.png"
-                  alt="ícone do LinkedIn"
+                  alt="ícone do Linked"
+                  className="hover:opacity-60 duration-300"
                 />
               </Link>
             </div>
           </li>
         </ul>
       </section>
-      <section className="pl-8 flex flex-col justify-center items-center gap-10 py-10">
+      <section className="pl-8 flex flex-col justify-center items-center gap-10 pt-20">
         <h2 className="font-bold text-4xl self-start">
           Qual foi o papel da Equipe E durante o projeto?
         </h2>
 
-        {/* Card tarefa 1 */}
+        {/* Card tarefa */}
         <div
-          className="bg-[#E79595] border-[#ED3535] rounded-[30px] border-[3px] p-6 mt-10 flex flex-col justify-center items-center w-[90%]"
+          className="bg-[#E79595] border-[#ED3535] rounded-[30px] border-[3px] p-6 mt-2
+          flex flex-col justify-center items-center text-center w-[90%]
+          2xl:p-10"
         >
-          <div className="lg:flex flex-row lg:gap-8 lg:items-center">
+          <div className="flex flex-col justify-center items-center
+            lg:flex-row lg:text-start
+            lg:gap-8 lg:items-center">
             <img
               src="https://res.cloudinary.com/dt26mfzpw/image/upload/v1762137963/pagina-faq_zhgrih.jpg"
               alt="Foto da tela de cadastro de usuário"
-              className="bg-[#E79595] border-[#ED3535] rounded-[10px] border-[3px]lg:w-[30%]
-            2xl:w-[20%]"
+              className="bg-[#E79595] border-[#ED3535] rounded-[10px] border-[3px]
+              md:w-[80%]
+              lg:w-[30%]
+              2xl:w-[20%]"
             />
             <div>
               <h2
-                className="font-bold text-4xl mt-5 mb-3 text-center"
+                className="font-bold text-4xl mt-5 mb-3 text-center
+                lg:text-start
+                2xl:text-5xl"
               >
                 Página de FAQ
               </h2>
               <p
-                className="text-2xl mb-10"
+                className="text-2xl mb-10 2xl:text-3xl"
               >
                 Equipe responsável pelo desenvolvimento da página de cadastro de
                 conta, implementando o formulário de registro de novos usuários,
@@ -120,7 +133,12 @@ export default function EquipeH() {
                 to="/faq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#ED3535] rounded-[10px] text-white text-2xl text-center font-bold p-2"
+                className="bg-[#ED3535] rounded-[10px] text-white text-2xl text-center text-[15px] font-bold p-2
+                hover:bg-[#a01f1f] transition duration-300
+                sm:text-xl
+                md:text-2xl
+                lg:w-[30%]
+                2xl:p-3"
               >
                 Clique aqui para ver mais
               </Link>
