@@ -126,7 +126,7 @@ export default function CadastroForm() {
       if (usuario && usuario.senha === dadosFormatados.senha) {
         localStorage.setItem("usuario", JSON.stringify(usuario));
         setToast({
-          message: "Bem-vindo! Login realizado automaticamente.",
+          message: "Cadastro realizado com sucesso!",
           type: "success",
         });
         setTimeout(() => {
@@ -134,7 +134,7 @@ export default function CadastroForm() {
         }, 1200);
       } else {
         setToast({
-          message: "Cadastro feito, mas erro ao logar automaticamente.",
+          message: "Erro ao cadastrar usuário.",
           type: "error",
         });
         setTimeout(() => {
