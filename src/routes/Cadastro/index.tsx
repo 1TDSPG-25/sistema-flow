@@ -88,17 +88,16 @@ export default function CadastroForm() {
       };
 
       const response = await fetch(API_URL);
-      if (!response.ok) throw new Error("Erro ao buscar usuários existentes");
+      if (!response.ok) throw new Error("Erro ao buscar clientes existentes");
 
-      const usuarios: CadastroInput[] = await response.json();
-
-      const usuarioExistente = usuarios.find(
+      const clientes: CadastroInput[] = await response.json();
+      const clienteExistente = clientes.find(
         (user) =>
           user.cpf === dadosFormatados.cpf ||
           user.email === dadosFormatados.email
       );
 
-      if (usuarioExistente) {
+      if (clienteExistente) {
         setToast({
           message: "CPF ou E-mail já cadastrado!",
           type: "error",
@@ -114,14 +113,34 @@ export default function CadastroForm() {
 
       if (!postResponse.ok) throw new Error("Erro ao cadastrar usuário");
 
-      setToast({
-        message: "Cadastro realizado com sucesso!",
-        type: "success",
-      });
-
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
+      const clientesAtualizadosResponse = await fetch(API_URL);
+      if (!clientesAtualizadosResponse.ok)
+        throw new Error(
+          "Cadastro feito, mas erro ao buscar usuário para login automático."
+        );
+      const clientesAtualizados: CadastroInput[] =
+        await clientesAtualizadosResponse.json();
+      const usuario = clientesAtualizados.find(
+        (user) => user.email === dadosFormatados.email
+      );
+      if (usuario && usuario.senha === dadosFormatados.senha) {
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+        setToast({
+          message: "Bem-vindo! Login realizado automaticamente.",
+          type: "success",
+        });
+        setTimeout(() => {
+          navigate("/perfil");
+        }, 1200);
+      } else {
+        setToast({
+          message: "Cadastro feito, mas erro ao logar automaticamente.",
+          type: "error",
+        });
+        setTimeout(() => {
+          navigate("/login");
+        }, 1500);
+      }
     } catch (error: unknown) {
       if (error instanceof Error) {
         setToast({
