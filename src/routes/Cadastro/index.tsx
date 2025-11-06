@@ -158,7 +158,20 @@ export default function CadastroForm() {
         (user) => user.email === dadosFormatados.email
       );
       if (usuario && usuario.senha === dadosFormatados.senha) {
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+  // Filtra dados sensíveis antes de salvar
+  const usuarioPublico = { ...usuario } as Record<string, unknown>;
+  delete usuarioPublico.senha;
+  delete usuarioPublico.cpf;
+  delete usuarioPublico.email;
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioPublico));
+        const authToken = btoa(
+          JSON.stringify({
+            id: usuario.cpf ?? usuario.email,
+            ts: Date.now(),
+          })
+        );
+        localStorage.setItem("authToken", authToken);
+        localStorage.setItem("isLoggedIn", "true");
         setToast({
           message: "Cadastro realizado com sucesso!",
           type: "success",
