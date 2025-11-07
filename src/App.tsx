@@ -16,13 +16,12 @@ export default function App() {
   const { isDark } = useTheme();
 
   return (
-    <div className={`${isDark ? "dark-mode" : "light-mode"}`}>
-      <Cabecalho />
-      {/* Suspense para carregamento NÃO APAGAR e por rotas. Consulte Enrico ou Iago */}
-      <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading />}>
+      <div className={`${isDark ? "dark-mode" : "light-mode"}`}>
+        <Cabecalho />
         <Home />
-      </Suspense>
-      <Rodape />
-    </div>
+        <Rodape />
+      </div>
+    </Suspense>
   );
 }
