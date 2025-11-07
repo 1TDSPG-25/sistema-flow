@@ -1,5 +1,7 @@
 # Projeto Front-End - Roadmap de Features
 
+Disponível em: [Vercel](https://sistema-flow.vercel.app)
+
 ## Objetivo
 O projeto **Megafarma** é um sistema de farmácia online desenvolvido com **React + Vite + TypeScript**, totalmente responsivo e acessível. O site exibe produtos, mostra as unidades físicas, responde dúvidas e permite contato direto com o usuário.
 
@@ -11,9 +13,7 @@ O frontend prioriza a segurança: nenhum dado sensível do usuário é salvo no 
 
 ## 🔗 API Backend
 
-O repositório da API utilizada neste projeto está disponível em:
-
-[https://github.com/PxS00/megafarma](https://github.com/PxS00/megafarma)
+O repositório da API utilizada neste projeto está disponível em: [megafarma](https://github.com/PxS00/megafarma)
 
 Sinta-se à vontade para dar palpites, ideias e melhorias via issues ou pull requests!
 
