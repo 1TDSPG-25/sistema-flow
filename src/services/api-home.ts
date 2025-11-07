@@ -1,7 +1,7 @@
 import type { apiResponse } from "@/types/tipoHome";
 
 export const fetchApi = async () => {
-    const VITE_HOME_URL: string = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=640bc8279b81411ea70af1879834e3b4';
+    const VITE_HOME_URL = import.meta.env.VITE_HOME_URL as string;
 
     try {
       const response = await fetch(`${VITE_HOME_URL}&skip=${Math.floor(Math.random() * 10)}`, { method: "GET" });
